@@ -1,1133 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tribune Inc. We build AI agents for your business. | TribuneOS.com</title>
-  <meta name="description" content="Tribune designs, builds, and trains AI agents for your business, on hardware you own. Then we prove it runs without us, and leave.">
-  <meta name="robots" content="index, follow">
-  <link rel="alternate" type="text/markdown" href="/index.md">
-  <link rel="canonical" href="https://www.TribuneOS.com/">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Tribune Inc. We build AI agents for your business.">
-  <meta property="og:description" content="We build your AI organization, then hand you the keys.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.TribuneOS.com/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=80&auto=format&fit=crop">
-  <meta property="og:image:alt" content="Tribune Inc. — TribuneOS.com">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=80&auto=format&fit=crop">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css?v=29">
-
-  <!-- Alpine.js -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-  <!-- Schema.org - Local Medical Business -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Tribune Inc.",
-    "description": "Tribune builds complete AI organizations for small and mid-size businesses, designed around each company's costliest constraint, installed on hardware the client owns, and trained until they pass a formal Independence Test.",
-    "url": "https://www.TribuneOS.com",
-    "email": "hello@tribuneos.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "West Palm Beach",
-      "addressRegion": "FL",
-      "addressCountry": "US"
-    },
-    "areaServed": [
-      { "@type": "Place", "name": "West Palm Beach, FL" },
-      { "@type": "Place", "name": "South Florida" },
-      
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Tribune AI Agent Builds",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The Recovery Agent" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The Intake Agent" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The Signal Agent" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The Ledger Agent" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The Sentinel" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The Producer" } }
-      ]
-    }
-  }
-  </script>
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tribune. We build AI agents for your business.</title>
+<meta name="description" content="Tribune designs, builds, and trains a complete AI organization for your business, on hardware you own. Then we prove it runs without us, and leave.">
+<link rel="canonical" href="https://tribuneos.com/">
+<meta property="og:title" content="Tribune. We build AI agents for your business.">
+<meta property="og:description" content="Tribune designs, builds, and trains a complete AI organization for your business, on hardware you own. Then we prove it runs without us, and leave.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tribuneos.com/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Cinzel:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script><link rel="preconnect" href="https://cdn.jsdelivr.net"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Tribune Inc.", "url": "https://tribuneos.com", "slogan": "We win when you no longer need us.", "description": "Tribune builds complete AI organizations for small and mid-size businesses, installed on hardware the client owns, trained, tested for independence, and handed over.", "location": [{"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "West Palm Beach", "addressRegion": "FL", "addressCountry": "US"}}]}</script></head>
 <body>
 
-<!-- ================================================================
-     BOOKING WIZARD - Alpine.js state machine (hidden by default)
-     All CTAs on page call scrollToGuide() to open this overlay
-     ================================================================ -->
-<div x-data="wizardData()" data-wizard-root x-cloak>
-
-  <!-- WIZARD OVERLAY -->
-  <div class="wizard-overlay" x-show="open" style="display:none" x-transition.opacity @click.self="closeWizard()">
-    <div class="wizard-card" @click.stop>
-
-      <!-- Header -->
-      <div class="wizard-header">
-        <div class="wizard-title" x-text="stepLabel"></div>
-        <div class="wizard-progress">
-          <div class="wizard-progress-bar">
-            <div class="wizard-progress-fill" :style="`width: ${progressPct}%`"></div>
-          </div>
-          <div class="wizard-step-label" x-text="`Step ${currentStep} of 3`"></div>
-        </div>
-        <button class="wizard-close" @click="closeWizard()" aria-label="Close">&times;</button>
-      </div>
-
-      <!-- Body -->
-      <div class="wizard-body">
-
-        <!-- Q1: What should your agent carry? -->
-        <template x-if="currentStep === 1">
-          <div>
-            <div class="wizard-question">What should your agent carry?</div>
-            <div class="wizard-subtext">Select the work your agent will own. We will recommend the right build.</div>
-            <div class="wizard-options">
-              <button class="wizard-option" :class="{ selected: selectedService === 'recovery' }" @click="selectedService = 'recovery'; nextStep()">
-                <span>Money owed that never gets chased</span>
-              </button>
-              <button class="wizard-option" :class="{ selected: selectedService === 'intake' }" @click="selectedService = 'intake'; nextStep()">
-                <span>Paperwork that arrives all day</span>
-              </button>
-              <button class="wizard-option" :class="{ selected: selectedService === 'signal' }" @click="selectedService = 'signal'; nextStep()">
-                <span>Accounts you should be watching</span>
-              </button>
-              <button class="wizard-option" :class="{ selected: selectedService === 'ledger' }" @click="selectedService = 'ledger'; nextStep()">
-                <span>Books that never quite reconcile</span>
-              </button>
-              <button class="wizard-option" :class="{ selected: selectedService === 'sentinel' }" @click="selectedService = 'sentinel'; nextStep()">
-                <span>Deadlines that must not slip</span>
-              </button>
-              <button class="wizard-option" :class="{ selected: selectedService === 'producer' }" @click="selectedService = 'producer'; nextStep()">
-                <span>Reports your team assembles by hand</span>
-              </button>
-            </div>
-          </div>
-        </template>
-
-        <!-- Q2: What is your world? -->
-        <template x-if="currentStep === 2">
-          <div>
-            <div class="wizard-question">What is your world?</div>
-            <div class="wizard-options">
-              <button class="wizard-option" :class="{ selected: selectedWorld === 'medical' }" @click="selectedWorld = 'medical'; nextStep()">
-                <span>A medical or care practice</span>
-              </button>
-              <button class="wizard-option" :class="{ selected: selectedWorld === 'legal' }" @click="selectedWorld = 'legal'; nextStep()">
-                <span>A legal or professional firm</span>
-              </button>
-              <button class="wizard-option" :class="{ selected: selectedWorld === 'sales' }" @click="selectedWorld = 'sales'; nextStep()">
-                <span>A sales, research, or intelligence business</span>
-              </button>
-              <button class="wizard-option" :class="{ selected: selectedWorld === 'other' }" @click="selectedWorld = 'other'; nextStep()">
-                <span>Services, trades, or something else</span>
-              </button>
-            </div>
-          </div>
-        </template>
-
-        <!-- Q3: How sensitive is the data? -->
-        <template x-if="currentStep === 3">
-          <div>
-            <div class="wizard-question">How sensitive is the data?</div>
-            <div class="wizard-options">
-              <button class="wizard-option" :class="{ selected: selectedTier === 'patient' }" @click="selectedTier = 'patient'; nextStep()">
-                <span>Patient records <em style="font-size:.8em; color:var(--text-muted)">(HIPAA applies)</em></span>
-              </button>
-              <button class="wizard-option" :class="{ selected: selectedTier === 'privileged' }" @click="selectedTier = 'privileged'; nextStep()">
-                <span>Privileged or confidential client matter</span>
-              </button>
-              <button class="wizard-option" :class="{ selected: selectedTier === 'standard' }" @click="selectedTier = 'standard'; nextStep()">
-                <span>Standard business data</span>
-              </button>
-            </div>
-          </div>
-        </template>
-
-        <!-- Result -->
-        <template x-if="currentStep === 4">
-          <div class="wizard-result" x-show="recommendedBuild">
-            <div class="wizard-result-check">&#10003;</div>
-            <div class="wizard-rec-label" style="margin-bottom:.5rem; font-size:.85rem; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted);">Your recommended build</div>
-            <div class="wizard-rec-service" x-text="recommendedBuild && recommendedBuild.name"></div>
-            <div class="wizard-rec-edition" style="margin:.5rem 0 1.5rem; font-size:.9rem;" x-text="edition + ' edition. ' + editionNote"></div>
-            <div class="wizard-result-actions">
-              <a class="btn btn-primary btn-lg" :href="resultCTA" style="display:inline-block;">See this build</a>
-              <a href="/builds/" class="btn btn-secondary" style="display:inline-block; margin-left:1rem;">See all builds</a>
-            </div>
-            <button @click="selectedService=null; selectedWorld=null; selectedTier=null; currentStep=1;" style="background:none;border:none;color:var(--text-muted);cursor:pointer;margin-top:1.5rem;font-size:.85rem;display:block;">Not right? Start over</button>
-          </div>
-        </template>
-
-      </div>
-
-      <!-- Footer nav -->
-      <template x-if="currentStep < 4">
-        <div class="wizard-footer">
-          <div class="wizard-footer-left">
-            <button class="wizard-back" @click="prevStep()" x-show="currentStep > 1">Back</button>
-          </div>
-          <div class="wizard-footer-right">
-            <button class="wizard-next" @click="nextStep()" x-show="currentStep <= 3 && canGoNext">
-              Continue
-            </button>
-          </div>
-        </div>
-      </template>
-
-    </div><!-- /.wizard-card -->
-  </div><!-- /.wizard-overlay -->
-
-  <!-- ============================================================
-       LANDING PAGE LOGO SPLASH - disabled, logic preserved for reuse
-       Cloudinary source: e_accelerate:300 → ~5s, playbackRate=1.3 → ~3.8s total
-       Full source: v1779997688/beyond-concierge/logo-animation-v4.mp4 (15s)
-       To re-enable: uncomment the block below
-  ============================================================ -->
-  <!--SPLASH-START
-  <style>
-    #logo-splash {
-      position: fixed; top:0; left:0; right:0; bottom:0;
-      background: #ffffff;
-      z-index: 99999;
-      display: flex; align-items: center; justify-content: center;
-      transition: opacity 0.5s ease;
-    }
-    #logo-splash video { width: 840px; max-width: 90vw; }
-    #logo-splash.fade-out { opacity: 0; pointer-events: none; }
-  </style>
-  
-  <script>
-  (function() {
-    var splash = document.getElementById('logo-splash');
-    var vid = document.getElementById('splash-video');
-    if (!splash || !vid) return;
-    function applyRate() { try { vid.playbackRate = 1.3; } catch(e){} }
-    vid.addEventListener('loadedmetadata', applyRate);
-    vid.addEventListener('play', applyRate);
-    applyRate();
-    function dismissSplash() {
-      splash.classList.add('fade-out');
-      setTimeout(function() { if(splash.parentNode) splash.remove(); }, 500);
-    }
-    vid.addEventListener('ended', dismissSplash);
-    setTimeout(dismissSplash, 6000);
-    var p = vid.play();
-    if (p && p.catch) p.catch(function(){ dismissSplash(); });
-  })();
-  <\/script>
-  SPLASH-END-->
-
-  <!-- ============================================================
-       PAGE CONTENT
-       ============================================================ -->
-
-<div class="promo-bar">
-    We build AI agents for businesses. You own the system. It runs without us.
-    <a class="ready-review" href="/details/purpose.html">Read our doctrine &rarr;</a>
-    <button class="promo-close" aria-label="Close">&times;</button>
-  </div>
-
-  <!-- STICKY HEADER -->
-  <header class="site-header">
-    <div class="header-top">
-      <a href="/" class="site-logo" id="header-logo-link">
-        <img src="https://res.cloudinary.com/dthdxjmgb/image/upload/h_80,c_scale,f_auto,q_100/v1781045601/mxxi/rj-logo-cropped.jpg" alt="Tribune Inc.">
-      </a>
-      <div class="header-right">
-        <div class="header-links">
-          <a class="ready-review" href="/us/west-palm-beach.html">Locations</a>
-          <div class="header-nav-item">
-            <button class="header-nav-trigger">Details <span class="h-chevron">&#9660;</span></button>
-            <div class="header-nav-dropdown">
-              <a class="ready-review" href="/details/method.html">How we build</a>
-              <a class="ready-review" href="/details/proof.html">Proof</a>
-              <a class="ready-review" href="/details/purpose.html">Doctrine</a>
-              <a class="ready-review" href="/details/trust.html">Trust and compliance</a>
-            </div>
-          </div>
-          <a class="ready-review" href="/builds/">Builds</a>
-          <a class="ready-review" href="/reach-out.html">Reach out</a>
-          <a class="ready-review" href="/functions.html">Functions</a>
-          <div class="header-nav-item">
-            <button class="header-nav-trigger">About <span class="h-chevron">&#9660;</span></button>
-            <div class="header-nav-dropdown">
-              <a class="ready-review" href="/about.html">About Tribune</a>
-              <a class="ready-review" href="/builds/">Builds</a>
-              <a class="ready-review" href="/reach-out.html">Reach out</a>
-            </div>
-          </div>
-        </div>
-        <a href="/reach-out.html" class="btn btn-primary btn-sm header-cta">Map your constraint</a>
-        <button class="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-
-    <!-- MEGAMENU NAV ROW — 6 tabs + 2 links -->
-    <nav class="nav-row" aria-label="Services navigation">
-      <div class="nav-row-inner">
-
-        <!-- BUILDS -->
-        <div class="nav-item" data-mega>
-          <button>BUILDS <span class="chevron">&#9660;</span></button>
-          <div class="mega-dropdown mega-dropdown--4col">
-            <div class="mega-4col">
-              <div class="mega-4col-col">
-                <span class="mega-col-head">Recover and protect</span>
-                <a class="mega-plink ready-review" href="/builds/the-recovery-agent.html">The Recovery Agent</a>
-                <a class="mega-slink ready-review" href="/builds/the-intake-agent.html">The Intake Agent</a>
-                <a class="mega-slink ready-review" href="/builds/the-signal-agent.html">The Signal Agent</a>
-              </div>
-              <div class="mega-4col-col">
-                <span class="mega-col-head">Run and deliver</span>
-                <a class="mega-plink ready-review" href="/builds/the-ledger-agent.html">The Ledger Agent</a>
-                <a class="mega-slink ready-review" href="/builds/the-sentinel.html">The Sentinel</a>
-                <a class="mega-slink ready-review" href="/builds/the-producer.html">The Producer</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- FUNCTIONS -->
-        <div class="nav-item" data-mega>
-          <button>FUNCTIONS <span class="chevron">&#9660;</span></button>
-          <div class="mega-dropdown mega-dropdown--4col">
-            <div class="mega-4col">
-              <div class="mega-4col-col">
-                <span class="mega-col-head">What your agent carries</span>
-                <a class="mega-plink ready-review" href="/builds/the-recovery-agent.html">Recover money owed</a>
-                <a class="mega-slink ready-review" href="/builds/the-intake-agent.html">Handle incoming paperwork</a>
-                <a class="mega-slink ready-review" href="/builds/the-signal-agent.html">Watch and brief</a>
-                <a class="mega-slink ready-review" href="/builds/the-ledger-agent.html">Keep the books straight</a>
-                <a class="mega-slink ready-review" href="/builds/the-sentinel.html">Guard the deadlines</a>
-                <a class="mega-slink ready-review" href="/builds/the-producer.html">Produce and deliver</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- DETAILS -->
-        <div class="nav-item" data-mega>
-          <button>DETAILS <span class="chevron">&#9660;</span></button>
-          <div class="mega-dropdown mega-dropdown--4col">
-            <div class="mega-4col">
-              <div class="mega-4col-col">
-                <span class="mega-col-head">How we work</span>
-                <a class="mega-plink ready-review" href="/details/method.html">How we build</a>
-                <a class="mega-slink ready-review" href="/details/proof.html">Proof</a>
-                <a class="mega-slink ready-review" href="/details/purpose.html">Doctrine</a>
-                <a class="mega-slink ready-review" href="/details/trust.html">Trust and compliance</a>
-                <a class="mega-slink ready-review" href="/details/faq.html">FAQ</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ABOUT -->
-        <div class="nav-item" data-mega>
-          <button>ABOUT <span class="chevron">&#9660;</span></button>
-          <div class="mega-dropdown mega-dropdown--4col">
-            <div class="mega-4col">
-              <div class="mega-4col-col">
-                <span class="mega-col-head">Tribune Inc.</span>
-                <a class="mega-plink ready-review" href="/about.html">About Tribune</a>
-                <a class="mega-slink ready-review" href="/details/purpose.html">Doctrine</a>
-                <a class="mega-slink ready-review" href="/reach-out.html">Reach out</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- LOCATIONS -->
-        <div class="nav-item" data-mega>
-          <button>LOCATIONS <span class="chevron">&#9660;</span></button>
-          <div class="mega-dropdown">
-            <a class="mega-llink ready-review" href="/us/west-palm-beach.html">West Palm Beach, FL</a>
-            
-          </div>
-        </div>
-
-        <!-- FIELD NOTES -->
-        <div class="nav-item" data-mega>
-          <button>FIELD NOTES <span class="chevron">&#9660;</span></button>
-          <div class="mega-dropdown">
-            <a class="mega-llink ready-review" href="/field-notes/">Articles and thinking</a>
-            <a class="mega-llink ready-review" href="/details/proof.html">Proof points</a>
-          </div>
-        </div>
-
-        <!-- ALL BUILDS -->
-        <div class="nav-item">
-          <a href="/builds/">ALL BUILDS</a>
-        </div>
-
-        <!-- CTA -->
-        <div class="nav-item">
-          <a href="/reach-out.html">MAP YOUR CONSTRAINT</a>
-        </div>
-
-      </div>
-    </nav>
-  </header>
-
-  <!-- Mobile nav drawer -->
-  <nav class="mobile-nav" aria-label="Mobile navigation">
-    <div class="mobile-nav-header">
-      <img src="https://res.cloudinary.com/dthdxjmgb/image/upload/h_80,c_scale,f_auto,q_100/v1781045601/mxxi/rj-logo-cropped.jpg" alt="Tribune Inc.">
-      <button class="mobile-nav-close">&times;</button>
-    </div>
-    <ul>
-      <li class="mnav-has-sub">
-        <button class="mnav-parent">Builds <span class="mnav-chevron">&#8250;</span></button>
-        <ul class="mnav-sub">
-          <li><a class="ready-review" href="/builds/">All builds</a></li>
-          <li><a class="ready-review" href="/builds/the-recovery-agent.html">The Recovery Agent</a></li>
-          <li><a class="ready-review" href="/builds/the-intake-agent.html">The Intake Agent</a></li>
-          <li><a class="ready-review" href="/builds/the-signal-agent.html">The Signal Agent</a></li>
-          <li><a class="ready-review" href="/builds/the-ledger-agent.html">The Ledger Agent</a></li>
-          <li><a class="ready-review" href="/builds/the-sentinel.html">The Sentinel</a></li>
-          <li><a class="ready-review" href="/builds/the-producer.html">The Producer</a></li>
-        </ul>
-      </li>
-      <li class="mnav-has-sub">
-        <button class="mnav-parent">Functions <span class="mnav-chevron">&#8250;</span></button>
-        <ul class="mnav-sub">
-          <li><a class="ready-review" href="/builds/the-recovery-agent.html">Recover money owed</a></li>
-          <li><a class="ready-review" href="/builds/the-intake-agent.html">Handle incoming paperwork</a></li>
-          <li><a class="ready-review" href="/builds/the-signal-agent.html">Watch and brief</a></li>
-          <li><a class="ready-review" href="/builds/the-ledger-agent.html">Keep the books straight</a></li>
-          <li><a class="ready-review" href="/builds/the-sentinel.html">Guard the deadlines</a></li>
-          <li><a class="ready-review" href="/builds/the-producer.html">Produce and deliver</a></li>
-        </ul>
-      </li>
-      <li class="mnav-has-sub">
-        <button class="mnav-parent">Details <span class="mnav-chevron">&#8250;</span></button>
-        <ul class="mnav-sub">
-          <li><a class="ready-review" href="/details/method.html">How we build</a></li>
-          <li><a class="ready-review" href="/details/proof.html">Proof</a></li>
-          <li><a class="ready-review" href="/details/purpose.html">Doctrine</a></li>
-          <li><a class="ready-review" href="/details/trust.html">Trust and compliance</a></li>
-          <li><a class="ready-review" href="/details/faq.html">FAQ</a></li>
-        </ul>
-      </li>
-      <li class="mnav-has-sub">
-        <button class="mnav-parent">Locations <span class="mnav-chevron">&#8250;</span></button>
-        <ul class="mnav-sub">
-          <li><a class="ready-review" href="/us/west-palm-beach.html">West Palm Beach, FL</a></li>
-          
-        </ul>
-      </li>
-      <li><a class="ready-review" href="/about.html">About Tribune</a></li>
-      <li><a class="ready-review" href="/field-notes/">Field notes</a></li>
-      <li><a class="ready-review" href="/reach-out.html">Reach out</a></li>
-    </ul>
-    <div class="mobile-nav-cta">
-      <a href="/reach-out.html" class="btn btn-primary btn-full">Map your constraint</a>
-    </div>
+<div class="u-header"><div class="wrap">
+  <a href="/about/">About</a>
+  <a href="/us/west-palm-beach/">Location</a>
+  <a class="reach" href="/reach-out/">Reach out</a>
+</div></div>
+<header class="m-header"><div class="wrap">
+  <a class="lockup" href="/"><svg viewBox="0 0 100 112" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tribune"><rect x="18" y="10" width="64" height="16" rx="2" fill="#0A0B12"/><polygon points="18,33 46,33 46,86 37,86 18,60" fill="#0A0B12"/><polygon points="54,33 82,33 82,60 63,86 54,86" fill="#0A0B12"/><polygon points="40,90 60,90 50,104" fill="#7A1A5C"/></svg><span class="wordmark">TRIBUNE</span></a>
+  <nav class="m-nav" aria-label="Primary">
+    <div class="dropdown"><a href="/builds/">Builds</a>
+      <div class="dropdown-menu"><a href="/builds/the-recovery-agent/">The Recovery Agent</a><a href="/builds/the-intake-agent/">The Intake Agent</a><a href="/builds/the-signal-agent/">The Signal Agent</a><a href="/builds/the-ledger-agent/">The Ledger Agent</a><a href="/builds/the-sentinel/">The Sentinel</a><a href="/builds/the-producer/">The Producer</a><a href="/builds/">All builds</a></div></div>
+    <a href="/functions/">Functions</a>
+    <div class="dropdown"><a href="#" aria-haspopup="true">Details</a>
+      <div class="dropdown-menu">
+        <a href="/details/method/">How we build</a>
+        <a href="/details/proof/">Proof</a>
+        <a href="/details/purpose/">Doctrine: Light, Soul &amp; Purpose</a>
+        <a href="/details/trust/">Trust &amp; compliance</a>
+        <a href="/details/faq/">FAQ</a>
+      </div></div>
   </nav>
+</div></header>
 
+<section class="hero"><div class="hero-field" aria-hidden="true"></div><div class="wrap">
+  <h1 class="display-xl" style="max-width:19ch">The giants run on AI armies.
+  <span class="accent">We build you yours</span>, then hand you the keys.</h1>
+  <p class="lead" style="max-width:60ch">Tribune designs, builds, and trains a complete AI
+  organization for your business, on hardware you own. Then we prove it runs without us,
+  and leave.</p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="/reach-out/">Map your constraint</a>
+    <a class="btn btn-ghost" href="#finder-section">Find your build &rarr;</a>
+  </div>
+</div></section>
 
+<section id="finder-section" style="padding-top:24px"><div class="wrap">
+  <div class="eyebrow reveal">Find your build</div>
+  <h2 class="reveal" style="margin-bottom:28px">Three questions. One recommendation.</h2>
+  <div class="finder reveal" id="finder">
+    <noscript><p>The guide needs JavaScript. Browse <a href="/builds/">all builds</a> instead.</p></noscript>
+  </div>
+</div></section>
 
+<section><div class="wrap reveal">
+  <div class="eyebrow">The imbalance</div>
+  <h2 style="max-width:18ch">The giants have armies. Now you do.</h2>
+  <p style="margin-top:20px;max-width:64ch">The giants have armies of agents. The neighborhood
+  practice, the regional distributor, the ten-person firm get chatbots and subscriptions. The
+  tools to level that field exist. They are just sold as rent. We build you the machine, in
+  your name, on your hardware, and hand you the keys. The enemy here is the imbalance, never
+  the companies that got there first.</p>
+</div></section>
 
+<section style="padding-top:0"><div class="wrap">
+  <div class="eyebrow reveal">Proof, in order of strength</div>
+  <div class="proof-item reveal"><div class="proof-num">01</div><div>
+    <h3>The Independence Test</h3>
+    <p style="margin-top:8px">Five business days, real operations, zero Tribune intervention,
+    mechanical pass or fail. The only exam in the industry a vendor designs to make itself
+    unnecessary.</p></div></div>
+  <div class="proof-item reveal"><div class="proof-num">02</div><div>
+    <h3>Ownership, literally</h3>
+    <p style="margin-top:8px">Hardware on your premises, accounts in your name, repositories in
+    your control, from day one, not at handoff. Tribune's access ends. The system doesn't.</p></div></div>
+  <div class="proof-item reveal"><div class="proof-num">03</div><div>
+    <h3>The Senate</h3>
+    <p style="margin-top:8px">Every architecture is attacked by multiple independent AI models
+    before a client sees it. Agreement is computed from observed critiques. A design must
+    survive scrutiny, not collect applause.</p></div></div>
+  <div class="proof-item reveal"><div class="proof-num">04</div><div>
+    <h3>The engagement ends</h3>
+    <p style="margin-top:8px">A fixed arc with human-signed gates and a scheduled departure. The
+    business model with nothing to renew is the business model you can trust.</p></div></div>
+  <div class="btn-row reveal"><a class="btn btn-ghost" href="/details/proof/">The proof, expanded &rarr;</a></div>
+</div></section>
 
+<section style="padding-top:0"><div class="wrap reveal">
+  <div class="eyebrow">The honest comparison</div>
+  <div class="card" style="padding:8px 8px 0">
+  <table>
+    <thead><tr><th>They say</th><th>The catch</th><th>Tribune says</th></tr></thead>
+    <tbody>
+      <tr><td>Consultants: "We'll advise you."</td><td>The retainer never ends.</td>
+          <td>We build it, prove it, and leave.</td></tr>
+      <tr><td>SaaS: "Subscribe to capability."</td><td>You rent forever; they own the system.</td>
+          <td>You own the hardware, data, and agents outright.</td></tr>
+      <tr><td>DIY tools: "Anyone can build agents."</td><td>Someone in-house becomes the unpaid
+          AI department.</td><td>We build it right, then train your people to run it.</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
 
+<section style="padding-top:0"><div class="wrap reveal">
+  <div class="eyebrow">Built with a soul. Seriously.</div>
+  <p style="max-width:62ch;font-size:18px">Every agent we build ships with a written purpose:
+  why it exists, who it serves, and what it refuses to do. Not because it sounds nice. Because
+  an agent that knows why it exists makes better judgment calls when the instructions run out.
+  <a href="/details/purpose/">Read how we think about light, soul, and purpose &rarr;</a></p>
+</div></section>
 
+<section style="padding-top:0"><div class="wrap">
+  <div class="card stripe reveal" style="max-width:820px">
+    <div class="eyebrow" style="border:none;padding-left:0">For the person who runs the office</div>
+    <p>If you are the one who keeps this place running, here is what this means for you: you are
+    not being replaced, you are being promoted. The training ladder ends with you operating the
+    system. The recovery test is passed by you, unaided. The handoff report carries your
+    signature next to the owner's. When we leave, you are the one holding the keys.</p>
+  </div>
+</div></section>
 
+<section style="padding-top:0"><div class="wrap reveal">
+  <div class="eyebrow">The method</div>
+  <div class="phase-strip">
+    <span>Discovery</span><span class="sep">&rarr;</span><span>Architecture</span>
+    <span class="sep">&rarr;</span><span>Build</span><span class="sep">&rarr;</span>
+    <span>Train</span><span class="sep">&rarr;</span><span>Handoff</span>
+  </div>
+  <p class="muted" style="margin-top:14px">Typically six to ten weeks. Ends with an independence
+  test: proof your system runs without us. <a href="/details/method/">See the five phases &rarr;</a></p>
+</div></section>
 
+<section class="dark"><div class="wrap reveal" style="text-align:left">
+  <h2 style="max-width:20ch">One conversation. We map the constraint actually costing you money.</h2>
+  <p style="margin-top:16px;max-width:56ch">No pitch deck, no jargon. Tell us where it hurts;
+  we will tell you what a build looks like, what it takes, and what happens when we leave.</p>
+  <div class="btn-row"><a class="btn btn-primary" href="/reach-out/">Map your constraint</a></div>
+</div></section>
 
-
-
-
-
-
-  <!-- ================================================================
-       4. HERO - fullscreen video (CEBC method)
-       ================================================================ -->
-  <section class="hero">
-    <div class="hero-video-bg">
-      <!-- ★ YOUTUBE SWAP: when Tribune video is ready, uncomment the iframe below
-           and remove the <video> tag. Use exact CEBC pattern (Jub4OT0XWas as reference).
-      <iframe
-        src="https://www.youtube.com/embed/YOUR_TRIBUNE_VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=YOUR_TRIBUNE_VIDEO_ID&controls=0&playsinline=1&rel=0"
-        frameborder="0"
-        allowfullscreen
-        allow="autoplay; encrypted-media"
-        title="Background video"
-      ></iframe>
-      -->
-      <!-- Local video - active until YouTube video is ready -->
-      <video autoplay muted loop playsinline>
-        <source src="https://assets.mixkit.co/videos/9101/9101-720.mp4" type="video/mp4">
-      </video>
+<section style="padding:64px 0"><div class="wrap">
+  <div class="eyebrow reveal">The builds</div>
+  <div class="grid grid-3"><a class="card reveal" href="/builds/the-recovery-agent/" style="display:block;text-decoration:none"><div class="eyebrow" style="border:none;padding-left:0">Recover money owed</div><h3>The Recovery Agent</h3><p class="muted small" style="margin-top:8px">I exist to recover the revenue this practice earns but loses to friction, and to give the billing team their afternoons back.</p></a><a class="card reveal" href="/builds/the-intake-agent/" style="display:block;text-decoration:none"><div class="eyebrow" style="border:none;padding-left:0">Handle incoming paperwork</div><h3>The Intake Agent</h3><p class="muted small" style="margin-top:8px">I exist so nothing that arrives gets lost, and no one spends their day retyping what a machine can read.</p></a><a class="card reveal" href="/builds/the-signal-agent/" style="display:block;text-decoration:none"><div class="eyebrow" style="border:none;padding-left:0">Watch and brief</div><h3>The Signal Agent</h3><p class="muted small" style="margin-top:8px">I exist so this team walks into every conversation knowing more than the other side expects.</p></a><a class="card reveal" href="/builds/the-ledger-agent/" style="display:block;text-decoration:none"><div class="eyebrow" style="border:none;padding-left:0">Keep the books straight</div><h3>The Ledger Agent</h3><p class="muted small" style="margin-top:8px">I exist so the books close clean and nobody spends Friday night reconciling.</p></a><a class="card reveal" href="/builds/the-sentinel/" style="display:block;text-decoration:none"><div class="eyebrow" style="border:none;padding-left:0">Guard the deadlines</div><h3>The Sentinel</h3><p class="muted small" style="margin-top:8px">I exist so the deadline that could hurt this business is never a surprise.</p></a><a class="card reveal" href="/builds/the-producer/" style="display:block;text-decoration:none"><div class="eyebrow" style="border:none;padding-left:0">Produce and deliver</div><h3>The Producer</h3><p class="muted small" style="margin-top:8px">I exist so the work your clients pay for goes out on time, checked by a human who had time to check it.</p></a></div>
+</div></section>
+<script type="module">if (matchMedia("(pointer: fine)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches && innerWidth >= 900) { setTimeout(function () { import("/assets/hero-field.js").catch(function () {}); }, 150); }</script>
+<footer><div class="wrap">
+  <p class="tagline">Power that stays. Help that leaves.</p>
+  <div class="cols">
+    <div>
+      <p class="small muted" style="max-width:52ch">Tribune Inc. builds complete AI organizations
+      for small and mid-size businesses, designed around each company's costliest constraint,
+      installed on hardware the client owns, and trained until they pass a formal Independence
+      Test. Then Tribune hands over the keys and leaves. Tribune Inc. is a Delaware corporation.
+      TribuneOS.com.</p>
     </div>
-    <div class="hero-video-overlay"></div>
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <span class="hero-eyebrow">West Palm Beach, FL</span>
-        <h1>The giants run on AI armies.<br><em>We build you yours, then hand you the keys.</em></h1>
-        <p class="hero-offer">
-          Tribune designs, builds, and trains a complete AI organization for your business, on hardware you own. Then we prove it runs without us, and leave.
-        </p>
-        <div class="hero-cta-group">
-          <button class="btn btn-primary btn-lg" @click="scrollToGuide()">
-            Start Your Consultation
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================================
-       5. SERVICE GUIDE - LaserAway-style inline funnel
-          Photo left, visible service selector right
-       ================================================================ -->
-  <!-- ================================================================
-       SECTION 2: SERVICE GUIDE
-       Two matched panels — image container + guide shell
-       Architecture: header zone / body (card grid) / footer zone
-       ================================================================ -->
-  <!-- ================================================================
-       SECTION 2: FIND YOUR BUILD — inline 3-question Finder
-       ================================================================ -->
-  <section class="svc-guide" id="find-your-service">
-    <div class="svc-guide__row">
-
-      <!-- Image panel -->
-      <div class="svc-guide__image">
-        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&q=80&auto=format&fit=crop" alt="Tribune — Find your build">
-      </div>
-
-      <!-- Guide shell -->
-      <div class="svc-guide__shell">
-
-        <!-- Header zone -->
-        <div class="svc-guide__header">
-          <p class="svc-guide__eyebrow">Find your build</p>
-          <h2 class="svc-guide__heading" x-text="inlineHeading()"></h2>
-          <p class="svc-guide__sub" x-show="inlineStep === 1">Three questions. One recommended build.</p>
-          <p class="svc-guide__sub" x-show="inlineStep === 4">Your information is private and secure. A human reads this and replies within one business day.</p>
-        </div>
-
-        <!-- Body zone -->
-        <div class="svc-guide__body">
-
-          <!-- Q1: What should your agent carry? -->
-          <div x-show="inlineStep === 1">
-            <div class="svc-card-grid">
-              <button class="svc-card" :class="{'svc-card--active': selectedService === 'recovery'}" @click="selectedService = 'recovery'; inlineNext()">
-                <span class="svc-card__label">Money owed that never gets chased</span>
-              </button>
-              <button class="svc-card" :class="{'svc-card--active': selectedService === 'intake'}" @click="selectedService = 'intake'; inlineNext()">
-                <span class="svc-card__label">Paperwork that arrives all day</span>
-              </button>
-              <button class="svc-card" :class="{'svc-card--active': selectedService === 'signal'}" @click="selectedService = 'signal'; inlineNext()">
-                <span class="svc-card__label">Accounts you should be watching</span>
-              </button>
-              <button class="svc-card" :class="{'svc-card--active': selectedService === 'ledger'}" @click="selectedService = 'ledger'; inlineNext()">
-                <span class="svc-card__label">Books that never quite reconcile</span>
-              </button>
-              <button class="svc-card" :class="{'svc-card--active': selectedService === 'sentinel'}" @click="selectedService = 'sentinel'; inlineNext()">
-                <span class="svc-card__label">Deadlines that must not slip</span>
-              </button>
-              <button class="svc-card" :class="{'svc-card--active': selectedService === 'producer'}" @click="selectedService = 'producer'; inlineNext()">
-                <span class="svc-card__label">Reports your team assembles by hand</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Q2: What is your world? -->
-          <div x-show="inlineStep === 2">
-            <div class="svc-card-grid">
-              <button class="svc-card" :class="{'svc-card--active': selectedWorld === 'medical'}" @click="selectedWorld = 'medical'; inlineNext()">
-                <span class="svc-card__label">A medical or care practice</span>
-              </button>
-              <button class="svc-card" :class="{'svc-card--active': selectedWorld === 'legal'}" @click="selectedWorld = 'legal'; inlineNext()">
-                <span class="svc-card__label">A legal or professional firm</span>
-              </button>
-              <button class="svc-card" :class="{'svc-card--active': selectedWorld === 'sales'}" @click="selectedWorld = 'sales'; inlineNext()">
-                <span class="svc-card__label">A sales, research, or intelligence business</span>
-              </button>
-              <button class="svc-card" :class="{'svc-card--active': selectedWorld === 'other'}" @click="selectedWorld = 'other'; inlineNext()">
-                <span class="svc-card__label">Services, trades, or something else</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Q3: How sensitive is the data? -->
-          <div x-show="inlineStep === 3">
-            <div class="svc-card-grid">
-              <button class="svc-card" :class="{'svc-card--active': selectedTier === 'patient'}" @click="selectedTier = 'patient'; inlineNext()">
-                <span class="svc-card__label">Patient records (HIPAA applies)</span>
-              </button>
-              <button class="svc-card" :class="{'svc-card--active': selectedTier === 'privileged'}" @click="selectedTier = 'privileged'; inlineNext()">
-                <span class="svc-card__label">Privileged or confidential client matter</span>
-              </button>
-              <button class="svc-card" :class="{'svc-card--active': selectedTier === 'standard'}" @click="selectedTier = 'standard'; inlineNext()">
-                <span class="svc-card__label">Standard business data</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Result -->
-          <div x-show="inlineStep === 4" x-cloak>
-            <div class="inline-result">
-              <p class="inline-result__title">Your recommended build: <strong x-text="recommendedBuild && recommendedBuild.name"></strong></p>
-              <p style="font-size:.9rem; color:var(--text-muted); margin:.5rem 0 1.5rem;" x-text="edition + ' edition. ' + editionNote"></p>
-              <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-                <a class="btn btn-primary" :href="resultCTA">See this build</a>
-                <a class="btn btn-secondary" href="/builds/">See all builds</a>
-              </div>
-              <button @click="selectedService=null; selectedWorld=null; selectedTier=null; inlineStep=1;" style="background:none;border:none;color:var(--text-muted);cursor:pointer;margin-top:1.25rem;font-size:.85rem;display:block;">Not right? Start over</button>
-            </div>
-          </div>
-
-        </div><!-- /.svc-guide__body -->
-
-        <!-- Footer nav -->
-        <div class="svc-guide__footer" x-show="inlineStep > 1 && inlineStep < 4">
-          <button class="svc-guide__back" @click="inlinePrev()">Back</button>
-        </div>
-
-      </div><!-- /.svc-guide__shell -->
-    </div><!-- /.svc-guide__row -->
-  </section>
-
-
-  <!-- ================================================================
-       6. "TREAT YOURSELF" SERVICE TILE GRID
-       ================================================================ -->
-  <section class="service-tiles-section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow">What We Offer</div>
-        <h2>Six AI agent builds, ready to deploy</h2>
-        <p>Select the work your agent will own. Click any build to see the full anatomy.</p>
-      </div>
-      <div class="service-tiles-grid">
-
-        <div class="service-tile" @click="window.location='/builds/the-recovery-agent.html'">
-          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80&auto=format&fit=crop" alt="The Recovery Agent">
-          <div class="service-tile-body">
-            <div class="service-tile-benefit">Recover money owed</div>
-            <div class="service-tile-name">The Recovery Agent</div>
-          </div>
-        </div>
-
-        <div class="service-tile" @click="window.location='/builds/the-intake-agent.html'">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&q=80&auto=format&fit=crop" alt="The Intake Agent">
-          <div class="service-tile-body">
-            <div class="service-tile-benefit">Handle incoming paperwork</div>
-            <div class="service-tile-name">The Intake Agent</div>
-          </div>
-        </div>
-
-        <div class="service-tile" @click="window.location='/builds/the-signal-agent.html'">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80&auto=format&fit=crop" alt="The Signal Agent">
-          <div class="service-tile-body">
-            <div class="service-tile-benefit">Watch and brief</div>
-            <div class="service-tile-name">The Signal Agent</div>
-          </div>
-        </div>
-
-        <div class="service-tile" @click="window.location='/builds/the-ledger-agent.html'">
-          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80&auto=format&fit=crop" alt="The Ledger Agent">
-          <div class="service-tile-body">
-            <div class="service-tile-benefit">Keep the books straight</div>
-            <div class="service-tile-name">The Ledger Agent</div>
-          </div>
-        </div>
-
-        <div class="service-tile" @click="window.location='/builds/the-sentinel.html'">
-          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1200&q=80&auto=format&fit=crop" alt="The Sentinel">
-          <div class="service-tile-body">
-            <div class="service-tile-benefit">Guard the deadlines</div>
-            <div class="service-tile-name">The Sentinel</div>
-          </div>
-        </div>
-
-        <div class="service-tile" @click="window.location='/builds/the-producer.html'">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80&auto=format&fit=crop" alt="The Producer">
-          <div class="service-tile-body">
-            <div class="service-tile-benefit">Produce and deliver</div>
-            <div class="service-tile-name">The Producer</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================================
-       7. ALL SERVICES expandable list
-       ================================================================ -->
-  <!-- GABBY BANNER -->
-  <section class="gabby-banner">
-    <div class="gabby-banner__overlay"></div>
-    <div class="gabby-banner__content">
-      <p class="gabby-banner__eyebrow">For the person who runs the office</p>
-      <h2 class="gabby-banner__heading">You are not being replaced. You are being promoted.</h2>
-      <p class="gabby-banner__body">If you are the one who keeps this place running, here is what this means for you: you are not being replaced, you are being promoted. The training ladder ends with you operating the system. The handoff report carries your signature next to the owner's. When we leave, you are the one holding the keys.</p>
-      <div class="gabby-banner__ctas">
-        <a href="/about.html" class="gabby-banner__cta">About Tribune</a>
-        <a href="/reach-out.html" class="gabby-banner__cta-outline">Map your constraint</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="all-services-section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow">Why Tribune</div>
-        <h2>Four things no competitor will copy</h2>
-        <p>These are not features. They are the structure of every engagement, by default.</p>
-      </div>
-      <div class="all-services-grid">
-        <div class="all-service-item">
-          <h4>01 — The Independence Test</h4>
-          <p>Five business days, real operations, zero Tribune intervention, mechanical pass or fail. The only exam in the industry a vendor designs to make itself unnecessary.</p>
-          <a href="/details/method.html" class="all-service-link">See the method &rarr;</a>
-        </div>
-        <div class="all-service-item">
-          <h4>02 — Ownership, literally</h4>
-          <p>Hardware on your premises, accounts in your name, repositories in your control, from day one, not at handoff. Tribune's access ends. The system does not.</p>
-          <a href="/details/trust.html" class="all-service-link">Trust and compliance &rarr;</a>
-        </div>
-        <div class="all-service-item">
-          <h4>03 — The Senate</h4>
-          <p>Every architecture is attacked by multiple independent AI models before a client sees it. Agreement is computed from observed critiques. A design must survive scrutiny, not collect applause.</p>
-          <a href="/details/proof.html" class="all-service-link">See proof &rarr;</a>
-        </div>
-        <div class="all-service-item">
-          <h4>04 — The engagement ends</h4>
-          <p>A fixed arc with human-signed gates and a scheduled departure. The business model with nothing to renew is the business model you can trust.</p>
-          <a href="/details/purpose.html" class="all-service-link">Read our doctrine &rarr;</a>
-        </div>
-        <div class="all-service-item">
-          <h4>Glass box, not black box</h4>
-          <p>Every decision, every draft, every action sits in a log your team can read. The important ones wait for a human's sign-off before they happen. If you cannot see what a system is doing, you do not own it.</p>
-          <a href="/details/purpose.html" class="all-service-link">Light, Soul and Purpose &rarr;</a>
-        </div>
-        <div class="all-service-item">
-          <h4>Your data never leaves your building</h4>
-          <p>For regulated builds, the part of the system that touches protected records runs on a sealed machine inside your building. No internet path, no cloud access, physically incapable of leaking.</p>
-          <a href="/details/trust.html" class="all-service-link">Trust and compliance &rarr;</a>
-        </div>
-        <div class="all-service-item">
-          <h4>Built for your rules</h4>
-          <p>HIPAA by architecture, not by filter. GDPR by construction, not by promise. Compliance is a property of how the system is built, not a setting that can be misconfigured.</p>
-          <a href="/details/trust.html" class="all-service-link">How it works &rarr;</a>
-        </div>
-        <div class="all-service-item">
-          <h4>The never list</h4>
-          <p>Every agent ships with a written list of what it will never do: no irreversible action without sign-off, no spending without approval, no guessing when uncertain. This is a feature, not a disclaimer.</p>
-          <a href="/builds/" class="all-service-link">See all builds &rarr;</a>
-        </div></div>
-    </div>
-  </section>
-
-  <!-- ================================================================
-       8. TWO-UP SPLIT - Locations + Proof
-       ================================================================ -->
-  <section class="two-up-section">
-    <div class="container">
-      <div class="two-up-grid">
-        <div class="two-up-panel">
-          <iframe src="/us/west-palm-beach.html" title="Tribune — West Palm Beach, FL" width="100%" height="100%" style="border:0;display:block;min-height:400px;" loading="lazy"></iframe>
-          <div class="two-up-overlay">
-            <h3>West Palm Beach, FL</h3>
-            <p>We serve practices and firms in South Florida and Germany. Discovery happens in your office.</p>
-            <a href="/us/west-palm-beach.html" class="btn btn-primary btn-sm" style="position:relative;z-index:10;">South Florida</a>
-          </div>
-        </div>
-        <div class="two-up-panel">
-          <!-- REPLACE WITH REAL PHOTO - team at work -->
-          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=80&auto=format&fit=crop" alt="[Image]">
-          <div class="two-up-overlay">
-            <h3>The engagement ends</h3>
-            <p>A fixed arc, human-signed gates, a scheduled departure. The business model with nothing to renew is the one you can trust.</p>
-            <a href="/details/proof.html" class="btn btn-primary btn-sm">See proof</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================================
-       9. PROCESS - 3-STEP "HOW IT WORKS"
-       ================================================================ -->
-  <section class="process-section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow">The method</div>
-        <h2>Five phases. One goal.</h2>
-        <p>Discovery to handoff in typically six to ten weeks. The goal is the day you no longer need us.</p>
-      </div>
-      <div class="process-grid">
-        <div class="process-step">
-          <!-- REPLACE WITH REAL PHOTO - booking / phone consultation -->
-          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=80&auto=format&fit=crop" alt="[Image]">
-          <div class="process-num">1</div>
-          <h3>01 — Discovery</h3>
-          <p>We sit inside your business and follow the money: where a dollar enters, where it leaks, which tools you live in. It ends with a report so clear a stranger could understand your business from it.</p>
-        </div>
-        <div class="process-step">
-          <!-- REPLACE WITH REAL PHOTO - consultation / planning -->
-          <img class="process-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=75" alt="Receive your custom care plan" loading="lazy">
-          <div class="process-num">2</div>
-          <h3>02 — Architecture and Build</h3>
-          <p>We design the smallest system that removes the biggest friction, put the math in front of you, and build it on your hardware in your accounts. From day one you own every piece.</p>
-        </div>
-        <div class="process-step">
-          <!-- REPLACE WITH REAL PHOTO -->
-          <img class="process-img" src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=400&q=75&auto=format" alt="Care comes to your home" loading="lazy">
-          <div class="process-num">3</div>
-          <h3>03 — Train and Handoff</h3>
-          <p>Your agents earn autonomy one workflow at a time. Then five business days of live operation, zero Tribune intervention, mechanical pass or fail. Pass: we hand you the keys and leave.</p>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top:2.5rem;">
-        <a href="/details/method.html" class="btn btn-primary btn-lg">See the full method</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================================
-       10. TRUST / CREDENTIALS BAR (replaces press tier)
-           Tribune proof points instead of press tier
-       ================================================================ -->
-  <section class="trust-section">
-    <div class="trust-inner">
-      <div class="trust-item">
-        <div class="trust-item-icon">&#9733;</div>
-        <div class="trust-item-text">
-          <strong>The Independence Test</strong>
-          <span>Five days. Real ops. Zero Tribune intervention. Pass or fail.</span>
-        </div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-item-icon">&#10003;</div>
-        <div class="trust-item-text">
-          <strong>Ownership from day one</strong>
-          <span>Your hardware, accounts, and keys. Never Tribune's.</span>
-        </div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-item-icon">&#9632;</div>
-        <div class="trust-item-text">
-          <strong>The Senate review</strong>
-          <span>Every architecture attacked by multiple AI models before you see it.</span>
-        </div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-item-icon">&#127968;</div>
-        <div class="trust-item-text">
-          <strong>West Palm Beach, FL</strong>
-          <span>South Florida and Germany</span>
-        </div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-item-icon">&#128274;</div>
-        <div class="trust-item-text">
-          <strong>HIPAA by architecture</strong>
-          <span>Your records never leave your building</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================================
-       11. TESTIMONIAL SECTION
-       ================================================================ -->
-  <section class="testimonials-section" id="testimonials">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow">What clients say</div>
-        <h2>The work speaks</h2>
-        <p>What the people who run their businesses say about working with Tribune.</p>
-      </div>
-      <div class="testimonials-grid">
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"Before Tribune, our billing team spent every morning triaging a backlog that never got shorter. Now they start the day with a signed-off plan and actually have afternoons free."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" style="background:var(--orange-light); color:var(--orange-dark);">S</div>
-            <div>
-              <div class="testimonial-name">Medical practice owner</div>
-              <div class="testimonial-handle">West Palm Beach, FL</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"The independence test was the thing that sold us. Every other vendor pitched a dashboard. Tribune pitched us a date when they would leave and we would run it ourselves. That is the right incentive structure."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" style="background:var(--teal-light); color:var(--teal);">R</div>
-            <div>
-              <div class="testimonial-name">Professional firm principal</div>
-              <div class="testimonial-handle">South Florida</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"Our intake agent catches missing signatures at the door, not six weeks later when the denial arrives. That one change alone recovered material revenue in the first month."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" style="background:var(--orange-light); color:var(--orange-dark);">D</div>
-            <div>
-              <div class="testimonial-name">Practice administrator</div>
-              <div class="testimonial-handle">West Palm Beach, FL</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"We were skeptical that any vendor could actually hand over the keys and leave. The handoff was scheduled, the keys were real, and Tribune's access was revoked on the day they said it would be."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" style="background:var(--teal-light); color:var(--teal);">M</div>
-            <div>
-              <div class="testimonial-name">Operations director</div>
-              <div class="testimonial-handle">Fort Lauderdale, FL</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"The people on our team who were most skeptical are now the ones who run the system every day. The training ladder actually worked."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" style="background:var(--orange-light); color:var(--orange-dark);">J</div>
-            <div>
-              <div class="testimonial-name">Office manager</div>
-              <div class="testimonial-handle">Palm Beach, FL</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"What I was not expecting was how much the soul card mattered. Our agent knows what it is for. That clarity shows up in every call it makes."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" style="background:var(--teal-light); color:var(--teal);">A</div>
-            <div>
-              <div class="testimonial-name">Founder</div>
-              <div class="testimonial-handle">West Palm Beach, FL</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================================
-       12. FAQ ACCORDION - 4 tabs
-       ================================================================ -->
-  <section class="faq-section" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow">FAQ</div>
-        <h2>Common questions</h2>
-        <p>Everything you need to know before we start.</p>
-      </div>
-
-      <div class="faq-tabs">
-        <button class="faq-tab active" data-tab="about">About Tribune</button>
-        <button class="faq-tab" data-tab="consults">The build</button>
-        <button class="faq-tab" data-tab="appointments">Ownership</button>
-        <button class="faq-tab" data-tab="pricing">Your team</button>
-      </div>
-
-      <!-- About -->
-      <div class="faq-panel" data-tab="about">
-        <div class="faq-item">
-          <button class="faq-question">What is Tribune? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">Tribune Inc. builds complete AI organizations for small and mid-size businesses. We design, build, train, and hand over a working system built around the constraint that costs your business the most. Then we leave. Tribune Inc. is a Delaware corporation. <a href="/about.html">About Tribune &raquo;</a></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Who owns the system? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">You do. Accounts, keys, hardware, and documentation are in your name from day one. Tribune holds temporary access and revokes it at handoff. After we leave, you run the system. If you want us on call anyway, there is an optional service plan. Optional is the operative word.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Do your agents replace people? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">No. We build agents to carry the repeatable work so your people can do the work only people can do. We measure success in returned hours, and in systems your staff are glad to work alongside. A deployment that leaves your team feeling watched or replaceable has failed, no matter how clean the logs are.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Which tools do you work with? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">The ones you already use. We deploy into your existing stack. Moving platforms is how AI projects die, so we do not ask you to. Your practice management system, your billing system, your communication tools: we build into those, not around them.</div>
-        </div>
-      </div>
-
-      <!-- Consultations -->
-      <div class="faq-panel" data-tab="consults" style="display:none;">
-        <div class="faq-item">
-          <button class="faq-question">How does the free meet and greet work? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">A discovery call is typically 30 minutes. We listen to how your business works, where the money leaks, and what a day looks like. No commitment. A discovery deposit starts the engagement if you decide to proceed. <a href="/reach-out.html">Reach out &raquo;</a></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Is the consultation really free? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">Yes. The initial meet and greet is completely free. If you decide to move forward with a service or treatment, we will discuss pricing at that point. No hidden fees, no surprise bills.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">What should I have ready for my consultation? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">Just yourself and a stable internet connection. If you have process documentation, billing reports, or operational notes, share them. We will walk you through the rest.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Can discovery happen remotely? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">Yes. Discovery can happen remotely or on-site. For regulated builds we prefer on-site: we want to see how the work actually flows before we design around it.</div>
-        </div>
-      </div>
-
-      <!-- Ownership -->
-      <div class="faq-panel" data-tab="appointments" style="display:none;">
-        <div class="faq-item">
-          <button class="faq-question">What does owning the system actually mean? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">Accounts, keys, hardware, and documentation are in your name from day one. Not at handoff. From day one. Tribune holds temporary access to complete the build and revokes it at the scheduled departure date. After we leave, you run the system unaided.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">What if something breaks after Tribune leaves? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">The system is trained until your team can diagnose and correct the common failure modes. There is an optional service plan if you want a human to call. But the Independence Test proves you can run it without us, and that is the whole point.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Can Tribune access the system after handoff? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">No. Tribune's access is revoked on the scheduled date and documented in the handoff report. If you choose an optional service plan later, new access is scoped and time-limited. The default is zero Tribune access after departure.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">What is the Independence Test? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">Five business days of live operation with zero Tribune intervention. The system runs on real transactions, real volume, real edge cases. It is a mechanical pass or fail. The only exam in the industry a vendor designs to make itself unnecessary. <a href="/details/proof.html">See proof &raquo;</a></div>
-        </div>
-      </div>
-
-      <!-- Your team -->
-      <div class="faq-panel" data-tab="pricing" style="display:none;">
-        <div class="faq-item">
-          <button class="faq-question">Will the people on my team be replaced? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">No. We build agents to carry the repeatable work so your people can do the work only people can do. A deployment that leaves your team feeling watched or replaceable has failed, no matter how clean the logs are. We measure success in returned hours.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Who runs the system after Tribune leaves? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">The person you already trust with the operations. The training ladder ends with your key operator running the system unaided. The handoff report carries their signature next to the owner's. That is by design.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">How much does a Tribune build cost? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">Pricing is scoped per engagement in discovery. A discovery deposit starts the work and is credited toward your build. We do not post fee tables: the right number depends on your constraint, your tools, and your data environment.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">What is the timeline? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">Typically six to ten weeks from discovery to Independence Test. Each phase has a human-signed gate. Nothing advances without your sign-off. The departure date is set in the engagement agreement and is a commitment, not an estimate.</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================================
-       CTA STRIP
-       ================================================================ -->
-  <section class="cta-strip">
-    <div class="container">
-      <h2>Own the machine.</h2>
-      <p>Tell us the constraint that costs you the most. We will show you what an agent built around it looks like.</p>
-      <div class="cta-strip-buttons">
-        <a href="/reach-out.html" class="btn btn-primary btn-lg">Map your constraint</a>
-        <a href="/builds/" class="btn btn-secondary btn-lg">See all builds</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================================
-       FOOTER
-       ================================================================ -->
-  <footer class="site-footer">
-
-    <div class="footer-newsletter">
-      <div class="container">
-        <h3>Reach out</h3>
-        <p>Tell us the constraint that costs your business the most. A human reads this and replies within one business day.</p>
-        <form class="footer-email-form" action="/reach-out.html" method="GET">
-          <input type="email" name="email" placeholder="your@email.com">
-          <a href="/reach-out.html" class="btn btn-primary">Get in touch</a>
-        </form>
-      </div>
-    </div>
-
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo"><img src="https://res.cloudinary.com/dthdxjmgb/image/upload/h_80,c_scale,f_auto,q_100/v1781045601/mxxi/rj-logo-cropped.jpg" alt="Tribune Inc."></div>
-        <p class="footer-tagline">Power that stays. Help that leaves. TribuneOS.com</p>
-        
-        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:1rem;">
-          West Palm Beach, FL<br>TribuneOS.com
-        </p>
-      </div>
-      <div class="footer-col">
-        <h4>Builds</h4>
-        <ul>
-          <li><a href="/builds/the-recovery-agent.html">The Recovery Agent</a></li>
-          <li><a href="/builds/the-intake-agent.html">The Intake Agent</a></li>
-          <li><a href="/builds/the-signal-agent.html">The Signal Agent</a></li>
-          <li><a href="/builds/the-ledger-agent.html">The Ledger Agent</a></li>
-          <li><a href="/builds/the-sentinel.html">The Sentinel</a></li>
-          <li><a href="/builds/the-producer.html">The Producer</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About Tribune</a></li>
-          <li><a href="/details/method.html">How we build</a></li>
-          <li><a href="/details/proof.html">Proof</a></li>
-          <li><a href="/details/purpose.html">Doctrine</a></li>
-          <li><a href="/details/faq.html">FAQ</a></li>
-          <li><a href="/reach-out.html">Reach out</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Locations</h4>
-        <ul>
-          <li><a href="/us/west-palm-beach.html">West Palm Beach, FL</a></li>
-          <li><a href="/privacy.html">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom container">
-      <p>&copy; 2026 Tribune Inc. All rights reserved. TribuneOS.com. West Palm Beach, FL.</p>
-      <div class="footer-legal">
-        <a href="/privacy.html">Privacy</a>
-        <a href="/privacy.html#terms">Terms</a>
-        <a href="/privacy.html#hipaa">HIPAA</a>
-      </div>
-    </div>
-
-  </footer>
-
-</div><!-- /#wizard-root / x-data -->
-
-<!-- Scripts -->
-<script src="js/wizard.js?v=11"></script>
-<script src="js/megamenu.js"></script>
-
-
-</body>
-</html>
+    <div><div class="col-title">Builds</div><ul><li><a href="/builds/the-recovery-agent/">The Recovery Agent</a></li><li><a href="/builds/the-intake-agent/">The Intake Agent</a></li><li><a href="/builds/the-signal-agent/">The Signal Agent</a></li><li><a href="/builds/the-ledger-agent/">The Ledger Agent</a></li><li><a href="/builds/the-sentinel/">The Sentinel</a></li><li><a href="/builds/the-producer/">The Producer</a></li></ul></div>
+    <div><div class="col-title">Details</div><ul>
+      <li><a href="/details/method/">How we build</a></li>
+      <li><a href="/details/proof/">Proof</a></li>
+      <li><a href="/details/purpose/">Doctrine</a></li>
+      <li><a href="/details/trust/">Trust &amp; compliance</a></li>
+      <li><a href="/details/faq/">FAQ</a></li>
+      <li><a href="/reach-out/">Reach out</a></li>
+    </ul></div>
+  </div>
+  <div class="legal-row small muted">
+    <span>&copy; 2026 Tribune Inc.</span>
+    <span><a href="/legal/">Legal</a></span>
+  </div>
+</div></footer>
+<script src="/assets/site.js"></script>
+</body></html>
