@@ -14,10 +14,10 @@
   <meta property="og:description" content="We build your AI organization, then hand you the keys.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.TribuneOS.com/">
-  <meta property="og:image" content="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=80&auto=format&fit=crop">
   <meta property="og:image:alt" content="Tribune Inc. — TribuneOS.com">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=80&auto=format&fit=crop">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,7 +84,7 @@
           <div class="wizard-progress-bar">
             <div class="wizard-progress-fill" :style="`width: ${progressPct}%`"></div>
           </div>
-          <div class="wizard-step-label" x-text="`Step ${currentStep} of ${totalSteps}`"></div>
+          <div class="wizard-step-label" x-text="`Step ${currentStep} of 3`"></div>
         </div>
         <button class="wizard-close" @click="closeWizard()" aria-label="Close">&times;</button>
       </div>
@@ -92,171 +92,98 @@
       <!-- Body -->
       <div class="wizard-body">
 
-        <!-- STEP 1: Service Selection -->
+        <!-- Q1: What should your agent carry? -->
         <template x-if="currentStep === 1">
           <div>
             <div class="wizard-question">What should your agent carry?</div>
             <div class="wizard-subtext">Select the work your agent will own. We will recommend the right build.</div>
-            <div class="wizard-tiles">
-              <template x-for="svc in services" :key="svc.id">
-                <button class="wizard-tile"
-                  :class="{ selected: selectedService === svc.id }"
-                  @click="selectService(svc.id)">
-                  <span class="wizard-tile-icon" x-text="svc.icon"></span>
-                  <span class="wizard-tile-label" x-text="svc.label"></span>
-                </button>
-              </template>
+            <div class="wizard-options">
+              <button class="wizard-option" :class="{ selected: selectedService === 'recovery' }" @click="selectedService = 'recovery'; nextStep()">
+                <span>Money owed that never gets chased</span>
+              </button>
+              <button class="wizard-option" :class="{ selected: selectedService === 'intake' }" @click="selectedService = 'intake'; nextStep()">
+                <span>Paperwork that arrives all day</span>
+              </button>
+              <button class="wizard-option" :class="{ selected: selectedService === 'signal' }" @click="selectedService = 'signal'; nextStep()">
+                <span>Accounts you should be watching</span>
+              </button>
+              <button class="wizard-option" :class="{ selected: selectedService === 'ledger' }" @click="selectedService = 'ledger'; nextStep()">
+                <span>Books that never quite reconcile</span>
+              </button>
+              <button class="wizard-option" :class="{ selected: selectedService === 'sentinel' }" @click="selectedService = 'sentinel'; nextStep()">
+                <span>Deadlines that must not slip</span>
+              </button>
+              <button class="wizard-option" :class="{ selected: selectedService === 'producer' }" @click="selectedService = 'producer'; nextStep()">
+                <span>Reports your team assembles by hand</span>
+              </button>
             </div>
           </div>
         </template>
 
-        <!-- STEP 2: Concern -->
+        <!-- Q2: What is your world? -->
         <template x-if="currentStep === 2">
           <div>
-            <div class="wizard-question" x-text="getConcernQuestion()"></div>
+            <div class="wizard-question">What is your world?</div>
             <div class="wizard-options">
-              <template x-for="opt in getConcerns()" :key="opt.id">
-                <button class="wizard-option"
-                  :class="{ selected: selectedConcern === opt.id }"
-                  @click="selectConcern(opt.id)">
-                  <span class="wizard-option-icon" x-text="opt.icon"></span>
-                  <span x-text="opt.label"></span>
-                </button>
-              </template>
+              <button class="wizard-option" :class="{ selected: selectedWorld === 'medical' }" @click="selectedWorld = 'medical'; nextStep()">
+                <span>A medical or care practice</span>
+              </button>
+              <button class="wizard-option" :class="{ selected: selectedWorld === 'legal' }" @click="selectedWorld = 'legal'; nextStep()">
+                <span>A legal or professional firm</span>
+              </button>
+              <button class="wizard-option" :class="{ selected: selectedWorld === 'sales' }" @click="selectedWorld = 'sales'; nextStep()">
+                <span>A sales, research, or intelligence business</span>
+              </button>
+              <button class="wizard-option" :class="{ selected: selectedWorld === 'other' }" @click="selectedWorld = 'other'; nextStep()">
+                <span>Services, trades, or something else</span>
+              </button>
             </div>
           </div>
         </template>
 
-        <!-- STEP 3: Detail / Goal -->
+        <!-- Q3: How sensitive is the data? -->
         <template x-if="currentStep === 3">
           <div>
-            <div class="wizard-question" x-text="getDetailQuestion()"></div>
+            <div class="wizard-question">How sensitive is the data?</div>
             <div class="wizard-options">
-              <template x-for="opt in getDetailOptions()" :key="opt.id">
-                <button class="wizard-option"
-                  :class="{ selected: selectedDetail === opt.id }"
-                  @click="selectDetail(opt.id)">
-                  <span class="wizard-option-icon" x-text="opt.icon"></span>
-                  <span x-text="opt.label"></span>
-                </button>
-              </template>
-            </div>
-          </div>
-        </template>
-
-        <!-- STEP 4: Contact Info -->
-        <template x-if="currentStep === 4">
-          <div>
-            <div class="wizard-question">How should we reach you?</div>
-            <div class="wizard-subtext">Your information is private and secure. A human reads this and replies within one business day.</div>
-            <div class="wizard-form">
-              <div class="wizard-field">
-                <label>Full Name</label>
-                <input type="text" x-model="formData.name" placeholder="Jane Smith" autocomplete="name">
-              </div>
-              <div class="wizard-field">
-                <label>Email Address</label>
-                <input type="email" x-model="formData.email" placeholder="jane@email.com" autocomplete="email">
-              </div>
-              <div class="wizard-field">
-                <label>Phone Number</label>
-                <input type="tel" x-model="formData.phone" placeholder="(561) 555-0100" autocomplete="tel">
-              </div>
-              <div class="wizard-consent">
-                <label style="display:flex; align-items:flex-start; gap:0.5rem; cursor:pointer;">
-                  <input type="checkbox" x-model="formData.consent" style="margin-top:0.15rem; flex-shrink:0;">
-                  <span>By submitting, you agree to be contacted by Tribune Inc. at the phone number and email provided. Message and data rates may apply. Reply STOP to opt out. View our <a href="/privacy.html">Privacy Policy</a>.</span>
-                </label>
-              </div>
-              <div x-show="submitError" style="margin-top:0.75rem; color:#dc2626; font-size:0.85rem;" x-text="submitError"></div>
-            </div>
-          </div>
-        </template>
-
-        <!-- STEP 5: Date & Time -->
-        <template x-if="currentStep === 5">
-          <div>
-            <div class="wizard-question">Pick a Date &amp; Time</div>
-            <div class="wizard-subtext">Suggest a date, and we will give you a call back to confirm.</div>
-            <div class="wizard-datetime-section" style="border-top:none; padding-top:0; margin-top:0;">
-              <div class="wizard-field">
-                <input type="date" x-model="formData.proposedDate" :min="minDate" :max="maxDate" style="width:100%;">
-              </div>
-              <div x-show="formData.proposedDate" style="margin-top:0.75rem;">
-                <div class="time-slots">
-                  <template x-for="slot in timeSlots" :key="slot">
-                    <button type="button" class="time-slot"
-                      :class="{ selected: formData.proposedTime === slot }"
-                      @click="formData.proposedTime = slot"
-                      x-text="slot"></button>
-                  </template>
-                </div>
-              </div>
-            </div>
-          </div>
-        </template>
-
-        <!-- STEP 6: Result — Recommendation + Two Actions -->
-        <template x-if="currentStep === 6">
-          <div class="wizard-result">
-            <div class="wizard-result-check">&#x2705;</div>
-            <h3 class="wizard-result-title">Request received, <span x-text="formData.name.split(' ')[0]"></span>.</h3>
-            <p class="wizard-result-sub">A human reads this and replies within one business day to scope your build.</p>
-
-            <div class="wizard-recommendation">
-              <div class="wizard-rec-label">Based on your answers, your recommended build is:</div>
-              <div class="wizard-rec-service" x-text="getRecommendation().text"></div>
-              <div class="wizard-rec-note">Your agent will be built on hardware you own. Your data never leaves your building.</div>
-            </div>
-
-            <div class="wizard-result-actions">
-              <button class="wizard-action-btn wizard-action-primary" @click="goToService()">
-                <span>&#x1F50D;</span>
-                <span>Learn More About This Service</span>
+              <button class="wizard-option" :class="{ selected: selectedTier === 'patient' }" @click="selectedTier = 'patient'; nextStep()">
+                <span>Patient records <em style="font-size:.8em; color:var(--text-muted)">(HIPAA applies)</em></span>
               </button>
-              <a class="wizard-action-btn wizard-action-secondary"
-                href="/reach-out.html"
-                target="_blank" rel="noopener">
-                <span>&#x1F4CB;</span>
-                <span>Accelerate Your Intake<br><small>Fill out our New Patient Form to save time at your visit</small></span>
-              </a>
+              <button class="wizard-option" :class="{ selected: selectedTier === 'privileged' }" @click="selectedTier = 'privileged'; nextStep()">
+                <span>Privileged or confidential client matter</span>
+              </button>
+              <button class="wizard-option" :class="{ selected: selectedTier === 'standard' }" @click="selectedTier = 'standard'; nextStep()">
+                <span>Standard business data</span>
+              </button>
             </div>
+          </div>
+        </template>
 
-            <div class="wizard-result-footer">
-              <button style="background:none;border:none;color:#6b7280;cursor:pointer;padding:0;font-size:inherit;" @click="closeWizard()">Close</button>
+        <!-- Result -->
+        <template x-if="currentStep === 4">
+          <div class="wizard-result" x-show="recommendedBuild">
+            <div class="wizard-result-check">&#10003;</div>
+            <div class="wizard-rec-label" style="margin-bottom:.5rem; font-size:.85rem; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted);">Your recommended build</div>
+            <div class="wizard-rec-service" x-text="recommendedBuild && recommendedBuild.name"></div>
+            <div class="wizard-rec-edition" style="margin:.5rem 0 1.5rem; font-size:.9rem;" x-text="edition + ' edition. ' + editionNote"></div>
+            <div class="wizard-result-actions">
+              <a class="btn btn-primary btn-lg" :href="resultCTA" style="display:inline-block;">See this build</a>
+              <a href="/builds/" class="btn btn-secondary" style="display:inline-block; margin-left:1rem;">See all builds</a>
             </div>
+            <button @click="selectedService=null; selectedWorld=null; selectedTier=null; currentStep=1;" style="background:none;border:none;color:var(--text-muted);cursor:pointer;margin-top:1.5rem;font-size:.85rem;display:block;">Not right? Start over</button>
           </div>
         </template>
 
       </div>
 
-      <!-- Privacy note — visible on steps 2-4, disappears on result -->
-      <template x-if="currentStep >= 2 && currentStep < 5">
-        <div class="wizard-privacy-note">
-          <span class="wizard-privacy-icon">&#x1F512;</span>
-          <span>
-            Your selections are <strong>never submitted</strong> — this guide uses a predefined matrix to suggest a direction only.
-            No health data is collected.
-            <template x-if="selectedService">
-              <span>Do mention <strong x-text="getServiceLabel()"></strong> to your Nurse Practitioner.</span>
-            </template>
-          </span>
-        </div>
-      </template>
-
-      <!-- Footer nav (hidden on result step 6) -->
-      <template x-if="currentStep < 6">
+      <!-- Footer nav -->
+      <template x-if="currentStep < 4">
         <div class="wizard-footer">
           <div class="wizard-footer-left">
             <button class="wizard-back" @click="prevStep()" x-show="currentStep > 1">Back</button>
           </div>
           <div class="wizard-footer-right">
-            <button class="wizard-next" @click="nextStep()" :disabled="!canGoNext"
-              x-show="currentStep === 5">
-              <span x-show="!isSubmitting">Send Request</span>
-              <span x-show="isSubmitting">Sending...</span>
-            </button>
-            <button class="wizard-next" @click="nextStep()" x-show="currentStep < 5 && canGoNext">
+            <button class="wizard-next" @click="nextStep()" x-show="currentStep <= 3 && canGoNext">
               Continue
             </button>
           </div>
@@ -320,7 +247,7 @@
   <header class="site-header">
     <div class="header-top">
       <a href="/" class="site-logo" id="header-logo-link">
-        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Tribune" alt="Tribune Inc.">
+        <img src="https://res.cloudinary.com/dthdxjmgb/image/upload/h_80,c_scale,f_auto,q_100/v1781045601/mxxi/rj-logo-cropped.jpg" alt="Tribune Inc.">
       </a>
       <div class="header-right">
         <div class="header-links">
@@ -463,7 +390,7 @@
   <!-- Mobile nav drawer -->
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <div class="mobile-nav-header">
-      <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Tribune" alt="Tribune Inc.">
+      <img src="https://res.cloudinary.com/dthdxjmgb/image/upload/h_80,c_scale,f_auto,q_100/v1781045601/mxxi/rj-logo-cropped.jpg" alt="Tribune Inc.">
       <button class="mobile-nav-close">&times;</button>
     </div>
     <ul>
@@ -576,186 +503,112 @@
        Two matched panels — image container + guide shell
        Architecture: header zone / body (card grid) / footer zone
        ================================================================ -->
+  <!-- ================================================================
+       SECTION 2: FIND YOUR BUILD — inline 3-question Finder
+       ================================================================ -->
   <section class="svc-guide" id="find-your-service">
     <div class="svc-guide__row">
 
-      <!-- Image panel: proper rounded container, matches guide radius -->
+      <!-- Image panel -->
       <div class="svc-guide__image">
-        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&q=80&auto=format&fit=crop" alt="Tribune — Find your build">
       </div>
 
-      <!-- Guide shell: header / body / footer -->
+      <!-- Guide shell -->
       <div class="svc-guide__shell">
 
-        <!-- Header zone: heading updates per inline step -->
+        <!-- Header zone -->
         <div class="svc-guide__header">
           <p class="svc-guide__eyebrow">Find your build</p>
           <h2 class="svc-guide__heading" x-text="inlineHeading()"></h2>
-          <p class="svc-guide__sub" x-show="inlineStep === 1">Select the work your agent will own. Three questions. One recommended build.</p>
+          <p class="svc-guide__sub" x-show="inlineStep === 1">Three questions. One recommended build.</p>
           <p class="svc-guide__sub" x-show="inlineStep === 4">Your information is private and secure. A human reads this and replies within one business day.</p>
-          <p class="svc-guide__sub" x-show="inlineStep === 5">We will contact you to schedule a discovery call at your convenience.</p>
         </div>
 
-        <!-- Body zone: step 1 = service grid, step 2 = concern grid -->
+        <!-- Body zone -->
         <div class="svc-guide__body">
 
-          <!-- Step 1: Build selection -->
+          <!-- Q1: What should your agent carry? -->
           <div x-show="inlineStep === 1">
             <div class="svc-card-grid">
-
-              <button class="svc-card" :class="{'svc-card--active': selectedService === 'recovery'}" @click="selectedService = 'recovery'">
-                <span class="svc-card__thumb"><img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Recovery" alt="The Recovery Agent"></span>
+              <button class="svc-card" :class="{'svc-card--active': selectedService === 'recovery'}" @click="selectedService = 'recovery'; inlineNext()">
                 <span class="svc-card__label">Money owed that never gets chased</span>
               </button>
-
-              <button class="svc-card" :class="{'svc-card--active': selectedService === 'intake'}" @click="selectedService = 'intake'">
-                <span class="svc-card__thumb"><img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Intake" alt="The Intake Agent"></span>
+              <button class="svc-card" :class="{'svc-card--active': selectedService === 'intake'}" @click="selectedService = 'intake'; inlineNext()">
                 <span class="svc-card__label">Paperwork that arrives all day</span>
               </button>
-
-              <button class="svc-card" :class="{'svc-card--active': selectedService === 'signal'}" @click="selectedService = 'signal'">
-                <span class="svc-card__thumb"><img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Signal" alt="The Signal Agent"></span>
+              <button class="svc-card" :class="{'svc-card--active': selectedService === 'signal'}" @click="selectedService = 'signal'; inlineNext()">
                 <span class="svc-card__label">Accounts you should be watching</span>
               </button>
-
-              <button class="svc-card" :class="{'svc-card--active': selectedService === 'ledger'}" @click="selectedService = 'ledger'">
-                <span class="svc-card__thumb"><img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Ledger" alt="The Ledger Agent"></span>
+              <button class="svc-card" :class="{'svc-card--active': selectedService === 'ledger'}" @click="selectedService = 'ledger'; inlineNext()">
                 <span class="svc-card__label">Books that never quite reconcile</span>
               </button>
-
-              <button class="svc-card" :class="{'svc-card--active': selectedService === 'sentinel'}" @click="selectedService = 'sentinel'">
-                <span class="svc-card__thumb"><img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Sentinel" alt="The Sentinel"></span>
+              <button class="svc-card" :class="{'svc-card--active': selectedService === 'sentinel'}" @click="selectedService = 'sentinel'; inlineNext()">
                 <span class="svc-card__label">Deadlines that must not slip</span>
               </button>
-
-              <button class="svc-card" :class="{'svc-card--active': selectedService === 'producer'}" @click="selectedService = 'producer'">
-                <span class="svc-card__thumb"><img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Producer" alt="The Producer"></span>
+              <button class="svc-card" :class="{'svc-card--active': selectedService === 'producer'}" @click="selectedService = 'producer'; inlineNext()">
                 <span class="svc-card__label">Reports your team assembles by hand</span>
               </button>
-
-              <button class="svc-card" @click="scrollToGuide()">
-                <span class="svc-card__thumb"><img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Help" alt="Help me choose"></span>
-                <span class="svc-card__label">Not sure. Help me choose</span>
-              </button>
-
             </div>
           </div>
 
-          <!-- Step 2: Concern grid -->
+          <!-- Q2: What is your world? -->
           <div x-show="inlineStep === 2">
             <div class="svc-card-grid">
-              <template x-for="opt in getConcerns()" :key="opt.id">
-                <button class="svc-card" :class="{'svc-card--active': selectedConcern === opt.id}" @click="selectedConcern = opt.id">
-                  <span class="svc-card__icon" x-text="opt.icon"></span>
-                  <span class="svc-card__label" x-text="opt.label"></span>
-                </button>
-              </template>
+              <button class="svc-card" :class="{'svc-card--active': selectedWorld === 'medical'}" @click="selectedWorld = 'medical'; inlineNext()">
+                <span class="svc-card__label">A medical or care practice</span>
+              </button>
+              <button class="svc-card" :class="{'svc-card--active': selectedWorld === 'legal'}" @click="selectedWorld = 'legal'; inlineNext()">
+                <span class="svc-card__label">A legal or professional firm</span>
+              </button>
+              <button class="svc-card" :class="{'svc-card--active': selectedWorld === 'sales'}" @click="selectedWorld = 'sales'; inlineNext()">
+                <span class="svc-card__label">A sales, research, or intelligence business</span>
+              </button>
+              <button class="svc-card" :class="{'svc-card--active': selectedWorld === 'other'}" @click="selectedWorld = 'other'; inlineNext()">
+                <span class="svc-card__label">Services, trades, or something else</span>
+              </button>
             </div>
           </div>
 
-          <!-- Step 3: Detail/goal grid (only for some services) -->
+          <!-- Q3: How sensitive is the data? -->
           <div x-show="inlineStep === 3">
             <div class="svc-card-grid">
-              <template x-for="opt in getDetailOptions()" :key="opt.id">
-                <button class="svc-card" :class="{'svc-card--active': selectedDetail === opt.id}" @click="selectedDetail = opt.id">
-                  <span class="svc-card__icon" x-text="opt.icon"></span>
-                  <span class="svc-card__label" x-text="opt.label"></span>
-                </button>
-              </template>
+              <button class="svc-card" :class="{'svc-card--active': selectedTier === 'patient'}" @click="selectedTier = 'patient'; inlineNext()">
+                <span class="svc-card__label">Patient records (HIPAA applies)</span>
+              </button>
+              <button class="svc-card" :class="{'svc-card--active': selectedTier === 'privileged'}" @click="selectedTier = 'privileged'; inlineNext()">
+                <span class="svc-card__label">Privileged or confidential client matter</span>
+              </button>
+              <button class="svc-card" :class="{'svc-card--active': selectedTier === 'standard'}" @click="selectedTier = 'standard'; inlineNext()">
+                <span class="svc-card__label">Standard business data</span>
+              </button>
             </div>
           </div>
 
-          <!-- Step 4: Contact form -->
-          <!-- Step 4: Contact Info -->
-          <div x-show="inlineStep === 4">
-            <div class="inline-form">
-              <div class="inline-field">
-                <label class="inline-label">Full Name</label>
-                <input class="inline-input" type="text" x-model="formData.name" placeholder="Jane Smith" autocomplete="name">
-              </div>
-              <div class="inline-field">
-                <label class="inline-label">Email Address</label>
-                <input class="inline-input" type="email" x-model="formData.email" placeholder="jane@email.com" autocomplete="email">
-              </div>
-              <div class="inline-field">
-                <label class="inline-label">Phone Number</label>
-                <input class="inline-input" type="tel" x-model="formData.phone" placeholder="(561) 555-0100" autocomplete="tel">
-              </div>
-              <div class="inline-consent">
-                <label style="display:flex;align-items:flex-start;gap:0.5rem;cursor:pointer;">
-                  <input type="checkbox" x-model="formData.consent" style="margin-top:0.2rem;flex-shrink:0;">
-                  <span>By submitting, you agree to be contacted by Tribune Inc. at the phone number and email provided. Message and data rates may apply. Reply STOP to opt out.</span>
-                </label>
-              </div>
-              <!-- Privacy note -->
-              <div class="inline-privacy-note">
-                &#x1F512; Your guide selections are <strong>never submitted</strong>. This guide uses a predefined matrix — no health data is collected.
-                <span x-show="selectedService"> Mention <strong x-text="getServiceLabel()"></strong> to your Nurse Practitioner.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 5: Date & Time -->
-          <div x-show="inlineStep === 5">
-            <div class="inline-form">
-              <div class="inline-field">
-                <input class="inline-input" type="date" x-model="formData.proposedDate" :min="minDate" :max="maxDate">
-              </div>
-              <div x-show="formData.proposedDate" style="margin-top:0.75rem;">
-                <div class="inline-time-slots">
-                  <template x-for="slot in timeSlots" :key="slot">
-                    <button type="button" class="inline-time-slot"
-                      :class="{'inline-time-slot--active': formData.proposedTime === slot}"
-                      @click="formData.proposedTime = slot"
-                      x-text="slot"></button>
-                  </template>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 6: Result — Recommendation + Two Actions -->
-          <div x-show="inlineStep === 6">
+          <!-- Result -->
+          <div x-show="inlineStep === 4" x-cloak>
             <div class="inline-result">
-              <div class="inline-result__check">&#x2705;</div>
-              <p class="inline-result__title">Request received, <strong x-text="formData.name.split(' ')[0]"></strong>!</p>
-              <p class="inline-result__sub">A human reads this and replies within one business day.</p>
-              <div class="inline-recommendation">
-                <div class="inline-rec__label">Based on your answers, we suggest looking into:</div>
-                <div class="inline-rec__service" x-text="getRecommendation().text"></div>
-                <div class="inline-rec__note">&#x270F;&#xFE0F; Your agent will be built on hardware you own. Your data never leaves your building.</div>
+              <p class="inline-result__title">Your recommended build: <strong x-text="recommendedBuild && recommendedBuild.name"></strong></p>
+              <p style="font-size:.9rem; color:var(--text-muted); margin:.5rem 0 1.5rem;" x-text="edition + ' edition. ' + editionNote"></p>
+              <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+                <a class="btn btn-primary" :href="resultCTA">See this build</a>
+                <a class="btn btn-secondary" href="/builds/">See all builds</a>
               </div>
-              <div class="inline-result__actions">
-                <button class="inline-action-primary" @click="goToService()">&#x1F50D; Learn More About This Service</button>
-                <a class="inline-action-secondary" href="/reach-out.html" target="_blank" rel="noopener">
-                  &#x1F4CB; Fill Out New Patient Form <small>— save time at your visit</small>
-                </a>
-              </div>
-              
+              <button @click="selectedService=null; selectedWorld=null; selectedTier=null; inlineStep=1;" style="background:none;border:none;color:var(--text-muted);cursor:pointer;margin-top:1.25rem;font-size:.85rem;display:block;">Not right? Start over</button>
             </div>
           </div>
 
         </div><!-- /.svc-guide__body -->
 
-        <!-- Footer zone: step label + progress + Prev/Next (hidden on result step 5) -->
-        <div class="svc-guide__footer" x-show="inlineStep < 6">
-          <div class="svc-guide__step">
-            <span class="svc-guide__step-label" x-text="inlineStepLabel()"></span>
-            <div class="svc-guide__progress">
-              <span class="svc-guide__progress-dot" :style="'left:' + inlineProgressLeft()"></span>
-            </div>
-          </div>
-          <div class="svc-guide__footer-btns">
-            <button class="svc-guide__prev" x-show="inlineStep > 1" @click="inlinePrev()">&lsaquo; Prev</button>
-            <button class="svc-guide__next" @click="inlineNext()" :class="{'svc-guide__next--on': inlineCanNext()}" :disabled="!inlineCanNext()" x-text="inlineNextLabel()">
-            </button>
-          </div>
+        <!-- Footer nav -->
+        <div class="svc-guide__footer" x-show="inlineStep > 1 && inlineStep < 4">
+          <button class="svc-guide__back" @click="inlinePrev()">Back</button>
         </div>
 
       </div><!-- /.svc-guide__shell -->
-
     </div><!-- /.svc-guide__row -->
   </section>
+
 
   <!-- ================================================================
        6. "TREAT YOURSELF" SERVICE TILE GRID
@@ -770,7 +623,7 @@
       <div class="service-tiles-grid">
 
         <div class="service-tile" @click="window.location='/builds/the-recovery-agent.html'">
-          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Recovery" alt="The Recovery Agent">
+          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80&auto=format&fit=crop" alt="The Recovery Agent">
           <div class="service-tile-body">
             <div class="service-tile-benefit">Recover money owed</div>
             <div class="service-tile-name">The Recovery Agent</div>
@@ -778,7 +631,7 @@
         </div>
 
         <div class="service-tile" @click="window.location='/builds/the-intake-agent.html'">
-          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Intake" alt="The Intake Agent">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&q=80&auto=format&fit=crop" alt="The Intake Agent">
           <div class="service-tile-body">
             <div class="service-tile-benefit">Handle incoming paperwork</div>
             <div class="service-tile-name">The Intake Agent</div>
@@ -786,7 +639,7 @@
         </div>
 
         <div class="service-tile" @click="window.location='/builds/the-signal-agent.html'">
-          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Signal" alt="The Signal Agent">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80&auto=format&fit=crop" alt="The Signal Agent">
           <div class="service-tile-body">
             <div class="service-tile-benefit">Watch and brief</div>
             <div class="service-tile-name">The Signal Agent</div>
@@ -794,7 +647,7 @@
         </div>
 
         <div class="service-tile" @click="window.location='/builds/the-ledger-agent.html'">
-          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Ledger" alt="The Ledger Agent">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80&auto=format&fit=crop" alt="The Ledger Agent">
           <div class="service-tile-body">
             <div class="service-tile-benefit">Keep the books straight</div>
             <div class="service-tile-name">The Ledger Agent</div>
@@ -802,7 +655,7 @@
         </div>
 
         <div class="service-tile" @click="window.location='/builds/the-sentinel.html'">
-          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Sentinel" alt="The Sentinel">
+          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1200&q=80&auto=format&fit=crop" alt="The Sentinel">
           <div class="service-tile-body">
             <div class="service-tile-benefit">Guard the deadlines</div>
             <div class="service-tile-name">The Sentinel</div>
@@ -810,7 +663,7 @@
         </div>
 
         <div class="service-tile" @click="window.location='/builds/the-producer.html'">
-          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Producer" alt="The Producer">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80&auto=format&fit=crop" alt="The Producer">
           <div class="service-tile-body">
             <div class="service-tile-benefit">Produce and deliver</div>
             <div class="service-tile-name">The Producer</div>
@@ -905,7 +758,7 @@
         </div>
         <div class="two-up-panel">
           <!-- REPLACE WITH REAL PHOTO - team at work -->
-          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=80&auto=format&fit=crop" alt="[Image]">
           <div class="two-up-overlay">
             <h3>The engagement ends</h3>
             <p>A fixed arc, human-signed gates, a scheduled departure. The business model with nothing to renew is the one you can trust.</p>
@@ -929,7 +782,7 @@
       <div class="process-grid">
         <div class="process-step">
           <!-- REPLACE WITH REAL PHOTO - booking / phone consultation -->
-          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=80&auto=format&fit=crop" alt="[Image]">
           <div class="process-num">1</div>
           <h3>01 — Discovery</h3>
           <p>We sit inside your business and follow the money: where a dollar enters, where it leaks, which tools you live in. It ends with a report so clear a stranger could understand your business from it.</p>
@@ -1220,7 +1073,7 @@
 
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo"><img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Tribune" alt="Tribune Inc."></div>
+        <div class="footer-logo"><img src="https://res.cloudinary.com/dthdxjmgb/image/upload/h_80,c_scale,f_auto,q_100/v1781045601/mxxi/rj-logo-cropped.jpg" alt="Tribune Inc."></div>
         <p class="footer-tagline">Power that stays. Help that leaves. TribuneOS.com</p>
         
         <p style="font-size:0.75rem; color:var(--text-muted); margin-top:1rem;">
@@ -1272,7 +1125,7 @@
 </div><!-- /#wizard-root / x-data -->
 
 <!-- Scripts -->
-<script src="js/wizard.js?v=10"></script>
+<script src="js/wizard.js?v=11"></script>
 <script src="js/megamenu.js"></script>
 
 
