@@ -1,5 +1,5 @@
 {
-  "slug": "b12-injections",
+  "slug": "[SERVICE NAME]-injections",
   "category": "[Category]",
   "name": "[Service Name]",
   "h1": "[Service Name] in [CITY], [STATE]",
@@ -54,15 +54,15 @@
     }
   ],
   "about": [
-    "B12 (methylcobalamin) is essential for energy production, nerve function, red blood cell formation, and mood regulation. Many people have suboptimal B12 levels without knowing it, especially those following plant-based diets, adults over 50, or people taking certain medications.",
+    "[SERVICE NAME] (methylcobalamin) is essential for energy production, nerve function, red blood cell formation, and mood regulation. Many people have suboptimal [SERVICE NAME] levels without knowing it, especially those following plant-based diets, adults over 50, or people taking certain medications.",
     "[placeholder text]",
     "[placeholder text]"
   ],
-  "about_headline": "Fast-Acting B12 Injections That Come to You",
-  "menu_headline": "Wellness Injection Options",
+  "about_headline": "Fast-Acting [SERVICE NAME] That Come to You",
+  "menu_headline": "[SERVICE CATEGORY] Injection Options",
   "sections": [
     {
-      "id": "b12",
+      "id": "[SERVICE NAME]",
       "title": "[placeholder text]",
       "body": "[placeholder text]",
       "items": [
@@ -92,7 +92,7 @@
   "related": [
     "iv-therapy",
     "wellness",
-    "membership"
+    "[SERVICE NAME]"
   ],
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",

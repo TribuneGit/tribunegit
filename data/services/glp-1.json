@@ -1,5 +1,5 @@
 {
-  "slug": "glp-1",
+  "slug": "[SERVICE NAME]",
   "category": "[Category]",
   "name": "[Service Name]",
   "h1": "[Service Name] in [CITY], [STATE]",
@@ -58,13 +58,13 @@
     }
   ],
   "about": [
-    "GLP-1 (glucagon-like peptide-1) is a natural hormone your gut releases after eating. GLP-1 medications mimic this hormone signal, telling your brain you are full, slowing stomach emptying, and helping your body regulate blood sugar more effectively.",
+    "[SERVICE NAME] (glucagon-like peptide-1) is a natural hormone your gut releases after eating. [SERVICE NAME] medications mimic this hormone signal, telling your brain you are full, slowing stomach emptying, and helping your body regulate blood sugar more effectively.",
     "[placeholder text]",
     "[placeholder text]"
   ],
-  "about_headline": "GLP-1 Weight Loss: Real Prescriptions, Real Supervision",
+  "about_headline": "[SERVICE NAME] [SERVICE CATEGORY]: Real Prescriptions, Real Supervision",
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
-  "menu_headline": "GLP-1 Program Overview",
+  "menu_headline": "[SERVICE NAME] Program Overview",
   "sections": [
     {
       "id": "what-is-glp1",
@@ -111,13 +111,13 @@
     "name": "[Service Name]",
     "city": "[placeholder text]"
   },
-  "cta_headline": "Ready to Start Your <em>GLP-1 Program</em>?",
+  "cta_headline": "Ready to Start Your <em>[SERVICE NAME] Program</em>?",
   "cta_body": "[placeholder text]",
   "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "related": [
     "weight-loss",
-    "semaglutide",
-    "tirzepatide"
+    "[SERVICE NAME]",
+    "[SERVICE NAME]"
   ],
   "gallery": [
     "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
@@ -139,18 +139,18 @@
     "hero": [
       "[placeholder text]",
       "[placeholder text]",
-      "GLP-1 prescription without insurance",
+      "[SERVICE NAME] prescription without insurance",
       "[placeholder text]"
     ],
     "about": [
-      "GLP-1 receptor agonist weight loss",
-      "GLP-1 PCOS insulin resistance",
-      "GLP-1 direct pay Florida"
+      "[SERVICE NAME] receptor agonist weight loss",
+      "[SERVICE NAME] PCOS insulin resistance",
+      "[SERVICE NAME] direct pay Florida"
     ],
     "faq": [
-      "GLP-1 no referral needed",
-      "GLP-1 PCOS",
-      "GLP-1 results timeline"
+      "[SERVICE NAME] no referral needed",
+      "[SERVICE NAME] PCOS",
+      "[SERVICE NAME] results timeline"
     ]
   }
 }

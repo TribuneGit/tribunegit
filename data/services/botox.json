@@ -11,7 +11,7 @@
   "hero_perks": [
     "We come to you",
     "Non-surgical, no downtime",
-    "Botox parties available"
+    "[SERVICE NAME] parties available"
   ],
   "fact_chips": [
     {
@@ -58,7 +58,7 @@
     "[placeholder text]",
     "Reverse signs of aging, improve your confidence, and enjoy near-instant results with no downtime. Get back to your life looking refreshed."
   ],
-  "about_headline": "Beautiful Botox That Comes to You",
+  "about_headline": "Beautiful [SERVICE NAME] That Comes to You",
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "how_it_works": {
     "time": "15 to 30 min",
@@ -135,7 +135,7 @@
   "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "related": [
     "dermal-fillers",
-    "microneedling",
+    "[SERVICE NAME]",
     "prp-facial"
   ],
   "gallery": [

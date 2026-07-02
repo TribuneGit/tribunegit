@@ -47,7 +47,7 @@ generated: 2026-07-02
 
 [placeholder text]
 
-## Wellness Services
+## [SERVICE CATEGORY] [SERVICES]
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 

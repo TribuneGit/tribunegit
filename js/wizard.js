@@ -114,116 +114,116 @@ function wizardData(preselect) {
 
       const map = {
         'iv-therapy': {
-          'energy':    { text: 'IV Therapy — Myers Cocktail',              slug: 'iv-therapy' },
-          'immunity':  { text: 'IV Therapy — Immunity Boost Cocktail',     slug: 'iv-therapy' },
-          'recovery':  { text: 'IV Therapy — Recovery Drip',              slug: 'iv-therapy' },
-          'hydration': { text: 'IV Therapy — Hydration Drip',             slug: 'iv-therapy' },
-          'hangover':  { text: 'IV Therapy — Hangover Relief Cocktail',   slug: 'iv-therapy' },
-          'glow':      { text: 'IV Therapy — Beauty & Glow Drip',         slug: 'iv-therapy' },
+          'energy':    { text: '[SERVICE CATEGORY] — [SERVICE NAME]',              slug: 'iv-therapy' },
+          'immunity':  { text: '[SERVICE CATEGORY] — Immunity Boost Cocktail',     slug: 'iv-therapy' },
+          'recovery':  { text: '[SERVICE CATEGORY] — Recovery Drip',              slug: 'iv-therapy' },
+          '[service name]': { text: '[SERVICE CATEGORY] — [service name] Drip',             slug: 'iv-therapy' },
+          '[SERVICE NAME]':  { text: '[SERVICE CATEGORY] — [SERVICE NAME] Relief Cocktail',   slug: 'iv-therapy' },
+          'glow':      { text: '[SERVICE CATEGORY] — Beauty & Glow Drip',         slug: 'iv-therapy' },
         },
         'weight-loss': {
-          'lose':     { text: 'Medical Weight Loss — GLP-1 Program',       slug: 'weight-loss' },
-          'maintain': { text: 'Medical Weight Loss — Maintenance Program', slug: 'weight-loss' },
-          'plan':     { text: 'Medical Weight Loss — Provider Consultation',slug: 'weight-loss' },
+          'lose':     { text: '[SERVICE CATEGORY] — [SERVICE NAME] Program',       slug: 'weight-loss' },
+          'maintain': { text: '[SERVICE CATEGORY] — Maintenance Program', slug: 'weight-loss' },
+          'plan':     { text: '[SERVICE CATEGORY] — Provider Consultation',slug: 'weight-loss' },
         },
         'botox': {
-          'forehead':  { text: 'Botox — Forehead & Frown Line Treatment',  slug: 'botox' },
-          'frown':     { text: 'Botox — Frown Line Treatment',             slug: 'botox' },
-          'crows':     { text: "Botox — Crow's Feet Treatment",            slug: 'botox' },
-          'brow':      { text: 'Botox — Brow Lift & Refresh',             slug: 'botox' },
-          'lip-flip':  { text: 'Botox — Lip Flip',                        slug: 'botox' },
-          'jawline':   { text: 'Botox — Jawline Slimming',                slug: 'botox' },
+          'forehead':  { text: '[SERVICE NAME] — Forehead & Frown Line Treatment',  slug: 'botox' },
+          'frown':     { text: '[SERVICE NAME] — Frown Line Treatment',             slug: 'botox' },
+          'crows':     { text: "[SERVICE NAME] — Crow's Feet Treatment",            slug: 'botox' },
+          'brow':      { text: '[SERVICE NAME] — Brow Lift & Refresh',             slug: 'botox' },
+          'lip-flip':  { text: '[SERVICE NAME] — Lip Flip',                        slug: 'botox' },
+          'jawline':   { text: '[SERVICE NAME] — Jawline Slimming',                slug: 'botox' },
         },
         'dermal-fillers': {
-          'lips':      { text: 'Dermal Fillers — Lip Enhancement',         slug: 'dermal-fillers' },
-          'cheeks':    { text: 'Dermal Fillers — Cheek Augmentation',      slug: 'dermal-fillers' },
-          'jawline':   { text: 'Dermal Fillers — Jawline Definition',      slug: 'dermal-fillers' },
-          'smile':     { text: 'Dermal Fillers — Smile Line Treatment',    slug: 'dermal-fillers' },
-          'chin':      { text: 'Dermal Fillers — Chin Enhancement',        slug: 'dermal-fillers' },
-          'under-eye': { text: 'Dermal Fillers — Under-Eye Rejuvenation',  slug: 'dermal-fillers' },
+          'lips':      { text: '[SERVICE NAME] — Lip Enhancement',         slug: 'dermal-fillers' },
+          'cheeks':    { text: '[SERVICE NAME] — Cheek Augmentation',      slug: 'dermal-fillers' },
+          'jawline':   { text: '[SERVICE NAME] — Jawline Definition',      slug: 'dermal-fillers' },
+          'smile':     { text: '[SERVICE NAME] — Smile Line Treatment',    slug: 'dermal-fillers' },
+          'chin':      { text: '[SERVICE NAME] — Chin Enhancement',        slug: 'dermal-fillers' },
+          'under-eye': { text: '[SERVICE NAME] — Under-Eye Rejuvenation',  slug: 'dermal-fillers' },
         },
-        'microneedling': {
-          'glow':     { text: 'Microneedling — Glow & Radiance Treatment', slug: 'microneedling' },
-          'texture':  { text: 'Microneedling — Texture Smoothing',         slug: 'microneedling' },
-          'lines':    { text: 'Microneedling with PRP — Fine Line Treatment', slug: 'microneedling' },
-          'tone':     { text: 'Microneedling — Tone & Pigmentation',       slug: 'microneedling' },
+        '[SERVICE NAME]': {
+          'glow':     { text: '[SERVICE NAME] — Glow & Radiance Treatment', slug: '[SERVICE NAME]' },
+          'texture':  { text: '[SERVICE NAME] — Texture Smoothing',         slug: '[SERVICE NAME]' },
+          'lines':    { text: '[SERVICE NAME] with [SERVICE NAME] — Fine Line Treatment', slug: '[SERVICE NAME]' },
+          'tone':     { text: '[SERVICE NAME] — Tone & Pigmentation',       slug: '[SERVICE NAME]' },
         },
         'in-home-care': {
-          'myself':   { text: 'In-Home Primary Care — Adult Visit',         slug: 'in-home-primary-care' },
-          'child':    { text: 'In-Home Primary Care — Pediatric Visit',     slug: 'in-home-primary-care' },
-          'senior':   { text: 'In-Home Primary Care — Senior Care Visit',  slug: 'in-home-primary-care' },
-          'family':   { text: 'In-Home Primary Care — Family Visit',        slug: 'in-home-primary-care' },
+          'myself':   { text: 'In-Home [SERVICE CATEGORY] — Adult Visit',         slug: 'in-home-primary-care' },
+          'child':    { text: 'In-Home [SERVICE CATEGORY] — Pediatric Visit',     slug: 'in-home-primary-care' },
+          'senior':   { text: 'In-Home [SERVICE CATEGORY] — Senior Care Visit',  slug: 'in-home-primary-care' },
+          'family':   { text: 'In-Home [SERVICE CATEGORY] — Family Visit',        slug: 'in-home-primary-care' },
         },
         'urgent-care': {
-          'same-day': { text: 'Urgent Care — Same-Day In-Home Visit',       slug: 'urgent-care' },
-          'lab':      { text: 'Urgent Care — In-Home Lab Work',             slug: 'urgent-care' },
-          'not-sure': { text: 'Urgent Care — In-Home Visit',               slug: 'urgent-care' },
+          'same-day': { text: '[SERVICE CATEGORY] — Same-Day In-Home Visit',       slug: 'urgent-care' },
+          'lab':      { text: '[SERVICE CATEGORY] — In-Home Lab Work',             slug: 'urgent-care' },
+          'not-sure': { text: '[SERVICE CATEGORY] — In-Home Visit',               slug: 'urgent-care' },
         },
-        'fertility': {
-          'me':       { text: 'Fertility Care — Individual Evaluation',     slug: 'fertility' },
-          'partner':  { text: 'Fertility Care — Partner Evaluation',       slug: 'fertility' },
-          'both':     { text: 'Fertility Care — Couples Evaluation',        slug: 'fertility' },
+        '[SERVICE NAME]': {
+          'me':       { text: '[SERVICE NAME] Care — Individual Evaluation',     slug: '[SERVICE NAME]' },
+          'partner':  { text: '[SERVICE NAME] Care — Partner Evaluation',       slug: '[SERVICE NAME]' },
+          'both':     { text: '[SERVICE NAME] Care — Couples Evaluation',        slug: '[SERVICE NAME]' },
         },
-        'cryotherapy': {
-          'recovery':    { text: 'Cryotherapy — Recovery Session',          slug: 'cryotherapy' },
-          'performance': { text: 'Cryotherapy — Performance Enhancement',  slug: 'cryotherapy' },
-          'wellness':    { text: 'Cryotherapy — Wellness Session',          slug: 'cryotherapy' },
-          'skin':        { text: 'Cryotherapy — Skin & Glow Treatment',    slug: 'cryotherapy' },
+        '[SERVICE NAME]': {
+          'recovery':    { text: '[SERVICE NAME] — Recovery Session',          slug: '[SERVICE NAME]' },
+          'performance': { text: '[SERVICE NAME] — Performance Enhancement',  slug: '[SERVICE NAME]' },
+          'wellness':    { text: '[SERVICE NAME] — [SERVICE CATEGORY] Session',          slug: '[SERVICE NAME]' },
+          'skin':        { text: '[SERVICE NAME] — Skin & Glow Treatment',    slug: '[SERVICE NAME]' },
         },
         'prp-facial': {
-          'glow':      { text: 'PRP Vampire Facial — Glow Treatment',       slug: 'prp-facial' },
-          'texture':   { text: 'PRP Vampire Facial — Texture Improvement', slug: 'prp-facial' },
-          'under-eye': { text: 'PRP Vampire Facial — Under-Eye Treatment', slug: 'prp-facial' },
-          'rejuv':     { text: 'PRP Vampire Facial — Full Rejuvenation',   slug: 'prp-facial' },
+          'glow':      { text: '[SERVICE NAME] Vampire Facial — Glow Treatment',       slug: 'prp-facial' },
+          'texture':   { text: '[SERVICE NAME] Vampire Facial — Texture Improvement', slug: 'prp-facial' },
+          'under-eye': { text: '[SERVICE NAME] Vampire Facial — Under-Eye Treatment', slug: 'prp-facial' },
+          'rejuv':     { text: '[SERVICE NAME] Vampire Facial — Full Rejuvenation',   slug: 'prp-facial' },
         },
-        'membership': {
-          'basic':    { text: 'Concierge Membership — Core Care Plan',      slug: 'membership' },
-          'plus':     { text: 'Concierge Membership — Plus Plan',           slug: 'membership' },
-          'elite':    { text: 'Concierge Membership — Elite Plan',          slug: 'membership' },
-          'not-sure': { text: 'Concierge Membership — Free Consultation',   slug: 'membership' },
+        '[SERVICE NAME]': {
+          'basic':    { text: 'Concierge [SERVICE NAME] — Core Care Plan',      slug: '[SERVICE NAME]' },
+          'plus':     { text: 'Concierge [SERVICE NAME] — Plus Plan',           slug: '[SERVICE NAME]' },
+          'elite':    { text: 'Concierge [SERVICE NAME] — Elite Plan',          slug: '[SERVICE NAME]' },
+          'not-sure': { text: 'Concierge [SERVICE NAME] — Free Consultation',   slug: '[SERVICE NAME]' },
         },
-        'nad-plus': {
-          'anti-aging':  { text: 'NAD+ IV Therapy — Anti-Aging Protocol',   slug: 'iv-therapy' },
-          'clarity':     { text: 'NAD+ IV Therapy — Brain Clarity Protocol',slug: 'iv-therapy' },
-          'energy':      { text: 'NAD+ IV Therapy — Energy Protocol',       slug: 'iv-therapy' },
-          'performance': { text: 'NAD+ IV Therapy — Athletic Performance',  slug: 'iv-therapy' },
-          'not-sure':    { text: 'NAD+ IV Therapy',                         slug: 'iv-therapy' },
+        '[SERVICE NAME]-plus': {
+          '[SERVICE NAME]':  { text: '[SERVICE NAME]+ [SERVICE CATEGORY] — [SERVICE NAME] Protocol',   slug: 'iv-therapy' },
+          'clarity':     { text: '[SERVICE NAME]+ [SERVICE CATEGORY] — Brain Clarity Protocol',slug: 'iv-therapy' },
+          'energy':      { text: '[SERVICE NAME]+ [SERVICE CATEGORY] — Energy Protocol',       slug: 'iv-therapy' },
+          'performance': { text: '[SERVICE NAME]+ [SERVICE CATEGORY] — Athletic Performance',  slug: 'iv-therapy' },
+          'not-sure':    { text: '[SERVICE NAME]+ [SERVICE CATEGORY]',                         slug: 'iv-therapy' },
         },
         'prp-hair': {
-          'fuller':    { text: 'PRP Hair Restoration — Fuller Hair',         slug: 'prp-hair' },
-          'scalp':     { text: 'PRP Hair Restoration — Scalp Health',       slug: 'prp-hair' },
-          'thickness': { text: 'PRP Hair Restoration — Overall Thickness',  slug: 'prp-hair' },
+          'fuller':    { text: '[SERVICE NAME] Restoration — Fuller Hair',         slug: 'prp-hair' },
+          'scalp':     { text: '[SERVICE NAME] Restoration — Scalp Health',       slug: 'prp-hair' },
+          'thickness': { text: '[SERVICE NAME] Restoration — Overall Thickness',  slug: 'prp-hair' },
         },
-        'b12-injections': {
-          'energy':  { text: 'B12 Injections — Energy Boost',              slug: 'b12-injections' },
-          'mood':    { text: 'B12 Injections — Mood & Vitality',           slug: 'b12-injections' },
-          'immune':  { text: 'B12 Injections — Immune Support',            slug: 'b12-injections' },
+        '[SERVICE NAME]-injections': {
+          'energy':  { text: '[SERVICE NAME] — Energy Boost',              slug: '[SERVICE NAME]-injections' },
+          'mood':    { text: '[SERVICE NAME] — Mood & Vitality',           slug: '[SERVICE NAME]-injections' },
+          'immune':  { text: '[SERVICE NAME] — Immune Support',            slug: '[SERVICE NAME]-injections' },
         },
         'peptides': {
-          'recovery':    { text: 'Peptide Therapy — Recovery Protocol',     slug: 'peptides' },
-          'performance': { text: 'Peptide Therapy — Performance Protocol', slug: 'peptides' },
-          'anti-aging':  { text: 'Peptide Therapy — Anti-Aging Protocol',  slug: 'peptides' },
-          'not-sure':    { text: 'Peptide Therapy — Consultation',          slug: 'peptides' },
+          'recovery':    { text: '[SERVICE NAME] Therapy — Recovery Protocol',     slug: 'peptides' },
+          'performance': { text: '[SERVICE NAME] Therapy — Performance Protocol', slug: 'peptides' },
+          '[SERVICE NAME]':  { text: '[SERVICE NAME] Therapy — [SERVICE NAME] Protocol',  slug: 'peptides' },
+          'not-sure':    { text: '[SERVICE NAME] Therapy — Consultation',          slug: 'peptides' },
         },
         'wellness': {
-          'energy':      { text: 'Wellness — Energy & Immunity Program',    slug: 'wellness' },
-          'recovery':    { text: 'Wellness — Recovery Program',             slug: 'wellness' },
-          'preventive':  { text: 'Wellness — Preventive Checkup',           slug: 'wellness' },
-          'not-sure':    { text: 'Wellness Consultation',                   slug: 'wellness' },
+          'energy':      { text: '[SERVICE CATEGORY] — Energy & Immunity Program',    slug: 'wellness' },
+          'recovery':    { text: '[SERVICE CATEGORY] — Recovery Program',             slug: 'wellness' },
+          'preventive':  { text: '[SERVICE CATEGORY] — Preventive Checkup',           slug: 'wellness' },
+          'not-sure':    { text: '[SERVICE CATEGORY] Consultation',                   slug: 'wellness' },
         },
         'hormone-replacement-therapy': {
-          'optimize':  { text: 'Hormone Replacement Therapy — Optimization', slug: 'hormone-replacement-therapy' },
-          'labs':      { text: 'Hormone Replacement Therapy — Lab Testing', slug: 'hormone-replacement-therapy' },
-          'not-sure':  { text: 'Hormone Replacement Therapy — Consultation',slug: 'hormone-replacement-therapy' },
+          'optimize':  { text: '[SERVICE NAME] — Optimization', slug: 'hormone-replacement-therapy' },
+          'labs':      { text: '[SERVICE NAME] — Lab Testing', slug: 'hormone-replacement-therapy' },
+          'not-sure':  { text: '[SERVICE NAME] — Consultation',slug: 'hormone-replacement-therapy' },
         },
-        'telehealth': {
-          'new-patient': { text: 'Telehealth — New Patient Meet & Greet',  slug: 'telehealth' },
-          'follow-up':   { text: 'Telehealth — Follow-Up Visit',           slug: 'telehealth' },
-          'question':    { text: 'Telehealth — Quick Consultation',        slug: 'telehealth' },
+        '[SERVICE NAME]': {
+          'new-patient': { text: '[SERVICE NAME] — New Patient Meet & Greet',  slug: '[SERVICE NAME]' },
+          'follow-up':   { text: '[SERVICE NAME] — Follow-Up Visit',           slug: '[SERVICE NAME]' },
+          'question':    { text: '[SERVICE NAME] — Quick Consultation',        slug: '[SERVICE NAME]' },
         },
         'skilled-nursing': {
-          'me':     { text: 'Skilled Nursing — In-Home Care Visit',         slug: 'skilled-nursing' },
-          'family': { text: 'Skilled Nursing — Family Care Visit',          slug: 'skilled-nursing' },
+          'me':     { text: '[SERVICE CATEGORY] — [SERVICE NAME] Visit',         slug: 'skilled-nursing' },
+          'family': { text: '[SERVICE CATEGORY] — Family Care Visit',          slug: 'skilled-nursing' },
         },
       };
 
@@ -281,18 +281,18 @@ function wizardData(preselect) {
     selectedService: preselect || null,
 
     services: [
-      { id: 'in-home-care',    label: 'In-Home Primary Care', icon: '🏠', desc: 'All ages, newborn to geriatric' },
-      { id: 'urgent-care',     label: 'Urgent Care at Home',  icon: '🚑', desc: 'Same-day in-home visits' },
-      { id: 'botox',           label: 'Botox',                icon: '💉', desc: 'Smooth lines, refresh your look' },
-      { id: 'dermal-fillers',  label: 'Dermal Fillers',       icon: '✨', desc: 'Restore volume and contour' },
-      { id: 'microneedling',   label: 'Microneedling / PRP',  icon: '🌟', desc: 'Skin renewal and hair restoration' },
-      { id: 'iv-therapy',      label: 'IV Therapy',           icon: '💧', desc: 'Mobile IV hydration and wellness' },
-      { id: 'weight-loss',     label: 'Medical Weight Loss',  icon: '⚖️', desc: 'Semaglutide, tirzepatide, coaching' },
-      { id: 'fertility',       label: 'Fertility Care',       icon: '🌱', desc: 'Men, women, couples — telehealth available' },
-      { id: 'cryotherapy',     label: 'Cryotherapy',          icon: '❄️', desc: 'Skin, body, and sports recovery' },
-      { id: 'prp-facial',      label: 'PRP Vampire Facial',   icon: '🩸', desc: 'Rejuvenate with your own platelets' },
-      { id: 'membership',      label: 'Concierge Membership', icon: '⭐', desc: 'Unlimited visits, priority access' },
-      { id: 'nad-plus',        label: 'NAD+ IV Therapy',      icon: '🧬', desc: 'Cellular renewal, energy, and recovery' },
+      { id: 'in-home-care',    label: 'In-Home [SERVICE CATEGORY]', icon: '🏠', desc: 'All ages, newborn to geriatric' },
+      { id: 'urgent-care',     label: '[SERVICE CATEGORY] at Home',  icon: '🚑', desc: 'Same-day in-home visits' },
+      { id: 'botox',           label: '[SERVICE NAME]',                icon: '💉', desc: 'Smooth lines, refresh your look' },
+      { id: 'dermal-fillers',  label: '[SERVICE NAME]',       icon: '✨', desc: 'Restore volume and contour' },
+      { id: '[SERVICE NAME]',   label: '[SERVICE NAME] / [SERVICE NAME]',  icon: '🌟', desc: 'Skin renewal and hair restoration' },
+      { id: 'iv-therapy',      label: '[SERVICE CATEGORY]',           icon: '💧', desc: '[SERVICE NAME] [service name] and wellness' },
+      { id: 'weight-loss',     label: '[SERVICE CATEGORY]',  icon: '⚖️', desc: '[SERVICE NAME], [SERVICE NAME], coaching' },
+      { id: '[SERVICE NAME]',       label: '[SERVICE NAME] Care',       icon: '🌱', desc: 'Men, women, couples — [SERVICE NAME] available' },
+      { id: '[SERVICE NAME]',     label: '[SERVICE NAME]',          icon: '❄️', desc: 'Skin, body, and sports recovery' },
+      { id: 'prp-facial',      label: '[SERVICE NAME] Vampire Facial',   icon: '🩸', desc: 'Rejuvenate with your own platelets' },
+      { id: '[SERVICE NAME]',      label: 'Concierge [SERVICE NAME]', icon: '⭐', desc: 'Unlimited visits, priority access' },
+      { id: '[SERVICE NAME]-plus',        label: '[SERVICE NAME]+ [SERVICE CATEGORY]',      icon: '🧬', desc: 'Cellular renewal, energy, and recovery' },
     ],
 
     selectService(id) {
@@ -313,21 +313,21 @@ function wizardData(preselect) {
         'urgent-care':                 'What do you need?',
         'botox':                       'Which area would you like to focus on?',
         'dermal-fillers':              'Where would you like more volume or definition?',
-        'microneedling':               'What would you like to improve?',
+        '[SERVICE NAME]':               'What would you like to improve?',
         'iv-therapy':                  'What are you hoping to get from it?',
         'weight-loss':                 'What is your goal?',
-        'fertility':                   'Who is this for?',
-        'cryotherapy':                 'What are you after?',
+        '[SERVICE NAME]':                   'Who is this for?',
+        '[SERVICE NAME]':                 'What are you after?',
         'prp-facial':                  'What is your main goal?',
         'prp-hair':                    'What would you like to work on?',
-        'b12-injections':              'What is your goal?',
+        '[SERVICE NAME]-injections':              'What is your goal?',
         'peptides':                    'What are you focused on?',
         'wellness':                    'What are you looking for?',
         'hormone-replacement-therapy': 'What are you interested in?',
-        'telehealth':                  'What do you need?',
+        '[SERVICE NAME]':                  'What do you need?',
         'skilled-nursing':             'Who needs care?',
-        'membership':                  'Which plan interests you?',
-        'nad-plus':                    'What are you focused on?',
+        '[SERVICE NAME]':                  'Which plan interests you?',
+        '[SERVICE NAME]-plus':                    'What are you focused on?',
       };
       return q[this.selectedService] || 'What are you looking for?';
     },
@@ -361,7 +361,7 @@ function wizardData(preselect) {
           { id: 'chin',      label: 'Chin',                icon: '🫦' },
           { id: 'under-eye', label: 'Under-eye',           icon: '👁' },
         ],
-        'microneedling': [
+        '[SERVICE NAME]': [
           { id: 'glow',      label: 'Glow',                icon: '✨' },
           { id: 'texture',   label: 'Smoother texture',    icon: '🌿' },
           { id: 'lines',     label: 'Fine lines',          icon: '〰️' },
@@ -371,8 +371,8 @@ function wizardData(preselect) {
           { id: 'energy',    label: 'Energy',              icon: '⚡' },
           { id: 'immunity',  label: 'Immunity',            icon: '🛡️' },
           { id: 'recovery',  label: 'Recovery',            icon: '🏃' },
-          { id: 'hydration', label: 'Hydration',           icon: '💧' },
-          { id: 'hangover',  label: 'Hangover relief',     icon: '🌅' },
+          { id: '[service name]', label: '[service name]',           icon: '💧' },
+          { id: '[SERVICE NAME]',  label: '[SERVICE NAME] relief',     icon: '🌅' },
           { id: 'glow',      label: 'Glow',                icon: '💅' },
         ],
         'weight-loss': [
@@ -380,15 +380,15 @@ function wizardData(preselect) {
           { id: 'maintain',  label: 'Maintain',                     icon: '⚖️' },
           { id: 'plan',      label: 'Build a plan with a provider', icon: '📋' },
         ],
-        'fertility': [
+        '[SERVICE NAME]': [
           { id: 'me',        label: 'Me',            icon: '🌸' },
           { id: 'partner',   label: 'My partner',    icon: '💙' },
           { id: 'both',      label: 'Both of us',    icon: '💑' },
         ],
-        'cryotherapy': [
+        '[SERVICE NAME]': [
           { id: 'recovery',    label: 'Recovery',    icon: '🏃' },
           { id: 'performance', label: 'Performance', icon: '💪' },
-          { id: 'wellness',    label: 'Wellness',    icon: '🌿' },
+          { id: 'wellness',    label: '[SERVICE CATEGORY]',    icon: '🌿' },
           { id: 'skin',        label: 'Skin and glow', icon: '✨' },
         ],
         'prp-facial': [
@@ -402,7 +402,7 @@ function wizardData(preselect) {
           { id: 'scalp',     label: 'Healthier scalp',   icon: '✨' },
           { id: 'thickness', label: 'Overall thickness', icon: '🌿' },
         ],
-        'b12-injections': [
+        '[SERVICE NAME]-injections': [
           { id: 'energy',  label: 'Energy',           icon: '⚡' },
           { id: 'mood',    label: 'Mood',             icon: '😊' },
           { id: 'immune',  label: 'Immune support',   icon: '🛡️' },
@@ -410,7 +410,7 @@ function wizardData(preselect) {
         'peptides': [
           { id: 'recovery',    label: 'Recovery',    icon: '🏃' },
           { id: 'performance', label: 'Performance', icon: '💪' },
-          { id: 'anti-aging',  label: 'Anti-aging',  icon: '✨' },
+          { id: '[SERVICE NAME]',  label: '[SERVICE NAME]',  icon: '✨' },
           { id: 'not-sure',    label: 'Not sure',    icon: '❓' },
         ],
         'wellness': [
@@ -424,7 +424,7 @@ function wizardData(preselect) {
           { id: 'labs',      label: 'Lab testing',          icon: '🧪' },
           { id: 'not-sure',  label: 'Not sure',             icon: '❓' },
         ],
-        'telehealth': [
+        '[SERVICE NAME]': [
           { id: 'new-patient', label: 'New patient meet & greet', icon: '👋' },
           { id: 'follow-up',   label: 'A follow-up',              icon: '📋' },
           { id: 'question',    label: 'A quick question',         icon: '❓' },
@@ -433,14 +433,14 @@ function wizardData(preselect) {
           { id: 'me',     label: 'Me',                 icon: '🧑' },
           { id: 'family', label: 'A family member',    icon: '👨‍👩‍👧' },
         ],
-        'membership': [
+        '[SERVICE NAME]': [
           { id: 'basic',    label: 'Basic',       icon: '⭐' },
           { id: 'plus',     label: 'Plus',        icon: '💫' },
           { id: 'elite',    label: 'Elite',       icon: '👑' },
           { id: 'not-sure', label: 'Not sure yet',icon: '❓' },
         ],
-        'nad-plus': [
-          { id: 'anti-aging',  label: 'Anti-aging',          icon: '✨' },
+        '[SERVICE NAME]-plus': [
+          { id: '[SERVICE NAME]',  label: '[SERVICE NAME]',          icon: '✨' },
           { id: 'clarity',     label: 'Brain clarity',       icon: '🧠' },
           { id: 'energy',      label: 'Natural energy',      icon: '⚡' },
           { id: 'performance', label: 'Athletic performance',icon: '🏃' },
@@ -466,14 +466,14 @@ function wizardData(preselect) {
     selectedDetail: null,
 
     hasDetailStep() {
-      return ['botox', 'dermal-fillers', 'microneedling', 'weight-loss'].includes(this.selectedService);
+      return ['botox', 'dermal-fillers', '[SERVICE NAME]', 'weight-loss'].includes(this.selectedService);
     },
 
     getDetailQuestion() {
       const q = {
         'botox':          "What's your primary goal?",
         'dermal-fillers': "What result are you looking for?",
-        'microneedling':  'How would you describe your skin goal?',
+        '[SERVICE NAME]':  'How would you describe your skin goal?',
         'weight-loss':    'What kind of support are you looking for?',
       };
       return q[this.selectedService] || 'Tell us a bit more.';
@@ -493,7 +493,7 @@ function wizardData(preselect) {
           { id: 'smooth', label: 'Smooth deep lines',      icon: '〰️' },
           { id: 'subtle', label: 'Subtle natural refresh', icon: '🌿' },
         ],
-        'microneedling': [
+        '[SERVICE NAME]': [
           { id: 'mild',        label: 'Mild — early signs',         icon: '🟢' },
           { id: 'moderate',    label: 'Moderate',                   icon: '🟡' },
           { id: 'significant', label: 'More significant',           icon: '🔴' },

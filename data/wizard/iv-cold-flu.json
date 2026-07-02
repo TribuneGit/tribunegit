@@ -23,9 +23,9 @@
           "label": "Recovery support"
         },
         {
-          "id": "hangover",
+          "id": "[SERVICE NAME]",
           "icon": "🥤",
-          "label": "Hangover relief"
+          "label": "[SERVICE NAME] relief"
         }
       ]
     },

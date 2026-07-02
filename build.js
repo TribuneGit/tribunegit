@@ -26,7 +26,7 @@ function breadcrumb(name){
   <div class="container">
     <a href="/">Home</a>
     <span class="sep">›</span>
-    <a href="/services/">Services</a>
+    <a href="/services/">[SERVICES]</a>
     <span class="sep">›</span>
     <span class="current">${name}</span>
   </div>
@@ -83,7 +83,7 @@ function hero(d, wizardJson){
           <p class="svc-hero-value is-hidden">${esc(d.hero_value_prop||'')}</p>
           <div class="svc-hero-ctas is-hidden">
             <a href="https://booking.[BOOKING URL]" class="btn btn-primary btn-pill btn-lg">Book Free Consultation</a>
-            <a href="/pricing.html" class="btn btn-secondary btn-pill">View Pricing</a>
+            <a href="/pricing.html" class="btn btn-secondary btn-pill">View [PRICING]</a>
           </div>
           <p class="svc-hero-disclaimer is-hidden">${esc(d.disclaimer||'Performed by [PROVIDER NAME], [CREDENTIALS]. Individual results may vary.')}</p>
         </div>
@@ -113,7 +113,7 @@ function hero(d, wizardJson){
             </div>
           </div>
 
-          <!-- Step 3: Detail/goal (botox, fillers, microneedling, weight-loss only) -->
+          <!-- Step 3: Detail/goal (botox, fillers, [SERVICE NAME], weight-loss only) -->
           <div x-show="inlineStep === 3">
             <div class="svc-card-grid">
               <template x-for="opt in getDetailOptions()" :key="opt.id">
@@ -360,7 +360,7 @@ function credentialStrip(d){
           </svg>
         </div>
         <div class="svc-cred-info">
-          <strong>100+ Five-Star Reviews</strong>
+          <strong>100+ Five-Star [REVIEWS]</strong>
           <span>Google and Healthgrades</span>
         </div>
       </div>
@@ -372,9 +372,9 @@ function credentialStrip(d){
 
 function steps(d){
   const st = d.steps_content || [
-    {n:1, title:'Book Your Free Meet and Greet', body:'Schedule a free telehealth call with [PROVIDER NAME] to talk through your goals and find the right care for you.'},
+    {n:1, title:'Book Your Free Meet and Greet', body:'Schedule a free [SERVICE NAME] call with [PROVIDER NAME] to talk through your goals and find the right care for you.'},
     {n:2, title:'Receive Your Custom Plan',       body:'[PROVIDER NAME] listens, evaluates, and builds a treatment plan built around your life. No cookie-cutter protocols.'},
-    {n:3, title:'Care Comes to You',              body:'At-home, in-office, or telehealth. Your choice. Your schedule. You are never just a number.'},
+    {n:3, title:'Care Comes to You',              body:'At-home, in-office, or [SERVICE NAME]. Your choice. Your schedule. You are never just a number.'},
   ];
   return `<section class="svc-section" aria-label="How It Works">
   <div class="container">
@@ -416,19 +416,19 @@ function serviceArea(d){
   const eyebrow = ((d.name||'SERVICE')+' NEAR YOU').toUpperCase();
   // Static SVG map — [STATE] outline with [COUNTY] highlighted.
   // Zero JS, zero external requests, instant render. Same approach as LaserAway's static coverage map.
-  return `<section class="svc-section" aria-label="Service Area">
+  return `<section class="svc-section" aria-label="[LOCATION PAGE]">
   <div class="container">
     <div class="svc-area-grid">
       <div class="svc-area-text">
         <span class="eyebrow">${eyebrow}</span>
         <h2 class="svc-section-title">Serving <em>[CITY]</em> and All of [COUNTY]</h2>
-        <p>We deliver ${esc(d.name||'care')} to [CITY], [CITY], [CITY], [CITY], [CITY], and all of [COUNTY], FL.${d.telehealth_statewide ? ' Telehealth appointments are available statewide across [STATE].' : ''}</p>
+        <p>We deliver ${esc(d.name||'care')} to [CITY], [CITY], [CITY], [CITY], [CITY], and all of [COUNTY], FL.${d.telehealth_statewide ? ' [SERVICE NAME] appointments are available statewide across [STATE].' : ''}</p>
         <div class="svc-area-links">
           <a href="/locations/wellington-fl.html" class="svc-area-link">[CITY]</a>
           <a href="/locations/loxahatchee-fl.html" class="svc-area-link">[CITY]</a>
           <a href="/locations/royal-palm-beach-fl.html" class="svc-area-link">[CITY]</a>
           <a href="/locations/west-palm-beach-fl.html" class="svc-area-link">[CITY]</a>
-          <a class="svc-area-link" href="/about/service-area.html">View Full Service Area</a>
+          <a class="svc-area-link" href="/about/service-area.html">View Full [LOCATION PAGE]</a>
         </div>
       </div>
       <div class="svc-area-map" style="border-radius:var(--radius);overflow:hidden;min-height:300px;">
@@ -451,31 +451,31 @@ const TILE = {
   'iv-therapy':              'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
   'botox':                   'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
   'dermal-fillers':          'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
-  'microneedling':           'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
+  '[SERVICE NAME]':           'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
   'prp-facial':              'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
   'prp-hair':                'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
   'weight-loss':             'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
   'peptides':                'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
   'wellness':                'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
-  'b12-injections':          'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
-  'cryotherapy':             'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
+  '[SERVICE NAME]-injections':          'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
+  '[SERVICE NAME]':             'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
   'hormone-replacement-therapy': 'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
-  'fertility':               'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
+  '[SERVICE NAME]':               'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
   'in-home-primary-care':    'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
   'urgent-care':             'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
-  'telehealth':              'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
+  '[SERVICE NAME]':              'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
   'skilled-nursing':         'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image',
-  'membership':              'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'
+  '[SERVICE NAME]':              'https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'
 };
 
 const SERVICE_NAMES = {
-  'iv-therapy':'Mobile IV Therapy','botox':'Botox','dermal-fillers':'Dermal Fillers',
-  'microneedling':'Microneedling','prp-facial':'PRP Vampire Facial','prp-hair':'PRP Hair Restoration',
-  'weight-loss':'Medical Weight Loss','peptides':'Peptide Therapy','wellness':'Wellness',
-  'b12-injections':'B12 Injections','cryotherapy':'Cryotherapy',
-  'hormone-replacement-therapy':'Hormone Therapy','fertility':'Fertility Care',
-  'in-home-primary-care':'In-Home Primary Care','urgent-care':'Urgent Care at Home',
-  'telehealth':'Telehealth','skilled-nursing':'Skilled Nursing','membership':'Membership'
+  'iv-therapy':'[service name]','botox':'[SERVICE NAME]','dermal-fillers':'[SERVICE NAME]',
+  '[SERVICE NAME]':'[SERVICE NAME]','prp-facial':'[SERVICE NAME] Vampire Facial','prp-hair':'[SERVICE NAME] Restoration',
+  'weight-loss':'[SERVICE CATEGORY]','peptides':'[SERVICE NAME] Therapy','wellness':'[SERVICE CATEGORY]',
+  '[SERVICE NAME]-injections':'[SERVICE NAME]','[SERVICE NAME]':'[SERVICE NAME]',
+  'hormone-replacement-therapy':'[service name]','[SERVICE NAME]':'[SERVICE NAME] Care',
+  'in-home-primary-care':'In-Home [SERVICE CATEGORY]','urgent-care':'[SERVICE CATEGORY] at Home',
+  '[SERVICE NAME]':'[SERVICE NAME]','skilled-nursing':'[SERVICE CATEGORY]','[SERVICE NAME]':'[SERVICE NAME]'
 };
 
 // ---- Before & After gallery — auto-scroll carousel -------------------------
@@ -530,11 +530,11 @@ function relatedServices(d){
         <div class="related-card-label">${esc(name)}</div>
       </a>`;
   }).join('');
-  return `<section class="svc-section-alt" aria-label="Related Services">
+  return `<section class="svc-section-alt" aria-label="Related [SERVICES]">
   <div class="container">
     <div style="text-align:center;margin-bottom:2rem">
       <span class="eyebrow">EXPLORE MORE</span>
-      <h2 class="svc-section-title centered">Related Services</h2>
+      <h2 class="svc-section-title centered">Related [SERVICES]</h2>
     </div>
     <div class="related-grid">
       ${cards}
@@ -628,7 +628,7 @@ function seoTerms(d, section){
 
   const generated = auto[section] || auto.page;
   const manual    = (d.seo && d.seo[section]) ? d.seo[section] : [];
-  // merge, dedupe, then strip any consecutive duplicate words (e.g. "mobile mobile iv therapy")
+  // merge, dedupe, then strip any consecutive duplicate words (e.g. "mobile [SERVICE NAME] therapy")
   const merged = [...new Set([...generated, ...manual])]
     .map(t => t.replace(/\b(\w+)(\s+\1\b)+/gi, '$1').trim())
     .filter(Boolean);
@@ -724,7 +724,7 @@ generated: ${today}
     md += `> "${d.testimonial.quote}"\n>\n> — ${attr}${city}\n\n`;
   }
 
-  // --- FAQ section ---
+  // --- [FAQ] section ---
   if(d.faq && d.faq.length){
     md += `## Frequently Asked Questions\n\n`;
     md += `**Keywords:** ${seoTerms(d,'faq')}\n\n`;
@@ -850,7 +850,7 @@ const PAGE_WIZARD = ${wz};
 </script>
 <script src="../wizard/engine.js"></script>
 <script>
-// FAQ accordion
+// [FAQ] accordion
 document.querySelectorAll('.faq-question').forEach(function(q){
   q.addEventListener('click', function(){
     q.closest('.faq-item').classList.toggle('open');

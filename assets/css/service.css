@@ -664,7 +664,7 @@
 }
 .svc-byline-text strong { color: var(--blue); display: block; margin-bottom: 0.2rem; }
 
-/* ---------- FAQ accordion ---------- */
+/* ---------- [FAQ] accordion ---------- */
 .svc-faq-header {
   text-align: center;
   margin-bottom: 2rem;
@@ -833,7 +833,7 @@
 
 /* --- Touch target fixes (P1) — min 48px on all interactive elements --- */
 
-/* FAQ: full-row tap target, icon bump */
+/* [FAQ]: full-row tap target, icon bump */
 .faq-question {
   min-height: 48px;
   padding: 0.875rem 0;
@@ -1098,7 +1098,7 @@
   .svc-cred-badges { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
 
-/* ---------- FAQ section — full-width, larger font ---------- */
+/* ---------- [FAQ] section — full-width, larger font ---------- */
 .svc-faq-section {
   background: var(--white);
   padding: 72px 0;

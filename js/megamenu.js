@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // -----------------------------------------------------------------------
-  // Header "About Us" / "Plans & Pricing" dropdowns
+  // Header "[ABOUT]" / "Plans & [PRICING]" dropdowns
   // Hover with 150ms close delay (same pattern as mega-menu) + click for touch
   // -----------------------------------------------------------------------
   const headerDropdownItems = document.querySelectorAll('.header-nav-item');
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -----------------------------------------------------------------------
-  // FAQ accordion (non-Alpine pages)
+  // [FAQ] accordion (non-Alpine pages)
   // -----------------------------------------------------------------------
   const faqTabs = document.querySelectorAll('.faq-tab');
   const faqPanels = document.querySelectorAll('.faq-panel[data-tab]');
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (faqTabs.length > 0) faqTabs[0].click();
 
   // -----------------------------------------------------------------------
-  // FAQ question accordion
+  // [FAQ] question accordion
   // -----------------------------------------------------------------------
   document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', () => {

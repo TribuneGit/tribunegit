@@ -1,5 +1,5 @@
 {
-  "slug": "membership",
+  "slug": "[SERVICE NAME]",
   "category": "[Category]",
   "name": "[Service Name]",
   "h1": "[Service Name] in [CITY], [STATE]",
@@ -10,7 +10,7 @@
   "hero_image": "https://placehold.co/1600x900/e8e8e8/aaaaaa?text=Hero",
   "hero_perks": [
     "[placeholder text]",
-    "Monthly IV therapy included",
+    "Monthly [service category] included",
     "No contracts, cancel anytime"
   ],
   "fact_chips": [
@@ -58,9 +58,9 @@
     "[placeholder text]",
     "[placeholder text]"
   ],
-  "about_headline": "Membership That Pays for Itself",
+  "about_headline": "[SERVICE NAME] That Pays for Itself",
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
-  "menu_headline": "Membership Plans",
+  "menu_headline": "[SERVICE NAME] Plans",
   "sections": [
     {
       "id": "basic",
@@ -68,7 +68,7 @@
       "price": "$149/month",
       "body": "[placeholder text]",
       "items": [
-        "1 Myers IV Drip per month",
+        "1 [SERVICE NAME] per month",
         "[placeholder text]",
         "Priority scheduling",
         "Same-day appointment access",
@@ -81,8 +81,8 @@
       "price": "$349/month (Most Popular)",
       "body": "[placeholder text]",
       "items": [
-        "2 Myers IV Drips per month",
-        "1 B12 Shot per month",
+        "2 [SERVICE NAME]s per month",
+        "1 [SERVICE NAME] Shot per month",
         "[placeholder text]",
         "Advanced nutrition guidance",
         "Priority scheduling",
@@ -132,8 +132,8 @@
   "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "related": [
     "iv-therapy",
-    "b12-injections",
-    "telehealth"
+    "[SERVICE NAME]-injections",
+    "[SERVICE NAME]"
   ],
   "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "how_it_works": {

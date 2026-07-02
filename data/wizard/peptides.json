@@ -1,6 +1,6 @@
 {
   "slug": "peptides",
-  "serviceLabel": "Peptide Therapy",
+  "serviceLabel": "[SERVICE NAME] Therapy",
   "steps": [
     {
       "type": "cards-single",
@@ -20,7 +20,7 @@
         {
           "id": "antiaging",
           "icon": "✨",
-          "label": "Anti-aging"
+          "label": "[SERVICE NAME]"
         },
         {
           "id": "unsure",
@@ -43,7 +43,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "Peptide Therapy"
+      "serviceLabel": "[SERVICE NAME] Therapy"
     }
   ]
 }

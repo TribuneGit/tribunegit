@@ -1,41 +1,41 @@
 ---
-title: Pricing | Concierge Healthcare [CITY], FL | [COMPANY NAME]
-description: Transparent pricing for concierge healthcare in [CITY] and [COUNTY]. In-home primary care, IV therapy, medical weight loss, aesthetics, and membership plans.
+title: [PRICING] | Concierge Healthcare [CITY], FL | [COMPANY NAME]
+description: Transparent pricing for concierge healthcare in [CITY] and [COUNTY]. [SERVICE NAME], [service category], [service category], aesthetics, and [SERVICE NAME] plans.
 url: https://www.[DOMAIN]/pricing.html
 provider: [PROVIDER NAME], [CREDENTIALS]
 generated: 2026-06-11
 ---
 
-# [COMPANY NAME] — Pricing
+# [COMPANY NAME] — [PRICING]
 
 ---
 
-## Service Pricing
+## Service [PRICING]
 
 **Keywords:** beyond concierge healthcare pricing wellington fl, in-home healthcare cost palm beach county, nurse practitioner visit price florida, concierge healthcare fees wellington
 
 | Service | Starting Price |
 |---|---|
-| In-Home Primary Care | $100+ |
-| Telehealth Visit | $60+ |
-| Medical Weight Loss Program | $300+ |
-| Mobile IV Therapy (per session) | $100+ |
-| PRP Hair Restoration | $300+ |
+| In-Home [SERVICE CATEGORY] | $100+ |
+| [SERVICE NAME] Visit | $60+ |
+| [SERVICE CATEGORY] Program | $300+ |
+| [service name] (per session) | $100+ |
+| [SERVICE NAME] Restoration | $300+ |
 | Cosmetic Procedures (general) | $100+ |
 
-Insurance not accepted (some lab exceptions). Payment: Cash, Visa, Mastercard, Amex, Discover. Payment plans available.
+Insurance not accepted (some lab exceptions). Payment: Cash, Visa, Mastercard, Amex, Discover. [NAVIGATION ITEM] available.
 
-## IV Therapy Membership Plans
+## [SERVICE CATEGORY] [SERVICE NAME] Plans
 
-**Keywords:** iv therapy membership wellington fl, beyond concierge membership plans palm beach, monthly iv therapy membership florida, 25% off healthcare membership
+**Keywords:** iv therapy [SERVICE NAME] wellington fl, beyond concierge [SERVICE NAME] plans palm beach, monthly iv therapy [SERVICE NAME] florida, 25% off healthcare [SERVICE NAME]
 
-| Plan | Monthly Price | IV Sessions | Savings |
+| Plan | Monthly Price | IV Sessions | [NAVIGATION ITEM] |
 |---|---|---|---|
 | Basic | $149/mo | 1 IV/mo | 25% off all other services |
 | Plus | $349/mo | 3 IVs/mo | 25% off all other services |
 | Elite | $549/mo | 5 IVs/mo | 25% off all other services |
 
-All membership plans include 25% off all other BCH services. No contracts. Cancel anytime.
+All [SERVICE NAME] plans include 25% off all other BCH services. No contracts. Cancel anytime.
 
 
 ---

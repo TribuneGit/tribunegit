@@ -22,7 +22,7 @@ About [PROVIDER NAME], [CREDENTIALS] — certified Nurse Practitioner with over 
 
 **Keywords:** gabrielle radabaugh nurse practitioner background, fnp-c palm beach county florida, concierge healthcare provider biography, nurse practitioner loxahatchee fl
 
-My name is [PROVIDER NAME], a certified Nurse Practitioner with over six years of experience in healthcare. I live in [CITY] and service all of [COUNTY], FL. I am dedicated to providing comprehensive, patient-centered care. I specialize in family medicine, aesthetic procedures, weight loss, and peptide therapy.
+My name is [PROVIDER NAME], a certified Nurse Practitioner with over six years of experience in healthcare. I live in [CITY] and service all of [COUNTY], FL. I am dedicated to providing comprehensive, patient-centered care. I specialize in family medicine, aesthetic procedures, weight loss, and [service name].
 
 I founded [COMPANY NAME] because I believe healthcare should fit your life — not the other way around. No waiting rooms, no rushed 10-minute appointments, no assembly-line medicine. Just you and me, focused entirely on your health and goals.
 
@@ -38,12 +38,12 @@ I founded [COMPANY NAME] because I believe healthcare should fit your life — n
 - **Degree:** Master of Science, South University
 - **Certification:** Board Certified Family Nurse Practitioner ([CREDENTIALS])
 - **License:** [STATE] Licensed [CREDENTIALS]
-- **Membership:** AANP (American Association of Nurse Practitioners)
+- **[SERVICE NAME]:** AANP (American Association of Nurse Practitioners)
 - **Experience:** 6+ years in healthcare
-- **Specializations:** Family medicine, aesthetics, weight loss, peptide therapy
+- **Specializations:** Family medicine, aesthetics, weight loss, [service name]
 - **HIPAA Compliant Practice**
 
-## Patient Reviews
+## Patient [REVIEWS]
 
 **Keywords:** gabrielle radabaugh reviews, beyond concierge healthcare testimonials palm beach, nurse practitioner reviews wellington fl
 

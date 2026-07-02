@@ -1,6 +1,6 @@
 {
   "slug": "wellness",
-  "serviceLabel": "Wellness",
+  "serviceLabel": "[SERVICE CATEGORY]",
   "steps": [
     {
       "type": "cards-single",
@@ -43,7 +43,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "Wellness"
+      "serviceLabel": "[SERVICE CATEGORY]"
     }
   ]
 }

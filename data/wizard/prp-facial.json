@@ -1,6 +1,6 @@
 {
   "slug": "prp-facial",
-  "serviceLabel": "PRP Vampire Facial",
+  "serviceLabel": "[SERVICE NAME] Vampire Facial",
   "steps": [
     {
       "type": "cards-single",
@@ -43,7 +43,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "PRP Vampire Facial"
+      "serviceLabel": "[SERVICE NAME] Vampire Facial"
     }
   ]
 }

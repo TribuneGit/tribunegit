@@ -22,7 +22,7 @@ generated: 2026-07-02
 [Brief hero value proposition for this service.]
 
 - Prescribed by a licensed NP
-- Recovery, anti-aging, performance
+- Recovery, [SERVICE NAME], performance
 - We come to you
 
 ## About [Service Name]
@@ -47,7 +47,7 @@ generated: 2026-07-02
 
 [placeholder text]
 
-## Peptide Protocols
+## [SERVICE NAME] Protocols
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 

@@ -1,6 +1,6 @@
 {
-  "slug": "telehealth",
-  "serviceLabel": "Telehealth Visit",
+  "slug": "[SERVICE NAME]",
+  "serviceLabel": "[SERVICE NAME] Visit",
   "steps": [
     {
       "type": "list-single",
@@ -35,7 +35,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "Telehealth Visit"
+      "serviceLabel": "[SERVICE NAME] Visit"
     }
   ]
 }

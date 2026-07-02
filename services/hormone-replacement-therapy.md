@@ -22,7 +22,7 @@ generated: 2026-07-02
 [Brief hero value proposition for this service.]
 
 - Personalized hormone evaluation
-- In-home or telehealth
+- In-home or [SERVICE NAME]
 - Lab-based treatment decisions
 
 ## About [Service Name]
@@ -33,7 +33,7 @@ generated: 2026-07-02
 
 [placeholder text]
 
-[CONTENT GAP — provider copy needed for specific HRT program details. All sub-services require provider-approved content before launch.]
+[CONTENT GAP — provider copy needed for specific [SERVICE NAME] program details. All sub-services require provider-approved content before launch.]
 
 ## How [Service Name] Works
 
@@ -47,7 +47,7 @@ generated: 2026-07-02
 
 [placeholder text]
 
-## Hormone Services
+## Hormone [SERVICES]
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 

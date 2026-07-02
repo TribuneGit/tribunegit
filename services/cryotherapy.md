@@ -22,8 +22,8 @@ generated: 2026-07-02
 [Brief hero value proposition for this service.]
 
 - We come to you
-- Aesthetic, orthopedic, and sports applications
-- Cryotherapy parties available
+- [SERVICE CATEGORY], orthopedic, and sports applications
+- [SERVICE NAME] parties available
 
 ## About [Service Name]
 
@@ -47,7 +47,7 @@ generated: 2026-07-02
 
 [placeholder text]
 
-## Cryotherapy Applications
+## [SERVICE NAME] Applications
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 
@@ -101,4 +101,4 @@ A: [Answer to this frequently asked question.]
 **Service area:** [CITY], [CITY], [CITY], [CITY], [CITY], and all of [COUNTY], FL.  
 **Website:** [URL]  
 
-*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/cryotherapy.json`.*
+*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/[SERVICE NAME].json`.*

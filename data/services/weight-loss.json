@@ -10,8 +10,8 @@
   "hero_image": "https://placehold.co/1600x900/e8e8e8/aaaaaa?text=Hero",
   "hero_perks": [
     "Monthly NP supervision",
-    "GLP-1 medication programs",
-    "In-home or telehealth visits"
+    "[SERVICE NAME] medication programs",
+    "In-home or [SERVICE NAME] visits"
   ],
   "fact_chips": [
     {
@@ -56,11 +56,11 @@
   "about": [
     "[placeholder text]",
     "[placeholder text]",
-    "All appointments are available in-home or via telehealth, so there is no commute and no waiting rooms. Just focused, one-on-one care designed to get you results."
+    "All appointments are available in-home or via [SERVICE NAME], so there is no commute and no waiting rooms. Just focused, one-on-one care designed to get you results."
   ],
-  "about_headline": "Lasting Medical Weight Loss That Comes to You",
+  "about_headline": "Lasting [SERVICE CATEGORY] That Comes to You",
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
-  "menu_headline": "Our Weight Loss Programs",
+  "menu_headline": "Our [SERVICE CATEGORY] Programs",
   "sections": [
     {
       "id": "glp1-overview",
@@ -68,12 +68,12 @@
       "body": "[placeholder text]"
     },
     {
-      "id": "semaglutide",
+      "id": "[SERVICE NAME]",
       "title": "[placeholder text]",
       "body": "[placeholder text]"
     },
     {
-      "id": "tirzepatide",
+      "id": "[SERVICE NAME]",
       "title": "[placeholder text]",
       "body": "[placeholder text]"
     },
@@ -117,13 +117,13 @@
     "name": "[Service Name]",
     "city": "[placeholder text]"
   },
-  "cta_headline": "Ready to Start Your <em>Weight Loss Journey</em>?",
+  "cta_headline": "Ready to Start Your <em>[SERVICE CATEGORY] Journey</em>?",
   "cta_body": "[placeholder text]",
   "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "related": [
-    "telehealth",
+    "[SERVICE NAME]",
     "in-home-primary-care",
-    "membership"
+    "[SERVICE NAME]"
   ],
   "gallery": [
     "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",

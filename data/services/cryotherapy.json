@@ -1,5 +1,5 @@
 {
-  "slug": "cryotherapy",
+  "slug": "[SERVICE NAME]",
   "category": "[Category]",
   "name": "[Service Name]",
   "h1": "[Service Name] in [CITY], [STATE]",
@@ -10,8 +10,8 @@
   "hero_image": "https://placehold.co/1600x900/e8e8e8/aaaaaa?text=Hero",
   "hero_perks": [
     "We come to you",
-    "Aesthetic, orthopedic, and sports applications",
-    "Cryotherapy parties available"
+    "[SERVICE CATEGORY], orthopedic, and sports applications",
+    "[SERVICE NAME] parties available"
   ],
   "fact_chips": [
     {
@@ -58,9 +58,9 @@
     "[placeholder text]",
     "[placeholder text]"
   ],
-  "about_headline": "Mobile Cryotherapy for Recovery, Aesthetics, and Performance",
+  "about_headline": "Mobile [SERVICE NAME] for Recovery, [SERVICE CATEGORY], and Performance",
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
-  "menu_headline": "Cryotherapy Applications",
+  "menu_headline": "[SERVICE NAME] Applications",
   "sections": [
     {
       "id": "aesthetic-cosmetic",
@@ -111,7 +111,7 @@
   "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "related": [
     "iv-therapy",
-    "b12-injections",
+    "[SERVICE NAME]-injections",
     "prp-facial"
   ],
   "gallery": [

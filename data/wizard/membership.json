@@ -1,6 +1,6 @@
 {
-  "slug": "membership",
-  "serviceLabel": "Concierge Membership",
+  "slug": "[SERVICE NAME]",
+  "serviceLabel": "Concierge [SERVICE NAME]",
   "steps": [
     {
       "type": "list-single",
@@ -36,7 +36,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "Concierge Membership"
+      "serviceLabel": "Concierge [SERVICE NAME]"
     }
   ]
 }

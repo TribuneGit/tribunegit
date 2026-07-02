@@ -23,9 +23,9 @@ if (fs.existsSync(LOG_PATH)) log = JSON.parse(fs.readFileSync(LOG_PATH));
 
 const ASSETS = [
   // Images
-  { old_id: '[company-slug]/bch-cryotherapy-v1', fmt: 'png', type: 'image' },
-  { old_id: '[company-slug]/bch-microneedling-prp-v1', fmt: 'png', type: 'image' },
-  { old_id: '[company-slug]/bch-microneedling-prp-v2', fmt: 'png', type: 'image' },
+  { old_id: '[company-slug]/bch-[SERVICE NAME]-v1', fmt: 'png', type: 'image' },
+  { old_id: '[company-slug]/bch-[SERVICE NAME]-prp-v1', fmt: 'png', type: 'image' },
+  { old_id: '[company-slug]/bch-[SERVICE NAME]-prp-v2', fmt: 'png', type: 'image' },
   { old_id: '[company-slug]/bch-payment-plans-hero', fmt: 'jpg', type: 'image' },
   { old_id: '[company-slug]/bch-pricing-hero', fmt: 'jpg', type: 'image' },
   { old_id: '[company-slug]/bch-prp-facial-hair-v1', fmt: 'png', type: 'image' },

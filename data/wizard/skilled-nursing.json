@@ -1,6 +1,6 @@
 {
   "slug": "skilled-nursing",
-  "serviceLabel": "Skilled Nursing",
+  "serviceLabel": "[SERVICE CATEGORY]",
   "steps": [
     {
       "type": "list-single",
@@ -31,7 +31,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "Skilled Nursing"
+      "serviceLabel": "[SERVICE CATEGORY]"
     }
   ]
 }

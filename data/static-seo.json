@@ -31,11 +31,11 @@
   "pricing": {
     "hero": [],
     "table": [],
-    "membership": []
+    "[SERVICE NAME]": []
   },
   "savings": {
     "hero": [],
-    "membership": []
+    "[SERVICE NAME]": []
   },
   "gabby": {
     "hero": [],
@@ -53,7 +53,7 @@
     "services": [],
     "area": []
   },
-  "iv-memberships": {
+  "service-slug": {
     "hero": [],
     "plans": [],
     "why": [],
@@ -72,7 +72,7 @@
     "hero": [],
     "menu": []
   },
-  "iv-nad": {
+  "service-slug": {
     "hero": [],
     "benefits": [],
     "how": [],

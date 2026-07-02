@@ -27,9 +27,9 @@ generated: 2026-07-02
 
 ## About [Service Name]
 
-**Keywords:** [service name] treatments wellington fl, [service name] benefits palm beach county, best [service name] wellington fl, [service name] concierge service florida, [service name] near me palm beach county, semaglutide GLP-1 receptor agonist, weekly semaglutide injection, FDA approved weight loss medication
+**Keywords:** [service name] treatments wellington fl, [service name] benefits palm beach county, best [service name] wellington fl, [service name] concierge service florida, [service name] near me palm beach county, [SERVICE NAME] [SERVICE NAME] receptor agonist, weekly [SERVICE NAME] injection, FDA approved weight loss medication
 
-Semaglutide is an FDA-approved GLP-1 receptor agonist administered as a weekly injection. It reduces appetite by mimicking a natural gut hormone that signals fullness to your brain. Most patients eat less without constant willpower or feeling deprived.
+[SERVICE NAME] is an FDA-approved [SERVICE NAME] receptor agonist administered as a weekly injection. It reduces appetite by mimicking a natural gut hormone that signals fullness to your brain. Most patients eat less without constant willpower or feeling deprived.
 
 [placeholder text]
 
@@ -37,7 +37,7 @@ Most patients lose 10 to 15 percent of their body weight over 12 to 16 months. R
 
 ## How [Service Name] Works
 
-**Keywords:** how [service name] works, [service name] procedure wellington fl, [service name] treatment process palm beach, concierge [service name] appointment florida, [service name] in-home visit wellington, semaglutide how it works, GLP-1 hormone appetite control, semaglutide dosing schedule
+**Keywords:** how [service name] works, [service name] procedure wellington fl, [service name] treatment process palm beach, concierge [service name] appointment florida, [service name] in-home visit wellington, [SERVICE NAME] how it works, [SERVICE NAME] hormone appetite control, [SERVICE NAME] dosing schedule
 
 **Treatment Time:** 30-45 min consult  
 **Downtime:** None  
@@ -47,7 +47,7 @@ Most patients lose 10 to 15 percent of their body weight over 12 to 16 months. R
 
 [placeholder text]
 
-## How Semaglutide Works
+## How [SERVICE NAME] Works
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 
@@ -89,7 +89,7 @@ Most patients lose 10 to 15 percent of their body weight over 12 to 16 months. R
 
 ## Frequently Asked Questions
 
-**Keywords:** [service name] faq wellington fl, [service name] cost palm beach county, [service name] questions and answers, is [service name] safe, how long does [service name] take, [service name] side effects, semaglutide results timeline, semaglutide who qualifies, semaglutide vs ozempic
+**Keywords:** [service name] faq wellington fl, [service name] cost palm beach county, [service name] questions and answers, is [service name] safe, how long does [service name] take, [service name] side effects, [SERVICE NAME] results timeline, [SERVICE NAME] who qualifies, [SERVICE NAME] vs ozempic
 
 **Q: [Frequently asked question?]**  
 A: [Answer to this frequently asked question.]
@@ -123,4 +123,4 @@ A: [Answer to this frequently asked question.]
 **Service area:** [CITY], [CITY], [CITY], [CITY], [CITY], and all of [COUNTY], FL.  
 **Website:** [URL]  
 
-*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/semaglutide.json`.*
+*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/[SERVICE NAME].json`.*

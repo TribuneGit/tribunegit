@@ -25,12 +25,12 @@ generated: 2026-06-11
 **Hours:** 7 days a week, 8am–8pm  
 **Response time:** 90-minute average  
 
-## Service Area
+## [LOCATION PAGE]
 
 **Keywords:** beyond concierge healthcare service area, in-home healthcare wellington loxahatchee, mobile nurse practitioner royal palm beach fl, concierge healthcare westlake jupiter fl
 
 [CITY] · [CITY] · [CITY] · [CITY] · [CITY] · and all of [COUNTY], FL  
-Telehealth available statewide across [STATE].
+[SERVICE NAME] available statewide across [STATE].
 
 ## Cancellation Policy
 

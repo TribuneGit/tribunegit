@@ -1,6 +1,6 @@
 {
   "slug": "botox",
-  "serviceLabel": "Botox",
+  "serviceLabel": "[SERVICE NAME]",
   "steps": [
     {
       "type": "cards-multi",
@@ -53,7 +53,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "Botox"
+      "serviceLabel": "[SERVICE NAME]"
     }
   ]
 }

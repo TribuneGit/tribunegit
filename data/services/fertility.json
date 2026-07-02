@@ -1,5 +1,5 @@
 {
-  "slug": "fertility",
+  "slug": "[SERVICE NAME]",
   "category": "[Category]",
   "name": "[Service Name]",
   "h1": "[Service Name] in [CITY], [STATE]",
@@ -10,7 +10,7 @@
   "hero_image": "https://placehold.co/1600x900/e8e8e8/aaaaaa?text=Hero",
   "hero_perks": [
     "Men, women, and couples",
-    "Telehealth statewide Florida",
+    "[SERVICE NAME] statewide Florida",
     "[placeholder text]"
   ],
   "telehealth_statewide": true,
@@ -59,24 +59,24 @@
     "7.4 million women (about 12% of women of reproductive age) in the United States have difficulty getting pregnant or staying pregnant. Infertility affects both men and women equally. The good news: approximately 90% of cases are treated with drug therapy or surgical procedures, without IVF.",
     "[placeholder text]"
   ],
-  "about_headline": "Caring Fertility Support for Men, Women, and Couples",
+  "about_headline": "Caring [SERVICE NAME] Support for Men, Women, and Couples",
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
-  "menu_headline": "Fertility Services",
+  "menu_headline": "[SERVICE NAME] [SERVICES]",
   "sections": [
     {
-      "id": "womens-fertility",
+      "id": "womens-[SERVICE NAME]",
       "title": "[placeholder text]",
       "body": "[placeholder text]",
       "items": [
         "Hormone evaluation and balancing",
         "Cycle tracking guidance",
         "Ovulation support",
-        "[CONTENT GAP: PRP ovarian rejuvenation — provider copy needed]",
+        "[CONTENT GAP: [SERVICE NAME] ovarian rejuvenation — provider copy needed]",
         "Referral coordination for advanced treatments"
       ]
     },
     {
-      "id": "mens-fertility",
+      "id": "mens-[SERVICE NAME]",
       "title": "[placeholder text]",
       "body": "[placeholder text]",
       "items": [
@@ -115,7 +115,7 @@
   "cta_body": "[placeholder text]",
   "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "related": [
-    "telehealth",
+    "[SERVICE NAME]",
     "in-home-primary-care",
     "wellness"
   ],

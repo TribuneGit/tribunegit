@@ -55,10 +55,10 @@
   ],
   "about": [
     "[placeholder text]",
-    "[CONTENT GAP — provider copy needed for specific skilled nursing program details. All sub-service descriptions require provider-approved content before launch.]"
+    "[CONTENT GAP — provider copy needed for specific [service category] program details. All sub-service descriptions require provider-approved content before launch.]"
   ],
-  "about_headline": "Skilled Nursing Care in Your Home",
-  "menu_headline": "Skilled Nursing Services",
+  "about_headline": "[SERVICE CATEGORY] Care in Your Home",
+  "menu_headline": "[SERVICE CATEGORY] [SERVICES]",
   "sections": [
     {
       "id": "wound-care",
@@ -76,7 +76,7 @@
       "body": "[placeholder text]"
     },
     {
-      "id": "infusion-therapy",
+      "id": "[service name]-therapy",
       "title": "[placeholder text]",
       "body": "[placeholder text]"
     }
@@ -88,13 +88,13 @@
     "name": "[Service Name]",
     "city": "[placeholder text]"
   },
-  "cta_headline": "Need Extended In-Home Care?",
+  "cta_headline": "Need Extended [SERVICE NAME]?",
   "cta_body": "[placeholder text]",
   "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "related": [
     "in-home-primary-care",
     "urgent-care",
-    "telehealth"
+    "[SERVICE NAME]"
   ],
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",

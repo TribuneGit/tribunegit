@@ -46,7 +46,7 @@ generated: 2026-07-02
 
 [placeholder text]
 
-## What In-Home Primary Care Covers
+## What In-Home [SERVICE CATEGORY] Covers
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 

@@ -1,42 +1,42 @@
 ---
-title: NAD+ IV Therapy in [CITY], FL | [COMPANY NAME]
-description: Mobile NAD+ IV therapy delivered to your home in [CITY] and [COUNTY]. Cellular energy, anti-aging, brain clarity, and recovery support from [PROVIDER NAME], [CREDENTIALS].
-url: https://www.[DOMAIN]/services/iv-nad.html
+title: [SERVICE NAME]+ [SERVICE CATEGORY] in [CITY], FL | [COMPANY NAME]
+description: Mobile [SERVICE NAME]+ [service category] delivered to your home in [CITY] and [COUNTY]. Cellular energy, [SERVICE NAME], brain clarity, and recovery support from [PROVIDER NAME], [CREDENTIALS].
+url: https://www.[DOMAIN]/services/service-slug.html
 provider: [PROVIDER NAME], [CREDENTIALS]
 generated: 2026-06-11
 ---
 
-# NAD+ IV Therapy — [CITY], FL
+# [SERVICE NAME]+ [SERVICE CATEGORY] — [CITY], FL
 
-> Nicotinamide Adenine Dinucleotide (NAD+) IV therapy for cellular renewal, energy, brain clarity, and recovery. Delivered to your home by [PROVIDER NAME].
+> Nicotinamide Adenine Dinucleotide ([SERVICE NAME]+) [service category] for cellular renewal, energy, brain clarity, and recovery. Delivered to your home by [PROVIDER NAME].
 
 ---
 
-## What is NAD+ IV Therapy?
+## What is [SERVICE NAME]+ [SERVICE CATEGORY]?
 
-**Keywords:** nad+ iv therapy wellington fl, nad+ infusion palm beach county, nicotinamide adenine dinucleotide iv florida, nad+ iv anti-aging wellington, mobile nad+ therapy palm beach fl
+**Keywords:** [SERVICE NAME] therapy wellington fl, [SERVICE NAME]+ [service name] palm beach county, nicotinamide adenine dinucleotide iv florida, [SERVICE NAME] [SERVICE NAME] wellington, mobile [SERVICE NAME]+ therapy palm beach fl
 
-NAD+ (nicotinamide adenine dinucleotide) is a coenzyme essential for cellular energy production, DNA repair, and metabolic function. IV delivery bypasses digestion and delivers NAD+ directly to cells — far more effective than oral supplements.
+[SERVICE NAME]+ (nicotinamide adenine dinucleotide) is a coenzyme essential for cellular energy production, DNA repair, and metabolic function. IV delivery bypasses digestion and delivers [SERVICE NAME]+ directly to cells — far more effective than oral supplements.
 
 ## Benefits
 
-**Keywords:** nad+ iv benefits wellington fl, nad+ therapy for energy florida, nad+ brain clarity palm beach county, nad+ anti-aging iv drip florida, nad+ addiction recovery iv therapy
+**Keywords:** [SERVICE NAME] benefits wellington fl, [SERVICE NAME]+ therapy for energy florida, [SERVICE NAME]+ brain clarity palm beach county, [SERVICE NAME]+ [SERVICE NAME] [SERVICE NAME] florida, [SERVICE NAME]+ addiction recovery iv therapy
 
-Clients report: sustained energy without stimulants · improved mental clarity and focus · reduced brain fog · anti-aging cellular support · improved athletic recovery · support for addiction recovery · better sleep quality.
+Clients report: sustained energy without stimulants · improved mental clarity and focus · reduced brain fog · [SERVICE NAME] cellular support · improved athletic recovery · support for addiction recovery · better sleep quality.
 
 ## How It Works
 
-**Keywords:** how nad+ iv therapy works, nad+ iv session process wellington fl, how long does nad+ iv take, nad+ iv dose palm beach county florida
+**Keywords:** how [SERVICE NAME] therapy works, [SERVICE NAME] session process wellington fl, how long does [SERVICE NAME] take, [SERVICE NAME] dose palm beach county florida
 
 **Time:** 1-4 hours depending on dose | **Downtime:** None | **Location:** We come to you
 
-[PROVIDER NAME] administers NAD+ slowly via IV to minimize any discomfort. Dose is tailored to your goals and health history. Sessions are done in your home — you can read, work, or relax during the infusion.
+[PROVIDER NAME] administers [SERVICE NAME]+ slowly via IV to minimize any discomfort. Dose is tailored to your goals and health history. Sessions are done in your home — you can read, work, or relax during the [service name].
 
 ## Provider Note
 
-**Keywords:** gabrielle radabaugh nad+ therapy, nurse practitioner nad+ wellington fl, board certified nad+ iv provider florida
+**Keywords:** gabrielle radabaugh [SERVICE NAME]+ therapy, nurse practitioner [SERVICE NAME]+ wellington fl, board certified [SERVICE NAME] provider florida
 
-All NAD+ sessions are administered by [PROVIDER NAME], [CREDENTIALS]. She evaluates your health history before your first session and adjusts dosing based on your response.
+All [SERVICE NAME]+ sessions are administered by [PROVIDER NAME], [CREDENTIALS]. She evaluates your health history before your first session and adjusts dosing based on your response.
 
 *[PROVIDER NAME], [CREDENTIALS]. Board Certified Family Nurse Practitioner. AANP Member.*
 

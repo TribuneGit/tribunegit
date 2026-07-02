@@ -31,7 +31,7 @@ generated: 2026-07-02
 
 [placeholder text]
 
-[CONTENT GAP — provider copy needed for specific skilled nursing program details. All sub-service descriptions require provider-approved content before launch.]
+[CONTENT GAP — provider copy needed for specific [service category] program details. All sub-service descriptions require provider-approved content before launch.]
 
 ## How [Service Name] Works
 
@@ -45,7 +45,7 @@ generated: 2026-07-02
 
 [placeholder text]
 
-## Skilled Nursing Services
+## [SERVICE CATEGORY] [SERVICES]
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 

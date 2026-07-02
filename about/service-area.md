@@ -1,23 +1,23 @@
 ---
-title: Service Area | [COMPANY NAME] | [CITY], [COUNTY], FL
-description: [COMPANY NAME] serves [CITY], [CITY], [CITY], [CITY], [CITY], [CITY], and all of [COUNTY], FL. Telehealth statewide.
+title: [LOCATION PAGE] | [COMPANY NAME] | [CITY], [COUNTY], FL
+description: [COMPANY NAME] serves [CITY], [CITY], [CITY], [CITY], [CITY], [CITY], and all of [COUNTY], FL. [SERVICE NAME] statewide.
 url: https://www.[DOMAIN]/about/service-area.html
 provider: [PROVIDER NAME], [CREDENTIALS]
 generated: 2026-06-11
 ---
 
-# [COMPANY NAME] — Service Area
+# [COMPANY NAME] — [LOCATION PAGE]
 
 ---
 
 ## Locations Served
 
-**Keywords:** beyond concierge healthcare service area florida, in-home healthcare palm beach county cities, mobile nurse practitioner cities served, concierge healthcare coverage palm beach fl, telehealth florida statewide nurse practitioner
+**Keywords:** beyond concierge healthcare service area florida, in-home healthcare palm beach county cities, mobile nurse practitioner cities served, concierge healthcare coverage palm beach fl, [SERVICE NAME] florida statewide nurse practitioner
 
-**In-Home & On-Site Service Area:**  
+**In-Home & On-Site [LOCATION PAGE]:**  
 [CITY] · [CITY] · [CITY] · [CITY] · [CITY] · [CITY] · [COUNTY] Gardens · Lake Worth · Boynton Beach · Boca Raton · and all of [COUNTY], FL
 
-**Telehealth:** Available statewide across [STATE].
+**[SERVICE NAME]:** Available statewide across [STATE].
 
 **Response time:** 90-minute average. Same-day appointments frequently available.  
 **Phone:** [PHONE] | **Book:** https://www.[DOMAIN]/book-now.html

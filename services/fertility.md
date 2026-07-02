@@ -22,7 +22,7 @@ generated: 2026-07-02
 [Brief hero value proposition for this service.]
 
 - Men, women, and couples
-- Telehealth statewide Florida
+- [SERVICE NAME] statewide Florida
 - [placeholder text]
 
 ## About [Service Name]
@@ -47,7 +47,7 @@ generated: 2026-07-02
 
 [placeholder text]
 
-## Fertility Services
+## [SERVICE NAME] [SERVICES]
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 
@@ -111,4 +111,4 @@ A: [Answer to this frequently asked question.]
 **Service area:** [CITY], [CITY], [CITY], [CITY], [CITY], and all of [COUNTY], FL.  
 **Website:** [URL]  
 
-*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/fertility.json`.*
+*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/[SERVICE NAME].json`.*

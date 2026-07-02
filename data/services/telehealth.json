@@ -1,5 +1,5 @@
 {
-  "slug": "telehealth",
+  "slug": "[SERVICE NAME]",
   "category": "[Category]",
   "name": "[Service Name]",
   "h1": "[Service Name] in [CITY], [STATE]",
@@ -60,7 +60,7 @@
     "[placeholder text]"
   ],
   "about_headline": "Real Healthcare. No Waiting Room.",
-  "menu_headline": "What We Cover via Telehealth",
+  "menu_headline": "What We Cover via [SERVICE NAME]",
   "sections": [
     {
       "id": "free-meet-greet",
@@ -119,7 +119,7 @@
   "related": [
     "in-home-primary-care",
     "weight-loss",
-    "fertility"
+    "[SERVICE NAME]"
   ],
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",

@@ -22,7 +22,7 @@ generated: 2026-07-02
 [Brief hero value proposition for this service.]
 
 - [placeholder text]
-- Monthly IV therapy included
+- Monthly [service category] included
 - No contracts, cancel anytime
 
 ## About [Service Name]
@@ -47,7 +47,7 @@ generated: 2026-07-02
 
 [placeholder text]
 
-## Membership Plans
+## [SERVICE NAME] Plans
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 
@@ -114,4 +114,4 @@ A: [Answer to this frequently asked question.]
 **Service area:** [CITY], [CITY], [CITY], [CITY], [CITY], and all of [COUNTY], FL.  
 **Website:** [URL]  
 
-*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/membership.json`.*
+*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/[SERVICE NAME].json`.*

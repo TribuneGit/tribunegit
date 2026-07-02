@@ -1,5 +1,5 @@
 {
-  "slug": "semaglutide",
+  "slug": "[SERVICE NAME]",
   "category": "[Category]",
   "name": "[Service Name]",
   "h1": "[Service Name] in [CITY], [STATE]",
@@ -58,13 +58,13 @@
     }
   ],
   "about": [
-    "Semaglutide is an FDA-approved GLP-1 receptor agonist administered as a weekly injection. It reduces appetite by mimicking a natural gut hormone that signals fullness to your brain. Most patients eat less without constant willpower or feeling deprived.",
+    "[SERVICE NAME] is an FDA-approved [SERVICE NAME] receptor agonist administered as a weekly injection. It reduces appetite by mimicking a natural gut hormone that signals fullness to your brain. Most patients eat less without constant willpower or feeling deprived.",
     "[placeholder text]",
     "Most patients lose 10 to 15 percent of their body weight over 12 to 16 months. Results vary by individual, but the combination of medical supervision and a personalized plan consistently delivers outcomes that diet and exercise alone have not."
   ],
-  "about_headline": "Semaglutide Weight Loss That Comes to You",
+  "about_headline": "[SERVICE NAME] [SERVICE CATEGORY] That Comes to You",
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
-  "menu_headline": "How Semaglutide Works",
+  "menu_headline": "How [SERVICE NAME] Works",
   "sections": [
     {
       "id": "how-it-works",
@@ -87,7 +87,7 @@
       "body": "[placeholder text]"
     },
     {
-      "id": "semaglutide-vs-ozempic",
+      "id": "[SERVICE NAME]-vs-ozempic",
       "title": "[placeholder text]",
       "body": "[placeholder text]"
     }
@@ -116,12 +116,12 @@
     "name": "[Service Name]",
     "city": "[placeholder text]"
   },
-  "cta_headline": "Ready to Start Your <em>Semaglutide Program</em>?",
+  "cta_headline": "Ready to Start Your <em>[SERVICE NAME] Program</em>?",
   "cta_body": "[placeholder text]",
   "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "related": [
     "weight-loss",
-    "tirzepatide",
+    "[SERVICE NAME]",
     "in-home-primary-care"
   ],
   "gallery": [
@@ -148,19 +148,19 @@
       "[placeholder text]"
     ],
     "about": [
-      "semaglutide GLP-1 receptor agonist",
-      "weekly semaglutide injection",
+      "[SERVICE NAME] [SERVICE NAME] receptor agonist",
+      "weekly [SERVICE NAME] injection",
       "FDA approved weight loss medication"
     ],
     "how_it_works": [
-      "semaglutide how it works",
-      "GLP-1 hormone appetite control",
-      "semaglutide dosing schedule"
+      "[SERVICE NAME] how it works",
+      "[SERVICE NAME] hormone appetite control",
+      "[SERVICE NAME] dosing schedule"
     ],
     "faq": [
-      "semaglutide results timeline",
-      "semaglutide who qualifies",
-      "semaglutide vs ozempic"
+      "[SERVICE NAME] results timeline",
+      "[SERVICE NAME] who qualifies",
+      "[SERVICE NAME] vs ozempic"
     ]
   }
 }

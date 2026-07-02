@@ -1,6 +1,6 @@
 {
   "slug": "urgent-care",
-  "serviceLabel": "Urgent Care at Home",
+  "serviceLabel": "[SERVICE CATEGORY] at Home",
   "steps": [
     {
       "type": "list-single",
@@ -35,7 +35,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "Urgent Care at Home"
+      "serviceLabel": "[SERVICE CATEGORY] at Home"
     }
   ]
 }

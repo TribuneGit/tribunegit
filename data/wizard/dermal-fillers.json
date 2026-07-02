@@ -1,6 +1,6 @@
 {
   "slug": "dermal-fillers",
-  "serviceLabel": "Dermal Fillers",
+  "serviceLabel": "[SERVICE NAME]",
   "steps": [
     {
       "type": "cards-multi",
@@ -53,7 +53,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "Dermal Fillers"
+      "serviceLabel": "[SERVICE NAME]"
     }
   ]
 }

@@ -23,7 +23,7 @@ generated: 2026-07-02
 
 - We come to you
 - Non-surgical, no downtime
-- Botox parties available
+- [SERVICE NAME] parties available
 
 ## About [Service Name]
 

@@ -31,7 +31,7 @@ generated: 2026-07-02
 
 [placeholder text]
 
-Vampire facials can address acne scars, fine lines, texture irregularities, and overall skin quality. Most patients see noticeable improvement after three sessions. Because the PRP comes from your own blood, rejection risk is minimal.
+Vampire facials can address acne scars, fine lines, texture irregularities, and overall skin quality. Most patients see noticeable improvement after three sessions. Because the [SERVICE NAME] comes from your own blood, rejection risk is minimal.
 
 ## How [Service Name] Works
 

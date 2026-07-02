@@ -22,8 +22,8 @@ generated: 2026-07-02
 [Brief hero value proposition for this service.]
 
 - Monthly NP supervision
-- GLP-1 medication programs
-- In-home or telehealth visits
+- [SERVICE NAME] medication programs
+- In-home or [SERVICE NAME] visits
 
 ## About [Service Name]
 
@@ -33,7 +33,7 @@ generated: 2026-07-02
 
 [placeholder text]
 
-All appointments are available in-home or via telehealth, so there is no commute and no waiting rooms. Just focused, one-on-one care designed to get you results.
+All appointments are available in-home or via [SERVICE NAME], so there is no commute and no waiting rooms. Just focused, one-on-one care designed to get you results.
 
 ## How [Service Name] Works
 
@@ -47,7 +47,7 @@ All appointments are available in-home or via telehealth, so there is no commute
 
 [placeholder text]
 
-## Our Weight Loss Programs
+## Our [SERVICE CATEGORY] Programs
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 

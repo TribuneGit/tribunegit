@@ -58,8 +58,8 @@
     "[placeholder text]",
     "[placeholder text]"
   ],
-  "about_headline": "Proactive Wellness Care That Comes to You",
-  "menu_headline": "Wellness Services",
+  "about_headline": "Proactive [SERVICE CATEGORY] Care That Comes to You",
+  "menu_headline": "[SERVICE CATEGORY] [SERVICES]",
   "sections": [
     {
       "id": "preventive-care",
@@ -90,7 +90,7 @@
   "related": [
     "iv-therapy",
     "in-home-primary-care",
-    "b12-injections"
+    "[SERVICE NAME]-injections"
   ],
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",

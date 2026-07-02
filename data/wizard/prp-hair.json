@@ -1,6 +1,6 @@
 {
   "slug": "prp-hair",
-  "serviceLabel": "PRP Hair Restoration",
+  "serviceLabel": "[SERVICE NAME] Restoration",
   "steps": [
     {
       "type": "cards-single",
@@ -38,7 +38,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "PRP Hair Restoration"
+      "serviceLabel": "[SERVICE NAME] Restoration"
     }
   ]
 }

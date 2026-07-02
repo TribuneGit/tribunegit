@@ -58,11 +58,11 @@
     }
   ],
   "about": [
-    "PRP hair restoration uses your own platelet-rich plasma to stimulate hair follicles that have become dormant due to pattern hair loss, hormonal changes, or other factors. Unlike medications that must be taken indefinitely, PRP works with your body's own biology.",
-    "A small amount of your blood is drawn during your appointment, processed in a centrifuge to concentrate the platelets, and injected into targeted areas of the scalp. The growth factors in PRP increase blood supply to the follicle and stimulate activity.",
+    "[SERVICE NAME] hair restoration uses your own platelet-rich plasma to stimulate hair follicles that have become dormant due to pattern hair loss, hormonal changes, or other factors. Unlike medications that must be taken indefinitely, [SERVICE NAME] works with your body's own biology.",
+    "A small amount of your blood is drawn during your appointment, processed in a centrifuge to concentrate the platelets, and injected into targeted areas of the scalp. The growth factors in [SERVICE NAME] increase blood supply to the follicle and stimulate activity.",
     "[placeholder text]"
   ],
-  "about_headline": "PRP Hair Restoration Using Your Own Growth Factors",
+  "about_headline": "[SERVICE NAME] Restoration Using Your Own Growth Factors",
   "menu_headline": "Hair Restoration Treatment",
   "sections": [
     {
@@ -91,7 +91,7 @@
   "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "related": [
     "prp-facial",
-    "microneedling",
+    "[SERVICE NAME]",
     "botox"
   ],
   "gallery": [

@@ -89,7 +89,7 @@ const WizardModules = {
     render(config, state) {
       return `
         <div class="wz-question">Are you in our service area?</div>
-        <div class="wz-subtext">Enter your zip code. We serve all of [COUNTY] and offer telehealth statewide.</div>
+        <div class="wz-subtext">Enter your zip code. We serve all of [COUNTY] and offer [SERVICE NAME] statewide.</div>
         <div class="wz-field">
           <input type="text" class="wz-input" id="wz-zip" placeholder="Enter zip code"
                  value="${state.zip||''}" inputmode="numeric" maxlength="5"
@@ -140,12 +140,12 @@ const WizardModules = {
   },
 
   /**
-   * consult — channel selection: telehealth / phone / in-person.
+   * consult — channel selection: [SERVICE NAME] / phone / in-person.
    */
   'consult': {
     render(config, state) {
       const options = [
-        { id: 'telehealth', icon: '💻', label: 'Telehealth Meet & Greet', desc: 'Free video call with [PROVIDER NAME], no commitment' },
+        { id: '[SERVICE NAME]', icon: '💻', label: '[SERVICE NAME] Meet & Greet', desc: 'Free video call with [PROVIDER NAME], no commitment' },
         { id: 'phone',      icon: '📞', label: 'Phone Call',              desc: '[PROVIDER NAME] or her team calls you back' },
         { id: 'in-person',  icon: '📍', label: '[CITY] Office',       desc: '[ADDRESS], Unit G — appointment required' },
       ];

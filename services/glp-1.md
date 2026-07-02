@@ -17,7 +17,7 @@ generated: 2026-07-02
 
 ## Hero
 
-**Keywords:** [service name] in wellington fl, mobile [service name] palm beach county fl, [service name] at home wellington, [service name] near me wellington fl, in-home [service name] palm beach county, [category] concierge wellington fl, [placeholder text], GLP-1 prescription without insurance
+**Keywords:** [service name] in wellington fl, mobile [service name] palm beach county fl, [service name] at home wellington, [service name] near me wellington fl, in-home [service name] palm beach county, [category] concierge wellington fl, [placeholder text], [SERVICE NAME] prescription without insurance
 
 [Brief hero value proposition for this service.]
 
@@ -27,9 +27,9 @@ generated: 2026-07-02
 
 ## About [Service Name]
 
-**Keywords:** [service name] treatments wellington fl, [service name] benefits palm beach county, best [service name] wellington fl, [service name] concierge service florida, [service name] near me palm beach county, GLP-1 receptor agonist weight loss, GLP-1 PCOS insulin resistance, GLP-1 direct pay Florida
+**Keywords:** [service name] treatments wellington fl, [service name] benefits palm beach county, best [service name] wellington fl, [service name] concierge service florida, [service name] near me palm beach county, [SERVICE NAME] receptor agonist weight loss, [SERVICE NAME] PCOS insulin resistance, [SERVICE NAME] direct pay Florida
 
-GLP-1 (glucagon-like peptide-1) is a natural hormone your gut releases after eating. GLP-1 medications mimic this hormone signal, telling your brain you are full, slowing stomach emptying, and helping your body regulate blood sugar more effectively.
+[SERVICE NAME] (glucagon-like peptide-1) is a natural hormone your gut releases after eating. [SERVICE NAME] medications mimic this hormone signal, telling your brain you are full, slowing stomach emptying, and helping your body regulate blood sugar more effectively.
 
 [placeholder text]
 
@@ -47,7 +47,7 @@ GLP-1 (glucagon-like peptide-1) is a natural hormone your gut releases after eat
 
 [placeholder text]
 
-## GLP-1 Program Overview
+## [SERVICE NAME] Program Overview
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 
@@ -86,7 +86,7 @@ GLP-1 (glucagon-like peptide-1) is a natural hormone your gut releases after eat
 
 ## Frequently Asked Questions
 
-**Keywords:** [service name] faq wellington fl, [service name] cost palm beach county, [service name] questions and answers, is [service name] safe, how long does [service name] take, [service name] side effects, GLP-1 no referral needed, GLP-1 PCOS, GLP-1 results timeline
+**Keywords:** [service name] faq wellington fl, [service name] cost palm beach county, [service name] questions and answers, is [service name] safe, how long does [service name] take, [service name] side effects, [SERVICE NAME] no referral needed, [SERVICE NAME] PCOS, [SERVICE NAME] results timeline
 
 **Q: [Frequently asked question?]**  
 A: [Answer to this frequently asked question.]
@@ -120,4 +120,4 @@ A: [Answer to this frequently asked question.]
 **Service area:** [CITY], [CITY], [CITY], [CITY], [CITY], and all of [COUNTY], FL.  
 **Website:** [URL]  
 
-*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/glp-1.json`.*
+*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/[SERVICE NAME].json`.*

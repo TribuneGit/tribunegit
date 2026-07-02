@@ -58,7 +58,7 @@
     "[placeholder text]",
     "[placeholder text]"
   ],
-  "about_headline": "In-Home Primary Care for All Ages",
+  "about_headline": "In-Home [SERVICE CATEGORY] for All Ages",
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "how_it_works": {
     "time": "Varies by visit type",
@@ -67,7 +67,7 @@
     "location": "[Location]",
     "body": "[placeholder text]"
   },
-  "menu_headline": "What In-Home Primary Care Covers",
+  "menu_headline": "What In-Home [SERVICE CATEGORY] Covers",
   "sections": [
     {
       "id": "annual-exams",
@@ -119,8 +119,8 @@
   "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "related": [
     "urgent-care",
-    "telehealth",
-    "membership"
+    "[SERVICE NAME]",
+    "[SERVICE NAME]"
   ],
   "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image"
 }

@@ -29,11 +29,11 @@ generated: 2026-07-02
 
 **Keywords:** [service name] treatments wellington fl, [service name] benefits palm beach county, best [service name] wellington fl, [service name] concierge service florida, [service name] near me palm beach county
 
-Microneedling works by creating thousands of tiny, controlled micro-channels in the skin's surface. These micro-injuries prompt your skin to produce new collagen and elastin, the structural proteins that keep skin firm, smooth, and youthful.
+[SERVICE NAME] works by creating thousands of tiny, controlled micro-channels in the skin's surface. These micro-injuries prompt your skin to produce new collagen and elastin, the structural proteins that keep skin firm, smooth, and youthful.
 
 [placeholder text]
 
-Whether you are targeting acne scars, fine lines, enlarged pores, or overall skin quality, microneedling is one of the most evidence-supported treatments in aesthetic medicine.
+Whether you are targeting acne scars, fine lines, enlarged pores, or overall skin quality, [SERVICE NAME] is one of the most evidence-supported treatments in aesthetic medicine.
 
 ## How [Service Name] Works
 
@@ -47,7 +47,7 @@ Whether you are targeting acne scars, fine lines, enlarged pores, or overall ski
 
 [placeholder text]
 
-## Skin Rejuvenation Services
+## Skin Rejuvenation [SERVICES]
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 
@@ -98,4 +98,4 @@ A: [Answer to this frequently asked question.]
 **Service area:** [CITY], [CITY], [CITY], [CITY], [CITY], and all of [COUNTY], FL.  
 **Website:** [URL]  
 
-*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/microneedling.json`.*
+*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/[SERVICE NAME].json`.*

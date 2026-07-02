@@ -1,6 +1,6 @@
 ---
 title: Concierge Healthcare in [CITY], FL | [COMPANY NAME]
-description: In-home and telehealth concierge healthcare in [CITY], FL. All BCH services delivered to your home by [PROVIDER NAME], [CREDENTIALS].
+description: In-home and [SERVICE NAME] concierge healthcare in [CITY], FL. All BCH services delivered to your home by [PROVIDER NAME], [CREDENTIALS].
 url: https://www.[DOMAIN]/locations/west-palm-beach-fl.html
 provider: [PROVIDER NAME], [CREDENTIALS]
 generated: 2026-06-11
@@ -10,13 +10,13 @@ generated: 2026-06-11
 
 ---
 
-## Services in [CITY], FL
+## [SERVICES] in [CITY], FL
 
-**Keywords:** concierge healthcare west palm beach florida, in-home nurse practitioner west palm beach fl, mobile iv therapy west palm beach, botox west palm beach fl, home visit healthcare west palm beach palm beach county
+**Keywords:** concierge healthcare west palm beach florida, in-home nurse practitioner west palm beach fl, [SERVICE NAME] therapy west palm beach, botox west palm beach fl, home visit healthcare west palm beach palm beach county
 
-All BCH services available in [CITY]. [PROVIDER NAME] delivers in-home primary care, IV therapy, aesthetics, weight loss, and more throughout [CITY] and greater [COUNTY].
+All BCH services available in [CITY]. [PROVIDER NAME] delivers [SERVICE NAME], [service category], aesthetics, weight loss, and more throughout [CITY] and greater [COUNTY].
 
-## Service Area Notes
+## [LOCATION PAGE] Notes
 
 **Keywords:** west palm beach fl healthcare provider, west palm beach nurse practitioner, beyond concierge healthcare west palm beach, west palm beach palm beach county medical care
 

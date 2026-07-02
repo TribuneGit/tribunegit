@@ -1,6 +1,6 @@
 {
-  "slug": "cryotherapy",
-  "serviceLabel": "Cryotherapy",
+  "slug": "[SERVICE NAME]",
+  "serviceLabel": "[SERVICE NAME]",
   "steps": [
     {
       "type": "cards-single",
@@ -20,7 +20,7 @@
         {
           "id": "wellness",
           "icon": "🌿",
-          "label": "Wellness"
+          "label": "[SERVICE CATEGORY]"
         },
         {
           "id": "skin",
@@ -43,7 +43,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "Cryotherapy"
+      "serviceLabel": "[SERVICE NAME]"
     }
   ]
 }

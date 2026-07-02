@@ -58,7 +58,7 @@
     "[placeholder text]",
     "[placeholder text]"
   ],
-  "about_headline": "Same-Day Urgent Care That Comes to You",
+  "about_headline": "Same-Day [SERVICE CATEGORY] That Comes to You",
   "how_it_works": {
     "time": "Varies by concern",
     "downtime": "None",
@@ -102,7 +102,7 @@
   "related": [
     "in-home-primary-care",
     "iv-therapy",
-    "telehealth"
+    "[SERVICE NAME]"
   ],
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image"

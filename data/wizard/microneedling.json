@@ -1,6 +1,6 @@
 {
-  "slug": "microneedling",
-  "serviceLabel": "Microneedling",
+  "slug": "[SERVICE NAME]",
+  "serviceLabel": "[SERVICE NAME]",
   "steps": [
     {
       "type": "cards-single",
@@ -43,7 +43,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "Microneedling"
+      "serviceLabel": "[SERVICE NAME]"
     }
   ]
 }

@@ -21,19 +21,19 @@ generated: 2026-07-02
 
 [Brief hero value proposition for this service.]
 
-- Dual GLP-1/GIP action
+- Dual [SERVICE NAME]/GIP action
 - Monthly NP supervision
 - We come to you
 
 ## About [Service Name]
 
-**Keywords:** [service name] treatments wellington fl, [service name] benefits palm beach county, best [service name] wellington fl, [service name] concierge service florida, [service name] near me palm beach county, tirzepatide dual GLP-1 GIP, tirzepatide vs semaglutide, tirzepatide clinical trial results
+**Keywords:** [service name] treatments wellington fl, [service name] benefits palm beach county, best [service name] wellington fl, [service name] concierge service florida, [service name] near me palm beach county, [SERVICE NAME] dual [SERVICE NAME] GIP, [SERVICE NAME] vs [SERVICE NAME], [SERVICE NAME] clinical trial results
 
-Tirzepatide is a once-weekly injection that targets two hormone pathways simultaneously: GLP-1 and GIP. This dual action controls hunger more aggressively than single-pathway medications, making tirzepatide one of the most effective weight loss medications available.
+[SERVICE NAME] is a once-weekly injection that targets two hormone pathways simultaneously: [SERVICE NAME] and GIP. This dual action controls hunger more aggressively than single-pathway medications, making [SERVICE NAME] one of the most effective weight loss medications available.
 
 [placeholder text]
 
-Clinical trials showed patients losing 15 percent or more of body weight over the course of treatment. For adults who have tried other weight loss approaches without lasting results, tirzepatide offers a different and more powerful mechanism.
+Clinical trials showed patients losing 15 percent or more of body weight over the course of treatment. For adults who have tried other weight loss approaches without lasting results, [SERVICE NAME] offers a different and more powerful mechanism.
 
 ## How [Service Name] Works
 
@@ -47,7 +47,7 @@ Clinical trials showed patients losing 15 percent or more of body weight over th
 
 [placeholder text]
 
-## How Tirzepatide Works
+## How [SERVICE NAME] Works
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 
@@ -89,7 +89,7 @@ Clinical trials showed patients losing 15 percent or more of body weight over th
 
 ## Frequently Asked Questions
 
-**Keywords:** [service name] faq wellington fl, [service name] cost palm beach county, [service name] questions and answers, is [service name] safe, how long does [service name] take, [service name] side effects, tirzepatide side effects, who qualifies tirzepatide, tirzepatide results timeline
+**Keywords:** [service name] faq wellington fl, [service name] cost palm beach county, [service name] questions and answers, is [service name] safe, how long does [service name] take, [service name] side effects, [SERVICE NAME] side effects, who qualifies [SERVICE NAME], [SERVICE NAME] results timeline
 
 **Q: [Frequently asked question?]**  
 A: [Answer to this frequently asked question.]
@@ -123,4 +123,4 @@ A: [Answer to this frequently asked question.]
 **Service area:** [CITY], [CITY], [CITY], [CITY], [CITY], and all of [COUNTY], FL.  
 **Website:** [URL]  
 
-*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/tirzepatide.json`.*
+*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/[SERVICE NAME].json`.*

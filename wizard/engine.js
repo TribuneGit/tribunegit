@@ -15,14 +15,14 @@
  * PAGE_WIZARD shape:
  * {
  *   slug: 'iv-therapy',
- *   serviceLabel: 'Mobile IV Therapy',
+ *   serviceLabel: '[service name]',
  *   steps: [
  *     { type: 'cards-multi', q: '...', options: [...], stateKey: 'qualifier1' },
  *     { type: 'zip' },
  *     { type: 'contact' },
  *     { type: 'consult' },
  *     { type: 'datetime' },
- *     { type: 'confirm', serviceLabel: 'Mobile IV Therapy' }
+ *     { type: 'confirm', serviceLabel: '[service name]' }
  *   ]
  * }
  */
@@ -260,7 +260,7 @@
     if (PBC_ZIPS.has(zip)) {
       resultEl.innerHTML = '<span class="wz-zip-ok">In-home service available in your area.</span>';
     } else {
-      resultEl.innerHTML = '<span class="wz-zip-alt">Outside our in-home area. Telehealth is available statewide across [STATE].</span>';
+      resultEl.innerHTML = '<span class="wz-zip-alt">Outside our in-home area. [SERVICE NAME] is available statewide across [STATE].</span>';
     }
   }
 

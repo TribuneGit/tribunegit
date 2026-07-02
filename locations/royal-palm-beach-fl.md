@@ -1,6 +1,6 @@
 ---
 title: Concierge Healthcare in [CITY], FL | [COMPANY NAME]
-description: In-home and telehealth concierge healthcare in [CITY], FL. All BCH services delivered to your home by [PROVIDER NAME], [CREDENTIALS].
+description: In-home and [SERVICE NAME] concierge healthcare in [CITY], FL. All BCH services delivered to your home by [PROVIDER NAME], [CREDENTIALS].
 url: https://www.[DOMAIN]/locations/royal-palm-beach-fl.html
 provider: [PROVIDER NAME], [CREDENTIALS]
 generated: 2026-06-11
@@ -10,13 +10,13 @@ generated: 2026-06-11
 
 ---
 
-## Services in [CITY], FL
+## [SERVICES] in [CITY], FL
 
-**Keywords:** concierge healthcare royal palm beach florida, in-home nurse practitioner royal palm beach fl, mobile iv therapy royal palm beach, botox royal palm beach fl, healthcare delivery royal palm beach palm beach county
+**Keywords:** concierge healthcare royal palm beach florida, in-home nurse practitioner royal palm beach fl, [SERVICE NAME] therapy royal palm beach, botox royal palm beach fl, healthcare delivery royal palm beach palm beach county
 
 All BCH services are available in [CITY]. [PROVIDER NAME] serves all of [COUNTY] including [CITY] with the same personal, one-on-one care.
 
-## Service Area Notes
+## [LOCATION PAGE] Notes
 
 **Keywords:** royal palm beach fl healthcare provider, royal palm beach nurse practitioner, beyond concierge healthcare royal palm beach, royal palm beach palm beach county medical
 

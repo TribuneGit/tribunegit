@@ -1,6 +1,6 @@
 {
-  "slug": "glp-1",
-  "serviceLabel": "GLP-1 Program",
+  "slug": "[SERVICE NAME]",
+  "serviceLabel": "[SERVICE NAME] Program",
   "steps": [
     {
       "type": "cards-single",
@@ -43,7 +43,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "GLP-1 Program"
+      "serviceLabel": "[SERVICE NAME] Program"
     }
   ]
 }

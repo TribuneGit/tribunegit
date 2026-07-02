@@ -1,6 +1,6 @@
 {
   "slug": "in-home-primary-care",
-  "serviceLabel": "In-Home Primary Care",
+  "serviceLabel": "In-Home [SERVICE CATEGORY]",
   "steps": [
     {
       "type": "list-single",
@@ -39,7 +39,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "In-Home Primary Care"
+      "serviceLabel": "In-Home [SERVICE CATEGORY]"
     }
   ]
 }

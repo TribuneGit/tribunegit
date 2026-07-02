@@ -29,7 +29,7 @@ generated: 2026-07-02
 
 **Keywords:** [service name] treatments wellington fl, [service name] benefits palm beach county, best [service name] wellington fl, [service name] concierge service florida, [service name] near me palm beach county
 
-B12 (methylcobalamin) is essential for energy production, nerve function, red blood cell formation, and mood regulation. Many people have suboptimal B12 levels without knowing it, especially those following plant-based diets, adults over 50, or people taking certain medications.
+[SERVICE NAME] (methylcobalamin) is essential for energy production, nerve function, red blood cell formation, and mood regulation. Many people have suboptimal [SERVICE NAME] levels without knowing it, especially those following plant-based diets, adults over 50, or people taking certain medications.
 
 [placeholder text]
 
@@ -47,7 +47,7 @@ B12 (methylcobalamin) is essential for energy production, nerve function, red bl
 
 [placeholder text]
 
-## Wellness Injection Options
+## [SERVICE CATEGORY] Injection Options
 
 **Keywords:** [service name] treatment areas, [service name] options wellington fl, types of [service name] palm beach county, [service name] services near me
 
@@ -98,4 +98,4 @@ A: [Answer to this frequently asked question.]
 **Service area:** [CITY], [CITY], [CITY], [CITY], [CITY], and all of [COUNTY], FL.  
 **Website:** [URL]  
 
-*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/b12-injections.json`.*
+*This markdown mirror is auto-generated for AI readability. To add or edit SEO terms for any section, update the `seo` key in `data/services/[SERVICE NAME]-injections.json`.*

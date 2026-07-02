@@ -10,7 +10,7 @@
   "hero_image": "https://placehold.co/1600x900/e8e8e8/aaaaaa?text=Hero",
   "hero_perks": [
     "Personalized hormone evaluation",
-    "In-home or telehealth",
+    "In-home or [SERVICE NAME]",
     "Lab-based treatment decisions"
   ],
   "fact_chips": [
@@ -57,10 +57,10 @@
   "about": [
     "[placeholder text]",
     "[placeholder text]",
-    "[CONTENT GAP — provider copy needed for specific HRT program details. All sub-services require provider-approved content before launch.]"
+    "[CONTENT GAP — provider copy needed for specific [SERVICE NAME] program details. All sub-services require provider-approved content before launch.]"
   ],
   "about_headline": "Lab-Guided Hormone Optimization",
-  "menu_headline": "Hormone Services",
+  "menu_headline": "Hormone [SERVICES]",
   "sections": [
     {
       "id": "womens-hrt",
@@ -96,7 +96,7 @@
   "related": [
     "wellness",
     "weight-loss",
-    "telehealth"
+    "[SERVICE NAME]"
   ],
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",

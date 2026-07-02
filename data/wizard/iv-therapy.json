@@ -1,6 +1,6 @@
 {
   "slug": "iv-therapy",
-  "serviceLabel": "Mobile IV Therapy",
+  "serviceLabel": "[service name]",
   "steps": [
     {
       "type": "cards-multi",
@@ -23,9 +23,9 @@
           "label": "Recovery"
         },
         {
-          "id": "hydration",
+          "id": "[service name]",
           "icon": "💧",
-          "label": "Hydration"
+          "label": "[service name]"
         },
         {
           "id": "glow",
@@ -33,9 +33,9 @@
           "label": "Glow"
         },
         {
-          "id": "hangover",
+          "id": "[SERVICE NAME]",
           "icon": "🌅",
-          "label": "Hangover relief"
+          "label": "[SERVICE NAME] relief"
         }
       ]
     },
@@ -53,7 +53,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "Mobile IV Therapy"
+      "serviceLabel": "[service name]"
     }
   ]
 }

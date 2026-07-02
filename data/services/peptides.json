@@ -10,7 +10,7 @@
   "hero_image": "https://placehold.co/1600x900/e8e8e8/aaaaaa?text=Hero",
   "hero_perks": [
     "Prescribed by a licensed NP",
-    "Recovery, anti-aging, performance",
+    "Recovery, [SERVICE NAME], performance",
     "We come to you"
   ],
   "faq": [
@@ -40,8 +40,8 @@
     "[placeholder text]",
     "[placeholder text]"
   ],
-  "about_headline": "Prescribed Peptide Therapy for Recovery and Performance",
-  "menu_headline": "Peptide Protocols",
+  "about_headline": "Prescribed [SERVICE NAME] Therapy for Recovery and Performance",
+  "menu_headline": "[SERVICE NAME] Protocols",
   "sections": [
     {
       "id": "recovery-healing",
@@ -50,7 +50,7 @@
       "body2": "[placeholder text]"
     },
     {
-      "id": "anti-aging-performance",
+      "id": "[SERVICE NAME]-performance",
       "title": "[placeholder text]",
       "body": "[placeholder text]",
       "body2": "[placeholder text]"
@@ -63,7 +63,7 @@
     "name": "[Service Name]",
     "city": "[placeholder text]"
   },
-  "cta_headline": "Ready to Explore <em>Peptide Therapy</em>?",
+  "cta_headline": "Ready to Explore <em>[SERVICE NAME] Therapy</em>?",
   "cta_body": "[placeholder text]",
   "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "related": [

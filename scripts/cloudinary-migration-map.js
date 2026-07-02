@@ -35,9 +35,9 @@ if (fs.existsSync(path.join(BASE, 'assets', 'logo.jpg'))) {
 
 // --- B) Jeff personal Cloudinary → [COMPANY] Cloudinary (images) ---
 const jeffImageAssets = [
-  { old_id: '[company-slug]/bch-cryotherapy-v1', fmt: 'png', type: 'image' },
-  { old_id: '[company-slug]/bch-microneedling-prp-v1', fmt: 'png', type: 'image' },
-  { old_id: '[company-slug]/bch-microneedling-prp-v2', fmt: 'png', type: 'image' },
+  { old_id: '[company-slug]/bch-[SERVICE NAME]-v1', fmt: 'png', type: 'image' },
+  { old_id: '[company-slug]/bch-[SERVICE NAME]-prp-v1', fmt: 'png', type: 'image' },
+  { old_id: '[company-slug]/bch-[SERVICE NAME]-prp-v2', fmt: 'png', type: 'image' },
   { old_id: '[company-slug]/bch-payment-plans-hero', fmt: 'jpg', type: 'image' },
   { old_id: '[company-slug]/bch-pricing-hero', fmt: 'jpg', type: 'image' },
   { old_id: '[company-slug]/bch-prp-facial-hair-v1', fmt: 'png', type: 'image' },
@@ -85,12 +85,12 @@ for (const asset of [...jeffImageAssets, ...jeffVideoAssets]) {
 // Map versioned URLs (the ones actually found in the codebase)
 const versionedMappings = [
   {
-    old: `https://res.cloudinary.com/${JEFF_CLOUD}/image/upload/f_auto,q_auto/v1780438192/[company-slug]/bch-cryotherapy-v1.png`,
-    new: `https://res.cloudinary.com/${BCH_CLOUD}/image/upload/f_auto,q_auto/[company-slug]/bch-cryotherapy-v1.png`,
+    old: `https://res.cloudinary.com/${JEFF_CLOUD}/image/upload/f_auto,q_auto/v1780438192/[company-slug]/bch-[SERVICE NAME]-v1.png`,
+    new: `https://res.cloudinary.com/${BCH_CLOUD}/image/upload/f_auto,q_auto/[company-slug]/bch-[SERVICE NAME]-v1.png`,
   },
   {
-    old: `https://res.cloudinary.com/${JEFF_CLOUD}/image/upload/f_auto,q_auto/v1780438931/[company-slug]/bch-microneedling-prp-v2.png`,
-    new: `https://res.cloudinary.com/${BCH_CLOUD}/image/upload/f_auto,q_auto/[company-slug]/bch-microneedling-prp-v2.png`,
+    old: `https://res.cloudinary.com/${JEFF_CLOUD}/image/upload/f_auto,q_auto/v1780438931/[company-slug]/bch-[SERVICE NAME]-prp-v2.png`,
+    new: `https://res.cloudinary.com/${BCH_CLOUD}/image/upload/f_auto,q_auto/[company-slug]/bch-[SERVICE NAME]-prp-v2.png`,
   },
   {
     old: `https://res.cloudinary.com/${JEFF_CLOUD}/image/upload/f_auto,q_auto/v1780438932/[company-slug]/bch-prp-facial-hair-v2.png`,

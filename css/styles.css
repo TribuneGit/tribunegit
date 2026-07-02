@@ -1227,7 +1227,7 @@ p  { font-size: 1rem; color: var(--text); }
 .testimonial-handle { font-size: 0.75rem; color: var(--text-muted); }
 
 /* ==========================================================================
-   FAQ ACCORDION
+   [FAQ] ACCORDION
    ========================================================================== */
 .faq-section { background: var(--white); padding: 5rem 0; }
 .faq-tabs {
@@ -1365,7 +1365,7 @@ p  { font-size: 1rem; color: var(--text); }
 .about-body p { color: var(--text); line-height: 1.8; margin-bottom: 1.25rem; }
 
 /* ==========================================================================
-   CONTACT, PRICING, FAQ PAGES
+   CONTACT, PRICING, [FAQ] PAGES
    ========================================================================== */
 .page-hero {
   background: var(--teal); color: var(--white); padding: 4rem 0; text-align: center;
@@ -1394,23 +1394,23 @@ p  { font-size: 1rem; color: var(--text); }
 .pricing-category { background: var(--orange-light); }
 .pricing-category td { font-weight: 700; color: var(--orange-dark); }
 
-.membership-card {
+.[SERVICE NAME]-card {
   background: var(--teal); color: var(--white); border-radius: var(--radius);
   padding: 2.5rem; text-align: center; margin-bottom: 3rem;
 }
-.membership-card h2 { color: var(--white); margin-bottom: 0.35rem; }
-.membership-price {
+.[SERVICE NAME]-card h2 { color: var(--white); margin-bottom: 0.35rem; }
+.[SERVICE NAME]-price {
   font-size: 3rem; font-weight: 800; color: var(--orange); margin: 0.5rem 0;
 }
-.membership-price span { font-size: 1rem; font-weight: 400; opacity: 0.8; }
-.membership-features {
+.[SERVICE NAME]-price span { font-size: 1rem; font-weight: 400; opacity: 0.8; }
+.[SERVICE NAME]-features {
   display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin: 1.5rem 0;
   text-align: left;
 }
-.membership-feature {
+.[SERVICE NAME]-feature {
   display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem;
 }
-.membership-feature::before { content: "✓"; color: var(--orange); font-weight: 700; }
+.[SERVICE NAME]-feature::before { content: "✓"; color: var(--orange); font-weight: 700; }
 
 /* ==========================================================================
    BREADCRUMBS / BACK LINK
@@ -1532,7 +1532,7 @@ p  { font-size: 1rem; color: var(--text); }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .hero h1 { font-size: 2rem; }
-  .membership-features { grid-template-columns: 1fr; }
+  .[SERVICE NAME]-features { grid-template-columns: 1fr; }
   .datetime-grid { grid-template-columns: 1fr; }
   .time-slots { grid-template-columns: 1fr 1fr; }
 }
@@ -1740,7 +1740,7 @@ p  { font-size: 1rem; color: var(--text); }
 }
 .bio-text p:last-child { margin-bottom: 0; }
 
-/* ── About Reviews ── */
+/* ── About [REVIEWS] ── */
 .about-reviews {
   background: var(--teal);
   padding: 4rem 1.25rem;
@@ -1809,7 +1809,7 @@ p  { font-size: 1rem; color: var(--text); }
   color: #fff;
 }
 
-/* ── Membership promo inline ── */
+/* ── [SERVICE NAME] promo inline ── */
 .about-promo-bar {
   background: var(--teal-light);
   padding: 0.9rem 1.25rem;
@@ -1824,7 +1824,7 @@ p  { font-size: 1rem; color: var(--text); }
 }
 .about-promo-bar a:hover { text-decoration: underline; }
 
-/* ===== Header "About Us" nav dropdown ===== */
+/* ===== Header "[ABOUT]" nav dropdown ===== */
 .header-nav-item {
   position: relative;
 }

@@ -71,13 +71,13 @@
   ],
   "about": [
     "[placeholder text]",
-    "Vampire facials can address acne scars, fine lines, texture irregularities, and overall skin quality. Most patients see noticeable improvement after three sessions. Because the PRP comes from your own blood, rejection risk is minimal."
+    "Vampire facials can address acne scars, fine lines, texture irregularities, and overall skin quality. Most patients see noticeable improvement after three sessions. Because the [SERVICE NAME] comes from your own blood, rejection risk is minimal."
   ],
-  "about_headline": "PRP Vampire Facial That Comes to You",
+  "about_headline": "[SERVICE NAME] Vampire Facial That Comes to You",
   "menu_headline": "Vampire Facial Treatment",
   "sections": [
     {
-      "id": "prp-microneedling",
+      "id": "prp-[SERVICE NAME]",
       "title": "[placeholder text]",
       "body": "[placeholder text]"
     },
@@ -142,7 +142,7 @@
   "cta_body": "[placeholder text]",
   "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "related": [
-    "microneedling",
+    "[SERVICE NAME]",
     "botox",
     "dermal-fillers"
   ]

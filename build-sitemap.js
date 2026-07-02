@@ -37,10 +37,10 @@ const PRIORITY_RULES = [
   [p => /services\/(in-home-primary-care|iv-therapy|botox|weight-loss|urgent-care)/.test(p), '0.9', 'monthly'],
   [p => /services\//.test(p),                                   '0.8', 'monthly'],
   [p => /about\/?$/.test(p),                                    '0.8', 'monthly'],
-  [p => /membership/.test(p),                                   '0.8', 'monthly'],
+  [p => /[SERVICE NAME]/.test(p),                                   '0.8', 'monthly'],
   [p => /locations\//.test(p),                                  '0.8', 'monthly'],
   [p => /gabby/.test(p),                                        '0.7', 'monthly'],
-  [p => /pricing|faqs|savings|telehealth/.test(p),              '0.7', 'monthly'],
+  [p => /pricing|faqs|savings|[SERVICE NAME]/.test(p),              '0.7', 'monthly'],
   [p => /contact|service-area/.test(p),                         '0.6', 'monthly'],
   [p => /privacy/.test(p),                                      '0.3', 'yearly' ],
 ];

@@ -58,13 +58,13 @@
     }
   ],
   "about": [
-    "Cold and flu season in South Florida is real, even without harsh winters. When illness hits, vitamin IV therapy delivers a concentrated blend of immune-supporting nutrients directly into your bloodstream, bypassing the digestive system for immediate effect.",
+    "Cold and flu season in South Florida is real, even without harsh winters. When illness hits, vitamin [service category] delivers a concentrated blend of immune-supporting nutrients directly into your bloodstream, bypassing the digestive system for immediate effect.",
     "[placeholder text]",
-    "Whether you are fighting an active cold, recovering from flu, or boosting your defenses before peak season, IV therapy provides your body with the nutrients it needs exactly when it needs them most."
+    "Whether you are fighting an active cold, recovering from flu, or boosting your defenses before peak season, [service category] provides your body with the nutrients it needs exactly when it needs them most."
   ],
   "about_headline": "Immune Support That Comes to You",
   "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
-  "menu_headline": "What's in the Infusion",
+  "menu_headline": "What's in the [service name]",
   "sections": [
     {
       "id": "vitamin-c",
@@ -82,7 +82,7 @@
       "body": "[placeholder text]"
     },
     {
-      "id": "glutathione",
+      "id": "[SERVICE NAME]",
       "title": "[placeholder text]",
       "body": "[placeholder text]"
     },
@@ -121,15 +121,15 @@
   "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "related": [
     "iv-therapy",
-    "iv-memberships",
-    "b12-injections"
+    "service-slug",
+    "[SERVICE NAME]-injections"
   ],
   "gallery": [
     "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
     "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
     "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image"
   ],
-  "gallery_headline": "Mobile IV Therapy",
+  "gallery_headline": "[service name]",
   "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
   "how_it_works": {
     "body": "[placeholder text]",
@@ -149,12 +149,12 @@
     "about": [
       "vitamin C IV immunity",
       "zinc IV cold flu",
-      "glutathione IV therapy immunity"
+      "[SERVICE NAME] [service category] immunity"
     ],
     "faq": [
-      "IV therapy cold flu how it works",
+      "[service category] cold flu how it works",
       "[placeholder text]",
-      "IV therapy immune support"
+      "[service category] immune support"
     ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "slug": "microneedling",
+  "slug": "[SERVICE NAME]",
   "category": "[Category]",
   "name": "[Service Name]",
   "h1": "[Service Name] in [CITY], [STATE]",
@@ -54,15 +54,15 @@
     }
   ],
   "about": [
-    "Microneedling works by creating thousands of tiny, controlled micro-channels in the skin's surface. These micro-injuries prompt your skin to produce new collagen and elastin, the structural proteins that keep skin firm, smooth, and youthful.",
+    "[SERVICE NAME] works by creating thousands of tiny, controlled micro-channels in the skin's surface. These micro-injuries prompt your skin to produce new collagen and elastin, the structural proteins that keep skin firm, smooth, and youthful.",
     "[placeholder text]",
-    "Whether you are targeting acne scars, fine lines, enlarged pores, or overall skin quality, microneedling is one of the most evidence-supported treatments in aesthetic medicine."
+    "Whether you are targeting acne scars, fine lines, enlarged pores, or overall skin quality, [SERVICE NAME] is one of the most evidence-supported treatments in aesthetic medicine."
   ],
-  "about_headline": "Microneedling That Comes to You",
-  "menu_headline": "Skin Rejuvenation Services",
+  "about_headline": "[SERVICE NAME] That Comes to You",
+  "menu_headline": "Skin Rejuvenation [SERVICES]",
   "sections": [
     {
-      "id": "microneedling",
+      "id": "[SERVICE NAME]",
       "title": "[placeholder text]",
       "body": "[placeholder text]",
       "items": [

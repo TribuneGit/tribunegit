@@ -9,8 +9,8 @@
   "hero_value_prop": "[Brief hero value proposition for this service.]",
   "about": [
     "[placeholder text]",
-    "We offer a wide variety of IV Treatments that are all specially designed by us and other trusted healthcare specialists to help relieve your symptoms fast. Our Mobile IV Therapy is used to treat symptoms caused by hangovers, cold, flu, migraines, dehydration, lack of energy, food poisoning, weakened immune system, jet lag, morning sickness, nausea, sunburn, weight loss, and so much more.",
-    "You can trust us for your IV Treatment needs. We will come to your home or office to administer your IV. This can save you money, time and energy. We also have a monthly IV Membership that comes with amazing benefits like up to 25% off all our other services."
+    "We offer a wide variety of IV Treatments that are all specially designed by us and other trusted healthcare specialists to help relieve your symptoms fast. Our [service name] is used to treat symptoms caused by hangovers, cold, flu, migraines, dehydration, lack of energy, food poisoning, weakened immune system, jet lag, morning sickness, nausea, sunburn, weight loss, and so much more.",
+    "You can trust us for your IV Treatment needs. We will come to your home or office to administer your IV. This can save you money, time and energy. We also have a monthly [SERVICE NAME] that comes with amazing benefits like up to 25% off all our other services."
   ],
   "how_it_works": {
     "body": "[placeholder text]",

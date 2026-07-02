@@ -1,20 +1,20 @@
 ---
-title: Save on Concierge Healthcare | Membership Plans | [COMPANY NAME]
-description: Save up to 25% on all BCH services with an IV Therapy membership. Basic, Plus, and Elite monthly plans. [CITY] and [COUNTY], FL.
+title: Save on Concierge Healthcare | [SERVICE NAME] Plans | [COMPANY NAME]
+description: Save up to 25% on all BCH services with an [SERVICE CATEGORY] [SERVICE NAME]. Basic, Plus, and Elite monthly plans. [CITY] and [COUNTY], FL.
 url: https://www.[DOMAIN]/savings.html
 provider: [PROVIDER NAME], [CREDENTIALS]
 generated: 2026-06-11
 ---
 
-# Save on Concierge Healthcare — Membership Plans
+# Save on Concierge Healthcare — [SERVICE NAME] Plans
 
 ---
 
-## Save with Membership
+## Save with [SERVICE NAME]
 
-**Keywords:** save on healthcare wellington fl, beyond concierge healthcare membership discount, iv therapy membership 25% off palm beach, monthly healthcare plan florida
+**Keywords:** save on healthcare wellington fl, beyond concierge healthcare [SERVICE NAME] discount, iv therapy [SERVICE NAME] 25% off palm beach, monthly healthcare plan florida
 
-Join an IV Therapy membership plan and save 25% on all other BCH services. No contracts. Cancel anytime.
+Join an [SERVICE CATEGORY] [SERVICE NAME] plan and save 25% on all other BCH services. No contracts. Cancel anytime.
 
 | Plan | Price | Sessions | Discount |
 |---|---|---|---|
@@ -24,9 +24,9 @@ Join an IV Therapy membership plan and save 25% on all other BCH services. No co
 
 ## Free New Patient Offer
 
-**Keywords:** free telehealth consultation wellington fl, new patient beyond concierge healthcare, free meet and greet nurse practitioner palm beach, first visit free concierge healthcare florida
+**Keywords:** free [SERVICE NAME] consultation wellington fl, new patient beyond concierge healthcare, free meet and greet nurse practitioner palm beach, first visit free concierge healthcare florida
 
-New patients receive a free Telehealth Meet & Greet with [PROVIDER NAME] — valued at $100. No commitment required.
+New patients receive a free [SERVICE NAME] Meet & Greet with [PROVIDER NAME] — valued at $100. No commitment required.
 
 Book: https://www.[DOMAIN]/book-now.html
 

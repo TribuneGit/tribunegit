@@ -1,6 +1,6 @@
 ---
 title: IV Cocktails & Specialty Drips in [CITY], FL | [COMPANY NAME]
-description: Custom IV cocktail blends for beauty, NAD+, weight loss support, and more. Mobile delivery to your home in [CITY] and [COUNTY], FL.
+description: Custom IV cocktail blends for beauty, [SERVICE NAME]+, weight loss support, and more. Mobile delivery to your home in [CITY] and [COUNTY], FL.
 url: https://www.[DOMAIN]/services/iv-cocktails.html
 provider: [PROVIDER NAME], [CREDENTIALS]
 generated: 2026-06-11
@@ -8,29 +8,29 @@ generated: 2026-06-11
 
 # IV Cocktails & Specialty Drips — [CITY], FL
 
-> Custom IV blends built for results. Specialty drips beyond the basics — beauty, NAD+, weight loss support, and more.
+> Custom IV blends built for results. Specialty drips beyond the basics — beauty, [SERVICE NAME]+, weight loss support, and more.
 
 ---
 
 ## Overview
 
-**Keywords:** iv cocktails wellington fl, specialty iv drips palm beach county, custom iv blend florida mobile, nad+ iv cocktail wellington, beauty iv drip palm beach county fl
+**Keywords:** iv cocktails wellington fl, specialty [SERVICE NAME]s palm beach county, custom iv blend florida mobile, [SERVICE NAME] cocktail wellington, beauty [SERVICE NAME] palm beach county fl
 
-BCH IV Cocktails are specialty blends designed for specific goals: anti-aging and beauty, NAD+ cellular renewal, weight loss support, pregnancy and morning sickness, and more. All delivered to your home by [PROVIDER NAME].
+BCH IV Cocktails are specialty blends designed for specific goals: [SERVICE NAME] and beauty, [SERVICE NAME]+ cellular renewal, weight loss support, pregnancy and morning sickness, and more. All delivered to your home by [PROVIDER NAME].
 
 ## Cocktail Menu
 
-**Keywords:** iv cocktail menu wellington fl, beauty iv drip florida, nad+ iv therapy palm beach county, myers cocktail wellington fl, weight loss iv drip florida, morning sickness iv therapy palm beach
+**Keywords:** iv cocktail menu wellington fl, beauty [SERVICE NAME] florida, [SERVICE NAME] therapy palm beach county, myers cocktail wellington fl, weight loss [SERVICE NAME] florida, morning sickness iv therapy palm beach
 
-- **Beauty** — glutathione, vitamin C, biotin for skin, hair, and nails
-- **NAD+** — nicotinamide adenine dinucleotide for cellular energy and anti-aging
-- **Weight Loss Support** — B12, L-carnitine, MIC blend
+- **Beauty** — [SERVICE NAME], vitamin C, biotin for skin, hair, and nails
+- **[SERVICE NAME]+** — nicotinamide adenine dinucleotide for cellular energy and [SERVICE NAME]
+- **[SERVICE CATEGORY] Support** — [SERVICE NAME], L-carnitine, MIC blend
 - **Morning Sickness / Pregnancy** — safe anti-nausea, fluids, B6
-- **Myers Cocktail** — full-spectrum immune + energy foundation
+- **[SERVICE NAME]** — full-spectrum immune + energy foundation
 - **High-Dose Vitamin C** — antioxidant and immune support
 - **Jet Lag & Travel Recovery** — rapid rehydration and reset
 
-25% off all cocktails with IV membership.
+25% off all cocktails with [SERVICE NAME].
 
 
 ---

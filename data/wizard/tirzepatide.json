@@ -1,6 +1,6 @@
 {
-  "slug": "tirzepatide",
-  "serviceLabel": "Tirzepatide",
+  "slug": "[SERVICE NAME]",
+  "serviceLabel": "[SERVICE NAME]",
   "steps": [
     {
       "type": "cards-single",
@@ -38,7 +38,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "Tirzepatide"
+      "serviceLabel": "[SERVICE NAME]"
     }
   ]
 }

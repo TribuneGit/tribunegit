@@ -1,6 +1,6 @@
 {
-  "slug": "fertility",
-  "serviceLabel": "Fertility Care",
+  "slug": "[SERVICE NAME]",
+  "serviceLabel": "[SERVICE NAME] Care",
   "steps": [
     {
       "type": "list-single",
@@ -35,7 +35,7 @@
     },
     {
       "type": "confirm",
-      "serviceLabel": "Fertility Care"
+      "serviceLabel": "[SERVICE NAME] Care"
     }
   ]
 }

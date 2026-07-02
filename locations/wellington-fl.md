@@ -1,6 +1,6 @@
 ---
 title: Concierge Healthcare in [CITY], FL | [COMPANY NAME]
-description: Concierge healthcare delivered to your home in [CITY], FL. In-home primary care, IV therapy, Botox, weight loss, and more from [PROVIDER NAME], [CREDENTIALS].
+description: Concierge healthcare delivered to your home in [CITY], FL. [SERVICE NAME], [service category], [SERVICE NAME], weight loss, and more from [PROVIDER NAME], [CREDENTIALS].
 url: https://www.[DOMAIN]/locations/wellington-fl.html
 provider: [PROVIDER NAME], [CREDENTIALS]
 generated: 2026-06-11
@@ -8,19 +8,19 @@ generated: 2026-06-11
 
 # Concierge Healthcare in [CITY], FL
 
-> [COMPANY NAME] delivers in-home and telehealth services throughout [CITY], FL and surrounding [COUNTY] communities.
+> [COMPANY NAME] delivers in-home and [SERVICE NAME] services throughout [CITY], FL and surrounding [COUNTY] communities.
 
 ---
 
-## Services in [CITY], FL
+## [SERVICES] in [CITY], FL
 
-**Keywords:** concierge healthcare wellington florida, in-home primary care wellington fl, mobile iv therapy wellington fl, botox wellington florida, medical weight loss wellington fl, nurse practitioner wellington fl, home healthcare wellington palm beach
+**Keywords:** concierge healthcare wellington florida, [SERVICE NAME] wellington fl, [SERVICE NAME] therapy wellington fl, botox wellington florida, [service category] wellington fl, nurse practitioner wellington fl, home healthcare wellington palm beach
 
 All BCH services are available throughout [CITY], FL. [PROVIDER NAME] comes directly to your home, office, or preferred location:
 
-In-Home Primary Care · Urgent Care · Telehealth · Mobile IV Therapy · Botox & Dysport · Dermal Fillers · Microneedling · PRP Facial/Hair · Medical Weight Loss · Peptides · HRT · Cryotherapy · B12 Injections · Fertility Care · Skilled Nursing · Wellness
+In-Home [SERVICE CATEGORY] · [SERVICE CATEGORY] · [SERVICE NAME] · [service name] · [SERVICE NAME] & [SERVICE NAME] · [SERVICE NAME] · [SERVICE NAME] · [SERVICE NAME]/Hair · [SERVICE CATEGORY] · [SERVICE NAME] · [SERVICE NAME] · [SERVICE NAME] · [SERVICE NAME] · [SERVICE NAME] Care · [SERVICE CATEGORY] · [SERVICE CATEGORY]
 
-## About [CITY], FL Service Area
+## About [CITY], FL [LOCATION PAGE]
 
 **Keywords:** wellington fl healthcare provider, wellington florida nurse practitioner, beyond concierge healthcare wellington service area, wellington palm beach county medical care
 
