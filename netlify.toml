@@ -2,9 +2,7 @@
   publish = "."
 
 # -----------------------------------------------------------------------
-# Staging: block indexing until DNS cutover to [DOMAIN]
-# TO UNDO: remove the [[headers]] block below (the one with noindex)
-# See reminder in planning/BCH-seo-location-strategy.md
+# Robots — remove this block at launch (replace with proper robots.txt)
 # -----------------------------------------------------------------------
 [[headers]]
   for = "/*"
@@ -12,150 +10,7 @@
     X-Robots-Tag = "noindex, follow"
 
 # -----------------------------------------------------------------------
-# Portal deactivation — 2026-06-18
-# -----------------------------------------------------------------------
-[[redirects]]
-  from = "/updates"
-  to = "/"
-  status = 302
-
-[[redirects]]
-  from = "/updates/*"
-  to = "/"
-  status = 302
-
-# -----------------------------------------------------------------------
-# Core redirects
-# -----------------------------------------------------------------------
-[[redirects]]
-  from = "/services"
-  to = "/services/in-home-primary-care.html"
-  status = 301
-
-[[redirects]]
-  from = "/about"
-  to = "/about/index.html"
-  status = 301
-
-[[redirects]]
-  from = "/contact"
-  to = "/contact.html"
-  status = 301
-
-[[redirects]]
-  from = "/privacy"
-  to = "/privacy.html"
-  status = 301
-
-[[redirects]]
-  from = "/book"
-  to = "/book-now.html"
-  status = 301
-
-[[redirects]]
-  from = "/booking"
-  to = "/book-now.html"
-  status = 301
-
-[[redirects]]
-  from = "/faqs"
-  to = "/faqs.html"
-  status = 301
-
-[[redirects]]
-  from = "/faq"
-  to = "/faqs.html"
-  status = 301
-
-[[redirects]]
-  from = "/pricing"
-  to = "/pricing.html"
-  status = 301
-
-[[redirects]]
-  from = "/membership"
-  to = "/membership.html"
-  status = 301
-
-# -----------------------------------------------------------------------
-# Location shortlinks (SEO — city pages)
-# -----------------------------------------------------------------------
-[[redirects]]
-  from = "/wellington"
-  to = "/locations/wellington-fl.html"
-  status = 301
-
-[[redirects]]
-  from = "/jupiter"
-  to = "/landing/jupiter-fl.html"
-  status = 301
-
-# Redirect old locations URL to new landing/ path
-[[redirects]]
-  from = "/locations/jupiter-fl.html"
-  to = "/landing/jupiter-fl.html"
-  status = 301
-
-[[redirects]]
-  from = "/loxahatchee"
-  to = "/locations/loxahatchee-fl.html"
-  status = 301
-
-[[redirects]]
-  from = "/royal-palm-beach"
-  to = "/locations/royal-palm-beach-fl.html"
-  status = 301
-
-[[redirects]]
-  from = "/west-palm-beach"
-  to = "/locations/west-palm-beach-fl.html"
-  status = 301
-
-[[redirects]]
-  from = "/westlake"
-  to = "/locations/wellington-fl.html"
-  status = 301
-
-# -----------------------------------------------------------------------
-# Service shortlinks
-# -----------------------------------------------------------------------
-[[redirects]]
-  from = "/botox"
-  to = "/services/botox.html"
-  status = 301
-
-[[redirects]]
-  from = "/iv"
-  to = "/services/iv-therapy.html"
-  status = 301
-
-[[redirects]]
-  from = "/iv-therapy"
-  to = "/services/iv-therapy.html"
-  status = 301
-
-[[redirects]]
-  from = "/weight-loss"
-  to = "/services/weight-loss.html"
-  status = 301
-
-[[redirects]]
-  from = "/fertility"
-  to = "/services/fertility.html"
-  status = 301
-
-[[redirects]]
-  from = "/primary-care"
-  to = "/services/in-home-primary-care.html"
-  status = 301
-
-[[redirects]]
-  from = "/urgent-care"
-  to = "/services/urgent-care.html"
-  status = 301
-
-# -----------------------------------------------------------------------
-# Headers
+# Security headers
 # -----------------------------------------------------------------------
 [[headers]]
   for = "/*"
@@ -166,6 +21,9 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
+# -----------------------------------------------------------------------
+# Immutable cache for versioned assets
+# -----------------------------------------------------------------------
 [[headers]]
   for = "/*.css"
   [headers.values]
@@ -182,22 +40,49 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 # -----------------------------------------------------------------------
-# Portal redirects
+# Tribune redirects
 # -----------------------------------------------------------------------
 [[redirects]]
-  from = "/updates"
-  to = "/updates/index.html"
-  status = 200
+  from = "/about"
+  to = "/about.html"
+  status = 301
 
 [[redirects]]
-  from = "/updates/"
-  to = "/updates/index.html"
-  status = 200
+  from = "/contact"
+  to = "/reach-out.html"
+  status = 301
 
-# Portal security headers
-[[headers]]
-  for = "/updates/*"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 301
+
+[[redirects]]
+  from = "/faq"
+  to = "/details/faq.html"
+  status = 301
+
+[[redirects]]
+  from = "/faqs"
+  to = "/details/faq.html"
+  status = 301
+
+[[redirects]]
+  from = "/method"
+  to = "/details/method.html"
+  status = 301
+
+[[redirects]]
+  from = "/doctrine"
+  to = "/details/purpose.html"
+  status = 301
+
+[[redirects]]
+  from = "/proof"
+  to = "/details/proof.html"
+  status = 301
+
+[[redirects]]
+  from = "/west-palm-beach"
+  to = "/us/west-palm-beach.html"
+  status = 301
