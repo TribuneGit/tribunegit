@@ -2,23 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Mangomint Booking -->
-  <script>window.Mangomint = window.Mangomint || {}; window.Mangomint.CompanyId = [BOOKING ID];</script>
-  <script src="https://booking.mangomint.com/app.js" async></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Concierge Healthcare in [CITY], FL | We Come To You | [COMPANY NAME]</title>
-  <meta name="description" content="Concierge healthcare delivered to your home. [SERVICE NAME], [service category], [SERVICE NAME], [service category], and more. Serving [CITY], [COUNTY], FL. Book a free [SERVICE NAME] meet and greet.">
+  <title>Tribune Inc. We build AI agents for your business. | TribuneOS.com</title>
+  <meta name="description" content="Tribune designs, builds, and trains AI agents for your business, on hardware you own. Then we prove it runs without us, and leave.">
   <meta name="robots" content="index, follow">
   <link rel="alternate" type="text/markdown" href="/index.md">
   <link rel="canonical" href="https://www.[DOMAIN]/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="[COMPANY NAME] - We Come to You">
-  <meta property="og:description" content="[SERVICE NAME], [service category], aesthetics, and [service category] in [COUNTY], FL.">
+  <meta property="og:title" content="Tribune Inc. We build AI agents for your business.">
+  <meta property="og:description" content="We build your AI organization, then hand you the keys.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.[DOMAIN]/">
   <meta property="og:image" content="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image">
-  <meta property="og:image:alt" content="[PROVIDER NAME], [CREDENTIALS] — [COMPANY NAME]">
+  <meta property="og:image:alt" content="Tribune Inc. — TribuneOS.com">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image">
 
@@ -37,24 +34,17 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "[COMPANY NAME]",
-    "description": "Concierge healthcare delivered to your home. [SERVICE NAME], [service category], aesthetics, and [service category].",
-    "url": "https://www.[DOMAIN]",
-    "email": "[EMAIL]",
-    "telephone": "+1[PHONE]",
+    "@type": "Organization",
+    "name": "Tribune Inc.",
+    "description": "Tribune builds complete AI organizations for small and mid-size businesses, designed around each company's costliest constraint, installed on hardware the client owns, and trained until they pass a formal Independence Test.",
+    "url": "https://www.TribuneOS.com",
+    "email": "hello@tribuneos.com",
+    
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "[ADDRESS], Unit G",
-      "addressLocality": "[CITY]",
+      "addressLocality": "West Palm Beach",
       "addressRegion": "FL",
-      "postalCode": "[ZIP]",
       "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 26.6588,
-      "longitude": -80.2714
     },
     "areaServed": [
       { "@type": "City", "name": "[CITY]" },
@@ -63,7 +53,7 @@
       { "@type": "City", "name": "[CITY]" },
       { "@type": "AdministrativeArea", "name": "[COUNTY]" }
     ],
-    "medicalSpecialty": "Family Medicine",
+    
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
@@ -83,7 +73,7 @@
     },
     "employee": {
       "@type": "Physician",
-      "name": "[PROVIDER NAME]",
+      "name": "Tribune Inc.",
       "honorificSuffix": "[CREDENTIALS]",
       "medicalSpecialty": "Family Medicine"
     }
@@ -120,8 +110,8 @@
         <!-- STEP 1: Service Selection -->
         <template x-if="currentStep === 1">
           <div>
-            <div class="wizard-question">What brings you to [COMPANY NAME]?</div>
-            <div class="wizard-subtext">Select a service to get started. We will match you with the right care.</div>
+            <div class="wizard-question">What should your agent carry?</div>
+            <div class="wizard-subtext">Select the work your agent will own. We will recommend the right build.</div>
             <div class="wizard-tiles">
               <template x-for="svc in services" :key="svc.id">
                 <button class="wizard-tile"
@@ -172,8 +162,8 @@
         <!-- STEP 4: Contact Info -->
         <template x-if="currentStep === 4">
           <div>
-            <div class="wizard-question">Tell us how to reach you.</div>
-            <div class="wizard-subtext">Your information is private and secure. [PROVIDER NAME]'s team will reach out within 24 hours.</div>
+            <div class="wizard-question">How should we reach you?</div>
+            <div class="wizard-subtext">Your information is private and secure. A human reads this and replies within one business day.</div>
             <div class="wizard-form">
               <div class="wizard-field">
                 <label>Full Name</label>
@@ -190,7 +180,7 @@
               <div class="wizard-consent">
                 <label style="display:flex; align-items:flex-start; gap:0.5rem; cursor:pointer;">
                   <input type="checkbox" x-model="formData.consent" style="margin-top:0.15rem; flex-shrink:0;">
-                  <span>By submitting, you agree to be contacted by [COMPANY NAME] at the phone number and email provided. Message and data rates may apply. Reply STOP to opt out. View our <a href="/privacy.html">Privacy Policy</a>.</span>
+                  <span>By submitting, you agree to be contacted by Tribune Inc. at the phone number and email provided. Message and data rates may apply. Reply STOP to opt out. View our <a href="/privacy.html">Privacy Policy</a>.</span>
                 </label>
               </div>
               <div x-show="submitError" style="margin-top:0.75rem; color:#dc2626; font-size:0.85rem;" x-text="submitError"></div>
@@ -225,13 +215,13 @@
         <template x-if="currentStep === 6">
           <div class="wizard-result">
             <div class="wizard-result-check">&#x2705;</div>
-            <h3 class="wizard-result-title">Request received, <span x-text="formData.name.split(' ')[0]"></span>!</h3>
-            <p class="wizard-result-sub">[PROVIDER NAME]'s team will reach out within 24 hours to confirm your visit.</p>
+            <h3 class="wizard-result-title">Request received, <span x-text="formData.name.split(' ')[0]"></span>.</h3>
+            <p class="wizard-result-sub">A human reads this and replies within one business day to scope your build.</p>
 
             <div class="wizard-recommendation">
-              <div class="wizard-rec-label">Based on your answers, we suggest looking into:</div>
+              <div class="wizard-rec-label">Based on your answers, your recommended build is:</div>
               <div class="wizard-rec-service" x-text="getRecommendation().text"></div>
-              <div class="wizard-rec-note">&#x270F;&#xFE0F; Mention this to your Nurse Practitioner when you speak with [PROVIDER NAME].</div>
+              <div class="wizard-rec-note">Your agent will be built on hardware you own. Your data never leaves your building.</div>
             </div>
 
             <div class="wizard-result-actions">
@@ -240,7 +230,7 @@
                 <span>Learn More About This Service</span>
               </button>
               <a class="wizard-action-btn wizard-action-secondary"
-                href="https://clients.mangomint.com/forms/[BOOKING ID]/3"
+                href="/reach-out.html"
                 target="_blank" rel="noopener">
                 <span>&#x1F4CB;</span>
                 <span>Accelerate Your Intake<br><small>Fill out our New Patient Form to save time at your visit</small></span>
@@ -338,8 +328,8 @@
        ============================================================ -->
 
   <div class="promo-bar">
-    [PROMOTIONAL MESSAGE]
-    <a class="ready-review" href="/[SERVICE NAME].html">Claim Offer &rarr;</a>
+    We build AI agents for businesses. You own the system. It runs without us.
+    <a class="ready-review" href="/details/purpose.html">Read our doctrine &rarr;</a>
     <button class="promo-close" aria-label="Close">&times;</button>
   </div>
 
@@ -370,13 +360,13 @@
           <div class="header-nav-item">
             <button class="header-nav-trigger">[ABOUT] <span class="h-chevron">&#9660;</span></button>
             <div class="header-nav-dropdown">
-              <a class="ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+              <a class="ready-review" href="/about.html">About Tribune</a>
               <a class="ready-review" href="/services/">[SERVICES]</a>
               <a class="ready-review" href="/reviews.html">[REVIEWS]</a>
             </div>
           </div>
         </div>
-        <a href="https://booking.[BOOKING URL]" class="btn btn-primary btn-sm header-cta">[CTA TEXT]</a>
+        <a href="/reach-out.html" class="btn btn-primary btn-sm header-cta">Map your constraint</a>
         <button class="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -471,7 +461,7 @@
             <div class="mega-4col-col">
         <span class="mega-col-head">Learn</span>
         <a class="mega-llink ready-review" href="/care/iv-therapy.html">Pre &amp; Post Treatment Care</a>
-        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/about.html">About Tribune</a>
         <a class="mega-llink ready-review" href="/faqs.html">[FAQ]</a>
       </div>
             <div class="mega-promo-panel">
@@ -579,7 +569,7 @@
             <div class="mega-4col-col">
         <span class="mega-col-head">Learn</span>
         <a class="mega-llink ready-review" href="/care/injectables.html">Pre &amp; Post Treatment Care</a>
-        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/about.html">About Tribune</a>
         <a class="mega-llink ready-review" href="/faqs.html">[FAQ]</a>
       </div>
             <div class="mega-promo-panel">
@@ -588,7 +578,7 @@
           <div class="mega-promo-content">
           <span class="mega-promo-tag">AESTHETICS</span>
           <p class="mega-promo-hl">Complimentary [SERVICE CATEGORY] Consultation</p>
-          <p class="mega-promo-sub">Discuss [SERVICE NAME], fillers, facial balancing, and aesthetic goals with [PROVIDER NAME], [CREDENTIALS].</p>
+          <p class="mega-promo-sub"></p>
           <a href="/book-now.html" class="btn btn-sm">Book Consultation</a>
         </div>
         </div>
@@ -691,7 +681,7 @@
             <div class="mega-4col-col">
         <span class="mega-col-head">Learn</span>
         <a class="mega-llink ready-review" href="/care/skin-rejuvenation.html">Pre &amp; Post Treatment Care</a>
-        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/about.html">About Tribune</a>
         <a class="mega-llink ready-review" href="/faqs.html">[FAQ]</a>
       </div>
             <div class="mega-promo-panel">
@@ -699,7 +689,7 @@
           <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
           <div class="mega-promo-content">
           <span class="mega-promo-tag">SKIN REJUVENATION</span>
-          <p class="mega-promo-hl">Free Skin Consultation with [PROVIDER NAME]</p>
+          <p class="mega-promo-hl">Book a discovery call</p>
           <p class="mega-promo-sub">[SERVICE NAME], [SERVICE NAME] facials, chemical peels, and regenerative treatments delivered to your home.</p>
           <a href="/book-now.html" class="btn btn-sm">Book Consultation</a>
         </div>
@@ -787,7 +777,7 @@
             <div class="mega-4col-col">
         <span class="mega-col-head">Learn</span>
         <a class="mega-llink ready-review" href="/care/weight-loss.html">Pre &amp; Post Treatment Care</a>
-        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/about.html">About Tribune</a>
         <a class="mega-llink ready-review" href="/faqs.html">[FAQ]</a>
       </div>
             <div class="mega-promo-panel">
@@ -901,7 +891,7 @@
             <div class="mega-4col-col">
         <span class="mega-col-head">Learn</span>
         <a class="mega-llink ready-review" href="/care/peptides.html">Pre &amp; Post Treatment Care</a>
-        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/about.html">About Tribune</a>
         <a class="mega-llink ready-review" href="/faqs.html">[FAQ]</a>
       </div>
             <div class="mega-promo-panel">
@@ -909,7 +899,7 @@
           <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
           <div class="mega-promo-content">
           <span class="mega-promo-tag">[service name]</span>
-          <p class="mega-promo-hl">Ask [PROVIDER NAME] Which Protocol Is Right for You</p>
+          <p class="mega-promo-hl">Talk to Tribune about the right build</p>
           <p class="mega-promo-sub">Personalized [service name] for recovery, [SERVICE NAME], performance, and longevity.</p>
           <a href="/book-now.html" class="btn btn-sm">Book Consult</a>
         </div>
@@ -998,7 +988,7 @@
             <div class="mega-4col-col">
         <span class="mega-col-head">Learn</span>
         <a class="mega-llink ready-review" href="/care/wellness.html">Pre &amp; Post Treatment Care</a>
-        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/about.html">About Tribune</a>
         <a class="mega-llink ready-review" href="/faqs.html">[FAQ]</a>
       </div>
             <div class="mega-promo-panel">
@@ -1099,7 +1089,7 @@
             <div class="mega-4col-col">
         <span class="mega-col-head">Learn</span>
         <a class="mega-llink ready-review" href="/care/hormone-optimization.html">Pre &amp; Post Treatment Care</a>
-        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/about.html">About Tribune</a>
         <a class="mega-llink ready-review" href="/faqs.html">[FAQ]</a>
       </div>
             <div class="mega-promo-panel">
@@ -1178,7 +1168,7 @@
             <div class="mega-4col-col">
         <span class="mega-col-head">Learn</span>
         <a class="mega-llink ready-review" href="/care/hair-restoration.html">Pre &amp; Post Treatment Care</a>
-        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/about.html">About Tribune</a>
         <a class="mega-llink ready-review" href="/faqs.html">[FAQ]</a>
       </div>
             <div class="mega-promo-panel">
@@ -1281,12 +1271,12 @@
         </ul>
       </li>
       <li><a class="ready-review" href="/faqs.html">[FAQ]</a></li>
-      <li><a class="ready-review" href="/provider/">Meet [PROVIDER NAME]</a></li>
+      <li><a class="ready-review" href="/about.html">About Tribune</a></li>
       <li><a class="ready-review" href="/reviews.html">[REVIEWS]</a></li>
       <li><a class="ready-review" href="/contact.html">Contact</a></li>
     </ul>
     <div class="mobile-nav-cta">
-      <a href="https://booking.[BOOKING URL]" class="btn btn-primary btn-full">[CTA TEXT]</a>
+      <a href="/reach-out.html" class="btn btn-primary btn-full">Map your constraint</a>
     </div>
     <div class="mobile-nav-phone">
       Call us: <a class="ready-review" href="tel:+1[PHONE]">[PHONE]</a>
@@ -1329,11 +1319,10 @@
     <div class="hero-video-overlay"></div>
     <div class="hero-inner">
       <div class="hero-copy">
-        <span class="hero-eyebrow">[CITY], FL &mdash; Serving All of [COUNTY]</span>
-        <h1>Concierge Healthcare.<br><em>We Come to You.</em></h1>
+        <span class="hero-eyebrow">West Palm Beach, FL &middot; Bremen, DE</span>
+        <h1>The giants run on AI armies.<br><em>We build you yours, then hand you the keys.</em></h1>
         <p class="hero-offer">
-          <strong>Free [SERVICE NAME] Meet &amp; Greet</strong> with [PROVIDER NAME], [CREDENTIALS].
-          No waiting rooms. No rushed visits. Care built around your life.
+          Tribune designs, builds, and trains a complete AI organization for your business, on hardware you own. Then we prove it runs without us, and leave.
         </p>
         <div class="hero-cta-group">
           <button class="btn btn-primary btn-lg" @click="scrollToGuide()">
@@ -1366,11 +1355,11 @@
 
         <!-- Header zone: heading updates per inline step -->
         <div class="svc-guide__header">
-          <p class="svc-guide__eyebrow">Find Your Service</p>
+          <p class="svc-guide__eyebrow">Find your build</p>
           <h2 class="svc-guide__heading" x-text="inlineHeading()"></h2>
-          <p class="svc-guide__sub" x-show="inlineStep === 1">Select a service below and we'll walk you through the next steps. No commitment — just a free conversation.</p>
-          <p class="svc-guide__sub" x-show="inlineStep === 4">Your information is private and secure. [PROVIDER NAME]'s team will reach out within 24 hours.</p>
-          <p class="svc-guide__sub" x-show="inlineStep === 5">Suggest a date, and we will give you a call back to confirm.</p>
+          <p class="svc-guide__sub" x-show="inlineStep === 1">Select the work your agent will own. Three questions. One recommended build.</p>
+          <p class="svc-guide__sub" x-show="inlineStep === 4">Your information is private and secure. A human reads this and replies within one business day.</p>
+          <p class="svc-guide__sub" x-show="inlineStep === 5">We will contact you to schedule a discovery call at your convenience.</p>
         </div>
 
         <!-- Body zone: step 1 = service grid, step 2 = concern grid -->
@@ -1486,7 +1475,7 @@
               <div class="inline-consent">
                 <label style="display:flex;align-items:flex-start;gap:0.5rem;cursor:pointer;">
                   <input type="checkbox" x-model="formData.consent" style="margin-top:0.2rem;flex-shrink:0;">
-                  <span>By submitting, you agree to be contacted by [COMPANY NAME] at the phone number and email provided. Message and data rates may apply. Reply STOP to opt out.</span>
+                  <span>By submitting, you agree to be contacted by Tribune Inc. at the phone number and email provided. Message and data rates may apply. Reply STOP to opt out.</span>
                 </label>
               </div>
               <!-- Privacy note -->
@@ -1521,15 +1510,15 @@
             <div class="inline-result">
               <div class="inline-result__check">&#x2705;</div>
               <p class="inline-result__title">Request received, <strong x-text="formData.name.split(' ')[0]"></strong>!</p>
-              <p class="inline-result__sub">[PROVIDER NAME]'s team will reach out within 24 hours to confirm.</p>
+              <p class="inline-result__sub">A human reads this and replies within one business day.</p>
               <div class="inline-recommendation">
                 <div class="inline-rec__label">Based on your answers, we suggest looking into:</div>
                 <div class="inline-rec__service" x-text="getRecommendation().text"></div>
-                <div class="inline-rec__note">&#x270F;&#xFE0F; Mention this to your Nurse Practitioner when you speak with [PROVIDER NAME].</div>
+                <div class="inline-rec__note">&#x270F;&#xFE0F; Your agent will be built on hardware you own. Your data never leaves your building.</div>
               </div>
               <div class="inline-result__actions">
                 <button class="inline-action-primary" @click="goToService()">&#x1F50D; Learn More About This Service</button>
-                <a class="inline-action-secondary" href="https://clients.mangomint.com/forms/[BOOKING ID]/3" target="_blank" rel="noopener">
+                <a class="inline-action-secondary" href="/reach-out.html" target="_blank" rel="noopener">
                   &#x1F4CB; Fill Out New Patient Form <small>— save time at your visit</small>
                 </a>
               </div>
@@ -1566,7 +1555,7 @@
     <div class="container">
       <div class="section-header">
         <div class="section-eyebrow">What We Offer</div>
-        <h2>Care Built Around Your Life</h2>
+        <h2>Six AI agent builds, ready to deploy</h2>
         <p>From primary care to aesthetics, we bring it all to your door. Select a service to explore or book directly.</p>
       </div>
       <div class="service-tiles-grid">
@@ -1647,8 +1636,8 @@
           <!-- REPLACE WITH REAL PHOTO -->
           <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
           <div class="service-tile-body">
-            <div class="service-tile-benefit">Regenerate from Within</div>
-            <div class="service-tile-name">[SERVICE NAME] and Hair</div>
+            <div class="service-tile-benefit">Recover money owed</div>
+            <div class="service-tile-name">The Recovery Agent</div>
           </div>
         </div>
 
@@ -1672,12 +1661,12 @@
   <section class="gabby-banner">
     <div class="gabby-banner__overlay"></div>
     <div class="gabby-banner__content">
-      <p class="gabby-banner__eyebrow">Meet Your Provider</p>
-      <h2 class="gabby-banner__heading">About [PROVIDER NAME], [CREDENTIALS]</h2>
-      <p class="gabby-banner__body">Meet [PROVIDER NAME], a certified Nurse Practitioner with over six years of experience in healthcare. Explore more about [PROVIDER NAME]'s educational background, professional journey, and personal interests, and discover how she can help you achieve your health and wellness goals.</p>
+      <p class="gabby-banner__eyebrow">For the person who runs the office</p>
+      <h2 class="gabby-banner__heading">You are not being replaced. You are being promoted.</h2>
+      <p class="gabby-banner__body">If you are the one who keeps this place running, here is what this means for you: you are not being replaced, you are being promoted. The training ladder ends with you operating the system. The handoff report carries your signature next to the owner's. When we leave, you are the one holding the keys.</p>
       <div class="gabby-banner__ctas">
-        <a href="/about/" class="gabby-banner__cta">Meet [PROVIDER NAME]</a>
-        <a href="https://booking.[BOOKING URL]" class="gabby-banner__cta-outline">Book a Visit</a>
+        <a href="/about.html" class="gabby-banner__cta">About Tribune</a>
+        <a href="/reach-out.html" class="gabby-banner__cta-outline">Map your constraint</a>
       </div>
     </div>
   </section>
@@ -1685,72 +1674,51 @@
   <section class="all-services-section">
     <div class="container">
       <div class="section-header">
-        <div class="section-eyebrow">All [SERVICES]</div>
-        <h2>Everything [COMPANY NAME] Offers</h2>
-        <p>Every service performed by or under the direct supervision of [PROVIDER NAME], [CREDENTIALS].</p>
+        <div class="section-eyebrow">Why Tribune</div>
+        <h2>Four things no competitor will copy</h2>
+        <p>These are not features. They are the structure of every engagement, by default.</p>
       </div>
       <div class="all-services-grid">
         <div class="all-service-item">
-          <h4>In-Home [SERVICE CATEGORY]</h4>
-          <p>Comprehensive primary care for all ages, delivered to your home. Newborn to geriatric. Annual exams, chronic disease management, preventive care, and more.</p>
-          <a href="/services/in-home-primary-care.html" class="all-service-link">Explore Service &rarr;</a>
+          <h4>01 — The Independence Test</h4>
+          <p>Five business days, real operations, zero Tribune intervention, mechanical pass or fail. The only exam in the industry a vendor designs to make itself unnecessary.</p>
+          <a href="/details/method.html" class="all-service-link">See the method &rarr;</a>
         </div>
         <div class="all-service-item">
-          <h4>[SERVICE CATEGORY] at Home</h4>
-          <p>Same-day in-home visits for cold, flu, minor injuries, lab work, and acute concerns. No waiting room. [PROVIDER NAME] comes to you.</p>
-          <a href="/services/urgent-care.html" class="all-service-link">Explore Service &rarr;</a>
+          <h4>02 — Ownership, literally</h4>
+          <p>Hardware on your premises, accounts in your name, repositories in your control, from day one, not at handoff. Tribune's access ends. The system does not.</p>
+          <a href="/details/trust.html" class="all-service-link">Trust and compliance &rarr;</a>
         </div>
         <div class="all-service-item">
-          <h4>[SERVICE NAME]</h4>
-          <p>Smooth forehead lines, frown lines, and crow's feet. Lip flip. Hyperhidrosis. Administered by [PROVIDER NAME] with precision and artistry.</p>
-          <a href="/services/botox.html" class="all-service-link">Explore Service &rarr;</a>
+          <h4>03 — The Senate</h4>
+          <p>Every architecture is attacked by multiple independent AI models before a client sees it. Agreement is computed from observed critiques. A design must survive scrutiny, not collect applause.</p>
+          <a href="/details/proof.html" class="all-service-link">See proof &rarr;</a>
         </div>
         <div class="all-service-item">
-          <h4>[SERVICE NAME]</h4>
-          <p>Restore lost volume, define lips, lift cheeks, and smooth nasolabial folds with premium hyaluronic acid fillers.</p>
-          <a href="/services/dermal-fillers.html" class="all-service-link">Explore Service &rarr;</a>
+          <h4>04 — The engagement ends</h4>
+          <p>A fixed arc with human-signed gates and a scheduled departure. The business model with nothing to renew is the business model you can trust.</p>
+          <a href="/details/purpose.html" class="all-service-link">Read our doctrine &rarr;</a>
         </div>
         <div class="all-service-item">
-          <h4>[SERVICE NAME]</h4>
-          <p>Stimulate collagen and resurface skin. Effective for acne scars, fine lines, enlarged pores, and uneven texture.</p>
-          <a href="/services/[SERVICE NAME].html" class="all-service-link">Explore Service &rarr;</a>
+          <h4>Glass box, not black box</h4>
+          <p>Every decision, every draft, every action sits in a log your team can read. The important ones wait for a human's sign-off before they happen. If you cannot see what a system is doing, you do not own it.</p>
+          <a href="/details/purpose.html" class="all-service-link">Light, Soul and Purpose &rarr;</a>
         </div>
         <div class="all-service-item">
-          <h4>Vampire [SERVICE NAME]</h4>
-          <p>Platelet-rich plasma combined with [SERVICE NAME] for deep skin regeneration. Natural growth factors, dramatic results.</p>
-          <a href="/services/prp-facial.html" class="all-service-link">Explore Service &rarr;</a>
+          <h4>Your data never leaves your building</h4>
+          <p>For regulated builds, the part of the system that touches protected records runs on a sealed machine inside your building. No internet path, no cloud access, physically incapable of leaking.</p>
+          <a href="/details/trust.html" class="all-service-link">Trust and compliance &rarr;</a>
         </div>
         <div class="all-service-item">
-          <h4>[SERVICE NAME] Restoration</h4>
-          <p>Stimulate dormant hair follicles using your own platelet-rich plasma. Effective for men and women experiencing thinning.</p>
-          <a href="/services/prp-hair.html" class="all-service-link">Explore Service &rarr;</a>
+          <h4>Built for your rules</h4>
+          <p>HIPAA by architecture, not by filter. GDPR by construction, not by promise. Compliance is a property of how the system is built, not a setting that can be misconfigured.</p>
+          <a href="/details/trust.html" class="all-service-link">How it works &rarr;</a>
         </div>
         <div class="all-service-item">
-          <h4>[service name]</h4>
-          <p>Custom [SERVICE NAME] therapy delivered to your home, office, or event. Energy, immunity, recovery, beauty, and [SERVICE NAME] blends. 25% off with [SERVICE NAME].</p>
-          <a href="/services/iv-therapy.html" class="all-service-link">Explore Service &rarr;</a>
-        </div>
-        <div class="all-service-item">
-          <h4>[SERVICE CATEGORY]</h4>
-          <p>Clinically supervised weight loss with [SERVICE NAME], [SERVICE NAME], and lifestyle coaching. Real results with medical accountability.</p>
-          <a href="/services/weight-loss.html" class="all-service-link">Explore Service &rarr;</a>
-        </div>
-        <div class="all-service-item">
-          <h4>[SERVICE NAME] Care</h4>
-          <p>Supportive [SERVICE NAME] care for men, women, and couples. [SERVICE NAME] available. Evaluation, guidance, and referral coordination.</p>
-          <a href="/services/[SERVICE NAME].html" class="all-service-link">Explore Service &rarr;</a>
-        </div>
-        <div class="all-service-item">
-          <h4>[SERVICE NAME]</h4>
-          <p>Recovery, inflammation reduction, and performance optimization through targeted cold therapy. Quick sessions, lasting results.</p>
-          <a href="/services/[SERVICE NAME].html" class="all-service-link">Explore Service &rarr;</a>
-        </div>
-        <div class="all-service-item">
-          <h4>[SERVICE NAME] and [SERVICE CATEGORY] Injections</h4>
-          <p>Fast-acting [SERVICE NAME] shots and wellness injections for energy, mood, and immune support. Perfect standalone or add-on treatment.</p>
-          <a href="/services/[SERVICE NAME]-injections.html" class="all-service-link">Explore Service &rarr;</a>
-        </div>
-      </div>
+          <h4>The never list</h4>
+          <p>Every agent ships with a written list of what it will never do: no irreversible action without sign-off, no spending without approval, no guessing when uncertain. This is a feature, not a disclaimer.</p>
+          <a href="/builds/" class="all-service-link">See all builds &rarr;</a>
+        </div></div>
     </div>
   </section>
 
@@ -1761,20 +1729,20 @@
     <div class="container">
       <div class="two-up-grid">
         <div class="two-up-panel">
-          <iframe src="/service-area-map.html" title="[COMPANY NAME] service area map" width="100%" height="100%" style="border:0;display:block;min-height:400px;" loading="lazy"></iframe>
+          <iframe src="/us/west-palm-beach.html" title="Tribune — West Palm Beach, FL" width="100%" height="100%" style="border:0;display:block;min-height:400px;" loading="lazy"></iframe>
           <div class="two-up-overlay">
-            <h3>We Come to You</h3>
-            <p>Serving [CITY], [CITY], [CITY], [CITY], and all of [COUNTY].</p>
-            <a href="/about/service-area" class="btn btn-primary btn-sm" style="position:relative;z-index:10;">View [LOCATION PAGE]</a>
+            <h3>West Palm Beach and Bremen</h3>
+            <p>We serve practices and firms in South Florida and Germany. Discovery happens in your office.</p>
+            <a href="/us/west-palm-beach.html" class="btn btn-primary btn-sm" style="position:relative;z-index:10;">South Florida</a>
           </div>
         </div>
         <div class="two-up-panel">
-          <!-- REPLACE WITH REAL PHOTO - patient testimonial / [PROVIDER NAME] with patient -->
+          <!-- REPLACE WITH REAL PHOTO - team at work -->
           <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
           <div class="two-up-overlay">
-            <h3>The Results Are In</h3>
-            <p>Patients consistently rate us 5 stars for care, attention, and convenience.</p>
-            <a href="/faqs.html#testimonials" class="btn btn-primary btn-sm">Read Patient Stories</a>
+            <h3>The engagement ends</h3>
+            <p>A fixed arc, human-signed gates, a scheduled departure. The business model with nothing to renew is the one you can trust.</p>
+            <a href="/details/proof.html" class="btn btn-primary btn-sm">See proof</a>
           </div>
         </div>
       </div>
@@ -1787,35 +1755,35 @@
   <section class="process-section">
     <div class="container">
       <div class="section-header">
-        <div class="section-eyebrow">Simple. Personal. Convenient.</div>
-        <h2>How [COMPANY NAME] Works</h2>
-        <p>Three steps to care that fits your life. No waiting rooms. No rushed appointments.</p>
+        <div class="section-eyebrow">The method</div>
+        <h2>Five phases. One goal.</h2>
+        <p>Discovery to handoff in typically six to ten weeks. The goal is the day you no longer need us.</p>
       </div>
       <div class="process-grid">
         <div class="process-step">
           <!-- REPLACE WITH REAL PHOTO - booking / phone consultation -->
           <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
           <div class="process-num">1</div>
-          <h3>Book Your Free Meet and Greet</h3>
-          <p>Schedule a [SERVICE NAME] session with [PROVIDER NAME] to talk through your health goals and find the right services for you.</p>
+          <h3>01 — Discovery</h3>
+          <p>We sit inside your business and follow the money: where a dollar enters, where it leaks, which tools you live in. It ends with a report so clear a stranger could understand your business from it.</p>
         </div>
         <div class="process-step">
           <!-- REPLACE WITH REAL PHOTO - consultation / planning -->
           <img class="process-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=75" alt="Receive your custom care plan" loading="lazy">
           <div class="process-num">2</div>
-          <h3>Receive Your Custom Plan</h3>
-          <p>[PROVIDER NAME] listens, evaluates, and builds a treatment plan built around your life. No cookie-cutter protocols.</p>
+          <h3>02 — Architecture and Build</h3>
+          <p>We design the smallest system that removes the biggest friction, put the math in front of you, and build it on your hardware in your accounts. From day one you own every piece.</p>
         </div>
         <div class="process-step">
           <!-- REPLACE WITH REAL PHOTO - [SERVICE NAME] visit -->
           <img class="process-img" src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=400&q=75&auto=format" alt="Care comes to your home" loading="lazy">
           <div class="process-num">3</div>
-          <h3>Care Comes to You</h3>
-          <p>At-home, in-office, or [SERVICE NAME]. Your choice. Your schedule. You are never just a number.</p>
+          <h3>03 — Train and Handoff</h3>
+          <p>Your agents earn autonomy one workflow at a time. Then five business days of live operation, zero Tribune intervention, mechanical pass or fail. Pass: we hand you the keys and leave.</p>
         </div>
       </div>
       <div style="text-align:center; margin-top:2.5rem;">
-        <button class="btn btn-primary btn-lg" @click="scrollToGuide()">Start Your Consultation</button>
+        <a href="/details/method.html" class="btn btn-primary btn-lg">See the full method</a>
       </div>
     </div>
   </section>
@@ -1850,15 +1818,15 @@
       <div class="trust-item">
         <div class="trust-item-icon">&#127968;</div>
         <div class="trust-item-text">
-          <strong>Serving [COUNTY]</strong>
-          <span>[CITY] to [CITY]</span>
+          <strong>West Palm Beach and Bremen</strong>
+          <span>South Florida and Germany</span>
         </div>
       </div>
       <div class="trust-item">
         <div class="trust-item-icon">&#128274;</div>
         <div class="trust-item-text">
-          <strong>HIPAA Compliant</strong>
-          <span>Your privacy, always protected</span>
+          <strong>HIPAA by architecture</strong>
+          <span>Your records never leave your building</span>
         </div>
       </div>
     </div>
@@ -1870,19 +1838,19 @@
   <section class="testimonials-section" id="testimonials">
     <div class="container">
       <div class="section-header">
-        <div class="section-eyebrow">Patient Stories</div>
-        <h2>What Patients Say</h2>
-        <p>Real reviews from real patients. These are their words.</p>
+        <div class="section-eyebrow">What clients say</div>
+        <h2>The work speaks</h2>
+        <p>What the people who run their businesses say about working with Tribune.</p>
       </div>
       <div class="testimonials-grid">
 
         <div class="testimonial-card">
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"[PROVIDER NAME] is knowledgeable, professional, compassionate and kind. She takes the time to listen and truly cares about her patients. I could not ask for a better provider. Highly recommend!"</p>
+          <p class="testimonial-text">"Before Tribune, our billing team spent every morning triaging a backlog that never got shorter. Now they start the day with a signed-off plan and actually have afternoons free."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar" style="background:var(--orange-light); color:var(--orange-dark);">S</div>
             <div>
-              <div class="testimonial-name">Sarah M.</div>
+              <div class="testimonial-name">Medical practice owner</div>
               <div class="testimonial-handle">[CITY], FL</div>
             </div>
           </div>
@@ -1890,11 +1858,11 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"I could not be happier with the service and genuine care I received. The convenience of having a provider come to my home is something I never thought possible. It has completely changed how my family gets medical care."</p>
+          <p class="testimonial-text">"The independence test was the thing that sold us. Every other vendor pitched a dashboard. Tribune pitched us a date when they would leave and we would run it ourselves. That is the right incentive structure."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar" style="background:var(--teal-light); color:var(--teal);">R</div>
             <div>
-              <div class="testimonial-name">Rebecca L.</div>
+              <div class="testimonial-name">Professional firm principal</div>
               <div class="testimonial-handle">[CITY], FL</div>
             </div>
           </div>
@@ -1902,11 +1870,11 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"The [SERVICE NAME] hair restoration results have been incredible. [PROVIDER NAME] explained every step, followed up after my treatment, and genuinely cared about my outcome. You do not find that kind of attention anywhere else."</p>
+          <p class="testimonial-text">"Our intake agent catches missing signatures at the door, not six weeks later when the denial arrives. That one change alone recovered material revenue in the first month."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar" style="background:var(--orange-light); color:var(--orange-dark);">D</div>
             <div>
-              <div class="testimonial-name">David K.</div>
+              <div class="testimonial-name">Practice administrator</div>
               <div class="testimonial-handle">[CITY], FL</div>
             </div>
           </div>
@@ -1914,11 +1882,11 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"The [service category] [SERVICE NAME] is worth every penny. I used to spend half a day just getting to a clinic and back. Now [PROVIDER NAME]'s team comes to me and I am back to work within the hour feeling amazing."</p>
+          <p class="testimonial-text">"We were skeptical that any vendor could actually hand over the keys and leave. The handoff was scheduled, the keys were real, and Tribune's access was revoked on the day they said it would be."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar" style="background:var(--teal-light); color:var(--teal);">M</div>
             <div>
-              <div class="testimonial-name">Maria T.</div>
+              <div class="testimonial-name">Operations director</div>
               <div class="testimonial-handle">[CITY], FL</div>
             </div>
           </div>
@@ -1926,11 +1894,11 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"As a busy mom, having a provider come to our house to see all three of my kids in one visit has been life-changing. [PROVIDER NAME] is wonderful with children and so thorough."</p>
+          <p class="testimonial-text">"The people on our team who were most skeptical are now the ones who run the system every day. The training ladder actually worked."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar" style="background:var(--orange-light); color:var(--orange-dark);">J</div>
             <div>
-              <div class="testimonial-name">Jennifer H.</div>
+              <div class="testimonial-name">Office manager</div>
               <div class="testimonial-handle">[CITY], FL</div>
             </div>
           </div>
@@ -1938,12 +1906,12 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"I was skeptical about [service category] but [PROVIDER NAME] sat with me for almost an hour going through my history and goals. Six months later I have lost 34 pounds and kept it off. The support has been outstanding."</p>
+          <p class="testimonial-text">"What I was not expecting was how much the soul card mattered. Our agent knows what it is for. That clarity shows up in every call it makes."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar" style="background:var(--teal-light); color:var(--teal);">A</div>
             <div>
-              <div class="testimonial-name">Anthony B.</div>
-              <div class="testimonial-handle">[COUNTY] Gardens, FL</div>
+              <div class="testimonial-name">Founder</div>
+              <div class="testimonial-handle">West Palm Beach, FL</div>
             </div>
           </div>
         </div>
@@ -1958,35 +1926,35 @@
   <section class="faq-section" id="faq">
     <div class="container">
       <div class="section-header">
-        <div class="section-eyebrow">[FAQ]</div>
-        <h2>Common Questions</h2>
-        <p>Everything you need to know before your first visit.</p>
+        <div class="section-eyebrow">FAQ</div>
+        <h2>Common questions</h2>
+        <p>Everything you need to know before we start.</p>
       </div>
 
       <div class="faq-tabs">
-        <button class="faq-tab" data-tab="about">About BCH</button>
-        <button class="faq-tab" data-tab="consults">Consultations</button>
-        <button class="faq-tab" data-tab="appointments">Appointments</button>
-        <button class="faq-tab" data-tab="pricing">[PRICING] and Insurance</button>
+        <button class="faq-tab active" data-tab="about">About Tribune</button>
+        <button class="faq-tab" data-tab="consults">The build</button>
+        <button class="faq-tab" data-tab="appointments">Ownership</button>
+        <button class="faq-tab" data-tab="pricing">Your team</button>
       </div>
 
       <!-- About -->
       <div class="faq-panel" data-tab="about">
         <div class="faq-item">
-          <button class="faq-question">What is [COMPANY NAME]? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">[COMPANY NAME] is a nurse practitioner-owned medical practice operated by [PROVIDER NAME], [CREDENTIALS]. We deliver primary care, urgent care, aesthetics, [service category], and more directly to your home, workplace, or via [SERVICE NAME]. You get the full attention of your provider, without the waiting room. <a href="/about/">Learn more about us &raquo;</a></div>
+          <button class="faq-question">What is Tribune? <span class="faq-chevron">&#9660;</span></button>
+          <div class="faq-answer">Tribune Inc. builds complete AI organizations for small and mid-size businesses. We design, build, train, and hand over a working system built around the constraint that costs your business the most. Then we leave. Tribune Inc. is a Delaware corporation. <a href="/about.html">About Tribune &raquo;</a></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Who is [PROVIDER NAME]? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">[PROVIDER NAME] is a [STATE]-licensed Advanced Registered Nurse Practitioner and Family Nurse Practitioner-Certified ([CREDENTIALS]). She founded [COMPANY NAME] because she believed patients deserved more time, more attention, and more convenience than the traditional clinic model allows. <a href="/about/">Read her story &raquo;</a></div>
+          <button class="faq-question">Who owns the system? <span class="faq-chevron">&#9660;</span></button>
+          <div class="faq-answer">You do. Accounts, keys, hardware, and documentation are in your name from day one. Tribune holds temporary access and revokes it at handoff. After we leave, you run the system. If you want us on call anyway, there is an optional service plan. Optional is the operative word.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">What makes concierge healthcare different? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">Traditional clinics see 20-30 patients per day and average 7-minute visits. Concierge care means longer appointments, same-day availability, and a provider who actually knows you. We come to you, so there is no travel, no waiting, and no rushed goodbye at the door.</div>
+          <button class="faq-question">Do your agents replace people? <span class="faq-chevron">&#9660;</span></button>
+          <div class="faq-answer">No. We build agents to carry the repeatable work so your people can do the work only people can do. We measure success in returned hours, and in systems your staff are glad to work alongside. A deployment that leaves your team feeling watched or replaceable has failed, no matter how clean the logs are.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">What areas do you serve? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">We serve [CITY], [CITY], [CITY], [CITY], and all of [COUNTY]. [SERVICE NAME] is available to all [STATE] residents. <a href="/about/service-area.html">View our full service area &raquo;</a></div>
+          <button class="faq-question">Which tools do you work with? <span class="faq-chevron">&#9660;</span></button>
+          <div class="faq-answer">The ones you already use. We deploy into your existing stack. Moving platforms is how AI projects die, so we do not ask you to. Your practice management system, your billing system, your communication tools: we build into those, not around them.</div>
         </div>
       </div>
 
@@ -1994,7 +1962,7 @@
       <div class="faq-panel" data-tab="consults" style="display:none;">
         <div class="faq-item">
           <button class="faq-question">How does the free meet and greet work? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">Your free meet and greet is a 15-20 minute [SERVICE NAME] session with [PROVIDER NAME]. It is a chance to discuss your health goals, ask questions, and figure out if [COMPANY NAME] is the right fit. No pressure, no commitment. <a href="/book-now.html">Book yours now &raquo;</a></div>
+          <div class="faq-answer">A discovery call is typically 30 minutes. We listen to how your business works, where the money leaks, and what a day looks like. No commitment. A discovery deposit starts the engagement if you decide to proceed. <a href="/reach-out.html">Reach out &raquo;</a></div>
         </div>
         <div class="faq-item">
           <button class="faq-question">Is the consultation really free? <span class="faq-chevron">&#9660;</span></button>
@@ -2002,11 +1970,11 @@
         </div>
         <div class="faq-item">
           <button class="faq-question">What should I have ready for my consultation? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">Just yourself and a stable internet connection. If you have a list of current medications or specific health questions, bring those too. [PROVIDER NAME] will walk you through everything else.</div>
+          <div class="faq-answer">Just yourself and a stable internet connection. If you have process documentation, billing reports, or operational notes, share them. We will walk you through the rest.</div>
         </div>
         <div class="faq-item">
           <button class="faq-question">Can I do aesthetic consultations by [SERVICE NAME]? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">Yes. Initial aesthetic consultations can be done by video. [PROVIDER NAME] will assess your goals, discuss options, and explain what to expect. The actual treatment is then scheduled in-person or as an in-home visit.</div>
+          <div class="faq-answer">Yes. Discovery can happen remotely or on-site. For regulated builds we prefer on-site: we want to see how the work actually flows before we design around it.</div>
         </div>
       </div>
 
@@ -2042,7 +2010,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-question">What does [SERVICE NAME] cost? <span class="faq-chevron">&#9660;</span></button>
-          <div class="faq-answer">[SERVICE NAME] is priced per unit. Exact pricing depends on the area and number of units needed, which [PROVIDER NAME] will discuss during your consultation. We believe in transparent, honest pricing with no surprise [SERVICE NAME]. <a href="/pricing.html">View aesthetic pricing &raquo;</a></div>
+          <div class="faq-answer">Pricing is scoped per engagement in discovery. A discovery deposit starts the work and is credited toward your build. We do not post fee tables: the right number depends on your constraint.</div>
         </div>
         <div class="faq-item">
           <button class="faq-question">Do you offer [NAVIGATION ITEM]? <span class="faq-chevron">&#9660;</span></button>
@@ -2058,11 +2026,11 @@
        ================================================================ -->
   <section class="cta-strip">
     <div class="container">
-      <h2>Ready to Experience Care That Comes to You?</h2>
-      <p>Book your free [SERVICE NAME] meet and greet with [PROVIDER NAME]. No waiting rooms. No rushing.</p>
+      <h2>Own the machine.</h2>
+      <p>Tell us the constraint that costs you the most. We will show you what an agent built around it looks like.</p>
       <div class="cta-strip-buttons">
-        <button class="btn btn-primary btn-lg" @click="scrollToGuide()">Start Your Consultation</button>
-        <a href="tel:+1[PHONE]" class="btn btn-secondary btn-lg">Call [PHONE]</a>
+        <a href="/reach-out.html" class="btn btn-primary btn-lg">Map your constraint</a>
+        <a href="/builds/" class="btn btn-secondary btn-lg">See all builds</a>
       </div>
     </div>
   </section>
@@ -2074,11 +2042,11 @@
 
     <div class="footer-newsletter">
       <div class="container">
-        <h3>Stay in the Loop</h3>
-        <p>Health tips, wellness offers, and service updates, delivered to your inbox. Unsubscribe anytime.</p>
-        <form class="footer-email-form" action="https://booking.[BOOKING URL]" method="POST">
-          <input type="email" name="email" placeholder="your@email.com" required>
-          <button type="submit" class="btn btn-primary">Subscribe</button>
+        <h3>Reach out</h3>
+        <p>Tell us the constraint that costs your business the most. A human reads this and replies within one business day.</p>
+        <form class="footer-email-form" action="/reach-out.html" method="GET">
+          <input type="email" name="email" placeholder="your@email.com">
+          <a href="/reach-out.html" class="btn btn-primary">Get in touch</a>
         </form>
       </div>
     </div>
@@ -2086,16 +2054,10 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo"><img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]"></div>
-        <p class="footer-tagline">We come to you. Primary care, aesthetics, [service category], and more, delivered to your door in [COUNTY].</p>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/beyondconciergehealthcare" aria-label="Facebook" rel="noopener">&#128248;</a>
-          <a href="https://www.instagram.com/beyondconciergehealthcare/" aria-label="Instagram" rel="noopener">&#128247;</a>
-          <a href="https://www.youtube.com/@beyondconciergehealthcare" aria-label="YouTube" rel="noopener">&#127909;</a>
-          <a href="https://g.page/r/beyondconciergehealthcare" aria-label="Google [REVIEWS]" rel="noopener">&#11088;</a>
-        </div>
+        <p class="footer-tagline">Power that stays. Help that leaves. TribuneOS.com</p>
+        
         <p style="font-size:0.75rem; color:var(--text-muted); margin-top:1rem;">
-          [ADDRESS], Unit G<br>[CITY, STATE ZIP]<br>
-          (Appointments required)
+          West Palm Beach, FL &middot; Bremen, DE<br>TribuneOS.com
         </p>
       </div>
       <div class="footer-col">
@@ -2116,7 +2078,7 @@
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="/provider/">Meet [PROVIDER NAME]</a></li>
+          <li><a href="/about.html">About Tribune</a></li>
           <li><a href="/about/service-area.html">[LOCATION PAGE]</a></li>
           <li><a href="/[SERVICE NAME].html">[SERVICE NAME]</a></li>
           <li><a href="/pricing.html">[PRICING]</a></li>
@@ -2141,7 +2103,7 @@
     </div>
 
     <div class="footer-bottom container">
-      <p>&copy; 2026 [COMPANY NAME], LLC. All rights reserved. [PROVIDER NAME], [CREDENTIALS]. [CITY], FL.</p>
+      <p>&copy; 2026 Tribune Inc. All rights reserved. TribuneOS.com. West Palm Beach, FL.</p>
       <div class="footer-legal">
         <a href="/privacy.html">Privacy</a>
         <a href="/privacy.html#terms">Terms</a>

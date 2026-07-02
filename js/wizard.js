@@ -281,13 +281,13 @@ function wizardData(preselect) {
     selectedService: preselect || null,
 
     services: [
-      { id: 'in-home-care',    label: 'In-Home [SERVICE CATEGORY]', icon: '🏠', desc: 'All ages, newborn to geriatric' },
-      { id: 'urgent-care',     label: '[SERVICE CATEGORY] at Home',  icon: '🚑', desc: 'Same-day in-home visits' },
-      { id: 'botox',           label: '[SERVICE NAME]',                icon: '💉', desc: 'Smooth lines, refresh your look' },
-      { id: 'dermal-fillers',  label: '[SERVICE NAME]',       icon: '✨', desc: 'Restore volume and contour' },
-      { id: '[SERVICE NAME]',   label: '[SERVICE NAME] / [SERVICE NAME]',  icon: '🌟', desc: 'Skin renewal and hair restoration' },
-      { id: 'iv-therapy',      label: '[SERVICE CATEGORY]',           icon: '💧', desc: '[SERVICE NAME] [service name] and wellness' },
-      { id: 'weight-loss',     label: '[SERVICE CATEGORY]',  icon: '⚖️', desc: '[SERVICE NAME], [SERVICE NAME], coaching' },
+      { id: 'recovery', label: 'Money owed that never gets chased', icon: '💰', desc: 'Denials, rejections, unpaid invoices' },
+      { id: 'intake',   label: 'Paperwork that arrives all day',    icon: '📥', desc: 'Faxes, referrals, forms, attachments' },
+      { id: 'signal',   label: 'Accounts you should be watching',   icon: '🔭', desc: 'Hiring signals, funding, leadership moves' },
+      { id: 'ledger',   label: 'Books that never quite reconcile',  icon: '📊', desc: 'Entries, reconciliation, month-end close' },
+      { id: 'sentinel', label: 'Deadlines that must not slip',      icon: '🛡️', desc: 'Licenses, filings, timely-filing windows' },
+      { id: 'producer', label: 'Reports your team assembles by hand', icon: '📄', desc: 'Recurring deliverables, client reports' },
+    ], [SERVICE NAME], coaching' },
       { id: '[SERVICE NAME]',       label: '[SERVICE NAME] Care',       icon: '🌱', desc: 'Men, women, couples — [SERVICE NAME] available' },
       { id: '[SERVICE NAME]',     label: '[SERVICE NAME]',          icon: '❄️', desc: 'Skin, body, and sports recovery' },
       { id: 'prp-facial',      label: '[SERVICE NAME] Vampire Facial',   icon: '🩸', desc: 'Rejuvenate with your own platelets' },
@@ -308,6 +308,10 @@ function wizardData(preselect) {
     selectedConcern: null,
 
     getConcernQuestion() {
+      return 'What is your world?';
+    },
+
+    _getConcernQuestion_ORIG() {
       const q = {
         'in-home-care':                'Who is this for?',
         'urgent-care':                 'What do you need?',
@@ -333,121 +337,13 @@ function wizardData(preselect) {
     },
 
     getConcerns() {
-      const map = {
-        'in-home-care': [
-          { id: 'myself',    label: 'Myself',              icon: '🧑' },
-          { id: 'child',     label: 'My child',            icon: '👶' },
-          { id: 'senior',    label: 'A parent or senior',  icon: '👴' },
-          { id: 'family',    label: 'Our whole family',    icon: '👨‍👩‍👧' },
-        ],
-        'urgent-care': [
-          { id: 'same-day',  label: 'A same-day visit',    icon: '🏠' },
-          { id: 'lab',       label: 'Lab work',            icon: '🧪' },
-          { id: 'not-sure',  label: 'Not sure',            icon: '❓' },
-        ],
-        'botox': [
-          { id: 'forehead',  label: 'Forehead',            icon: '😌' },
-          { id: 'frown',     label: 'Frown lines',         icon: '🧖' },
-          { id: 'crows',     label: "Crow's feet",         icon: '👁' },
-          { id: 'brow',      label: 'Brow refresh',        icon: '✨' },
-          { id: 'lip-flip',  label: 'Lip flip',            icon: '💋' },
-          { id: 'jawline',   label: 'Jawline',             icon: '💪' },
-        ],
-        'dermal-fillers': [
-          { id: 'lips',      label: 'Lips',                icon: '💋' },
-          { id: 'cheeks',    label: 'Cheeks',              icon: '✨' },
-          { id: 'jawline',   label: 'Jawline',             icon: '💪' },
-          { id: 'smile',     label: 'Smile lines',         icon: '🙂' },
-          { id: 'chin',      label: 'Chin',                icon: '🫦' },
-          { id: 'under-eye', label: 'Under-eye',           icon: '👁' },
-        ],
-        '[SERVICE NAME]': [
-          { id: 'glow',      label: 'Glow',                icon: '✨' },
-          { id: 'texture',   label: 'Smoother texture',    icon: '🌿' },
-          { id: 'lines',     label: 'Fine lines',          icon: '〰️' },
-          { id: 'tone',      label: 'Even tone',           icon: '🌸' },
-        ],
-        'iv-therapy': [
-          { id: 'energy',    label: 'Energy',              icon: '⚡' },
-          { id: 'immunity',  label: 'Immunity',            icon: '🛡️' },
-          { id: 'recovery',  label: 'Recovery',            icon: '🏃' },
-          { id: '[service name]', label: '[service name]',           icon: '💧' },
-          { id: '[SERVICE NAME]',  label: '[SERVICE NAME] relief',     icon: '🌅' },
-          { id: 'glow',      label: 'Glow',                icon: '💅' },
-        ],
-        'weight-loss': [
-          { id: 'lose',      label: 'Lose weight',                  icon: '🎯' },
-          { id: 'maintain',  label: 'Maintain',                     icon: '⚖️' },
-          { id: 'plan',      label: 'Build a plan with a provider', icon: '📋' },
-        ],
-        '[SERVICE NAME]': [
-          { id: 'me',        label: 'Me',            icon: '🌸' },
-          { id: 'partner',   label: 'My partner',    icon: '💙' },
-          { id: 'both',      label: 'Both of us',    icon: '💑' },
-        ],
-        '[SERVICE NAME]': [
-          { id: 'recovery',    label: 'Recovery',    icon: '🏃' },
-          { id: 'performance', label: 'Performance', icon: '💪' },
-          { id: 'wellness',    label: '[SERVICE CATEGORY]',    icon: '🌿' },
-          { id: 'skin',        label: 'Skin and glow', icon: '✨' },
-        ],
-        'prp-facial': [
-          { id: 'glow',      label: 'Glow',                  icon: '✨' },
-          { id: 'texture',   label: 'Texture',               icon: '🌿' },
-          { id: 'under-eye', label: 'Under-eye',             icon: '👁' },
-          { id: 'rejuv',     label: 'Overall rejuvenation',  icon: '🌸' },
-        ],
-        'prp-hair': [
-          { id: 'fuller',    label: 'Fuller hair',       icon: '💆' },
-          { id: 'scalp',     label: 'Healthier scalp',   icon: '✨' },
-          { id: 'thickness', label: 'Overall thickness', icon: '🌿' },
-        ],
-        '[SERVICE NAME]-injections': [
-          { id: 'energy',  label: 'Energy',           icon: '⚡' },
-          { id: 'mood',    label: 'Mood',             icon: '😊' },
-          { id: 'immune',  label: 'Immune support',   icon: '🛡️' },
-        ],
-        'peptides': [
-          { id: 'recovery',    label: 'Recovery',    icon: '🏃' },
-          { id: 'performance', label: 'Performance', icon: '💪' },
-          { id: '[SERVICE NAME]',  label: '[SERVICE NAME]',  icon: '✨' },
-          { id: 'not-sure',    label: 'Not sure',    icon: '❓' },
-        ],
-        'wellness': [
-          { id: 'energy',     label: 'Energy and immunity', icon: '⚡' },
-          { id: 'recovery',   label: 'Recovery',            icon: '🏃' },
-          { id: 'preventive', label: 'Preventive checkup',  icon: '🌿' },
-          { id: 'not-sure',   label: 'Not sure',            icon: '❓' },
-        ],
-        'hormone-replacement-therapy': [
-          { id: 'optimize',  label: 'Hormone optimization', icon: '⚖️' },
-          { id: 'labs',      label: 'Lab testing',          icon: '🧪' },
-          { id: 'not-sure',  label: 'Not sure',             icon: '❓' },
-        ],
-        '[SERVICE NAME]': [
-          { id: 'new-patient', label: 'New patient meet & greet', icon: '👋' },
-          { id: 'follow-up',   label: 'A follow-up',              icon: '📋' },
-          { id: 'question',    label: 'A quick question',         icon: '❓' },
-        ],
-        'skilled-nursing': [
-          { id: 'me',     label: 'Me',                 icon: '🧑' },
-          { id: 'family', label: 'A family member',    icon: '👨‍👩‍👧' },
-        ],
-        '[SERVICE NAME]': [
-          { id: 'basic',    label: 'Basic',       icon: '⭐' },
-          { id: 'plus',     label: 'Plus',        icon: '💫' },
-          { id: 'elite',    label: 'Elite',       icon: '👑' },
-          { id: 'not-sure', label: 'Not sure yet',icon: '❓' },
-        ],
-        '[SERVICE NAME]-plus': [
-          { id: '[SERVICE NAME]',  label: '[SERVICE NAME]',          icon: '✨' },
-          { id: 'clarity',     label: 'Brain clarity',       icon: '🧠' },
-          { id: 'energy',      label: 'Natural energy',      icon: '⚡' },
-          { id: 'performance', label: 'Athletic performance',icon: '🏃' },
-          { id: 'not-sure',    label: 'Not sure yet',        icon: '❓' },
-        ],
-      };
-      return map[this.selectedService] || [];
+      // Tribune Q2: What is your world?
+      return [
+        { id: 'medical', label: 'A medical or care practice',                 icon: '🏥' },
+        { id: 'legal',   label: 'A legal or professional firm',               icon: '⚖️' },
+        { id: 'sales',   label: 'A sales, research, or intelligence business', icon: '🔭' },
+        { id: 'other',   label: 'Services, trades, or something else',        icon: '🏢' },
+      ]
     },
 
     selectConcern(id) {
@@ -466,47 +362,19 @@ function wizardData(preselect) {
     selectedDetail: null,
 
     hasDetailStep() {
-      return ['botox', 'dermal-fillers', '[SERVICE NAME]', 'weight-loss'].includes(this.selectedService);
+      return true; // Tribune Q3: data sensitivity
     },
 
     getDetailQuestion() {
-      const q = {
-        'botox':          "What's your primary goal?",
-        'dermal-fillers': "What result are you looking for?",
-        '[SERVICE NAME]':  'How would you describe your skin goal?',
-        'weight-loss':    'What kind of support are you looking for?',
-      };
-      return q[this.selectedService] || 'Tell us a bit more.';
+      return 'How sensitive is the data?';
     },
 
     getDetailOptions() {
-      const map = {
-        'botox': [
-          { id: 'prevent', label: 'Prevent new lines',     icon: '🛡️' },
-          { id: 'soften',  label: 'Soften existing lines', icon: '〰️' },
-          { id: 'lift',    label: 'Lift & refresh',        icon: '↑' },
-          { id: 'sweat',   label: 'Reduce sweating',       icon: '💧' },
-        ],
-        'dermal-fillers': [
-          { id: 'volume', label: 'Add volume & fullness',  icon: '✨' },
-          { id: 'define', label: 'Define & contour',       icon: '🎯' },
-          { id: 'smooth', label: 'Smooth deep lines',      icon: '〰️' },
-          { id: 'subtle', label: 'Subtle natural refresh', icon: '🌿' },
-        ],
-        '[SERVICE NAME]': [
-          { id: 'mild',        label: 'Mild — early signs',         icon: '🟢' },
-          { id: 'moderate',    label: 'Moderate',                   icon: '🟡' },
-          { id: 'significant', label: 'More significant',           icon: '🔴' },
-          { id: 'not-sure',    label: 'Not sure, need assessment',  icon: '❓' },
-        ],
-        'weight-loss': [
-          { id: 'medication',  label: 'Medication-assisted',        icon: '💊' },
-          { id: 'coaching',    label: 'Coaching & lifestyle plan',  icon: '📋' },
-          { id: 'combination', label: 'Both',                       icon: '⭐' },
-          { id: 'not-sure',    label: 'Not sure yet',               icon: '❓' },
-        ],
-      };
-      return map[this.selectedService] || [];
+      return [
+        { id: 'regulated', label: 'Patient records',                             icon: '🏥' },
+        { id: 'regulated', label: 'Privileged or confidential client matter',    icon: '⚖️' },
+        { id: 'standard',  label: 'Standard business data',                      icon: '📊' },
+      ]
     },
 
     selectDetail(id) {
