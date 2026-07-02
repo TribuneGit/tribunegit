@@ -1,0 +1,71 @@
+/* ==========================================================================
+   [COMPANY NAME] — Design Tokens
+   Single source of truth for all design decisions.
+   Import this before any other stylesheet.
+   ========================================================================== */
+
+:root {
+  /* Brand colors */
+  --blue:          #c41e3a;   /* primary — exact [COMPANY] logo blue */
+  --blue-dark:     #a8192f;
+  --blue-light:    rgba(196,30,58,0.06);
+  --blue-mid:      #4a7fc1;
+  --orange:        #6b2aa8;   /* accent — promo bar, highlights */
+  --orange-dark:   #562289;
+  --orange-light:  rgba(107,42,168,0.07);
+
+  /* Neutrals */
+  --white:         #ffffff;
+  --bg:            #f8faff;   /* page background — very pale blue-white */
+  --bg-warm:       #fdf9f5;
+  --bg-alt:        #f1f5fb;   /* section alternates */
+  --text:          #1a1a1a;
+  --text-muted:    #6b7280;
+  --text-light:    #9ca3af;
+  --border:        #e2e8f0;
+  --footer-bg:     #1a2540;
+
+  /* Spacing */
+  --section-gap:   5rem;      /* between major sections */
+  --section-gap-sm:3rem;
+  --card-pad:      2rem;
+  --card-pad-sm:   1.25rem;
+
+  /* Shape */
+  --radius:        16px;      /* card border radius */
+  --radius-sm:     10px;
+  --radius-xs:     6px;
+  --radius-pill:   999px;
+
+  /* Shadow */
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.08);
+  --shadow:        0 4px 16px rgba(0,0,0,0.10);
+  --shadow-lg:     0 8px 32px rgba(0,0,0,0.12);
+  --shadow-blue:   0 4px 16px rgba(196,30,58,0.22);
+
+  /* Typography */
+  --font-sans:     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display:  'Playfair Display', Georgia, serif;
+
+  /* Animation */
+  --transition:    0.2s ease;
+  --transition-md: 0.3s ease;
+}
+
+/* Mobile token overrides — reduce spacing on small screens */
+@media (max-width: 600px) {
+  :root {
+    --section-gap:    2.5rem;
+    --section-gap-sm: 1.5rem;
+    --card-pad:       1.25rem;
+    --card-pad-sm:    1rem;
+  }
+}
+
+/* P2: Fluid typography — Senate spec 2026-06-06 */
+@media (max-width: 768px) {
+  h1 { font-size: clamp(1.75rem, 6vw, 3rem); }
+  h2 { font-size: clamp(1.4rem, 4.5vw, 2.2rem); }
+  h3 { font-size: clamp(1.15rem, 3.5vw, 1.6rem); }
+  p  { font-size: clamp(0.9rem, 2.5vw, 1rem); line-height: 1.65; }
+}

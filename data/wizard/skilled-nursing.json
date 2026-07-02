@@ -1,0 +1,37 @@
+{
+  "slug": "skilled-nursing",
+  "serviceLabel": "Skilled Nursing",
+  "steps": [
+    {
+      "type": "list-single",
+      "q": "Who needs care?",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "me",
+          "label": "Me"
+        },
+        {
+          "id": "family",
+          "label": "A family member"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "Skilled Nursing"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "fertility",
+  "serviceLabel": "Fertility Care",
+  "steps": [
+    {
+      "type": "list-single",
+      "q": "Who is this for?",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "me",
+          "label": "Me"
+        },
+        {
+          "id": "partner",
+          "label": "My partner"
+        },
+        {
+          "id": "both",
+          "label": "Both of us"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "Fertility Care"
+    }
+  ]
+}

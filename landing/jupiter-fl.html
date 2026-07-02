@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concierge Healthcare in [CITY], FL | [COMPANY NAME]</title>
+  <meta name="description" content="IV therapy, injectables, and concierge care delivered to your door in [CITY], FL. [PROVIDER NAME], [CREDENTIALS] — no waiting rooms, no rushed visits.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.[DOMAIN]/landing/jupiter-fl.html">
+  <meta property="og:title" content="Concierge Healthcare in [CITY], FL | [COMPANY NAME]">
+  <meta property="og:description" content="IV therapy and injectables delivered to your door in [CITY], FL.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=29">
+
+  <style>
+    /* ── Landing page overrides ─────────────────────── */
+    /* Hide full nav — kept in DOM for future re-enable */
+    .promo-bar,
+    .site-header { display: none !important; }
+
+    /* Minimal top bar (logo + CTA only) */
+    .lp-topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.85rem 2rem;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky; top: 0; z-index: 500;
+    }
+    .lp-topbar-logo img { height: 48px; display: block; }
+    .lp-topbar-cta {
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .lp-topbar-phone {
+      font-weight: 600; color: var(--teal); font-size: 0.95rem;
+      text-decoration: none;
+    }
+    .lp-topbar-phone:hover { color: var(--teal-dark); }
+
+    /* ── Intro banner ─────────────────────────────── */
+    .lp-intro {
+      background: var(--teal);
+      padding: 2.25rem 2rem 2.5rem;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    .lp-intro-logo {
+      position: absolute;
+      top: 1.75rem;
+      left: 2rem;
+      text-decoration: none;
+    }
+    .lp-intro-logo img {
+      height: 52px;
+      border-radius: 10px;
+      display: block;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.20);
+    }
+    .lp-intro-eyebrow {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: rgba(255,255,255,0.65);
+      margin-bottom: 0.75rem;
+    }
+    .lp-intro h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      font-weight: 700; font-style: italic;
+      line-height: 1.18;
+      color: #fff; margin-bottom: 0.85rem;
+      letter-spacing: -0.01em;
+    }
+    .lp-intro h1 span {
+      font-style: normal; font-weight: 400;
+      color: rgba(255,255,255,0.78);
+    }
+    .lp-intro-sub {
+      font-size: 1.05rem; color: rgba(255,255,255,0.82);
+      line-height: 1.6; max-width: 560px; margin: 0 auto 2.5rem;
+    }
+
+    /* Credential badges — single row, no wrap */
+    .lp-badges {
+      display: flex; flex-wrap: nowrap; justify-content: center;
+      gap: 0.6rem;
+      max-width: 100%; margin: 0 auto;
+      overflow-x: auto; /* scroll on very small screens */
+      padding-bottom: 0.25rem;
+    }
+    .lp-badge {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 50px;
+      padding: 0.5rem 0.95rem;
+      text-align: left;
+      flex-shrink: 0;
+    }
+    .lp-badge-icon {
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .lp-badge-text { line-height: 1.25; }
+    .lp-badge-title {
+      font-size: 0.75rem; font-weight: 700; color: #fff;
+      display: block; white-space: nowrap;
+    }
+    .lp-badge-sub {
+      font-size: 0.65rem; color: rgba(255,255,255,0.65);
+      display: block; white-space: nowrap;
+    }
+
+    /* ── Hero arrow ─────────────────────────────────── */
+    .lp-hero-arrow {
+      position: absolute;
+      bottom: 1.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255,255,255,0.45);
+      border-radius: 50px;
+      padding: 0.65rem 1.5rem;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      animation: lp-arrow-bounce 2s infinite ease-in-out;
+      transition: background 0.25s;
+    }
+    .lp-hero-arrow:hover {
+      background: rgba(255,255,255,0.28);
+    }
+    .lp-hero-arrow-icon {
+      font-size: 1rem;
+    }
+    @keyframes lp-arrow-bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(5px); }
+    }
+
+    /* ── Hero: full-width [CITY], two clickable halves ── */
+    .lp-hero-wrap {
+      position: relative;
+      background: #000;
+    }
+    .lp-hero-full {
+      position: relative;
+      width: 100%;
+      min-height: 90vh;
+      background-image: url('https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image');
+      background-size: cover;
+      background-position: center 68%;
+      display: flex;
+      flex-direction: column;
+    }
+    .lp-hero-full-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.38) 0%,
+        rgba(0,0,0,0.12) 38%,
+        rgba(0,0,0,0.48) 80%,
+        rgba(0,0,0,0.62) 100%
+      );
+      z-index: 0;
+    }
+    .lp-hero-logo {
+      position: absolute;
+      top: 1.5rem; left: 1.75rem;
+      z-index: 10;
+      text-decoration: none;
+    }
+    .lp-hero-logo img {
+      height: 52px;
+      display: block;
+    }
+    .lp-hero-heading {
+      position: relative; z-index: 2;
+      text-align: center;
+      padding: 5.5rem 2rem 3rem;
+      pointer-events: none;
+    }
+    .lp-hero-eyebrow-top {
+      display: block;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: rgba(255,255,255,0.60);
+      margin-bottom: 1.1rem;
+    }
+    .lp-hero-heading h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(3.4rem, 9vw, 7.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: #fff; margin: 0;
+      text-shadow: 0 3px 40px rgba(0,0,0,0.55);
+    }
+    .lp-hero-halves {
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1fr 1fr;
+      flex: 1;
+    }
+    .lp-half {
+      display: flex; flex-direction: column; justify-content: flex-end;
+      align-items: flex-start;
+      padding: 2rem 2.75rem 3.5rem;
+      text-decoration: none; color: #fff;
+      transition: background 0.3s ease;
+      min-height: 240px;
+    }
+    .lp-half-left {
+      background: transparent;
+    }
+    .lp-half-right {
+      background: transparent;
+    }
+    .lp-half:hover { background: rgba(255,255,255,0.15); }
+    .lp-half:hover .lp-cta-btn {
+      background: linear-gradient(135deg, #c02040 0%, #a8192f 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(196,30,58,0.50);
+    }
+    .lp-eyebrow {
+      display: inline-block;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em;
+      text-transform: uppercase; color: rgba(255,255,255,0.70);
+      margin-bottom: 0.55rem;
+    }
+    .lp-service-label {
+      font-family: 'DM Sans', 'Inter', sans-serif;
+      font-size: clamp(1.55rem, 2.2vw, 2.1rem);
+      font-weight: 700; line-height: 1.1;
+      color: #fff; margin-bottom: 0.6rem;
+    }
+    .lp-service-desc {
+      font-size: 0.88rem; color: rgba(255,255,255,0.78);
+      line-height: 1.55; margin-bottom: 1.25rem;
+      max-width: 300px;
+    }
+    .lp-cta-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: linear-gradient(135deg, #d94a60 0%, #c41e3a 100%);
+      border: none;
+      color: #fff; font-weight: 600; font-size: 0.9rem;
+      padding: 0.65rem 1.4rem; border-radius: 8px;
+      transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 10px rgba(196,30,58,0.35);
+      align-self: flex-start;
+    }
+    .lp-half:hover .lp-cta-btn {
+      background: linear-gradient(135deg, #c02040 0%, #a8192f 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(196,30,58,0.50);
+    }
+
+    /* ── [PROVIDER NAME] provider section (full-screen banner) ── */
+    .lp-gabby-section {
+      position: relative;
+      background-image: url('https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image');
+      background-size: cover;
+      background-position: center center;
+      min-height: 72vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .lp-gabby-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.28);
+      z-index: 0;
+    }
+    .lp-gabby-content {
+      position: relative; z-index: 2;
+      max-width: 860px; margin: 0 auto;
+      color: #fff;
+    }
+    .lp-gabby-content .section-eyebrow {
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 0.75rem;
+    }
+    .lp-gabby-content h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 700; color: #fff; margin-bottom: 1rem; line-height: 1.2;
+    }
+    .lp-gabby-content p {
+      color: rgba(255,255,255,0.88); line-height: 1.72;
+      font-size: 0.975rem; margin-bottom: 1.75rem;
+    }
+    .lp-gabby-ctas {
+      display: flex; gap: 0.85rem; flex-wrap: wrap; justify-content: center;
+    }
+    .lp-gabby-btn-primary {
+      display: inline-block;
+      background: #fff; color: var(--teal);
+      font-weight: 700; font-size: 0.95rem;
+      padding: 0.7rem 1.6rem; border-radius: 7px;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .lp-gabby-btn-primary:hover { opacity: 0.88; color: var(--teal); }
+    .lp-gabby-btn-outline {
+      display: inline-block;
+      background: transparent; color: #fff;
+      font-weight: 700; font-size: 0.95rem;
+      padding: 0.65rem 1.6rem; border-radius: 7px;
+      border: 2px solid rgba(255,255,255,0.65);
+      text-decoration: none; transition: background 0.2s;
+    }
+    .lp-gabby-btn-outline:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+    /* ── Bridge ─────────────────────────────────────── */
+    .lp-bridge {
+      text-align: center;
+      padding: 3rem 1.5rem 0.5rem;
+      background: var(--bg-alt);
+    }
+    .lp-bridge-eyebrow {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem;
+    }
+    .lp-bridge h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 700; color: var(--text); margin-bottom: 0.4rem;
+    }
+    .lp-bridge p {
+      color: var(--text-muted); font-size: 1rem; max-width: 480px; margin: 0 auto 2rem;
+    }
+
+    /* ── Services grid (static) ──────────────────────── */
+    .lp-services {
+      background: var(--bg-alt);
+      padding: 3.5rem 2rem 4rem;
+    }
+    .lp-services-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+    .lp-services-header h2 { margin-bottom: 0.5rem; }
+    .lp-services-header p { color: var(--text-muted); font-size: 1rem; }
+    .lp-services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .lp-service-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: block;
+    }
+    .lp-service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+    }
+    .lp-service-card-img {
+      width: 100%; height: 160px;
+      object-fit: cover; display: block;
+    }
+    .lp-service-card-body {
+      padding: 0.9rem 1rem 1rem;
+    }
+    .lp-service-card-benefit {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 0.2rem;
+    }
+    .lp-service-card-name {
+      font-size: 1rem; font-weight: 700; color: var(--text);
+    }
+
+    /* ── Membership band ─────────────────────────────── */
+    .lp-membership-band {
+      background: var(--teal); color: #fff;
+      padding: 2.75rem 1.25rem; text-align: center;
+    }
+    .lp-membership-band h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .lp-membership-band p { opacity: 0.9; margin-bottom: 1.35rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .lp-btn-white {
+      background: #fff; color: var(--teal); border: none;
+      padding: 0.7rem 1.75rem; border-radius: 6px; font-weight: 700; font-size: 0.95rem;
+      display: inline-block; transition: opacity 0.2s; text-decoration: none;
+    }
+    .lp-btn-white:hover { opacity: 0.88; color: var(--teal); }
+
+    /* ── Testimonials override (white bg) ────────────── */
+    .testimonials-section {
+      background: #fff;
+    }
+
+    /* ── Mobile ─────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .lp-topbar { padding: 0.75rem 1.25rem; }
+      .lp-topbar-logo img { height: 38px; }
+      .lp-intro { padding: 2.5rem 1.25rem 2rem; }
+      .lp-badges { justify-content: flex-start; }
+      .lp-hero-full { min-height: auto; }
+      .lp-hero-heading { padding: 3.5rem 1.5rem 2rem; }
+      .lp-hero-heading h1 { font-size: clamp(2.6rem, 11vw, 4.5rem); }
+      .lp-hero-halves { grid-template-columns: 1fr; }
+      .lp-half { min-height: 190px; padding: 1.5rem 1.5rem 2.25rem; }
+      .lp-half-left { border-right: none; }
+      .lp-gabby-section { min-height: 100svh; padding: 60px 20px; align-items: flex-end; }
+      .lp-services { padding: 1rem 1rem 3rem; }
+      .lp-services-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+      .lp-service-card-img { height: 130px; }
+    }
+
+    @media (max-width: 420px) {
+      .lp-services-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FULL NAV — hidden, not removed (commercial landing page) -->
+  <div style="display:none" aria-hidden="true">
+    <div class="promo-bar"></div>
+    <header class="site-header"></header>
+  </div>
+
+
+
+  <!-- ── Hero: Full-width [CITY] lighthouse ──────────── -->
+  <div class="lp-hero-wrap">
+    <div class="lp-hero-full">
+      <div class="lp-hero-full-overlay"></div>
+
+      <!-- Logo: upper left -->
+      <a href="/" class="lp-hero-logo">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+      </a>
+
+      <!-- Big heading -->
+      <div class="lp-hero-heading">
+        <span class="lp-hero-eyebrow-top">[COMPANY NAME]</span>
+        <h1>Now Serving<br>[CITY] [STATE]</h1>
+      </div>
+
+      <!-- Two clickable halves -->
+      <div class="lp-hero-halves">
+        <a href="/services/botox.html" class="lp-half lp-half-left">
+          <span class="lp-eyebrow">&#10024; Aesthetics &amp; Injectables</span>
+          <div class="lp-service-label">Injectables</div>
+          <p class="lp-service-desc">Botox, dermal fillers, and aesthetic treatments administered at your [CITY] address.</p>
+          <span class="lp-cta-btn">Explore Injectables &nbsp;&#8594;</span>
+        </a>
+        <a href="/services/iv-therapy.html" class="lp-half lp-half-right">
+          <span class="lp-eyebrow">&#128167; IV Drips &amp; NAD+</span>
+          <div class="lp-service-label">IV Therapy</div>
+          <p class="lp-service-desc">Custom drip infusions, NAD+, immune support, and hangover relief delivered to your [CITY] home or office.</p>
+          <span class="lp-cta-btn">Explore IV Therapy &nbsp;&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <a href="#services" class="lp-hero-arrow">
+      See all services
+      <span class="lp-hero-arrow-icon">&#8595;</span>
+    </a>
+  </div>
+
+  <!-- ── Intro banner (below hero) ─────────────────── -->
+  <section class="lp-intro">
+    <div class="lp-intro-eyebrow">[CITY], FL &mdash; [COUNTY]</div>
+    <h1>Concierge Healthcare.<br><span>We Come to You.</span></h1>
+    <p class="lp-intro-sub">Free Telehealth Meet &amp; Greet with [PROVIDER NAME], [CREDENTIALS]. No waiting rooms. No rushed visits. Care built around your life.</p>
+
+    <div class="lp-badges">
+      <div class="lp-badge">
+        <span class="lp-badge-icon">&#9733;</span>
+        <div class="lp-badge-text">
+          <span class="lp-badge-title">[STATE] Licensed [CREDENTIALS]</span>
+          <span class="lp-badge-sub">Board Certified [CREDENTIALS]</span>
+        </div>
+      </div>
+      <div class="lp-badge">
+        <span class="lp-badge-icon">&#10003;</span>
+        <div class="lp-badge-text">
+          <span class="lp-badge-title">AANP Member</span>
+          <span class="lp-badge-sub">American Association of NPs</span>
+        </div>
+      </div>
+      <div class="lp-badge">
+        <span class="lp-badge-icon">&#128522;</span>
+        <div class="lp-badge-text">
+          <span class="lp-badge-title">60+ Five-Star Reviews</span>
+          <span class="lp-badge-sub">Google and Healthgrades</span>
+        </div>
+      </div>
+      <div class="lp-badge">
+        <span class="lp-badge-icon">&#127968;</span>
+        <div class="lp-badge-text">
+          <span class="lp-badge-title">Serving [COUNTY]</span>
+          <span class="lp-badge-sub">[CITY] to [CITY]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Services grid (static — mirrors main page) ─── -->
+  <section class="lp-services" id="services">
+    <div class="lp-services-header">
+      <div class="section-eyebrow">What We Offer</div>
+      <h2>Care Built Around Your Life</h2>
+      <p>From primary care to aesthetics, we bring it all to your door. Select a service to explore or book directly.</p>
+    </div>
+    <div class="lp-services-grid">
+
+      <a href="/services/in-home-primary-care.html" class="lp-service-card">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+        <div class="lp-service-card-body">
+          <div class="lp-service-card-benefit">Care That Comes to You</div>
+          <div class="lp-service-card-name">In-Home Primary Care</div>
+        </div>
+      </a>
+
+      <a href="/services/urgent-care.html" class="lp-service-card">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+        <div class="lp-service-card-body">
+          <div class="lp-service-card-benefit">Same-Day Relief</div>
+          <div class="lp-service-card-name">Urgent Care at Home</div>
+        </div>
+      </a>
+
+      <a href="/services/botox.html" class="lp-service-card">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+        <div class="lp-service-card-body">
+          <div class="lp-service-card-benefit">Relax Fine Lines</div>
+          <div class="lp-service-card-name">Botox</div>
+        </div>
+      </a>
+
+      <a href="/services/dermal-fillers.html" class="lp-service-card">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+        <div class="lp-service-card-body">
+          <div class="lp-service-card-benefit">Restore Volume</div>
+          <div class="lp-service-card-name">Dermal Fillers</div>
+        </div>
+      </a>
+
+      <a href="/services/microneedling.html" class="lp-service-card">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+        <div class="lp-service-card-body">
+          <div class="lp-service-card-benefit">Stimulate Collagen</div>
+          <div class="lp-service-card-name">Microneedling / PRP</div>
+        </div>
+      </a>
+
+      <a href="/services/iv-therapy.html" class="lp-service-card">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+        <div class="lp-service-card-body">
+          <div class="lp-service-card-benefit">Fast Energy and Recovery</div>
+          <div class="lp-service-card-name">Mobile IV Therapy</div>
+        </div>
+      </a>
+
+      <a href="/services/weight-loss.html" class="lp-service-card">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+        <div class="lp-service-card-body">
+          <div class="lp-service-card-benefit">Lose Weight Safely</div>
+          <div class="lp-service-card-name">Medical Weight Loss</div>
+        </div>
+      </a>
+
+      <a href="/services/fertility.html" class="lp-service-card">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+        <div class="lp-service-card-body">
+          <div class="lp-service-card-benefit">Build Your Family</div>
+          <div class="lp-service-card-name">Fertility Care</div>
+        </div>
+      </a>
+
+      <a href="/services/prp-facial.html" class="lp-service-card">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+        <div class="lp-service-card-body">
+          <div class="lp-service-card-benefit">Regenerate from Within</div>
+          <div class="lp-service-card-name">PRP Facial and Hair</div>
+        </div>
+      </a>
+
+      <a href="/services/cryotherapy.html" class="lp-service-card">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+        <div class="lp-service-card-body">
+          <div class="lp-service-card-benefit">Reset and Recover</div>
+          <div class="lp-service-card-name">Cryotherapy</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Membership band ──────────────────────────── -->
+  <section class="lp-membership-band">
+    <h2>Save 25% with a Monthly Membership</h2>
+    <p>Join our affordable monthly plan and save on IV therapy and select services every single month.</p>
+    <a href="/membership.html" class="lp-btn-white">View Membership Plans</a>
+  </section>
+
+  <!-- ── [PROVIDER NAME] Provider Section ─────────────────────── -->
+  <section class="lp-gabby-section">
+    <div class="lp-gabby-overlay"></div>
+    <div class="lp-gabby-content">
+      <div class="section-eyebrow">Meet Your Provider</div>
+      <h2>About [PROVIDER NAME], [CREDENTIALS]</h2>
+      <p>Meet [PROVIDER NAME], a certified Nurse Practitioner with over six years of experience in healthcare. Explore more about [PROVIDER NAME]'s educational background, professional journey, and personal interests, and discover how she can help you achieve your health and wellness goals.</p>
+      <div class="lp-gabby-ctas">
+        <a href="/about/" class="lp-gabby-btn-primary">Meet [PROVIDER NAME]</a>
+        <a href="https://booking.[BOOKING URL]" class="lp-gabby-btn-outline">Book a Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Reviews ───────────────────────────────────── -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Patient Stories</div>
+        <h2>What Patients Say</h2>
+        <p>Real reviews from real patients across [COUNTY].</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"[PROVIDER NAME] is knowledgeable, professional, compassionate and kind. She takes the time to listen and truly cares about her patients. I could not ask for a better provider. Highly recommend!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:var(--orange-light); color:var(--orange-dark);">S</div>
+            <div><div class="testimonial-name">Sarah M.</div><div class="testimonial-handle">[CITY], FL</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"I could not be happier with the service and genuine care I received. The convenience of having a provider come to my home is something I never thought possible. It has completely changed how my family gets medical care."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:var(--teal-light); color:var(--teal);">R</div>
+            <div><div class="testimonial-name">Rebecca L.</div><div class="testimonial-handle">[CITY], FL</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"The IV therapy membership is worth every penny. I used to spend half a day just getting to a clinic and back. Now [PROVIDER NAME]'s team comes to me and I am back to work within the hour feeling amazing."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:var(--teal-light); color:var(--teal);">M</div>
+            <div><div class="testimonial-name">Maria T.</div><div class="testimonial-handle">[CITY], FL</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"I was skeptical about medical weight loss but [PROVIDER NAME] sat with me for almost an hour going through my history and goals. Six months later I have lost 34 pounds and kept it off. The support has been outstanding."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:var(--orange-light); color:var(--orange-dark);">A</div>
+            <div><div class="testimonial-name">Anthony B.</div><div class="testimonial-handle">[COUNTY] Gardens, FL</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"The PRP hair restoration results have been incredible. [PROVIDER NAME] explained every step, followed up after my treatment, and genuinely cared about my outcome. You do not find that kind of attention anywhere else."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:var(--orange-light); color:var(--orange-dark);">D</div>
+            <div><div class="testimonial-name">David K.</div><div class="testimonial-handle">North [COUNTY], FL</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"As a busy mom, having a provider come to our house to see all three of my kids in one visit has been life-changing. [PROVIDER NAME] is wonderful with children and so thorough."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:var(--teal-light); color:var(--teal);">J</div>
+            <div><div class="testimonial-name">Jennifer H.</div><div class="testimonial-handle">[CITY], FL</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]"></div>
+        <p class="footer-tagline">We come to you. Serving [COUNTY], FL.</p>
+        <p style="font-size:.75rem;color:var(--text-muted);margin-top:1rem;">[ADDRESS], Unit G, [CITY, STATE ZIP]</p>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="/services/botox.html">Botox</a></li>
+        <li><a href="/services/dermal-fillers.html">Dermal Fillers</a></li>
+        <li><a href="/services/microneedling.html">Microneedling</a></li>
+        <li><a href="/services/prp-facial.html">PRP Facial</a></li>
+        <li><a href="/services/iv-therapy.html">IV Therapy</a></li>
+        <li><a href="/services/weight-loss.html">Weight Loss</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="/provider/">Meet [PROVIDER NAME]</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/faqs.html">FAQs</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="tel:+1[PHONE]">[PHONE]</a></li>
+        <li><a href="/contact.html">Send a Message</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2026 [COMPANY NAME], LLC. [PROVIDER NAME], [CREDENTIALS]. [CITY], FL.</p>
+    </div>
+  </footer>
+
+  <script src="../js/megamenu.js"></script>
+  <!-- LeadConnector Chat Widget -->
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="696fcf0124cb5a2d1fa376e8"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{
+  "slug": "peptides",
+  "category": "[Category]",
+  "name": "[Service Name]",
+  "h1": "[Service Name] in [CITY], [STATE]",
+  "meta_title": "[Page Title | COMPANY NAME]",
+  "meta_description": "[Meta description for this service page.]",
+  "canonical": "[URL]",
+  "hero_value_prop": "[Brief hero value proposition for this service.]",
+  "hero_image": "https://placehold.co/1600x900/e8e8e8/aaaaaa?text=Hero",
+  "hero_perks": [
+    "Prescribed by a licensed NP",
+    "Recovery, anti-aging, performance",
+    "We come to you"
+  ],
+  "faq": [
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    }
+  ],
+  "about": [
+    "[placeholder text]",
+    "[placeholder text]",
+    "[placeholder text]"
+  ],
+  "about_headline": "Prescribed Peptide Therapy for Recovery and Performance",
+  "menu_headline": "Peptide Protocols",
+  "sections": [
+    {
+      "id": "recovery-healing",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]",
+      "body2": "[placeholder text]"
+    },
+    {
+      "id": "anti-aging-performance",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]",
+      "body2": "[placeholder text]"
+    }
+  ],
+  "byline": "Written and medically reviewed by [PROVIDER NAME], [CREDENTIALS].",
+  "last_updated": "June 2026",
+  "testimonial": {
+    "quote": "[Customer testimonial quote.]",
+    "name": "[Service Name]",
+    "city": "[placeholder text]"
+  },
+  "cta_headline": "Ready to Explore <em>Peptide Therapy</em>?",
+  "cta_body": "[placeholder text]",
+  "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "related": [
+    "weight-loss",
+    "wellness",
+    "iv-therapy"
+  ],
+  "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "how_it_works": {
+    "body": "[placeholder text]",
+    "time": "30-45 min consult",
+    "downtime": "None",
+    "onset": "Weeks 2-6",
+    "duration": "Protocol-dependent",
+    "location": "[Location]"
+  }
+}

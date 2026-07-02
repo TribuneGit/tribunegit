@@ -1,0 +1,42 @@
+{
+  "slug": "membership",
+  "serviceLabel": "Concierge Membership",
+  "steps": [
+    {
+      "type": "list-single",
+      "q": "[placeholder]",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "basic",
+          "label": "Basic"
+        },
+        {
+          "id": "plus",
+          "label": "Plus"
+        },
+        {
+          "id": "elite",
+          "label": "Elite"
+        },
+        {
+          "id": "unsure",
+          "label": "Not sure yet"
+        }
+      ]
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "Concierge Membership"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+<!-- Wizard overlay — uses body scope (x-data on body tag) -->
+  <div class="wizard-overlay" x-show="open" style="display:none" x-transition.opacity @click.self="closeWizard()">
+    <div class="wizard-card" @click.stop>
+      <div class="wizard-header">
+        <div class="wizard-title" x-text="stepLabel"></div>
+        <div class="wizard-progress">
+          <div class="wizard-progress-bar"><div class="wizard-progress-fill" :style="`width: ${progressPct}%`"></div></div>
+          <div class="wizard-step-label" x-text="`Step ${currentStep} of ${totalSteps}`"></div>
+        </div>
+        <button class="wizard-close" @click="closeWizard()">&times;</button>
+      </div>
+      <div class="wizard-body">
+        <template x-if="currentStep === 1"><div>
+          <div class="wizard-question">What brings you to [COMPANY NAME]?</div>
+          <div class="wizard-tiles">
+            <template x-for="svc in services" :key="svc.id">
+              <button class="wizard-tile" :class="{ selected: selectedService === svc.id }" @click="selectService(svc.id)">
+                <span class="wizard-tile-icon" x-text="svc.icon"></span>
+                <span class="wizard-tile-label" x-text="svc.label"></span>
+              </button>
+            </template>
+          </div>
+        </div></template>
+        <template x-if="currentStep === 2"><div>
+          <div class="wizard-question" x-text="getConcernQuestion()"></div>
+          <div class="wizard-options">
+            <template x-for="opt in getConcerns()" :key="opt.id">
+              <button class="wizard-option" :class="{ selected: selectedConcern === opt.id }" @click="selectConcern(opt.id)">
+                <span class="wizard-option-icon" x-text="opt.icon"></span><span x-text="opt.label"></span>
+              </button>
+            </template>
+          </div>
+        </div></template>
+        <template x-if="currentStep === 3"><div>
+          <div class="wizard-question" x-text="getDetailQuestion()"></div>
+          <div class="wizard-options">
+            <template x-for="opt in getDetailOptions()" :key="opt.id">
+              <button class="wizard-option" :class="{ selected: selectedDetail === opt.id }" @click="selectDetail(opt.id)">
+                <span class="wizard-option-icon" x-text="opt.icon"></span><span x-text="opt.label"></span>
+              </button>
+            </template>
+          </div>
+        </div></template>
+        <template x-if="currentStep === 4"><div>
+          <div class="wizard-question">Tell us how to reach you.</div>
+          <div class="wizard-form">
+            <div class="wizard-field"><label>Full Name</label><input type="text" x-model="formData.name" placeholder="Jane Smith"></div>
+            <div class="wizard-field"><label>Email</label><input type="email" x-model="formData.email" placeholder="jane@email.com"></div>
+            <div class="wizard-field"><label>Phone</label><input type="tel" x-model="formData.phone" placeholder="(561) 555-0100"></div>
+            <div class="wizard-consent"><label style="display:flex;align-items:flex-start;gap:.5rem;cursor:pointer;"><input type="checkbox" x-model="formData.consent" style="margin-top:.15rem;flex-shrink:0;"><span>By submitting you agree to be contacted by [COMPANY NAME]. View our <a href="/privacy.html">Privacy Policy</a>.</span></label></div>
+          </div>
+        </div></template>
+        <template x-if="currentStep === 5"><div>
+          <div class="wizard-question">How would you like your consultation?</div>
+          <div class="consult-options">
+            <template x-for="ct in consultTypes" :key="ct.id">
+              <button class="consult-option" :class="{ selected: consultType === ct.id }" @click="selectConsult(ct.id)">
+                <span class="consult-option-icon" x-text="ct.icon"></span>
+                <span class="consult-option-label" x-text="ct.label"></span>
+                <span style="font-size:.75rem;color:#6b7280;" x-text="ct.desc"></span>
+              </button>
+            </template>
+          </div>
+        </div></template>
+        <template x-if="currentStep === 6"><div>
+          <div class="wizard-question">Pick a date and time.</div>
+          <div class="wizard-field"><label>Date</label><input type="date" x-model="selectedDate" :min="minDate" :max="maxDate"></div>
+          <div style="margin-top:1.25rem;"><label style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:.5rem;">Preferred Time</label>
+          <div class="time-slots"><template x-for="slot in timeSlots" :key="slot"><button class="time-slot" :class="{ selected: selectedTime === slot }" @click="selectedTime = slot" x-text="slot"></button></template></div></div>
+        </div></template>
+        <template x-if="currentStep === 7"><div class="wizard-confirm">
+          <div class="wizard-confirm-icon">🎉</div>
+          <h3>You are all set, <span x-text="formData.name.split(' ')[0]"></span>!</h3>
+          <p>[PROVIDER NAME]'s team will reach out within 24 hours to confirm.</p>
+          <div class="wizard-confirm-checklist"><ul>
+            <li>Confirmation sent to <strong x-text="formData.email"></strong></li>
+            <li>Service: <strong x-text="getServiceLabel()"></strong></li>
+            <li>Consultation: <strong x-text="getConsultLabel()"></strong></li>
+          </ul></div>
+          <button class="btn btn-teal btn-full" @click="closeWizard()">Back to Site</button>
+        </div></template>
+      </div>
+      <template x-if="currentStep < 7">
+        <div class="wizard-footer">
+          <div><button class="wizard-back" @click="prevStep()" x-show="currentStep > 1">Back</button></div>
+          <div class="wizard-footer-right">
+            <button class="wizard-next" @click="nextStep()" :disabled="!canGoNext" x-show="currentStep >= 4"><span x-show="!isSubmitting">Continue</span><span x-show="isSubmitting">Submitting...</span></button>
+            <button class="wizard-next" @click="nextStep()" x-show="currentStep < 4 && canGoNext">Continue</button>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- Promo bar -->
+    

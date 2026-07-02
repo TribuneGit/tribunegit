@@ -1,0 +1,49 @@
+{
+  "slug": "wellness",
+  "serviceLabel": "Wellness",
+  "steps": [
+    {
+      "type": "cards-single",
+      "q": "[placeholder]",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "energy",
+          "icon": "⚡",
+          "label": "Energy and immunity"
+        },
+        {
+          "id": "recovery",
+          "icon": "💪",
+          "label": "Recovery"
+        },
+        {
+          "id": "preventive",
+          "icon": "🏥",
+          "label": "Preventive checkup"
+        },
+        {
+          "id": "unsure",
+          "icon": "💬",
+          "label": "Not sure"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "Wellness"
+    }
+  ]
+}

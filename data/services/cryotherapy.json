@@ -1,0 +1,137 @@
+{
+  "slug": "cryotherapy",
+  "category": "[Category]",
+  "name": "[Service Name]",
+  "h1": "[Service Name] in [CITY], [STATE]",
+  "meta_title": "[Page Title | COMPANY NAME]",
+  "meta_description": "[Meta description for this service page.]",
+  "canonical": "[URL]",
+  "hero_value_prop": "[Brief hero value proposition for this service.]",
+  "hero_image": "https://placehold.co/1600x900/e8e8e8/aaaaaa?text=Hero",
+  "hero_perks": [
+    "We come to you",
+    "Aesthetic, orthopedic, and sports applications",
+    "Cryotherapy parties available"
+  ],
+  "fact_chips": [
+    {
+      "icon": "⏱",
+      "label": "[placeholder text]"
+    },
+    {
+      "icon": "⚡",
+      "label": "[placeholder text]"
+    },
+    {
+      "icon": "🔄",
+      "label": "[placeholder text]"
+    },
+    {
+      "icon": "📍",
+      "label": "[placeholder text]"
+    }
+  ],
+  "faq": [
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    }
+  ],
+  "about": [
+    "[placeholder text]",
+    "[placeholder text]",
+    "[placeholder text]"
+  ],
+  "about_headline": "Mobile Cryotherapy for Recovery, Aesthetics, and Performance",
+  "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "menu_headline": "Cryotherapy Applications",
+  "sections": [
+    {
+      "id": "aesthetic-cosmetic",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]",
+      "items": [
+        "Collagen stimulation",
+        "Reduced skin redness",
+        "Improved skin tone and texture",
+        "Pore minimization",
+        "Metabolism boost"
+      ]
+    },
+    {
+      "id": "orthopedic-pain",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]",
+      "items": [
+        "Injury recovery",
+        "Chronic pain relief",
+        "Reduced inflammation",
+        "Reduced swelling",
+        "Improved range of motion"
+      ]
+    },
+    {
+      "id": "sports-recovery",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]",
+      "items": [
+        "Reduced muscle soreness",
+        "Faster recovery",
+        "Decreased inflammation",
+        "Improved energy",
+        "Mental focus support"
+      ]
+    }
+  ],
+  "byline": "Written and medically reviewed by [PROVIDER NAME], [CREDENTIALS].",
+  "last_updated": "June 2026",
+  "testimonial": {
+    "quote": "[Customer testimonial quote.]",
+    "name": "[Service Name]",
+    "city": "[placeholder text]"
+  },
+  "cta_headline": "Ready to <em>Reset and Recover</em>?",
+  "cta_body": "[placeholder text]",
+  "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "related": [
+    "iv-therapy",
+    "b12-injections",
+    "prp-facial"
+  ],
+  "gallery": [
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image"
+  ],
+  "gallery_headline": "Before and After",
+  "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "how_it_works": {
+    "body": "[placeholder text]",
+    "time": "20-30 min",
+    "downtime": "None",
+    "onset": "Immediate",
+    "duration": "Ongoing with sessions",
+    "location": "[Location]"
+  }
+}

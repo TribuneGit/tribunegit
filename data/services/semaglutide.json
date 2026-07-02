@@ -1,0 +1,166 @@
+{
+  "slug": "semaglutide",
+  "category": "[Category]",
+  "name": "[Service Name]",
+  "h1": "[Service Name] in [CITY], [STATE]",
+  "meta_title": "[Page Title | COMPANY NAME]",
+  "meta_description": "[Meta description for this service page.]",
+  "canonical": "[URL]",
+  "hero_value_prop": "[Brief hero value proposition for this service.]",
+  "hero_image": "https://placehold.co/1600x900/e8e8e8/aaaaaa?text=Hero",
+  "hero_perks": [
+    "FDA-approved weekly injection",
+    "Monthly NP supervision",
+    "We come to you"
+  ],
+  "fact_chips": [
+    {
+      "icon": "💉",
+      "label": "[placeholder text]"
+    },
+    {
+      "icon": "📅",
+      "label": "[placeholder text]"
+    },
+    {
+      "icon": "⚖️",
+      "label": "[placeholder text]"
+    },
+    {
+      "icon": "📍",
+      "label": "[placeholder text]"
+    }
+  ],
+  "faq": [
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    }
+  ],
+  "about": [
+    "Semaglutide is an FDA-approved GLP-1 receptor agonist administered as a weekly injection. It reduces appetite by mimicking a natural gut hormone that signals fullness to your brain. Most patients eat less without constant willpower or feeling deprived.",
+    "[placeholder text]",
+    "Most patients lose 10 to 15 percent of their body weight over 12 to 16 months. Results vary by individual, but the combination of medical supervision and a personalized plan consistently delivers outcomes that diet and exercise alone have not."
+  ],
+  "about_headline": "Semaglutide Weight Loss That Comes to You",
+  "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "menu_headline": "How Semaglutide Works",
+  "sections": [
+    {
+      "id": "how-it-works",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    },
+    {
+      "id": "who-qualifies",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    },
+    {
+      "id": "what-to-expect",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    },
+    {
+      "id": "best-practices",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    },
+    {
+      "id": "semaglutide-vs-ozempic",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    }
+  ],
+  "byline": "Written and medically reviewed by [PROVIDER NAME], [CREDENTIALS].",
+  "last_updated": "June 2026",
+  "steps_content": [
+    {
+      "n": 1,
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    },
+    {
+      "n": 2,
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    },
+    {
+      "n": 3,
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    }
+  ],
+  "testimonial": {
+    "quote": "[Customer testimonial quote.]",
+    "name": "[Service Name]",
+    "city": "[placeholder text]"
+  },
+  "cta_headline": "Ready to Start Your <em>Semaglutide Program</em>?",
+  "cta_body": "[placeholder text]",
+  "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "related": [
+    "weight-loss",
+    "tirzepatide",
+    "in-home-primary-care"
+  ],
+  "gallery": [
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image"
+  ],
+  "gallery_headline": "Before and After",
+  "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "how_it_works": {
+    "body": "[placeholder text]",
+    "time": "30-45 min consult",
+    "downtime": "None",
+    "onset": "Weeks 1-2 (appetite), Weeks 4-6 (weight)",
+    "duration": "12-16 month program",
+    "location": "[Location]"
+  },
+  "seo": {
+    "hero": [
+      "[placeholder text]",
+      "[placeholder text]",
+      "[placeholder text]",
+      "[placeholder text]"
+    ],
+    "about": [
+      "semaglutide GLP-1 receptor agonist",
+      "weekly semaglutide injection",
+      "FDA approved weight loss medication"
+    ],
+    "how_it_works": [
+      "semaglutide how it works",
+      "GLP-1 hormone appetite control",
+      "semaglutide dosing schedule"
+    ],
+    "faq": [
+      "semaglutide results timeline",
+      "semaglutide who qualifies",
+      "semaglutide vs ozempic"
+    ]
+  }
+}

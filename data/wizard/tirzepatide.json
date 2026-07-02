@@ -1,0 +1,44 @@
+{
+  "slug": "tirzepatide",
+  "serviceLabel": "Tirzepatide",
+  "steps": [
+    {
+      "type": "cards-single",
+      "q": "What is your goal?",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "lose-weight",
+          "icon": "⚖️",
+          "label": "Lose weight"
+        },
+        {
+          "id": "tried-sema",
+          "icon": "🔄",
+          "label": "[placeholder]"
+        },
+        {
+          "id": "not-sure",
+          "icon": "🤔",
+          "label": "Not sure yet"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "Tirzepatide"
+    }
+  ]
+}

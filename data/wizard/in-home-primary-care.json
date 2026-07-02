@@ -1,0 +1,45 @@
+{
+  "slug": "in-home-primary-care",
+  "serviceLabel": "In-Home Primary Care",
+  "steps": [
+    {
+      "type": "list-single",
+      "q": "Who is this for?",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "myself",
+          "label": "Myself"
+        },
+        {
+          "id": "child",
+          "label": "My child"
+        },
+        {
+          "id": "parent",
+          "label": "A parent or senior"
+        },
+        {
+          "id": "family",
+          "label": "Our whole family"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "In-Home Primary Care"
+    }
+  ]
+}

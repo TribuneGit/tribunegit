@@ -1,0 +1,59 @@
+{
+  "slug": "iv-therapy",
+  "serviceLabel": "Mobile IV Therapy",
+  "steps": [
+    {
+      "type": "cards-multi",
+      "q": "[placeholder]",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "energy",
+          "icon": "⚡",
+          "label": "Energy"
+        },
+        {
+          "id": "immunity",
+          "icon": "🛡️",
+          "label": "Immunity"
+        },
+        {
+          "id": "recovery",
+          "icon": "💪",
+          "label": "Recovery"
+        },
+        {
+          "id": "hydration",
+          "icon": "💧",
+          "label": "Hydration"
+        },
+        {
+          "id": "glow",
+          "icon": "✨",
+          "label": "Glow"
+        },
+        {
+          "id": "hangover",
+          "icon": "🌅",
+          "label": "Hangover relief"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "Mobile IV Therapy"
+    }
+  ]
+}

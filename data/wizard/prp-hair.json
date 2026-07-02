@@ -1,0 +1,44 @@
+{
+  "slug": "prp-hair",
+  "serviceLabel": "PRP Hair Restoration",
+  "steps": [
+    {
+      "type": "cards-single",
+      "q": "[placeholder]",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "fuller",
+          "icon": "💪",
+          "label": "Fuller hair"
+        },
+        {
+          "id": "scalp",
+          "icon": "🌱",
+          "label": "Healthier scalp"
+        },
+        {
+          "id": "thickness",
+          "icon": "✨",
+          "label": "Overall thickness"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "PRP Hair Restoration"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "dermal-fillers",
+  "title": "[placeholder text]",
+  "category": "[Category]",
+  "provider": "[placeholder text]",
+  "url": "/services/dermal-fillers.html",
+  "canonical": "[URL]",
+  "image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "description": "[Service description]",
+  "facts": {
+    "onset": "Immediate",
+    "duration": "6 to 18 months",
+    "downtime": "Minimal",
+    "location": "[Location]"
+  },
+  "treatmentAreas": [
+    {
+      "id": "lip-enhancement",
+      "label": "[placeholder text]"
+    },
+    {
+      "id": "cheeks",
+      "label": "[placeholder text]"
+    },
+    {
+      "id": "jawline",
+      "label": "[placeholder text]"
+    },
+    {
+      "id": "nasolabial-folds",
+      "label": "[placeholder text]"
+    },
+    {
+      "id": "marionette",
+      "label": "[placeholder text]"
+    }
+  ],
+  "fillerType": "Hyaluronic acid (fully reversible with hyaluronidase)",
+  "reversible": true,
+  "disclaimer": "Performed by [PROVIDER NAME], [CREDENTIALS]. Individual results may vary.",
+  "lastUpdated": "2026-06-01",
+  "gallery": [
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+    "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image"
+  ],
+  "gallery_headline": "Before and After",
+  "hero_image": "https://placehold.co/1600x900/e8e8e8/aaaaaa?text=Hero",
+  "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "how_it_works": {
+    "body": "[placeholder text]",
+    "time": "30-60 min",
+    "downtime": "Minimal (24-48 hrs)",
+    "onset": "Immediate",
+    "duration": "6-18 months",
+    "location": "[Location]"
+  }
+}

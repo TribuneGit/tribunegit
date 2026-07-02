@@ -1,0 +1,59 @@
+{
+  "slug": "botox",
+  "serviceLabel": "Botox",
+  "steps": [
+    {
+      "type": "cards-multi",
+      "q": "[placeholder]",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "forehead",
+          "icon": "🫡",
+          "label": "Forehead"
+        },
+        {
+          "id": "frown",
+          "icon": "😤",
+          "label": "Frown lines"
+        },
+        {
+          "id": "crows",
+          "icon": "👁️",
+          "label": "Crow's feet"
+        },
+        {
+          "id": "brow",
+          "icon": "⬆️",
+          "label": "Brow"
+        },
+        {
+          "id": "lip",
+          "icon": "💋",
+          "label": "Lip flip"
+        },
+        {
+          "id": "jawline",
+          "icon": "💪",
+          "label": "Jawline"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "Botox"
+    }
+  ]
+}

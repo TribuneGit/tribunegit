@@ -1,0 +1,49 @@
+{
+  "slug": "microneedling",
+  "serviceLabel": "Microneedling",
+  "steps": [
+    {
+      "type": "cards-single",
+      "q": "[placeholder]",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "glow",
+          "icon": "☀️",
+          "label": "Glow"
+        },
+        {
+          "id": "texture",
+          "icon": "🌟",
+          "label": "Smoother texture"
+        },
+        {
+          "id": "lines",
+          "icon": "✨",
+          "label": "Fine lines"
+        },
+        {
+          "id": "tone",
+          "icon": "💫",
+          "label": "Even tone"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "Microneedling"
+    }
+  ]
+}

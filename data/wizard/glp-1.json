@@ -1,0 +1,49 @@
+{
+  "slug": "glp-1",
+  "serviceLabel": "GLP-1 Program",
+  "steps": [
+    {
+      "type": "cards-single",
+      "q": "What brings you in?",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "lose-weight",
+          "icon": "⚖️",
+          "label": "Lose weight"
+        },
+        {
+          "id": "pcos-insulin",
+          "icon": "🔬",
+          "label": "[placeholder]"
+        },
+        {
+          "id": "no-insurance",
+          "icon": "💳",
+          "label": "[placeholder]"
+        },
+        {
+          "id": "not-sure",
+          "icon": "🤔",
+          "label": "Not sure yet"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "GLP-1 Program"
+    }
+  ]
+}

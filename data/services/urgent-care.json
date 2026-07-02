@@ -1,0 +1,109 @@
+{
+  "slug": "urgent-care",
+  "category": "[Category]",
+  "name": "[Service Name]",
+  "h1": "[Service Name] in [CITY], [STATE]",
+  "meta_title": "[Page Title | COMPANY NAME]",
+  "meta_description": "[Meta description for this service page.]",
+  "canonical": "[URL]",
+  "hero_value_prop": "[Brief hero value proposition for this service.]",
+  "hero_image": "https://placehold.co/1600x900/e8e8e8/aaaaaa?text=Hero",
+  "hero_perks": [
+    "Same-day frequently available",
+    "90-minute average response",
+    "No waiting room"
+  ],
+  "fact_chips": [
+    {
+      "icon": "📅",
+      "label": "[placeholder text]"
+    },
+    {
+      "icon": "⏱",
+      "label": "[placeholder text]"
+    },
+    {
+      "icon": "🔄",
+      "label": "[placeholder text]"
+    },
+    {
+      "icon": "📍",
+      "label": "[placeholder text]"
+    }
+  ],
+  "faq": [
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    }
+  ],
+  "about": [
+    "[placeholder text]",
+    "[placeholder text]",
+    "[placeholder text]"
+  ],
+  "about_headline": "Same-Day Urgent Care That Comes to You",
+  "how_it_works": {
+    "time": "Varies by concern",
+    "downtime": "None",
+    "onset": "Same-day",
+    "location": "[Location]",
+    "body": "[placeholder text]"
+  },
+  "menu_headline": "Conditions We Treat",
+  "sections": [
+    {
+      "id": "cold-flu",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    },
+    {
+      "id": "injuries",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    },
+    {
+      "id": "dehydration",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    },
+    {
+      "id": "lab-work",
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    }
+  ],
+  "byline": "Written and medically reviewed by [PROVIDER NAME], [CREDENTIALS].",
+  "last_updated": "June 2026",
+  "testimonial": {
+    "quote": "[Customer testimonial quote.]",
+    "name": "[Service Name]",
+    "city": "[placeholder text]"
+  },
+  "cta_headline": "Feeling Sick? <em>We Come to You.</em>",
+  "cta_body": "[placeholder text]",
+  "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "related": [
+    "in-home-primary-care",
+    "iv-therapy",
+    "telehealth"
+  ],
+  "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image"
+}

@@ -1,0 +1,147 @@
+{
+  "slug": "membership",
+  "category": "[Category]",
+  "name": "[Service Name]",
+  "h1": "[Service Name] in [CITY], [STATE]",
+  "meta_title": "[Page Title | COMPANY NAME]",
+  "meta_description": "[Meta description for this service page.]",
+  "canonical": "[URL]",
+  "hero_value_prop": "[Brief hero value proposition for this service.]",
+  "hero_image": "https://placehold.co/1600x900/e8e8e8/aaaaaa?text=Hero",
+  "hero_perks": [
+    "[placeholder text]",
+    "Monthly IV therapy included",
+    "No contracts, cancel anytime"
+  ],
+  "fact_chips": [
+    {
+      "icon": "💉",
+      "label": "[placeholder text]"
+    },
+    {
+      "icon": "💰",
+      "label": "[placeholder text]"
+    },
+    {
+      "icon": "📍",
+      "label": "[placeholder text]"
+    },
+    {
+      "icon": "🚫",
+      "label": "[placeholder text]"
+    }
+  ],
+  "faq": [
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    },
+    {
+      "q": "[Frequently asked question?]",
+      "a": "[Answer to this frequently asked question.]"
+    }
+  ],
+  "about": [
+    "[placeholder text]",
+    "[placeholder text]",
+    "[placeholder text]"
+  ],
+  "about_headline": "Membership That Pays for Itself",
+  "about_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "menu_headline": "Membership Plans",
+  "sections": [
+    {
+      "id": "basic",
+      "title": "[placeholder text]",
+      "price": "$149/month",
+      "body": "[placeholder text]",
+      "items": [
+        "1 Myers IV Drip per month",
+        "[placeholder text]",
+        "Priority scheduling",
+        "Same-day appointment access",
+        "No contracts"
+      ]
+    },
+    {
+      "id": "plus",
+      "title": "[placeholder text]",
+      "price": "$349/month (Most Popular)",
+      "body": "[placeholder text]",
+      "items": [
+        "2 Myers IV Drips per month",
+        "1 B12 Shot per month",
+        "[placeholder text]",
+        "Advanced nutrition guidance",
+        "Priority scheduling",
+        "No contracts"
+      ]
+    },
+    {
+      "id": "elite",
+      "title": "[placeholder text]",
+      "price": "$549/month",
+      "body": "[placeholder text]",
+      "items": [
+        "Highest discount tier (up to 25% off)",
+        "Designed for athletes and high-frequency use",
+        "Maximum priority scheduling",
+        "[placeholder text]",
+        "No contracts"
+      ]
+    }
+  ],
+  "byline": "Written and medically reviewed by [PROVIDER NAME], [CREDENTIALS].",
+  "last_updated": "June 2026",
+  "steps_content": [
+    {
+      "n": 1,
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    },
+    {
+      "n": 2,
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    },
+    {
+      "n": 3,
+      "title": "[placeholder text]",
+      "body": "[placeholder text]"
+    }
+  ],
+  "testimonial": {
+    "quote": "[Customer testimonial quote.]",
+    "name": "[Service Name]",
+    "city": "[placeholder text]"
+  },
+  "cta_headline": "Ready to <em>Join the Family</em>?",
+  "cta_body": "[placeholder text]",
+  "cta_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "related": [
+    "iv-therapy",
+    "b12-injections",
+    "telehealth"
+  ],
+  "how_image": "https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image",
+  "how_it_works": {
+    "body": "[placeholder text]",
+    "time": "5 min setup",
+    "downtime": "None",
+    "onset": "Same or next day",
+    "duration": "Monthly, cancel anytime",
+    "location": "[Location]"
+  }
+}

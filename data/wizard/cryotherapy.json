@@ -1,0 +1,49 @@
+{
+  "slug": "cryotherapy",
+  "serviceLabel": "Cryotherapy",
+  "steps": [
+    {
+      "type": "cards-single",
+      "q": "What are you after?",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "recovery",
+          "icon": "💪",
+          "label": "Recovery"
+        },
+        {
+          "id": "performance",
+          "icon": "⚡",
+          "label": "Performance"
+        },
+        {
+          "id": "wellness",
+          "icon": "🌿",
+          "label": "Wellness"
+        },
+        {
+          "id": "skin",
+          "icon": "✨",
+          "label": "Skin and glow"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "Cryotherapy"
+    }
+  ]
+}

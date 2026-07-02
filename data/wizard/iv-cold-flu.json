@@ -1,0 +1,49 @@
+{
+  "slug": "iv-cold-flu",
+  "serviceLabel": "Cold & Flu IV",
+  "steps": [
+    {
+      "type": "cards-single",
+      "q": "[placeholder]",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "sick-now",
+          "icon": "🤧",
+          "label": "I'm sick now"
+        },
+        {
+          "id": "prevent",
+          "icon": "🛡️",
+          "label": "[placeholder]"
+        },
+        {
+          "id": "recovery",
+          "icon": "⚡",
+          "label": "Recovery support"
+        },
+        {
+          "id": "hangover",
+          "icon": "🥤",
+          "label": "Hangover relief"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "Cold & Flu IV"
+    }
+  ]
+}

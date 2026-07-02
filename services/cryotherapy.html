@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>window.Mangomint = window.Mangomint || {}; window.Mangomint.CompanyId = 770971;</script>
+  <script src="https://booking.mangomint.com/app.js" async></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Page Title | COMPANY NAME]</title>
+  <meta name="description" content="[Meta description for this service page.]">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="[URL]">
+  <meta property="og:title" content="[Page Title | COMPANY NAME]">
+  <meta property="og:description" content="[Meta description for this service page.]">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="[URL]">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../css/styles.css?v=28">
+  <link rel="stylesheet" href="../assets/css/service.css?v=23">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- Markdown mirror discovery -->
+  <link rel="alternate" type="text/markdown" href="/services/cryotherapy.md">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "[Page Title | COMPANY NAME]",
+    "url": "[URL]",
+    "description": "[Meta description for this service page.]",
+    "sameAs": "https://www.[DOMAIN]/services/cryotherapy.md",
+    "encodingFormat": "text/html",
+    "isAccessibleForFree": true,
+    "provider": {
+      "@type": "Person",
+      "name": "[PROVIDER NAME], [CREDENTIALS]",
+      "jobTitle": "Board Certified Family Nurse Practitioner"
+    }
+  }
+  </script>
+</head>
+<body class="service-page" x-data="wizardData('cryotherapy')" data-wizard-root x-cloak>
+
+<!-- Wizard overlay — uses body scope (x-data on body tag) -->
+  <div class="wizard-overlay" x-show="open" style="display:none" x-transition.opacity @click.self="closeWizard()">
+    <div class="wizard-card" @click.stop>
+      <div class="wizard-header">
+        <div class="wizard-title" x-text="stepLabel"></div>
+        <div class="wizard-progress">
+          <div class="wizard-progress-bar"><div class="wizard-progress-fill" :style="`width: ${progressPct}%`"></div></div>
+          <div class="wizard-step-label" x-text="`Step ${currentStep} of ${totalSteps}`"></div>
+        </div>
+        <button class="wizard-close" @click="closeWizard()">&times;</button>
+      </div>
+      <div class="wizard-body">
+        <template x-if="currentStep === 1"><div>
+          <div class="wizard-question">What brings you to [COMPANY NAME]?</div>
+          <div class="wizard-tiles">
+            <template x-for="svc in services" :key="svc.id">
+              <button class="wizard-tile" :class="{ selected: selectedService === svc.id }" @click="selectService(svc.id)">
+                <span class="wizard-tile-icon" x-text="svc.icon"></span>
+                <span class="wizard-tile-label" x-text="svc.label"></span>
+              </button>
+            </template>
+          </div>
+        </div></template>
+        <template x-if="currentStep === 2"><div>
+          <div class="wizard-question" x-text="getConcernQuestion()"></div>
+          <div class="wizard-options">
+            <template x-for="opt in getConcerns()" :key="opt.id">
+              <button class="wizard-option" :class="{ selected: selectedConcern === opt.id }" @click="selectConcern(opt.id)">
+                <span class="wizard-option-icon" x-text="opt.icon"></span><span x-text="opt.label"></span>
+              </button>
+            </template>
+          </div>
+        </div></template>
+        <template x-if="currentStep === 3"><div>
+          <div class="wizard-question" x-text="getDetailQuestion()"></div>
+          <div class="wizard-options">
+            <template x-for="opt in getDetailOptions()" :key="opt.id">
+              <button class="wizard-option" :class="{ selected: selectedDetail === opt.id }" @click="selectDetail(opt.id)">
+                <span class="wizard-option-icon" x-text="opt.icon"></span><span x-text="opt.label"></span>
+              </button>
+            </template>
+          </div>
+        </div></template>
+        <template x-if="currentStep === 4"><div>
+          <div class="wizard-question">Tell us how to reach you.</div>
+          <div class="wizard-form">
+            <div class="wizard-field"><label>Full Name</label><input type="text" x-model="formData.name" placeholder="Jane Smith"></div>
+            <div class="wizard-field"><label>Email</label><input type="email" x-model="formData.email" placeholder="jane@email.com"></div>
+            <div class="wizard-field"><label>Phone</label><input type="tel" x-model="formData.phone" placeholder="(561) 555-0100"></div>
+            <div class="wizard-consent"><label style="display:flex;align-items:flex-start;gap:.5rem;cursor:pointer;"><input type="checkbox" x-model="formData.consent" style="margin-top:.15rem;flex-shrink:0;"><span>By submitting you agree to be contacted by [COMPANY NAME]. View our <a href="/privacy.html">Privacy Policy</a>.</span></label></div>
+          </div>
+        </div></template>
+        <template x-if="currentStep === 5"><div>
+          <div class="wizard-question">How would you like your consultation?</div>
+          <div class="consult-options">
+            <template x-for="ct in consultTypes" :key="ct.id">
+              <button class="consult-option" :class="{ selected: consultType === ct.id }" @click="selectConsult(ct.id)">
+                <span class="consult-option-icon" x-text="ct.icon"></span>
+                <span class="consult-option-label" x-text="ct.label"></span>
+                <span style="font-size:.75rem;color:#6b7280;" x-text="ct.desc"></span>
+              </button>
+            </template>
+          </div>
+        </div></template>
+        <template x-if="currentStep === 6"><div>
+          <div class="wizard-question">Pick a date and time.</div>
+          <div class="wizard-field"><label>Date</label><input type="date" x-model="selectedDate" :min="minDate" :max="maxDate"></div>
+          <div style="margin-top:1.25rem;"><label style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:.5rem;">Preferred Time</label>
+          <div class="time-slots"><template x-for="slot in timeSlots" :key="slot"><button class="time-slot" :class="{ selected: selectedTime === slot }" @click="selectedTime = slot" x-text="slot"></button></template></div></div>
+        </div></template>
+        <template x-if="currentStep === 7"><div class="wizard-confirm">
+          <div class="wizard-confirm-icon">🎉</div>
+          <h3>You are all set, <span x-text="formData.name.split(' ')[0]"></span>!</h3>
+          <p>[PROVIDER NAME]'s team will reach out within 24 hours to confirm.</p>
+          <div class="wizard-confirm-checklist"><ul>
+            <li>Confirmation sent to <strong x-text="formData.email"></strong></li>
+            <li>Service: <strong x-text="getServiceLabel()"></strong></li>
+            <li>Consultation: <strong x-text="getConsultLabel()"></strong></li>
+          </ul></div>
+          <button class="btn btn-teal btn-full" @click="closeWizard()">Back to Site</button>
+        </div></template>
+      </div>
+      <template x-if="currentStep < 7">
+        <div class="wizard-footer">
+          <div><button class="wizard-back" @click="prevStep()" x-show="currentStep > 1">Back</button></div>
+          <div class="wizard-footer-right">
+            <button class="wizard-next" @click="nextStep()" :disabled="!canGoNext" x-show="currentStep >= 4"><span x-show="!isSubmitting">Continue</span><span x-show="isSubmitting">Submitting...</span></button>
+            <button class="wizard-next" @click="nextStep()" x-show="currentStep < 4 && canGoNext">Continue</button>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- Promo bar -->
+    
+
+<div class="promo-bar">
+    Save 25% on IV Therapy with our Monthly Membership.
+    <a class="ready-review" href="/membership.html">Claim Offer &rarr;</a>
+    <button class="promo-close" aria-label="Close">&times;</button>
+  </div>
+
+  <!-- STICKY HEADER -->
+  <header class="site-header">
+    <div class="header-top">
+      <a href="/" class="site-logo" id="header-logo-link">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+      </a>
+      <div class="header-right">
+        <a href="tel:+1[PHONE]" class="header-phone">
+          <span>📞</span> [PHONE]
+        </a>
+        <div class="header-links">
+          <a class="ready-review" href="/about/service-area.html">Service Area</a>
+          <div class="header-nav-item">
+          <button class="header-nav-trigger">Plans &amp; Pricing <span class="h-chevron">&#9660;</span></button>
+          <div class="header-nav-dropdown">
+            <a class="ready-review" href="/pricing.html">Pricing</a>
+            <a class="ready-review" href="/payment-plans.html">Payment Plans</a>
+            <a class="ready-review" href="/membership.html">Memberships</a>
+            <a class="ready-review" href="/savings.html">Savings</a>
+          </div>
+        </div>
+          <a class="ready-review" href="/services/telehealth.html">Telehealth</a>
+          <a class="ready-review" href="/faqs.html">FAQs</a>
+          <a class="ready-review" href="/services/in-home-primary-care.html">In-Home Care</a>
+          <div class="header-nav-item">
+            <button class="header-nav-trigger">About Us <span class="h-chevron">&#9660;</span></button>
+            <div class="header-nav-dropdown">
+              <a class="ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+              <a class="ready-review" href="/services/">Services</a>
+              <a class="ready-review" href="/reviews.html">Reviews</a>
+            </div>
+          </div>
+        </div>
+        <a href="https://booking.[BOOKING URL]" class="btn btn-primary btn-sm header-cta">Book Service</a>
+        <button class="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MEGAMENU NAV ROW — 8 tabs -->
+    <nav class="nav-row" aria-label="Services navigation">
+      <div class="nav-row-inner">
+
+        <!-- 1. IV Therapy -->
+        <div class="nav-item" data-mega>
+          <button>IV Therapy <span class="chevron">&#9660;</span></button>
+          <div class="mega-dropdown mega-dropdown--4col">
+          <div class="mega-4col">
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Explore IV Therapy</span>
+
+        <a class="mega-plink ready-review" href="/services/iv-therapy.html">IV Therapy Overview</a>
+
+        <span class="mega-col-head mega-col-head--mt">Drip Infusions</span>
+
+        <a class="mega-slink ready-review" href="/services/iv-cocktails.html">Myers Cocktail</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-nad.html">NAD+ IV Therapy</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-cold-flu.html">Cold &amp; Flu IV</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-extras.html">Add-Ons</a>
+
+        <a class="mega-slink no-content" href="/services/iv-therapy.html#hangover">Hangover</a>
+
+        <a class="mega-slink no-content" href="/services/iv-therapy.html#anti-aging">Anti-Aging</a>
+
+        <a class="mega-slink no-content" href="/services/iv-therapy.html#hydrate">Hydrate</a>
+
+        <a class="mega-slink no-content" href="/services/iv-therapy.html#glutathione">Glutathione</a>
+
+        <a class="mega-slink no-content" href="/services/iv-therapy.html#custom">Customized IV</a>
+
+        <span class="mega-col-head mega-col-head--mt">Memberships</span>
+
+        <a class="mega-plink ready-review" href="/services/iv-memberships.html">IV Memberships</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Treatment Types</span>
+
+        <a class="mega-slink ready-review" href="/services/iv-cocktails.html">Myers Cocktail</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-nad.html">NAD+ Infusion</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-cold-flu.html">Immune Support</a>
+
+        <a class="mega-slink no-content" href="/services/iv-therapy.html#hydrate">Hydration Drip</a>
+
+        <a class="mega-slink no-content" href="/services/iv-therapy.html#anti-aging">Energy Boost</a>
+
+        <a class="mega-slink no-content" href="/services/iv-therapy.html#recovery">Recovery / Performance</a>
+
+        <a class="mega-slink no-content" href="/services/iv-therapy.html#hangover">Hangover Relief</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-extras.html">Glutathione Push</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-therapy.html">Travel Recovery</a>
+
+        <a class="mega-slink no-content" href="/services/iv-therapy.html#custom">Customized Blend</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Find By Concern</span>
+
+        <a class="mega-slink ready-review" href="/services/iv-therapy.html">Feeling Run Down</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-cold-flu.html">Hangover</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-therapy.html">Dehydration</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-cold-flu.html">Low Immunity</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-therapy.html">Low Energy</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-therapy.html">Athletic Recovery</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-therapy.html">Travel Fatigue</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-therapy.html">Wellness Boost</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-cold-flu.html">Cold &amp; Flu</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Learn</span>
+        <a class="mega-llink ready-review" href="/care/iv-therapy.html">Pre &amp; Post Treatment Care</a>
+        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/faqs.html">FAQ</a>
+      </div>
+            <div class="mega-promo-panel">
+        <div class="mega-promo-img-box">
+          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+          <div class="mega-promo-content">
+          <span class="mega-promo-tag">MOBILE IV THERAPY</span>
+          <p class="mega-promo-hl">IV Therapy Delivered To You</p>
+          <p class="mega-promo-sub">Custom IV drips, NAD+, and immune infusions at your home or office across [COUNTY].</p>
+          <a href="/services/iv-therapy.html" class="btn btn-sm">View IV Therapy</a>
+        </div>
+        </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- 2. Injectables -->
+        <div class="nav-item" data-mega>
+          <button>Injectables <span class="chevron">&#9660;</span></button>
+          <div class="mega-dropdown mega-dropdown--4col">
+          <div class="mega-4col">
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Explore Injectables</span>
+
+        <span class="mega-col-head">Neuromodulators</span>
+
+        <a class="mega-plink ready-review" href="/services/botox.html">Botox</a>
+
+        <a class="mega-slink no-content" href="/services/botox.html#dysport">Dysport</a>
+
+        <a class="mega-slink no-content" href="/services/botox.html#jeuveau">Jeuveau</a>
+
+        <a class="mega-slink no-content" href="/services/botox.html#brow-lift">Brow Lift</a>
+
+        <a class="mega-slink no-content" href="/services/botox.html#jaw-slimming">Jaw Slimming</a>
+
+        <a class="mega-slink no-content" href="/services/botox.html#biostimulators">Biostimulators</a>
+
+        <span class="mega-col-head mega-col-head--mt">Fillers</span>
+
+        <a class="mega-plink ready-review" href="/services/dermal-fillers.html">Dermal Fillers</a>
+
+        <a class="mega-slink no-content" href="/services/dermal-fillers.html#lips">Lip Enhancement</a>
+
+        <a class="mega-slink no-content" href="/services/dermal-fillers.html#cheeks">Cheek Contouring</a>
+
+        <a class="mega-slink no-content" href="/services/dermal-fillers.html#jawline">Jawline Definition</a>
+
+        <a class="mega-slink no-content" href="/services/dermal-fillers.html#facial-balancing">Facial Balancing</a>
+
+        <a class="mega-slink no-content" href="/services/dermal-fillers.html#russian-lips">Russian Lips</a>
+
+        <a class="mega-slink no-content" href="/services/dermal-fillers.html#kybella">Kybella</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Treatment Areas</span>
+
+        <a class="mega-slink ready-review" href="/services/botox.html">Forehead</a>
+
+        <a class="mega-slink ready-review" href="/services/botox.html">Frown Lines</a>
+
+        <a class="mega-slink ready-review" href="/services/botox.html">Crow's Feet</a>
+
+        <a class="mega-slink ready-review" href="/services/botox.html">Brow</a>
+
+        <a class="mega-slink ready-review" href="/services/botox.html">Lip Flip</a>
+
+        <a class="mega-slink no-content" href="/services/dermal-fillers.html#jawline">Jawline</a>
+
+        <a class="mega-slink no-content" href="/services/dermal-fillers.html#lips">Lips</a>
+
+        <a class="mega-slink no-content" href="/services/dermal-fillers.html#cheeks">Cheeks</a>
+
+        <a class="mega-slink ready-review" href="/services/dermal-fillers.html">Chin</a>
+
+        <a class="mega-slink ready-review" href="/services/botox.html">Neck</a>
+
+        <a class="mega-slink no-content" href="/services/botox.html#hyperhidrosis">Hyperhidrosis</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Find By Concern</span>
+
+        <a class="mega-slink ready-review" href="/services/botox.html">Smooth Wrinkles</a>
+
+        <a class="mega-slink ready-review" href="/services/botox.html">Prevent Aging</a>
+
+        <a class="mega-slink ready-review" href="/services/dermal-fillers.html">Restore Volume</a>
+
+        <a class="mega-slink no-content" href="/services/dermal-fillers.html#lips">Enhance Lips</a>
+
+        <a class="mega-slink ready-review" href="/services/dermal-fillers.html">Facial Contouring</a>
+
+        <a class="mega-slink no-content" href="/services/dermal-fillers.html#jawline">Jawline Definition</a>
+
+        <a class="mega-slink no-content" href="/services/dermal-fillers.html#double-chin">Double Chin</a>
+
+        <a class="mega-slink no-content" href="/services/botox.html#hyperhidrosis">Excessive Sweating</a>
+
+        <a class="mega-slink ready-review" href="/services/botox.html">Look Refreshed</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Learn</span>
+        <a class="mega-llink ready-review" href="/care/injectables.html">Pre &amp; Post Treatment Care</a>
+        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/faqs.html">FAQ</a>
+      </div>
+            <div class="mega-promo-panel">
+        <div class="mega-promo-img-box">
+          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+          <div class="mega-promo-content">
+          <span class="mega-promo-tag">AESTHETICS</span>
+          <p class="mega-promo-hl">Complimentary Aesthetic Consultation</p>
+          <p class="mega-promo-sub">Discuss Botox, fillers, facial balancing, and aesthetic goals with [PROVIDER NAME], [CREDENTIALS].</p>
+          <a href="/book-now.html" class="btn btn-sm">Book Consultation</a>
+        </div>
+        </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- 3. Skin Rejuvenation -->
+        <div class="nav-item" data-mega>
+          <button>Skin Rejuvenation <span class="chevron">&#9660;</span></button>
+          <div class="mega-dropdown mega-dropdown--4col">
+          <div class="mega-4col">
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Explore Skin Rejuvenation</span>
+
+        <span class="mega-col-head">Resurfacing</span>
+
+        <a class="mega-plink ready-review" href="/services/microneedling.html">Microneedling</a>
+
+        <a class="mega-slink no-content" href="/services/microneedling.html#chemical-peel">Chemical Peels</a>
+
+        <a class="mega-slink no-content" href="/services/microneedling.html#jessner">Jessner Peel</a>
+
+        <a class="mega-slink no-content" href="/services/microneedling.html#tca">TCA Peel</a>
+
+        <a class="mega-slink no-content" href="/services/microneedling.html#brightening">Skin Brightening</a>
+
+        <a class="mega-slink no-content" href="/services/microneedling.html#brown-spots">Brown Spot Removal</a>
+
+        <a class="mega-slink no-content" href="/services/microneedling.html#texture">Improve Texture &amp; Tone</a>
+
+        <span class="mega-col-head mega-col-head--mt">Regenerative</span>
+
+        <a class="mega-plink ready-review" href="/services/prp-facial.html">Vampire Facial</a>
+
+        <a class="mega-plink ready-review" href="/services/prp-hair.html">PRP Hair Restoration</a>
+
+        <a class="mega-slink no-content" href="/services/prp-facial.html#pdrn">PDRN &mdash; Salmon DNA</a>
+
+        <a class="mega-slink no-content" href="/services/prp-facial.html#ez-gel">EZ Gel</a>
+
+        <a class="mega-slink no-content" href="/services/prp-facial.html#glass-skin">Korean Glass Skin</a>
+
+        <a class="mega-slink ready-review" href="/services/prp-facial.html#under-eye">Under-Eye Rejuvenation</a>
+
+        <a class="mega-slink no-content" href="/services/prp-facial.html#dark-circles">Dark Circle Treatment</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Treatment Areas</span>
+
+        <a class="mega-slink ready-review" href="/services/microneedling.html">Full Face</a>
+
+        <a class="mega-slink ready-review" href="/services/prp-facial.html#under-eye">Under-Eye</a>
+
+        <a class="mega-slink ready-review" href="/services/prp-hair.html">Scalp &amp; Hair</a>
+
+        <a class="mega-slink ready-review" href="/services/microneedling.html">Forehead &amp; Brow</a>
+
+        <a class="mega-slink ready-review" href="/services/microneedling.html">Cheeks</a>
+
+        <a class="mega-slink no-content" href="/services/microneedling.html#acne-scars">Acne Scar Areas</a>
+
+        <a class="mega-slink ready-review" href="/services/microneedling.html">Neck</a>
+
+        <a class="mega-slink ready-review" href="/services/microneedling.html">Hands</a>
+
+        <span class="mega-col-head mega-col-head--mt">Treatment Types</span>
+
+        <a class="mega-slink ready-review" href="/services/prp-facial.html">PRP Therapy</a>
+
+        <a class="mega-slink no-content" href="/services/prp-facial.html#prf">PRF</a>
+
+        <a class="mega-slink no-content" href="/services/prp-facial.html#prfm">PRFM</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Find By Concern</span>
+
+        <a class="mega-slink ready-review" href="/services/microneedling.html">Acne Scars</a>
+
+        <a class="mega-slink ready-review" href="/services/prp-facial.html">Fine Lines &amp; Wrinkles</a>
+
+        <a class="mega-slink ready-review" href="/services/microneedling.html">Uneven Skin Tone</a>
+
+        <a class="mega-slink ready-review" href="/services/prp-facial.html">Dull Skin</a>
+
+        <a class="mega-slink ready-review" href="/services/prp-hair.html">Hair Loss</a>
+
+        <a class="mega-slink no-content" href="/services/prp-facial.html#dark-circles">Dark Circles</a>
+
+        <a class="mega-slink no-content" href="/services/prp-facial.html#puffy-eyes">Puffy Eyes</a>
+
+        <a class="mega-slink ready-review" href="/services/microneedling.html">Enlarged Pores</a>
+
+        <a class="mega-slink ready-review" href="/services/prp-facial.html">Look Refreshed</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Learn</span>
+        <a class="mega-llink ready-review" href="/care/skin-rejuvenation.html">Pre &amp; Post Treatment Care</a>
+        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/faqs.html">FAQ</a>
+      </div>
+            <div class="mega-promo-panel">
+        <div class="mega-promo-img-box">
+          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+          <div class="mega-promo-content">
+          <span class="mega-promo-tag">SKIN REJUVENATION</span>
+          <p class="mega-promo-hl">Free Skin Consultation with [PROVIDER NAME]</p>
+          <p class="mega-promo-sub">Microneedling, PRP facials, chemical peels, and regenerative treatments delivered to your home.</p>
+          <a href="/book-now.html" class="btn btn-sm">Book Consultation</a>
+        </div>
+        </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- 4. Weight Loss -->
+        <div class="nav-item" data-mega>
+          <button>Weight Loss <span class="chevron">&#9660;</span></button>
+          <div class="mega-dropdown mega-dropdown--4col">
+          <div class="mega-4col">
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Explore Weight Loss</span>
+
+        <a class="mega-plink ready-review" href="/services/weight-loss.html">Medical Weight Loss</a>
+
+        <span class="mega-col-head mega-col-head--mt">GLP-1 Programs</span>
+
+        <a class="mega-plink ready-review" href="/services/semaglutide.html">Semaglutide</a>
+
+        <a class="mega-plink ready-review" href="/services/tirzepatide.html">Tirzepatide</a>
+
+        <a class="mega-slink ready-review" href="/services/glp-1.html">GLP-1 Programs</a>
+
+        <a class="mega-slink no-content" href="/services/weight-loss.html#retatrutide">Retatrutide</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#tesamorelin">Peptide Therapy &mdash; Tesamorelin</a>
+
+        <a class="mega-slink no-content" href="/services/weight-loss.html#phentermine">Phentermine / Oral Appetite Suppression</a>
+
+        <span class="mega-col-head mega-col-head--mt">Support</span>
+
+        <a class="mega-slink no-content" href="/services/weight-loss.html#coaching">Nutritional Coaching</a>
+
+        <a class="mega-slink no-content" href="/services/weight-loss.html#labs">In-Depth Bloodwork</a>
+
+        <a class="mega-slink no-content" href="/services/weight-loss.html#maintenance">Maintenance Plans</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Treatment Types</span>
+
+        <a class="mega-slink ready-review" href="/services/weight-loss.html">Weekly Injections</a>
+
+        <a class="mega-slink ready-review" href="/services/telehealth.html">Monthly NP Visits</a>
+
+        <a class="mega-slink ready-review" href="/services/semaglutide.html">Semaglutide Program</a>
+
+        <a class="mega-slink ready-review" href="/services/tirzepatide.html">Tirzepatide Program</a>
+
+        <a class="mega-slink ready-review" href="/services/glp-1.html">GLP-1 Without Insurance</a>
+
+        <a class="mega-slink no-content" href="/services/weight-loss.html#labs">Lab Work &amp; Testing</a>
+
+        <a class="mega-slink no-content" href="/services/weight-loss.html#coaching">Lifestyle Coaching</a>
+
+        <a class="mega-slink ready-review" href="/services/in-home-primary-care.html">In-Home Program</a>
+
+        <a class="mega-slink ready-review" href="/services/telehealth.html">Telehealth Program</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Find By Concern</span>
+
+        <a class="mega-slink ready-review" href="/services/weight-loss.html">Weight Gain</a>
+
+        <a class="mega-slink ready-review" href="/services/weight-loss.html">Difficulty Losing Weight</a>
+
+        <a class="mega-slink ready-review" href="/services/glp-1.html">PCOS</a>
+
+        <a class="mega-slink ready-review" href="/services/glp-1.html">Insulin Resistance</a>
+
+        <a class="mega-slink ready-review" href="/services/glp-1.html">No Insurance</a>
+
+        <a class="mega-slink ready-review" href="/services/weight-loss.html">Metabolic Issues</a>
+
+        <a class="mega-slink ready-review" href="/services/weight-loss.html">Need Medical Supervision</a>
+
+        <a class="mega-slink ready-review" href="/services/weight-loss.html">Plateau &mdash; Nothing Is Working</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Learn</span>
+        <a class="mega-llink ready-review" href="/care/weight-loss.html">Pre &amp; Post Treatment Care</a>
+        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/faqs.html">FAQ</a>
+      </div>
+            <div class="mega-promo-panel">
+        <div class="mega-promo-img-box">
+          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+          <div class="mega-promo-content">
+          <span class="mega-promo-tag">MEDICAL WEIGHT LOSS</span>
+          <p class="mega-promo-hl">Medical Weight Loss Programs</p>
+          <p class="mega-promo-sub">Clinically supervised GLP-1 programs, monthly NP check-ins, and plans tailored to you.</p>
+          <a href="/services/weight-loss.html" class="btn btn-sm">Explore Weight Loss</a>
+        </div>
+        </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- 5. Peptides -->
+        <div class="nav-item" data-mega>
+          <button>Peptides <span class="chevron">&#9660;</span></button>
+          <div class="mega-dropdown mega-dropdown--4col">
+          <div class="mega-4col">
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Explore Peptides</span>
+
+        <a class="mega-plink ready-review" href="/services/peptides.html">Peptides Overview</a>
+
+        <span class="mega-col-head mega-col-head--mt">Recovery &amp; Healing</span>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#bpc157">BPC-157</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#tb500">TB-500</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#kpv">KPV</a>
+
+        <span class="mega-col-head mega-col-head--mt">Wolverine Blend</span>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#thymosin">Thymosin Alpha-1</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#tesamorelin">Tesamorelin</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#mk677">MK-677</a>
+
+        <span class="mega-col-head mega-col-head--mt">Anti-Aging &amp; Performance</span>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#ipamorelin">Ipamorelin / CJC-1295</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#sermorelin">Sermorelin</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#epithalon">Epithalon</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#ghk-cu">GHK-CU</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Treatment Types</span>
+
+        <a class="mega-slink ready-review" href="/services/peptides.html">Recovery Peptides</a>
+
+        <a class="mega-slink ready-review" href="/services/peptides.html">Anti-Aging Peptides</a>
+
+        <a class="mega-slink ready-review" href="/services/peptides.html">Performance Peptides</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-nad.html">NAD+ Therapy</a>
+
+        <a class="mega-slink no-content" href="/services/iv-therapy.html#glutathione">Glutathione</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#ghk-cu">GHK-CU Hair Peptides</a>
+
+        <span class="mega-col-head mega-col-head--mt">Sexual Wellness</span>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#pt141">PT-141</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#kisspeptin">Kisspeptin</a>
+
+        <span class="mega-col-head mega-col-head--mt">Cognitive / Longevity</span>
+
+        <a class="mega-slink ready-review" href="/services/iv-nad.html">NAD+</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#selank">Selank</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#semax">Semax</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#mots-c">Mots-C</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#ss31">SS-31</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Find By Concern</span>
+
+        <a class="mega-slink ready-review" href="/services/peptides.html">Poor Recovery</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-nad.html">Low Energy</a>
+
+        <a class="mega-slink ready-review" href="/services/peptides.html">Anti-Aging</a>
+
+        <a class="mega-slink ready-review" href="/services/peptides.html">Cognitive Fog</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#pt141">Sexual Wellness</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#ghk-cu">Hair Loss</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#thymosin">Immune Support</a>
+
+        <a class="mega-slink ready-review" href="/services/peptides.html">Performance &amp; Strength</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-nad.html">Longevity</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Learn</span>
+        <a class="mega-llink ready-review" href="/care/peptides.html">Pre &amp; Post Treatment Care</a>
+        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/faqs.html">FAQ</a>
+      </div>
+            <div class="mega-promo-panel">
+        <div class="mega-promo-img-box">
+          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+          <div class="mega-promo-content">
+          <span class="mega-promo-tag">PEPTIDE THERAPY</span>
+          <p class="mega-promo-hl">Ask [PROVIDER NAME] Which Protocol Is Right for You</p>
+          <p class="mega-promo-sub">Personalized peptide therapy for recovery, anti-aging, performance, and longevity.</p>
+          <a href="/book-now.html" class="btn btn-sm">Book Consult</a>
+        </div>
+        </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- 6. Wellness -->
+        <div class="nav-item" data-mega>
+          <button>Wellness <span class="chevron">&#9660;</span></button>
+          <div class="mega-dropdown mega-dropdown--4col">
+          <div class="mega-4col">
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Explore Wellness</span>
+
+        <span class="mega-col-head">Injections &amp; Recovery</span>
+
+        <a class="mega-plink ready-review" href="/services/b12-injections.html">B12 Shots</a>
+
+        <a class="mega-plink ready-review" href="/services/cryotherapy.html">Cryotherapy</a>
+
+        <a class="mega-slink no-content" href="/services/wellness.html#vitamin-d">Vitamin D Injection</a>
+
+        <a class="mega-slink no-content" href="/services/wellness.html#lipo-mino">Lipo-Mino Shot</a>
+
+        <span class="mega-col-head mega-col-head--mt">Hormone Replacement (HRT)</span>
+
+        <a class="mega-plink ready-review" href="/services/hormone-replacement-therapy.html">Hormone Replacement Therapy</a>
+
+        <a class="mega-slink no-content" href="/services/hormone-replacement-therapy.html#women">Women's HRT</a>
+
+        <a class="mega-slink no-content" href="/services/hormone-replacement-therapy.html#pellet">Pellet Therapy</a>
+
+        <a class="mega-slink no-content" href="/services/hormone-replacement-therapy.html#testosterone">Men's Testosterone</a>
+
+        <a class="mega-slink no-content" href="/services/hormone-replacement-therapy.html#labs">Hormone Lab Testing</a>
+
+        <span class="mega-col-head mega-col-head--mt">Preventive Care</span>
+
+        <a class="mega-slink no-content" href="/services/wellness.html#annual-exam">Annual Wellness Exam</a>
+
+        <a class="mega-slink no-content" href="/services/wellness.html#labs">Comprehensive Lab Panels</a>
+
+        <a class="mega-slink no-content" href="/services/wellness.html#micronutrient">Micronutrient Testing</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Treatment Types</span>
+
+        <a class="mega-slink ready-review" href="/services/b12-injections.html">In-Home Injections</a>
+
+        <a class="mega-slink ready-review" href="/services/cryotherapy.html">Cryotherapy Session</a>
+
+        <a class="mega-slink ready-review" href="/services/hormone-replacement-therapy.html">Hormone Therapy</a>
+
+        <a class="mega-slink ready-review" href="/services/wellness.html">Lab Testing</a>
+
+        <a class="mega-slink ready-review" href="/services/telehealth.html">Telehealth Wellness Visit</a>
+
+        <a class="mega-slink no-content" href="/services/wellness.html#annual-exam">Annual Exam (In-Home)</a>
+
+        <a class="mega-slink no-content" href="/services/wellness.html#micronutrient">Micronutrient Panel</a>
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Find By Concern</span>
+
+        <a class="mega-slink ready-review" href="/services/b12-injections.html">Low Energy</a>
+
+        <a class="mega-slink ready-review" href="/services/b12-injections.html">Vitamin Deficiency</a>
+
+        <a class="mega-slink ready-review" href="/services/hormone-replacement-therapy.html">Hormonal Imbalance</a>
+
+        <a class="mega-slink ready-review" href="/services/wellness.html">Fatigue</a>
+
+        <a class="mega-slink ready-review" href="/services/weight-loss.html">Weight Management</a>
+
+        <a class="mega-slink ready-review" href="/services/iv-cold-flu.html">Immune Support</a>
+
+        <a class="mega-slink ready-review" href="/services/wellness.html">Preventive Health</a>
+
+        <a class="mega-slink ready-review" href="/services/cryotherapy.html">Muscle Recovery</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Learn</span>
+        <a class="mega-llink ready-review" href="/care/wellness.html">Pre &amp; Post Treatment Care</a>
+        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/faqs.html">FAQ</a>
+      </div>
+            <div class="mega-promo-panel">
+        <div class="mega-promo-img-box">
+          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+          <div class="mega-promo-content">
+          <span class="mega-promo-tag">WELLNESS</span>
+          <p class="mega-promo-hl">Proactive Care Delivered to Your Door</p>
+          <p class="mega-promo-sub">In-home B12 shots, cryotherapy, hormone therapy, and preventive wellness care across [COUNTY].</p>
+          <a href="/book-now.html" class="btn btn-sm">Book a Visit</a>
+        </div>
+        </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- 7. Hormone Optimization -->
+        <div class="nav-item" data-mega>
+          <button>Hormone Optimization <span class="chevron">&#9660;</span></button>
+          <div class="mega-dropdown mega-dropdown--4col">
+          <div class="mega-4col">
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Explore Hormone Optimization</span>
+
+        <span class="mega-col-head">Women's Health</span>
+
+        <a class="mega-plink ready-review" href="/services/fertility.html">Fertility</a>
+
+        <a class="mega-plink ready-review" href="/services/hormone-replacement-therapy.html">Hormone Replacement Therapy</a>
+
+        <a class="mega-slink no-content" href="/services/fertility.html#pcos">PCOS</a>
+
+        <a class="mega-slink no-content" href="/services/fertility.html#insulin-resistance">Insulin Resistance</a>
+
+        <a class="mega-slink no-content" href="/services/fertility.html#hormonal-imbalance">Hormonal Imbalance</a>
+
+        <a class="mega-slink no-content" href="/services/fertility.html#o-shot">O-Shot</a>
+
+        <a class="mega-slink no-content" href="/services/fertility.html#pmdd">PMDD</a>
+
+        <a class="mega-slink no-content" href="/services/fertility.html#vaginal-dryness">Vaginal Dryness</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#kisspeptin">Kisspeptin &amp; PT-141 &rarr;</a>
+
+        <span class="mega-col-head mega-col-head--mt">Men's Health</span>
+
+        <a class="mega-plink mega-plink no-content" href="/services/hormone-replacement-therapy.html#testosterone">Testosterone Therapy</a>
+
+        <a class="mega-slink ready-review" href="/services/fertility.html#men">Men's Fertility</a>
+
+        <a class="mega-slink no-content" href="/services/fertility.html#ed">ED</a>
+
+        <a class="mega-slink no-content" href="/services/fertility.html#p-shot">P-Shot</a>
+
+        <a class="mega-slink no-content" href="/services/fertility.html#low-libido">Low Libido</a>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#kisspeptin">Kisspeptin &amp; PT-141 &rarr;</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Treatment Areas</span>
+
+        <a class="mega-slink ready-review" href="/services/fertility.html">Women's Hormones</a>
+
+        <a class="mega-slink ready-review" href="/services/hormone-replacement-therapy.html">Men's Hormones</a>
+
+        <a class="mega-slink ready-review" href="/services/fertility.html">Fertility (Women)</a>
+
+        <a class="mega-slink ready-review" href="/services/fertility.html#men">Fertility (Men)</a>
+
+        <a class="mega-slink no-content" href="/services/fertility.html#sexual-health">Sexual Health</a>
+
+        <a class="mega-slink no-content" href="/services/hormone-replacement-therapy.html#labs">Hormone Lab Testing</a>
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Find By Concern</span>
+
+        <a class="mega-slink ready-review" href="/services/hormone-replacement-therapy.html">Low Testosterone</a>
+
+        <a class="mega-slink ready-review" href="/services/hormone-replacement-therapy.html">Fatigue</a>
+
+        <a class="mega-slink ready-review" href="/services/weight-loss.html">Weight Gain</a>
+
+        <a class="mega-slink no-content" href="/services/hormone-replacement-therapy.html#women">Menopause Support</a>
+
+        <a class="mega-slink ready-review" href="/services/fertility.html">Hormonal Imbalance</a>
+
+        <a class="mega-slink ready-review" href="/services/fertility.html">Fertility Support</a>
+
+        <a class="mega-slink no-content" href="/services/fertility.html#low-libido">Low Libido</a>
+
+        <a class="mega-slink no-content" href="/services/fertility.html#brain-fog">Brain Fog</a>
+
+        <a class="mega-slink no-content" href="/services/fertility.html#energy-loss">Energy Loss</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Learn</span>
+        <a class="mega-llink ready-review" href="/care/hormone-optimization.html">Pre &amp; Post Treatment Care</a>
+        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/faqs.html">FAQ</a>
+      </div>
+            <div class="mega-promo-panel">
+        <div class="mega-promo-img-box">
+          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+          <div class="mega-promo-content">
+          <span class="mega-promo-tag">HORMONE OPTIMIZATION</span>
+          <p class="mega-promo-hl">Hormone Optimization &amp; Fertility Support</p>
+          <p class="mega-promo-sub">Comprehensive hormonal care for women and men. Telehealth consultations available statewide.</p>
+          <a href="/book-now.html" class="btn btn-sm">Book Consult</a>
+        </div>
+        </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- 8. Hair Restoration -->
+        <div class="nav-item" data-mega>
+          <button>Hair Restoration <span class="chevron">&#9660;</span></button>
+          <div class="mega-dropdown mega-dropdown--4col">
+          <div class="mega-4col">
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Explore Hair Restoration</span>
+
+        <a class="mega-plink ready-review" href="/services/prp-hair.html">PRP Hair Restoration</a>
+
+        <a class="mega-slink no-content" href="/services/prp-hair.html#prp-microneedling">PRP Microneedling</a>
+
+        <a class="mega-slink no-content" href="/services/prp-hair.html#hair-growth">Hair Growth Treatment</a>
+
+        <a class="mega-slink no-content" href="/services/prp-hair.html#hair-thinning">Hair Thinning Treatment</a>
+
+        <span class="mega-col-head mega-col-head--mt">Related Treatments</span>
+
+        <a class="mega-slink no-content" href="/services/peptides.html#ghk-cu">GHK-CU &mdash; Compounded Hair</a>
+
+        <a class="mega-slink no-content" href="/services/weight-loss.html#glp1-hair-loss">GLP-1 Hair Loss</a>
+
+        <a class="mega-slink no-content" href="/services/hormone-replacement-therapy.html#hormonal-hair-loss">Hormonal Hair Loss</a>
+
+        <a class="mega-slink no-content" href="/services/wellness.html#iron-ferritin">Blood Work &mdash; Iron / Ferritin</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Treatment Types</span>
+
+        <a class="mega-slink ready-review" href="/services/prp-hair.html">PRP Therapy</a>
+
+        <a class="mega-slink ready-review" href="/services/prp-hair.html">Scalp Treatment</a>
+
+        <a class="mega-slink ready-review" href="/services/peptides.html">Peptide Therapy</a>
+
+        <a class="mega-slink ready-review" href="/services/hormone-replacement-therapy.html">Hormone Testing</a>
+
+        <a class="mega-slink ready-review" href="/services/wellness.html">Lab Work</a>
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Find By Concern</span>
+
+        <a class="mega-slink ready-review" href="/services/prp-hair.html">Hair Thinning</a>
+
+        <a class="mega-slink ready-review" href="/services/prp-hair.html">Hair Loss</a>
+
+        <a class="mega-slink ready-review" href="/services/hormone-replacement-therapy.html">Hormonal Hair Loss</a>
+
+        <a class="mega-slink ready-review" href="/services/glp-1.html">GLP-1 Related Hair Loss</a>
+
+        <a class="mega-slink ready-review" href="/services/b12-injections.html">Nutrient Deficiency</a>
+
+        <a class="mega-slink ready-review" href="/services/prp-hair.html">Scalp Health</a>
+
+        <a class="mega-slink ready-review" href="/services/prp-hair.html">Regrow Hair Naturally</a>
+
+      </div>
+            <div class="mega-4col-col">
+        <span class="mega-col-head">Learn</span>
+        <a class="mega-llink ready-review" href="/care/hair-restoration.html">Pre &amp; Post Treatment Care</a>
+        <a class="mega-llink ready-review" href="/provider/">Meet [PROVIDER NAME]</a>
+        <a class="mega-llink ready-review" href="/faqs.html">FAQ</a>
+      </div>
+            <div class="mega-promo-panel">
+        <div class="mega-promo-img-box">
+          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+          <div class="mega-promo-content">
+          <span class="mega-promo-tag">HAIR RESTORATION</span>
+          <p class="mega-promo-hl">Personalized Solutions for Hair Loss &amp; Thinning</p>
+          <p class="mega-promo-sub">PRP hair restoration, GHK-CU peptides, and hormone-based hair treatments delivered at home.</p>
+          <a href="/book-now.html" class="btn btn-sm">Book Consult</a>
+        </div>
+        </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        </div>
+    </nav>
+  </header>
+
+  <!-- Mobile nav drawer -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <div class="mobile-nav-header">
+      <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]">
+      <button class="mobile-nav-close">&times;</button>
+    </div>
+    <ul>
+      <li class="mnav-has-sub">
+        <button class="mnav-parent">IV Therapy <span class="mnav-chevron">&#8250;</span></button>
+        <ul class="mnav-sub">
+          <li><a class="ready-review" href="/services/iv-therapy.html">Drip Infusions (Overview)</a></li>
+          <li><a class="ready-review" href="/services/iv-memberships.html">IV Memberships</a></li>
+          <li><a href="/services/iv-cocktails.html">Myers Cocktail</a></li>
+          <li><a class="ready-review" href="/services/iv-nad.html">NAD+</a></li>
+          <li><a class="ready-review" href="/services/iv-extras.html">Add-Ons</a></li>
+        </ul>
+      </li>
+      <li class="mnav-has-sub">
+        <button class="mnav-parent">Injectables <span class="mnav-chevron">&#8250;</span></button>
+        <ul class="mnav-sub">
+          <li><a class="ready-review" href="/services/botox.html">Botox / Neuromodulators</a></li>
+          <li><a class="ready-review" href="/services/dermal-fillers.html">Dermal Fillers</a></li>
+        </ul>
+      </li>
+      <li class="mnav-has-sub">
+        <button class="mnav-parent">Skin Rejuvenation <span class="mnav-chevron">&#8250;</span></button>
+        <ul class="mnav-sub">
+          <li><a class="ready-review" href="/services/microneedling.html">Microneedling &amp; Peels</a></li>
+          <li><a class="ready-review" href="/services/prp-facial.html">Vampire Facial / PRP</a></li>
+          <li><a class="ready-review" href="/services/prp-hair.html">PRP Hair Restoration</a></li>
+        </ul>
+      </li>
+      <li class="mnav-has-sub">
+        <button class="mnav-parent">Weight Loss <span class="mnav-chevron">&#8250;</span></button>
+        <ul class="mnav-sub">
+          <li><a class="ready-review" href="/services/weight-loss.html">Medical Weight Loss</a></li>
+          <li><a class="ready-review" href="/services/semaglutide.html">Semaglutide</a></li>
+          <li><a class="ready-review" href="/services/tirzepatide.html">Tirzepatide</a></li>
+        </ul>
+      </li>
+      <li class="mnav-has-sub">
+        <button class="mnav-parent">Peptides <span class="mnav-chevron">&#8250;</span></button>
+        <ul class="mnav-sub">
+          <li><a class="ready-review" href="/services/peptides.html">Peptides Overview</a></li>
+          <li><a class="ready-review" href="/services/iv-nad.html">NAD+</a></li>
+        </ul>
+      </li>
+      <li class="mnav-has-sub">
+        <button class="mnav-parent">Wellness <span class="mnav-chevron">&#8250;</span></button>
+        <ul class="mnav-sub">
+          <li><a class="ready-review" href="/services/wellness.html">Wellness Overview</a></li>
+          <li><a class="ready-review" href="/services/b12-injections.html">B12 Shots</a></li>
+          <li><a class="ready-review" href="/services/cryotherapy.html">Cryotherapy</a></li>
+          <li><a class="ready-review" href="/services/hormone-replacement-therapy.html">Hormone Replacement (HRT)</a></li>
+        </ul>
+      </li>
+      <li class="mnav-has-sub">
+        <button class="mnav-parent">Hormone Optimization <span class="mnav-chevron">&#8250;</span></button>
+        <ul class="mnav-sub">
+          <li><a class="ready-review" href="/services/fertility.html">Fertility</a></li>
+          <li><a class="ready-review" href="/services/hormone-replacement-therapy.html">Hormone Replacement Therapy</a></li>
+          <li><a class="ready-review" href="/services/in-home-primary-care.html">In-Home Primary Care</a></li>
+          <li><a class="ready-review" href="/services/telehealth.html">Telehealth</a></li>
+        </ul>
+      </li>
+      <li class="mnav-has-sub">
+        <button class="mnav-parent">Hair Restoration <span class="mnav-chevron">&#8250;</span></button>
+        <ul class="mnav-sub">
+          <li><a class="ready-review" href="/services/prp-hair.html">PRP Hair Restoration</a></li>
+          <li><a class="ready-review" href="/services/peptides.html#ghk-cu">GHK-CU &mdash; Compounded Hair Treatment</a></li>
+        </ul>
+      </li>
+      <li class="mnav-has-sub">
+        <button class="mnav-parent">Plans &amp; Pricing <span class="mnav-chevron">&#8250;</span></button>
+        <ul class="mnav-sub">
+          <li><a class="ready-review" href="/pricing.html">Pricing</a></li>
+          <li><a class="ready-review" href="/payment-plans.html">Payment Plans</a></li>
+          <li><a class="ready-review" href="/membership.html">Memberships</a></li>
+        </ul>
+      </li>
+      <li><a class="ready-review" href="/faqs.html">FAQs</a></li>
+      <li><a class="ready-review" href="/provider/">Meet [PROVIDER NAME]</a></li>
+      <li><a class="ready-review" href="/reviews.html">Reviews</a></li>
+      <li><a class="ready-review" href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-cta">
+      <a href="https://booking.[BOOKING URL]" class="btn btn-primary btn-full">Book Service</a>
+    </div>
+    <div class="mobile-nav-phone">
+      Call us: <a class="ready-review" href="tel:+1[PHONE]">[PHONE]</a>
+    </div>
+  </nav>
+
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <a href="/">Home</a>
+    <span class="sep">›</span>
+    <a href="/services/">Services</a>
+    <span class="sep">›</span>
+    <span class="current">[Service Name]</span>
+  </div>
+</nav>
+
+<section class="svc-hero service-page">
+    <div class="svc-hero-grid">
+
+      <!-- Left: image with minimal overlay. Value prop + CTAs are placeholders (hidden). -->
+      <div class="svc-hero-image-card">
+        <img src="https://placehold.co/1600x900/e8e8e8/aaaaaa?text=Hero" alt="[Service Name] in [CITY], FL" loading="eager">
+        <div class="svc-hero-overlay">
+          <span class="svc-hero-category">[Category]</span>
+          <h1>[Service Name] in [CITY], [STATE]</h1>
+          <!-- Placeholders: remove .is-hidden to activate when content is ready -->
+          <p class="svc-hero-value is-hidden">[Brief hero value proposition for this service.]</p>
+          <div class="svc-hero-ctas is-hidden">
+            <a href="https://booking.[BOOKING URL]" class="btn btn-primary btn-pill btn-lg">Book Free Consultation</a>
+            <a href="/pricing.html" class="btn btn-secondary btn-pill">View Pricing</a>
+          </div>
+          <p class="svc-hero-disclaimer is-hidden">Performed by [PROVIDER NAME], [CREDENTIALS]. Individual results may vary.</p>
+        </div>
+      </div>
+
+      <!-- Right: inline guide shell. Service pre-selected — starts at qualifier (inlineStep 2). -->
+      <div class="svc-guide__shell">
+
+        <div class="svc-guide__header">
+          <p class="svc-guide__eyebrow">Free Consultation</p>
+          <h2 class="svc-guide__heading" x-text="inlineHeading()"></h2>
+          <p class="svc-guide__sub" x-show="inlineStep === 4">Your info is private. [PROVIDER NAME]&apos;s team will reach out within 24 hours.</p>
+          <p class="svc-guide__sub" x-show="inlineStep === 5">All options are available at no charge for your first meet and greet.</p>
+        </div>
+
+        <div class="svc-guide__body">
+
+          <!-- Step 2: Qualifier (HIPAA-compliant, goal/area only) -->
+          <div x-show="inlineStep === 2">
+            <div class="svc-card-grid">
+              <template x-for="opt in getConcerns()" :key="opt.id">
+                <button class="svc-card" :class="{'svc-card--active': selectedConcern === opt.id}" @click="selectedConcern = opt.id">
+                  <span class="svc-card__icon" x-text="opt.icon"></span>
+                  <span class="svc-card__label" x-text="opt.label"></span>
+                </button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Step 3: Detail/goal (botox, fillers, microneedling, weight-loss only) -->
+          <div x-show="inlineStep === 3">
+            <div class="svc-card-grid">
+              <template x-for="opt in getDetailOptions()" :key="opt.id">
+                <button class="svc-card" :class="{'svc-card--active': selectedDetail === opt.id}" @click="selectedDetail = opt.id">
+                  <span class="svc-card__icon" x-text="opt.icon"></span>
+                  <span class="svc-card__label" x-text="opt.label"></span>
+                </button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Step 4: Contact form -->
+          <div x-show="inlineStep === 4">
+            <div class="inline-form">
+              <div class="inline-field">
+                <label class="inline-label">Full Name</label>
+                <input class="inline-input" type="text" x-model="formData.name" placeholder="Jane Smith" autocomplete="name">
+              </div>
+              <div class="inline-field">
+                <label class="inline-label">Email Address</label>
+                <input class="inline-input" type="email" x-model="formData.email" placeholder="jane@email.com" autocomplete="email">
+              </div>
+              <div class="inline-field">
+                <label class="inline-label">Phone Number</label>
+                <input class="inline-input" type="tel" x-model="formData.phone" placeholder="(561) 555-0100" autocomplete="tel">
+              </div>
+              <div class="inline-consent">
+                <label style="display:flex;align-items:flex-start;gap:0.5rem;cursor:pointer;">
+                  <input type="checkbox" x-model="formData.consent" style="margin-top:0.2rem;flex-shrink:0;">
+                  <span>By submitting, you agree to be contacted by [COMPANY NAME] at the phone number and email provided. Message and data rates may apply. Reply STOP to opt out.</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5: Consultation type -->
+          <div x-show="inlineStep === 5">
+            <div class="inline-consult-grid">
+              <template x-for="ct in consultTypes" :key="ct.id">
+                <button class="inline-consult-card" :class="{'inline-consult-card--active': consultType === ct.id}" @click="selectConsult(ct.id)">
+                  <span class="inline-consult-icon" x-text="ct.icon"></span>
+                  <div class="inline-consult-text">
+                    <span class="inline-consult-label" x-text="ct.label"></span>
+                    <span class="inline-consult-desc" x-text="ct.desc"></span>
+                  </div>
+                </button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Step 6: Date and time -->
+          <div x-show="inlineStep === 6">
+            <div class="inline-form">
+              <div class="inline-field">
+                <label class="inline-label">Preferred Date</label>
+                <input class="inline-input" type="date" x-model="selectedDate" :min="minDate" :max="maxDate">
+              </div>
+              <div class="inline-field">
+                <label class="inline-label">Preferred Time <span style="font-weight:400;color:#6b7280;">(Eastern)</span></label>
+                <div class="inline-time-slots">
+                  <template x-for="slot in timeSlots" :key="slot">
+                    <button class="inline-time-slot" :class="{'inline-time-slot--active': selectedTime === slot}" @click="selectedTime = slot" x-text="slot"></button>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 7: Confirmation -->
+          <div x-show="inlineStep === 7">
+            <div class="inline-confirm">
+              <div class="inline-confirm__icon">&#127881;</div>
+              <p class="inline-confirm__msg">[PROVIDER NAME]&apos;s team will reach out within 24 hours to confirm your appointment.</p>
+              <ul class="inline-confirm__list">
+                <li>Confirmation sent to <strong x-text="formData.email"></strong></li>
+                <li>Service: <strong>[Service Name]</strong></li>
+                <li>Consultation: <strong x-text="getConsultLabel()"></strong></li>
+                <li x-show="selectedDate">Date requested: <strong x-text="formatDate(selectedDate) + ' at ' + selectedTime"></strong></li>
+              </ul>
+              <p class="inline-confirm__phone">Questions? Call <a href="tel:+1[PHONE]">[PHONE]</a></p>
+            </div>
+          </div>
+
+        </div><!-- /.svc-guide__body -->
+
+        <!-- Footer: step indicator + Prev/Next (hidden on confirmation) -->
+        <div class="svc-guide__footer" x-show="inlineStep < 7">
+          <div class="svc-guide__step">
+            <span class="svc-guide__step-label" x-text="inlineStepLabel()"></span>
+            <div class="svc-guide__progress">
+              <span class="svc-guide__progress-dot" :style="'left:' + inlineProgressLeft()"></span>
+            </div>
+          </div>
+          <div class="svc-guide__footer-btns">
+            <button class="svc-guide__prev" x-show="inlineStep > 2" @click="inlinePrev()">&lsaquo; Prev</button>
+            <button class="svc-guide__next" @click="inlineNext()" :class="{'svc-guide__next--on': inlineCanNext()}" :disabled="!inlineCanNext()" x-text="inlineNextLabel()"></button>
+          </div>
+        </div>
+
+      </div><!-- /.svc-guide__shell -->
+
+    </div>
+</section>
+
+<section class="svc-vp-section">
+  <div class="svc-vp-inner">
+    <div class="svc-vp-left">
+      <span class="eyebrow">CONCIERGE CARE</span>
+      <h2 class="svc-vp-heading">Your [Service Name], <em>Your Way</em></h2>
+      <p class="svc-vp-sub">Science-backed. Expert-led. [PROVIDER NAME] delivers every treatment to your door, tailored to your goals and your schedule.</p>
+    </div>
+    <div class="svc-vp-right">
+      <div class="svc-vp-features">
+      <div class="svc-vp-feature">
+        <div class="svc-vp-icon">⏱</div>
+        <div class="svc-vp-text">
+          <strong>Treatment Time</strong>
+          <span>20-30 min</span>
+        </div>
+      </div>
+      <div class="svc-vp-feature">
+        <div class="svc-vp-icon">⚡</div>
+        <div class="svc-vp-text">
+          <strong>Results Onset</strong>
+          <span>Immediate</span>
+        </div>
+      </div>
+      <div class="svc-vp-feature">
+        <div class="svc-vp-icon">📅</div>
+        <div class="svc-vp-text">
+          <strong>How Long It Lasts</strong>
+          <span>Ongoing with sessions</span>
+        </div>
+      </div>
+      <div class="svc-vp-feature">
+        <div class="svc-vp-icon">🔄</div>
+        <div class="svc-vp-text">
+          <strong>Downtime</strong>
+          <span>None</span>
+        </div>
+      </div></div>
+      <a href="https://booking.[BOOKING URL]" class="btn btn-primary btn-pill btn-lg">Book Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<section class="svc-section svc-section--wide" aria-label="About [Service Name]">
+  <div class="svc-zigzag">
+    <div class="svc-zigzag-text">
+      <span class="eyebrow">ABOUT [CATEGORY]</span>
+      <h2 class="svc-section-title">Mobile Cryotherapy for Recovery, Aesthetics, and Performance</h2>
+      <p>[placeholder text]</p>
+        <p>[placeholder text]</p>
+        <p>[placeholder text]</p>
+      <div><a href="https://booking.[BOOKING URL]" class="btn btn-primary btn-pill">Book Free Consultation</a></div>
+    </div>
+    <div class="svc-zigzag-image">
+      <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Service Name] at [COMPANY NAME]" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="svc-section-white svc-section--wide" aria-label="How [Service Name] Works">
+  <div class="svc-zigzag">
+    <div class="svc-zigzag-image">
+      <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="How [Service Name] works at [COMPANY NAME]" loading="lazy">
+    </div>
+    <div class="svc-zigzag-text">
+      <span class="eyebrow">WHAT TO EXPECT</span>
+      <h2 class="svc-section-title">How [Service Name] Works</h2>
+      <p>[placeholder text]</p>
+      <div class="svc-facts" style="margin-top:1rem">
+        <div class="svc-fact"><span>⏱</span> Time: 20-30 min</div>
+        <div class="svc-fact"><span>🔄</span> Downtime: None</div>
+        <div class="svc-fact"><span>⚡</span> Onset: Immediate</div>
+        <div class="svc-fact"><span>📅</span> Duration: Ongoing with sessions</div>
+        <div class="svc-fact"><span>📍</span> Location: [Location]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc-section-alt" aria-label="Cryotherapy Applications">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2rem">
+      <span class="eyebrow">[CATEGORY]</span>
+      <h2 class="svc-section-title centered">Cryotherapy Applications</h2>
+    </div>
+    <div class="svc-menu">
+      <div class="svc-menu-item" id="aesthetic-cosmetic">
+        <h3>[placeholder text]</h3>
+        <p>[placeholder text]</p>
+        
+        <ul style="margin-top:.75rem;list-style:disc;padding-left:1.25rem"><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Collagen stimulation</li><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Reduced skin redness</li><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Improved skin tone and texture</li><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Pore minimization</li><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Metabolism boost</li></ul>
+      </div>
+      <div class="svc-menu-item" id="orthopedic-pain">
+        <h3>[placeholder text]</h3>
+        <p>[placeholder text]</p>
+        
+        <ul style="margin-top:.75rem;list-style:disc;padding-left:1.25rem"><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Injury recovery</li><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Chronic pain relief</li><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Reduced inflammation</li><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Reduced swelling</li><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Improved range of motion</li></ul>
+      </div>
+      <div class="svc-menu-item" id="sports-recovery">
+        <h3>[placeholder text]</h3>
+        <p>[placeholder text]</p>
+        
+        <ul style="margin-top:.75rem;list-style:disc;padding-left:1.25rem"><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Reduced muscle soreness</li><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Faster recovery</li><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Decreased inflammation</li><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Improved energy</li><li style="font-size:.875rem;color:var(--text-muted);margin-bottom:.25rem">Mental focus support</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc-section-white" aria-label="Before and After" x-data="baCarousel()">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2rem">
+      <span class="eyebrow">RESULTS</span>
+      <h2 class="svc-section-title centered">Before and After</h2>
+      <p style="font-size:.8rem;color:var(--text-muted);margin-top:.5rem">Results not typical. Individual results may vary. Performed by [PROVIDER NAME], [CREDENTIALS].</p>
+    </div>
+  </div>
+  <!-- Full-width carousel track -->
+  <div class="ba-carousel-wrap"
+       @mouseenter="pause()" @mouseleave="resume()"
+       style="overflow:hidden;width:100%;position:relative;">
+    <div class="ba-track" :style="'transform:translateX(-'+offset+'px);transition:'+trans">
+      
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="ba-slide" @click="lb='https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image'" title="Click to view full screen">
+        <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Before and After — [COMPANY NAME]" loading="lazy">
+        <div class="ba-slide-overlay"><span>&#128269;</span></div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:2rem">
+    <a href="https://booking.[BOOKING URL]" class="btn btn-primary btn-pill">Book Your Free Consultation</a>
+  </div>
+  <!-- Fullscreen lightbox -->
+  <div class="ba-lightbox" x-show="lb" @click.self="lb=null" x-cloak>
+    <button class="ba-lb-close" @click="lb=null" aria-label="Close">&times;</button>
+    <img class="ba-lb-img" :src="lb" alt="Result" @click.stop>
+  </div>
+</section>
+
+<section class="svc-section" aria-label="How It Works">
+  <div class="container">
+    <div class="svc-steps-header">
+      <span class="eyebrow">HOW IT WORKS</span>
+      <h2 class="svc-section-title centered">Simple. Personal. Convenient.</h2>
+      <p>Three steps to care that fits your life.</p>
+      <div style="margin-top:1.25rem"><button class="btn btn-primary btn-pill" data-open-wizard>Book Free Consultation →</button></div>
+    </div>
+    <div class="svc-steps-grid">
+      <div class="svc-step-card">
+        <div class="svc-step-badge">1</div>
+        <h3>Book Your Free Meet and Greet</h3>
+        <p>Schedule a free telehealth call with [PROVIDER NAME] to talk through your goals and find the right care for you.</p>
+      </div>
+      <div class="svc-step-card">
+        <div class="svc-step-badge">2</div>
+        <h3>Receive Your Custom Plan</h3>
+        <p>[PROVIDER NAME] listens, evaluates, and builds a treatment plan built around your life. No cookie-cutter protocols.</p>
+      </div>
+      <div class="svc-step-card">
+        <div class="svc-step-badge">3</div>
+        <h3>Care Comes to You</h3>
+        <p>At-home, in-office, or telehealth. Your choice. Your schedule. You are never just a number.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc-section-alt" aria-label="Patient Stories">
+    <div class="svc-testimonial">
+      <div class="svc-testimonial-stars">
+        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+      </div>
+      <blockquote>[Customer testimonial quote.]</blockquote>
+      <cite><strong>[Service Name], [placeholder text]</strong></cite>
+    </div>
+  </section>
+
+<section class="svc-section" aria-label="Service Area">
+  <div class="container">
+    <div class="svc-area-grid">
+      <div class="svc-area-text">
+        <span class="eyebrow">[SERVICE NAME] NEAR YOU</span>
+        <h2 class="svc-section-title">Serving <em>[CITY]</em> and All of [COUNTY]</h2>
+        <p>We deliver [Service Name] to [CITY], [CITY], [CITY], [CITY], [CITY], and all of [COUNTY], FL.</p>
+        <div class="svc-area-links">
+          <a href="/locations/wellington-fl.html" class="svc-area-link">[CITY]</a>
+          <a href="/locations/loxahatchee-fl.html" class="svc-area-link">[CITY]</a>
+          <a href="/locations/royal-palm-beach-fl.html" class="svc-area-link">[CITY]</a>
+          <a href="/locations/west-palm-beach-fl.html" class="svc-area-link">[CITY]</a>
+          <a class="svc-area-link" href="/about/service-area.html">View Full Service Area</a>
+        </div>
+      </div>
+      <div class="svc-area-map" style="border-radius:var(--radius);overflow:hidden;min-height:300px;">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-80.29,26.63,-80.19,26.69&layer=mapnik&marker=26.659,-80.2431"
+          width="100%" height="320" style="border:0;display:block;" loading="lazy"
+          title="[COMPANY NAME] — [CITY], FL"
+          allowfullscreen></iframe>
+        <p style="font-size:.72rem;text-align:right;margin:.25rem .5rem 0;padding-bottom:.25rem;"><a href="https://www.openstreetmap.org/?mlat=26.659&mlon=-80.2431#map=13/26.659/-80.2431" target="_blank" rel="noopener" style="color:#6b7280;">View larger map &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc-cred-strip" aria-label="Provider Credentials">
+  <div class="svc-cred-inner">
+
+    <div class="svc-cred-provider">
+      <img class="svc-cred-photo" src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[PROVIDER NAME], [CREDENTIALS]" loading="lazy">
+      <div class="svc-cred-meta">
+        <strong>[PROVIDER NAME], [CREDENTIALS]</strong>
+        <span>Written and medically reviewed by [PROVIDER NAME]</span>
+        <span class="svc-cred-date">Last updated June 2026</span>
+      </div>
+    </div>
+
+    <div class="svc-cred-divider"></div>
+
+    <div class="svc-cred-badges">
+      <div class="svc-cred-badge">
+        <div class="svc-cred-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="16" fill="white" fill-opacity="0.15"/>
+            <path d="M14 8h4v6h6v4h-6v6h-4v-6H8v-4h6V8z" fill="white"/>
+          </svg>
+        </div>
+        <div class="svc-cred-info">
+          <strong>[STATE] Licensed [CREDENTIALS]</strong>
+          <span>Board Certified [CREDENTIALS]</span>
+        </div>
+      </div>
+      <div class="svc-cred-badge">
+        <div class="svc-cred-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="14" stroke="white" stroke-width="2" fill="white" fill-opacity="0.15"/>
+            <path d="M10 16l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="svc-cred-info">
+          <strong>AANP Member</strong>
+          <span>American Association of NPs</span>
+        </div>
+      </div>
+      <div class="svc-cred-badge">
+        <div class="svc-cred-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 4l3.09 6.26L26 11.27l-5 4.87 1.18 6.88L16 19.77l-6.18 3.25L11 15.14l-5-4.87 6.91-1.01L16 4z" fill="white" fill-opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="svc-cred-info">
+          <strong>100+ Five-Star Reviews</strong>
+          <span>Google and Healthgrades</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="svc-faq-section" aria-label="Common Questions">
+  <div class="svc-faq-inner">
+    <h2 class="svc-faq-heading">Common Questions</h2>
+    <div class="svc-faq-list">
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question">
+        <span class="faq-q-text">[Frequently asked question?]</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer">[Answer to this frequently asked question.]</div>
+    </div><div class="faq-item" id="faq-2">
+      <button class="faq-question">
+        <span class="faq-q-text">[Frequently asked question?]</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer">[Answer to this frequently asked question.]</div>
+    </div><div class="faq-item" id="faq-3">
+      <button class="faq-question">
+        <span class="faq-q-text">[Frequently asked question?]</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer">[Answer to this frequently asked question.]</div>
+    </div><div class="faq-item" id="faq-4">
+      <button class="faq-question">
+        <span class="faq-q-text">[Frequently asked question?]</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer">[Answer to this frequently asked question.]</div>
+    </div><div class="faq-item" id="faq-5">
+      <button class="faq-question">
+        <span class="faq-q-text">[Frequently asked question?]</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer">[Answer to this frequently asked question.]</div>
+    </div>
+    </div>
+    <p class="faq-footer">Still have questions? <a href="/contact.html">Contact Us</a></p>
+  </div>
+</section>
+
+<section class="svc-section-alt" aria-label="Related Services">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2rem">
+      <span class="eyebrow">EXPLORE MORE</span>
+      <h2 class="svc-section-title centered">Related Services</h2>
+    </div>
+    <div class="related-grid">
+      <a href="/services/iv-therapy.html" class="related-card">
+        <div class="related-card-img">
+          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="Mobile IV Therapy" loading="lazy">
+        </div>
+        <div class="related-card-label">Mobile IV Therapy</div>
+      </a><a href="/services/b12-injections.html" class="related-card">
+        <div class="related-card-img">
+          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="B12 Injections" loading="lazy">
+        </div>
+        <div class="related-card-label">B12 Injections</div>
+      </a><a href="/services/prp-facial.html" class="related-card">
+        <div class="related-card-img">
+          <img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="PRP Vampire Facial" loading="lazy">
+        </div>
+        <div class="related-card-label">PRP Vampire Facial</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="https://placehold.co/800x600/e8e8e8/aaaaaa?text=Image" alt="[Image]"></div>
+        <p class="footer-tagline">We come to you. Serving [COUNTY], FL.</p>
+        <p style="font-size:.75rem;color:var(--text-muted);margin-top:1rem;">[ADDRESS], Unit G, [CITY, STATE ZIP]</p>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="/services/botox.html">Botox</a></li>
+        <li><a href="/services/dermal-fillers.html">Dermal Fillers</a></li>
+        <li><a href="/services/microneedling.html">Microneedling</a></li>
+        <li><a href="/services/prp-facial.html">PRP Facial</a></li>
+        <li><a href="/services/iv-therapy.html">IV Therapy</a></li>
+        <li><a href="/services/weight-loss.html">Weight Loss</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="/provider/">Meet [PROVIDER NAME]</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/faqs.html">FAQs</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="tel:+1[PHONE]">[PHONE]</a></li>
+        <li><a href="/contact.html">Send a Message</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2026 [COMPANY NAME], LLC. [PROVIDER NAME], [CREDENTIALS]. [CITY], FL.</p>
+    </div>
+  </footer>
+
+</div>
+<script src="../js/wizard.js?v=10"></script>
+<script src="../js/megamenu.js"></script>
+<!-- LeadConnector Chat Widget -->
+<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="696fcf0124cb5a2d1fa376e8"></script>
+
+
+<script src="../wizard/modules.js"></script>
+<script>
+const PAGE_WIZARD = {
+  "slug": "cryotherapy",
+  "serviceLabel": "Cryotherapy",
+  "steps": [
+    {
+      "type": "cards-single",
+      "q": "What are you after?",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "recovery",
+          "icon": "💪",
+          "label": "Recovery"
+        },
+        {
+          "id": "performance",
+          "icon": "⚡",
+          "label": "Performance"
+        },
+        {
+          "id": "wellness",
+          "icon": "🌿",
+          "label": "Wellness"
+        },
+        {
+          "id": "skin",
+          "icon": "✨",
+          "label": "Skin and glow"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "Cryotherapy"
+    }
+  ]
+};
+</script>
+<script src="../wizard/engine.js"></script>
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q){
+  q.addEventListener('click', function(){
+    q.closest('.faq-item').classList.toggle('open');
+  });
+});
+// Promo bar close
+var promoClose = document.querySelector('.promo-close');
+var promoBar = document.querySelector('.promo-bar');
+if(promoClose && promoBar){
+  promoClose.addEventListener('click', function(){ promoBar.style.display='none'; });
+}
+</script>
+
+</body>
+</html>

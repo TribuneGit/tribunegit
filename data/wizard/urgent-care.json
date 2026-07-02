@@ -1,0 +1,41 @@
+{
+  "slug": "urgent-care",
+  "serviceLabel": "Urgent Care at Home",
+  "steps": [
+    {
+      "type": "list-single",
+      "q": "What do you need?",
+      "stateKey": "qualifier1",
+      "options": [
+        {
+          "id": "visit",
+          "label": "A same-day visit"
+        },
+        {
+          "id": "labs",
+          "label": "Lab work"
+        },
+        {
+          "id": "unsure",
+          "label": "Not sure"
+        }
+      ]
+    },
+    {
+      "type": "zip"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "consult"
+    },
+    {
+      "type": "datetime"
+    },
+    {
+      "type": "confirm",
+      "serviceLabel": "Urgent Care at Home"
+    }
+  ]
+}
