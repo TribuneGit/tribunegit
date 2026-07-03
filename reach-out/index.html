@@ -49,9 +49,11 @@
   form.</p>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
-<form name="reach-out" method="POST" action="/reach-out/thanks/" data-netlify="true"
-      netlify-honeypot="company-website">
-  <p class="hp"><label>Leave this field empty <input name="company-website"></label></p>
+<form name="reach-out" method="POST" action="https://api.web3forms.com/submit">
+  <input type="hidden" name="access_key" value="513708c1-033f-40ab-850b-33672a05c8bd">
+  <input type="hidden" name="subject" value="New Tribune inquiry — reach out form">
+  <input type="hidden" name="redirect" value="https://www.tribuneinc.com/reach-out/thanks/">
+  <p style="display:none"><label>Leave empty <input name="botcheck" type="checkbox"></label></p>
   <div class="field"><label>Your name</label><input type="text" name="name" required></div>
   <div class="field"><label>Email</label><input type="email" name="email" required></div>
   <div class="field"><label>What should your agent carry?</label><label class="choice"><input type="checkbox" name="functions[]" value="Recover money owed"> Recover money owed</label><label class="choice"><input type="checkbox" name="functions[]" value="Handle incoming paperwork"> Handle incoming paperwork</label><label class="choice"><input type="checkbox" name="functions[]" value="Watch and brief"> Watch and brief</label><label class="choice"><input type="checkbox" name="functions[]" value="Keep the books straight"> Keep the books straight</label><label class="choice"><input type="checkbox" name="functions[]" value="Guard the deadlines"> Guard the deadlines</label><label class="choice"><input type="checkbox" name="functions[]" value="Produce and deliver"> Produce and deliver</label><label class="choice"><input type="checkbox" name="functions[]" value="Keep the pipeline moving"> Keep the pipeline moving</label><label class="choice"><input type="checkbox" name="functions[]" value="Build your brand"> Build your brand</label></div>

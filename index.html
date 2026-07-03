@@ -97,8 +97,11 @@
   <div class="eyebrow reveal">Start here</div>
   <h2 class="reveal" style="margin-bottom:8px">Tell us where it hurts.</h2>
   <p class="reveal muted" style="margin-bottom:28px">A human reads this and replies within one business day.</p>
-  <form name="homepage-contact" method="POST" action="/reach-out/thanks/" data-netlify="true" netlify-honeypot="company-website" style="max-width:560px">
-    <p style="display:none"><label>Leave this field empty <input name="company-website"></label></p>
+  <form name="homepage-contact" method="POST" action="https://api.web3forms.com/submit" style="max-width:560px">
+    <input type="hidden" name="access_key" value="513708c1-033f-40ab-850b-33672a05c8bd">
+    <input type="hidden" name="subject" value="New Tribune inquiry — homepage form">
+    <input type="hidden" name="redirect" value="https://www.tribuneinc.com/reach-out/thanks/">
+    <p style="display:none"><label>Leave empty <input name="botcheck" type="checkbox"></label></p>
     <div class="field"><label>Your name</label><input type="text" name="name" required></div>
     <div class="field"><label>Email</label><input type="email" name="email" required></div>
     <div class="field"><label>What&#39;s costing you the most right now?</label><input type="text" name="constraint" placeholder="e.g. denied claims, deal follow-ups, content that never gets made" required></div>
