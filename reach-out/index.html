@@ -52,6 +52,7 @@
 <form name="reach-out" method="POST" action="https://api.web3forms.com/submit">
   <input type="hidden" name="access_key" value="513708c1-033f-40ab-850b-33672a05c8bd">
   <input type="hidden" name="subject" value="New Tribune inquiry — reach out form">
+  <input type="hidden" name="build" id="build-field" value="">
   <input type="hidden" name="redirect" value="https://www.tribuneinc.com/reach-out/thanks/">
   <p style="display:none"><label>Leave empty <input name="botcheck" type="checkbox"></label></p>
   <div class="field"><label>Your name</label><input type="text" name="name" required></div>
@@ -104,4 +105,33 @@
   </div>
 </div></footer>
 <script src="/assets/site.js"></script>
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var build = params.get('build');
+  if (!build) return;
+  // Set hidden field
+  var bf = document.getElementById('build-field');
+  if (bf) bf.value = build;
+  // Update subject
+  var sf = document.querySelector('input[name="subject"]');
+  if (sf) sf.value = 'New Tribune inquiry — ' + build;
+  // Map slug to checkbox value
+  var map = {
+    'the-recovery-agent':    'Recover money owed',
+    'the-intake-agent':      'Handle incoming paperwork',
+    'the-signal-agent':      'Watch and brief',
+    'the-ledger-agent':      'Keep the books straight',
+    'the-sentinel':          'Guard the deadlines',
+    'the-producer':          'Produce and deliver',
+    'the-sales-agent':       'Keep the pipeline moving',
+    'the-marketing-agent':   'Build your brand'
+  };
+  var val = map[build];
+  if (val) {
+    var cb = document.querySelector('input[name="functions[]"][value="' + val + '"]');
+    if (cb) cb.checked = true;
+  }
+})();
+</script>
 </body></html>
