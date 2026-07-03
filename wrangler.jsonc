@@ -1,7 +1,11 @@
 {
-  "name": "tribune",
+  "name": "tribune-web",
   "compatibility_date": "2026-07-01",
   "assets": {
     "directory": "./"
-  }
+  },
+  "routes": [
+    { "pattern": "tribuneinc.com/*", "zone_name": "tribuneinc.com" },
+    { "pattern": "www.tribuneinc.com/*", "zone_name": "tribuneinc.com" }
+  ]
 }
