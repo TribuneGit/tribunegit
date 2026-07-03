@@ -8,7 +8,7 @@ Built from `tribune-website-spec-2026-07-02.md` v1.1 (Brand System v2.0, Dayligh
    (Or drag-and-drop this folder in the Netlify UI.)
 3. The reach-out form uses Netlify Forms (`data-netlify="true"`); it activates automatically
    on deploy. Set a notification email in Netlify: Site settings, Forms, Notifications.
-4. Point TribuneOS.com at the site when ready; sitemap/canonicals already use that domain.
+4. Point TribuneInc.com at the site when ready; sitemap/canonicals already use that domain.
 
 ## Before public launch (TODO)
 - §15 sign-offs with Ryan: Daylight inversion, three dash-free verbatim lines.

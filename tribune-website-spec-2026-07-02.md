@@ -17,7 +17,7 @@ Tribune builds AI agents for businesses. We design them, train them on your real
 - Public message (the marketing): *we build AI agents for you.* A service, delivered by a firm.
 - The website NEVER states, implies, or winks at the internal truth. No "the asset is the builder" framing, no AI C-suite roster, no meta-agent language. "We" on the website means the firm and its founders. Full stop.
 
-**Primary domain:** TribuneOS.com (TribuneInc.com redirects).
+**Primary domain:** TribuneInc.com (TribuneInc.com redirects).
 
 **Tagline system (from the brand copy library, altitude rules apply):**
 - SIGNATURE (the manifesto, verbatim): **We win when you no longer need us.** Used in the About close and the Doctrine close. Never on a page that carries a CAMPAIGN line.
@@ -32,7 +32,7 @@ Rules: one tagline per viewport. SIGNATURE never shares a page with a CAMPAIGN l
 3. **DISCESSUS, the Departer.** The engagement is designed to end. Success is measured by not being needed.
 
 **The boilerplate paragraph (footer / about / press, brand verbatim in dash-free form, §15):**
-Tribune Inc. builds complete AI organizations for small and mid-size businesses, designed around each company's costliest constraint, installed on hardware the client owns, and trained until they pass a formal Independence Test. Then Tribune hands over the keys and leaves. Tribune Inc. is a Delaware corporation. TribuneOS.com.
+Tribune Inc. builds complete AI organizations for small and mid-size businesses, designed around each company's costliest constraint, installed on hardware the client owns, and trained until they pass a formal Independence Test. Then Tribune hands over the keys and leaves. Tribune Inc. is a Delaware corporation. TribuneInc.com.
 
 **The two-layer rule (governs all storytelling):** every surface holds a modern layer (flat geometry, precise type, engineered language: the HOW) over a Roman spine (the Tribune of the Plebs: protector of ordinary citizens, door always open, returns power when the term ends: the WHY). The Roman layer lives in meaning, naming, the motto, and the ceremonial face only. Never literal Roman kitsch: no columns, no laurels, no togas, no Trajan. Never fasces, eagles, or imperial iconography. The tribunate was plebeian and anti-imperial. Shield yes, empire no.
 
