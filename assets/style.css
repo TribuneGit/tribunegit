@@ -220,14 +220,27 @@ footer a{color:var(--basalt)}
 .legal-row{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);
   display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
-/* Signature moment: the stone field (landing hero only) */
+/* Hero layout */
 .hero{position:relative;overflow:hidden}
-.hero .wrap{position:relative;z-index:1}
-.hero-field{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1.4s ease;
-  pointer-events:none}
-.hero-field.on{opacity:1}
-.hero-field canvas{width:100%;height:100%;display:block}
-@media(prefers-reduced-motion:reduce){.hero-field{display:none}}
+.hero .wrap{position:relative;z-index:2}
+
+/* Video hero background */
+.hero-video-wrap{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
+.hero-overlay{position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(10,11,18,.78) 0%,rgba(10,11,18,.60) 60%,rgba(10,11,18,.75) 100%)}
+
+/* Dark-video hero text */
+.hero.dark-video h1,.hero.dark-video .display-xl{color:var(--marble)}
+.hero.dark-video .lead{color:rgba(239,235,226,.82)}
+.hero.dark-video .accent{color:var(--murex)}
+.hero.dark-video .eyebrow{color:rgba(239,235,226,.55)}
+.hero.dark-video .btn-ghost{color:var(--marble);border-color:rgba(255,255,255,.18)}
+.hero.dark-video .btn-ghost:hover{color:var(--murex)}
+
+/* Legacy stone field (disabled — kept for rollback) */
+.hero-field{display:none}
+@media(prefers-reduced-motion:reduce){.hero-video-wrap video{display:none}}
 
 /* No-flash navigation without Barba: View Transitions where supported */
 @view-transition{navigation:auto}
