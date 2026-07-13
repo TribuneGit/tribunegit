@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tribune Inc | AI Denial Recovery for O&amp;P Practices</title>
+<meta name="description" content="Payers use AI to deny your O&P claims. Tribune builds you an AI team to fight back — on hardware you own. Book a free 30-minute discovery call.">
+<link rel="canonical" href="https://tribuneinc.com/op/">
+<meta property="og:title" content="Tribune Inc | AI Denial Recovery for O&amp;P Practices">
+<meta property="og:description" content="Payers use AI to deny your O&P claims. Tribune builds you an AI team to fight back — on hardware you own. Book a free 30-minute discovery call.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tribuneinc.com/op/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bebas+Neue&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+/* ── /op landing page ── Tribune Inc. O&P Denial Recovery ── */
+:root {
+  --gold: #C9A961;
+  --gold-hover: #D4B06A;
+  --navy: #0F1B2D;
+  --cream: #F5F0E8;
+}
+
+/* LP header — logo left, CTA right, no full nav */
+.op-header {
+  background: var(--navy);
+  border-bottom: 1px solid rgba(239,235,226,.08);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.op-header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+/* Gold CTA button */
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px 28px;
+  border-radius: var(--radius-control);
+  text-decoration: none;
+  transition: background .2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-gold:hover { background: var(--gold-hover); text-decoration: none; color: var(--navy); }
+.btn-gold-lg { font-size: 18px; padding: 18px 40px; }
+@media(max-width:560px) { .btn-gold-lg { font-size: 16px; padding: 16px 28px; width: 100%; text-align: center; display: block; } }
+
+/* ── S1: Hero ── */
+.op-hero {
+  background: var(--navy);
+  padding: 110px 0 96px;
+}
+.op-eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: rgba(239,235,226,.5);
+  border-left: 3px solid var(--gold);
+  padding-left: 12px;
+  margin-bottom: 28px;
+  display: inline-block;
+}
+.op-hero h1 {
+  font-family: 'Bebas Neue', var(--display);
+  font-size: clamp(44px, 7vw, 84px);
+  line-height: 1.0;
+  color: var(--marble);
+  letter-spacing: .02em;
+  max-width: 18ch;
+}
+.op-hero h1 .gold { color: var(--gold); }
+.op-hero .lead {
+  font-size: 19px;
+  color: rgba(239,235,226,.82);
+  margin-top: 28px;
+  max-width: 60ch;
+  line-height: 1.65;
+}
+.op-hero .lead + .lead { margin-top: 14px; }
+.op-hero .btn-row { margin-top: 40px; }
+@media(max-width:768px) { .op-hero { padding: 72px 0 60px; } .op-hero h1 { font-size: clamp(40px, 9vw, 64px); } }
+
+/* ── S2: Numbers ── */
+.op-numbers { background: var(--cream); }
+.op-numbers .op-eyebrow { color: var(--ash); }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 40px;
+  margin-top: 52px;
+}
+@media(max-width:840px) { .stats-grid { grid-template-columns: 1fr; gap: 40px; } }
+.stat-num {
+  font-family: 'Bebas Neue', var(--display);
+  font-size: clamp(52px, 7vw, 80px);
+  color: var(--gold);
+  line-height: 1.0;
+  letter-spacing: .01em;
+}
+.stat-label {
+  font-size: 15.5px;
+  color: var(--basalt);
+  margin-top: 12px;
+  max-width: 34ch;
+  line-height: 1.6;
+}
+.stat-source {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  color: var(--ash);
+  margin-top: 10px;
+}
+.op-numbers .plain-para {
+  margin-top: 60px;
+  padding-top: 44px;
+  border-top: 1px solid var(--line);
+  max-width: 72ch;
+}
+.op-numbers .plain-para p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--basalt);
+  max-width: 72ch;
+}
+.op-numbers .plain-para p + p { margin-top: 18px; }
+.op-numbers .plain-para strong { color: var(--navy); }
+
+/* ── S3: Pain Points ── */
+.op-pain { background: var(--navy); }
+.op-pain h2 { color: var(--marble); }
+.pain-list {
+  list-style: none;
+  margin-top: 40px;
+  max-width: 68ch;
+}
+.pain-list li {
+  padding: 16px 0 16px 34px;
+  border-bottom: 1px solid rgba(239,235,226,.1);
+  color: rgba(239,235,226,.85);
+  font-size: 16.5px;
+  line-height: 1.6;
+  position: relative;
+}
+.pain-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+.pain-list li:last-child { border-bottom: none; }
+.pain-closing {
+  margin-top: 44px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--marble);
+  max-width: 56ch;
+  line-height: 1.35;
+}
+
+/* ── S4: Solution ── */
+.op-solution { background: var(--cream); }
+.op-solution h2 { max-width: 22ch; }
+.op-solution .intro-text {
+  margin-top: 24px;
+  max-width: 64ch;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--basalt);
+}
+.op-solution .intro-text + .intro-text { margin-top: 14px; }
+.agent-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 52px;
+}
+@media(max-width:900px) { .agent-cards { grid-template-columns: 1fr; } }
+.agent-card {
+  background: var(--daylight);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold);
+  border-radius: var(--radius-card);
+  padding: 32px 28px;
+}
+.agent-card h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--obsidian);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+.agent-card p {
+  font-size: 15px;
+  color: var(--basalt);
+  line-height: 1.65;
+  max-width: 100%;
+}
+
+/* ── S5: How It Works ── */
+.op-steps { background: var(--navy); }
+.op-steps h2 { color: var(--marble); }
+.steps-list {
+  list-style: none;
+  margin-top: 52px;
+  max-width: 68ch;
+}
+.step-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 24px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(239,235,226,.1);
+}
+.step-item:last-child { border-bottom: none; }
+.step-num {
+  font-family: 'Bebas Neue', var(--display);
+  font-size: 36px;
+  color: var(--gold);
+  line-height: 1.05;
+}
+.step-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--marble);
+  margin-bottom: 10px;
+}
+.step-title .step-tag {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: rgba(239,235,226,.4);
+  margin-left: 8px;
+}
+.step-body {
+  font-size: 15.5px;
+  color: rgba(239,235,226,.8);
+  line-height: 1.65;
+}
+
+/* ── S6: ROI ── */
+.op-roi { background: var(--cream); }
+.op-roi .roi-subhead {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  color: var(--ash);
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+.roi-table-wrap {
+  overflow-x: auto;
+  margin-top: 40px;
+  -webkit-overflow-scrolling: touch;
+}
+.roi-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15.5px;
+  min-width: 560px;
+}
+.roi-table th {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ash);
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 2px solid var(--line-strong);
+  white-space: nowrap;
+}
+.roi-table th:last-child {
+  color: var(--gold);
+  font-weight: 700;
+}
+.roi-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+  color: var(--basalt);
+}
+.roi-table tr:last-child td { border-bottom: none; }
+.roi-table td:last-child {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--navy);
+}
+.roi-footnote {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--ash);
+  max-width: 72ch;
+  line-height: 1.6;
+}
+.roi-closing {
+  margin-top: 32px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--obsidian);
+  max-width: 56ch;
+}
+
+/* ── S7: Final CTA ── */
+.op-cta-final {
+  background: var(--navy);
+  padding: 120px 0;
+  text-align: center;
+}
+.op-cta-final h2 {
+  font-family: 'Bebas Neue', var(--display);
+  font-size: clamp(36px, 5.5vw, 68px);
+  color: var(--marble);
+  letter-spacing: .03em;
+  line-height: 1.0;
+}
+.op-cta-final .cta-lead {
+  font-size: 18px;
+  color: rgba(239,235,226,.82);
+  max-width: 58ch;
+  margin: 24px auto 0;
+  line-height: 1.7;
+}
+.op-cta-final .cta-note {
+  font-size: 16px;
+  color: rgba(239,235,226,.55);
+  max-width: 50ch;
+  margin: 16px auto 0;
+  line-height: 1.6;
+}
+.cta-wrap {
+  margin-top: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.cta-sub {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .1em;
+  color: rgba(239,235,226,.45);
+}
+.cta-sub a {
+  color: rgba(239,235,226,.65);
+  text-decoration: none;
+}
+.cta-sub a:hover { color: var(--marble); text-decoration: underline; }
+@media(max-width:768px) { .op-cta-final { padding: 80px 0; } }
+
+/* ── LP footer ── */
+.op-footer {
+  background: var(--navy);
+  border-top: 1px solid rgba(239,235,226,.07);
+  padding: 36px 0;
+  text-align: center;
+}
+.op-footer p {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .07em;
+  color: rgba(239,235,226,.38);
+  max-width: 100%;
+}
+.op-footer p + p { margin-top: 8px; }
+.op-footer a { color: rgba(239,235,226,.55); text-decoration: none; }
+.op-footer a:hover { color: var(--marble); }
+</style>
+</head>
+<body>
+
+<!-- ══ LP HEADER ══ -->
+<header class="op-header">
+  <div class="wrap">
+    <a class="lockup" href="/">
+      <svg viewBox="0 0 100 112" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tribune" style="height:34px;width:auto">
+        <rect x="18" y="10" width="64" height="16" rx="2" fill="#EFEBE2"/>
+        <polygon points="18,33 46,33 46,86 37,86 18,60" fill="#EFEBE2"/>
+        <polygon points="54,33 82,33 82,60 63,86 54,86" fill="#EFEBE2"/>
+        <polygon points="40,90 60,90 50,104" fill="#C9A961"/>
+      </svg>
+      <span class="wordmark" style="color:#EFEBE2;letter-spacing:.2em;font-size:17px;font-family:var(--display);font-weight:700">TRIBUNE</span>
+    </a>
+    <!-- TODO: replace href with Calendly URL before launch -->
+    <a class="btn-gold" href="#book-call">Book a Call</a>
+  </div>
+</header>
+
+<!-- ══ S1: HERO ══ -->
+<section class="op-hero">
+  <div class="wrap">
+    <div class="op-eyebrow">O&amp;P Denial Recovery</div>
+    <h1>Payers are using AI to deny your practice's claims.<br><span class="gold">Now you can fight back with your own.</span></h1>
+    <p class="lead">Every year, AI systems deny millions of O&amp;P claims in seconds — automatically, at scale, with no human review. Your billing team is spending hours on hold, chasing prior authorizations, and building appeals by hand.</p>
+    <p class="lead">Tribune builds you an AI team that fights back. Trained on your practice. Installed on hardware you own. Working 24/7 on the denials that are bleeding your revenue.</p>
+    <div class="btn-row">
+      <!-- TODO: replace href with Calendly URL before launch -->
+      <a class="btn-gold btn-gold-lg" id="book-call" href="#book-call">Book a Free 30-Minute Discovery Call &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ S2: THE NUMBERS ══ -->
+<section class="op-numbers">
+  <div class="wrap">
+    <div class="op-eyebrow reveal">The scale of the problem</div>
+    <h2 class="reveal">Here's what's happening to your practice right now.</h2>
+    <div class="stats-grid">
+      <div class="reveal">
+        <div class="stat-num">300,000</div>
+        <div class="stat-label">Claims reviewed and denied by Cigna's AI — in 2 months. Each decision took 1.2 seconds.</div>
+        <div class="stat-source">Source: ProPublica, 2023</div>
+      </div>
+      <div class="reveal">
+        <div class="stat-num">$48.4B</div>
+        <div class="stat-label">In provider revenue lost to insurance denials in 2025 alone — and climbing every year.</div>
+        <div class="stat-source">Source: Kodiak Solutions / Experian Health, 2025–2026</div>
+      </div>
+      <div class="reveal">
+        <div class="stat-num">11.6%</div>
+        <div class="stat-label">National initial claim denial rate in 2025. For O&amp;P and DMEPOS practices, the rate is significantly higher — and expanding every year.</div>
+        <div class="stat-source">Source: Kodiak Solutions, State of the Healthcare Revenue Cycle, March 2026</div>
+      </div>
+    </div>
+    <div class="plain-para reveal">
+      <p>For a <strong>$2 million O&amp;P practice</strong>, that's <strong>$232,000 in denied claims</strong> sitting on your desk right now.</p>
+      <p>Your payer has an AI system that reviewed and denied those claims automatically — often before a human ever looked at them. You have a billing coordinator, a phone, and a fax machine.</p>
+      <p><strong>That is not a fair fight. And it is getting less fair every year.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ S3: PAIN POINTS ══ -->
+<section class="op-pain">
+  <div class="wrap">
+    <div class="op-eyebrow reveal">We know your practice</div>
+    <h2 class="reveal" style="color:var(--marble)">We know what your billing team is dealing with.</h2>
+    <ul class="pain-list">
+      <li class="reveal">Prior authorization for every major prosthetic component — hours of documentation before care is even approved</li>
+      <li class="reveal">L-code documentation requirements that change without notice and get flagged retroactively in audits</li>
+      <li class="reveal">DMEPOS audit risk — MAC reviews, TPE audits, and coverage determination requests arriving without warning</li>
+      <li class="reveal">Appeals that take 90–180 days with no guarantee of payment at the end</li>
+      <li class="reveal">Staff spending 45% of their day on claim submissions — not patient care, not growth, just survival</li>
+      <li class="reveal">Denied claims piling up because there are never enough hours to fight every one</li>
+    </ul>
+    <p class="pain-closing reveal">Your practice is not broken. You're fighting an AI system with human hours. Tribune changes that.</p>
+  </div>
+</section>
+
+<!-- ══ S4: THE SOLUTION ══ -->
+<section class="op-solution">
+  <div class="wrap">
+    <div class="op-eyebrow reveal" style="color:var(--ash)">The solution</div>
+    <h2 class="reveal">Tribune builds your AI team.<br>Then hands you the keys.</h2>
+    <p class="intro-text reveal">Tribune designs, builds, and trains a complete AI back office for your practice — starting with your highest-cost constraint: denial management.</p>
+    <p class="intro-text reveal">Your AI team handles the intake, documentation checks, prior authorization tracking, and denial appeals consuming your staff's time and costing your practice hundreds of thousands in lost revenue.</p>
+    <p class="intro-text reveal">Every system is installed on hardware you own — not our cloud, not a subscription you can be priced out of. Your accounts, your repositories, your AI.</p>
+    <div class="agent-cards">
+      <div class="agent-card reveal">
+        <h3>Document Intake Agent</h3>
+        <p>Catches missing or incomplete documentation before a claim is submitted. No more denials for preventable documentation errors. Zero rework on your team's end.</p>
+      </div>
+      <div class="agent-card reveal">
+        <h3>Denial Response Agent</h3>
+        <p>When a claim is denied, your AI immediately builds the appeal — pulling the right clinical documentation, referencing the correct L-codes, and filing within the optimal window. Faster, more consistent, 24/7.</p>
+      </div>
+      <div class="agent-card reveal">
+        <h3>Client Communication Agent</h3>
+        <p>Automates prior authorization follow-up, patient status updates, and payer correspondence — so your staff can focus on the patients in front of them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ S5: HOW IT WORKS ══ -->
+<section class="op-steps">
+  <div class="wrap">
+    <div class="op-eyebrow reveal">The process</div>
+    <h2 class="reveal" style="color:var(--marble)">Four steps. A fixed timeline. A clear exit.</h2>
+    <ol class="steps-list">
+      <li class="step-item reveal">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Discovery Call <span class="step-tag">(30 minutes)</span></div>
+          <div class="step-body">We map your practice's denial profile — where you're losing the most revenue, what your payer mix looks like, and exactly which agents will deliver the fastest ROI.</div>
+        </div>
+      </li>
+      <li class="step-item reveal">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Build + Train</div>
+          <div class="step-body">Tribune builds your AI agents, trained specifically on your payer patterns, documentation standards, and claim types. No generic software. Built for your practice.</div>
+        </div>
+      </li>
+      <li class="step-item reveal">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">The Independence Test</div>
+          <div class="step-body">Five full business days of live operations — real claims, real payers, zero Tribune intervention. Mechanical pass or fail. Your team runs it. We observe.</div>
+        </div>
+      </li>
+      <li class="step-item reveal">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-title">You Own It. We Leave.</div>
+          <div class="step-body">Hardware in your name. Accounts in your control. Repositories yours from day one. Tribune's access ends. Your AI doesn't.</div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══ S6: ROI ══ -->
+<section class="op-roi">
+  <div class="wrap">
+    <div class="op-eyebrow reveal" style="color:var(--ash)">The numbers</div>
+    <h2 class="reveal">What could your practice recover?</h2>
+    <p class="roi-subhead reveal">Based on a 12% average O&amp;P denial rate and a 65% successful appeal rate.</p>
+    <div class="roi-table-wrap reveal">
+      <table class="roi-table">
+        <thead>
+          <tr>
+            <th>Your Annual Billings</th>
+            <th>Estimated Denied Revenue</th>
+            <th>Tribune Recovers</th>
+            <th>You Keep</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$1,000,000</td>
+            <td>~$120,000</td>
+            <td>up to $78,000</td>
+            <td>~$66,300</td>
+          </tr>
+          <tr>
+            <td>$2,000,000</td>
+            <td>~$240,000</td>
+            <td>up to $156,000</td>
+            <td>~$132,600</td>
+          </tr>
+          <tr>
+            <td>$3,000,000</td>
+            <td>~$360,000</td>
+            <td>up to $234,000</td>
+            <td>~$198,900</td>
+          </tr>
+          <tr>
+            <td>$5,000,000</td>
+            <td>~$600,000</td>
+            <td>up to $390,000</td>
+            <td>~$331,500</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="roi-footnote reveal">Tribune's recovery share is 15% of successfully appealed claims — verified via ERA/835 remittance. You see every dollar. You approve every filing.</p>
+    <p class="roi-closing reveal">Every month you wait is another month of denials your team can't get to.</p>
+  </div>
+</section>
+
+<!-- ══ S7: FINAL CTA ══ -->
+<section class="op-cta-final">
+  <div class="wrap">
+    <h2 class="reveal">30 minutes. Your numbers. No obligation.</h2>
+    <p class="cta-lead reveal">We'll show you exactly what Tribune can recover for your practice — using your payer mix, your denial profile, your billing volume. No pitch deck. No generic demo. Just your practice, and what it's leaving on the table.</p>
+    <p class="cta-note reveal">The call is free. The information is yours to keep either way.</p>
+    <div class="cta-wrap reveal">
+      <!-- TODO: replace href with Calendly URL before launch -->
+      <a class="btn-gold btn-gold-lg" href="#book-call">Book a Free 30-Minute Discovery Call &rarr;</a>
+      <p class="cta-sub">Questions first? Email us at <a href="mailto:ryan@tribuneinc.com">ryan@tribuneinc.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="op-footer">
+  <div class="wrap">
+    <p>Tribune Inc.&nbsp;&nbsp;|&nbsp;&nbsp;Delaware Corporation&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://tribuneinc.com">tribuneinc.com</a></p>
+    <p>&copy; 2026 Tribune Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
