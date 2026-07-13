@@ -62,7 +62,8 @@ p{max-width:66ch}
 .m-header .wrap{display:flex;justify-content:space-between;align-items:center;height:72px}
 .lockup{display:flex;align-items:center;gap:14px;text-decoration:none}
 .lockup:hover{text-decoration:none}
-.lockup svg{height:34px;width:auto}
+.lockup:hover svg{height:68px}
+.lockup svg{height:51px;width:auto;transition:height .25s ease}
 .wordmark{font-family:var(--display);font-weight:700;letter-spacing:.2em;
   font-size:17px;color:var(--obsidian)}
 .m-nav{display:flex;gap:36px;align-items:center}

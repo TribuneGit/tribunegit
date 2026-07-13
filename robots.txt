@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://tribuneos.com/sitemap.xml
+Sitemap: https://tribuneinc.com/sitemap.xml

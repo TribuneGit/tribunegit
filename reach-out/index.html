@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reach out | Tribune</title>
-<meta name="description" content="Tell us where it hurts. A human reads this and replies within one business day.">
-<link rel="canonical" href="https://tribuneos.com/reach-out/">
-<meta property="og:title" content="Reach out | Tribune">
-<meta property="og:description" content="Tell us where it hurts. A human reads this and replies within one business day.">
+<title>Reach Out | Tribune</title>
+<meta name="description" content="Tell us where it hurts. A human reads it and replies within one business day.">
+<link rel="canonical" href="https://tribuneinc.com/reach-out/">
+<meta property="og:title" content="Reach Out | Tribune">
+<meta property="og:description" content="Tell us where it hurts. A human reads it and replies within one business day.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://tribuneos.com/reach-out/">
+<meta property="og:url" content="https://tribuneinc.com/reach-out/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
   <a class="lockup" href="/"><svg viewBox="0 0 100 112" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tribune"><rect x="18" y="10" width="64" height="16" rx="2" fill="#0A0B12"/><polygon points="18,33 46,33 46,86 37,86 18,60" fill="#0A0B12"/><polygon points="54,33 82,33 82,60 63,86 54,86" fill="#0A0B12"/><polygon points="40,90 60,90 50,104" fill="#7A1A5C"/></svg><span class="wordmark">TRIBUNE</span></a>
   <nav class="m-nav" aria-label="Primary">
     <div class="dropdown"><a href="/builds/">Builds</a>
-      <div class="dropdown-menu"><a href="/builds/the-recovery-agent/">The Recovery Agent</a><a href="/builds/the-intake-agent/">The Intake Agent</a><a href="/builds/the-signal-agent/">The Signal Agent</a><a href="/builds/the-ledger-agent/">The Ledger Agent</a><a href="/builds/the-sentinel/">The Sentinel</a><a href="/builds/the-producer/">The Producer</a><a href="/builds/">All builds</a></div></div>
+      <div class="dropdown-menu"><a href="/builds/the-recovery-agent/">The Recovery Agent</a><a href="/builds/the-intake-agent/">The Intake Agent</a><a href="/builds/the-signal-agent/">The Signal Agent</a><a href="/builds/the-ledger-agent/">The Ledger Agent</a><a href="/builds/the-sentinel/">The Sentinel</a><a href="/builds/the-producer/">The Producer</a><a href="/builds/the-sales-agent/">The Sales Agent</a><a href="/builds/the-marketing-agent/">The Marketing Agent</a><a href="/builds/">All builds</a></div></div>
     <a href="/functions/">Functions</a>
     <div class="dropdown"><a href="#" aria-haspopup="true">Details</a>
       <div class="dropdown-menu">
@@ -49,12 +49,15 @@
   form.</p>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
-<form name="reach-out" method="POST" action="/reach-out/thanks/" data-netlify="true"
-      netlify-honeypot="company-website">
-  <p class="hp"><label>Leave this field empty <input name="company-website"></label></p>
+<form name="reach-out" method="POST" action="https://api.web3forms.com/submit">
+  <input type="hidden" name="access_key" value="513708c1-033f-40ab-850b-33672a05c8bd">
+  <input type="hidden" name="subject" value="New Tribune inquiry — reach out form">
+  <input type="hidden" name="build" id="build-field" value="">
+  <input type="hidden" name="redirect" value="https://www.tribuneinc.com/reach-out/thanks/">
+  <p style="display:none"><label>Leave empty <input name="botcheck" type="checkbox"></label></p>
   <div class="field"><label>Your name</label><input type="text" name="name" required></div>
   <div class="field"><label>Email</label><input type="email" name="email" required></div>
-  <div class="field"><label>What should your agent carry?</label><label class="choice"><input type="checkbox" name="functions[]" value="Recover money owed"> Recover money owed</label><label class="choice"><input type="checkbox" name="functions[]" value="Handle incoming paperwork"> Handle incoming paperwork</label><label class="choice"><input type="checkbox" name="functions[]" value="Watch and brief"> Watch and brief</label><label class="choice"><input type="checkbox" name="functions[]" value="Keep the books straight"> Keep the books straight</label><label class="choice"><input type="checkbox" name="functions[]" value="Guard the deadlines"> Guard the deadlines</label><label class="choice"><input type="checkbox" name="functions[]" value="Produce and deliver"> Produce and deliver</label></div>
+  <div class="field"><label>What should your agent carry?</label><label class="choice"><input type="checkbox" name="functions[]" value="Recover money owed"> Recover money owed</label><label class="choice"><input type="checkbox" name="functions[]" value="Handle incoming paperwork"> Handle incoming paperwork</label><label class="choice"><input type="checkbox" name="functions[]" value="Watch and brief"> Watch and brief</label><label class="choice"><input type="checkbox" name="functions[]" value="Keep the books straight"> Keep the books straight</label><label class="choice"><input type="checkbox" name="functions[]" value="Guard the deadlines"> Guard the deadlines</label><label class="choice"><input type="checkbox" name="functions[]" value="Produce and deliver"> Produce and deliver</label><label class="choice"><input type="checkbox" name="functions[]" value="Keep the pipeline moving"> Keep the pipeline moving</label><label class="choice"><input type="checkbox" name="functions[]" value="Build your brand"> Build your brand</label></div>
   <div class="field"><label>How should it work?</label>
     <label class="choice"><input type="radio" name="mode" value="with-team" required>
       Our team will work with the agent day to day</label>
@@ -68,7 +71,9 @@
   </div>
   <div class="field"><label>Where are you? (city, country)</label>
     <input type="text" name="location"></div>
-  <div class="field"><label>Anything else?</label><textarea name="message"></textarea></div>
+  <div class="field"><label>Anything else?</label>
+    <p class="small muted" style="margin-bottom:10px">Not sure where to start? Others have opened with: <em>&ldquo;We lose about $X a month to denied claims.&rdquo;</em> &middot; <em>&ldquo;My sellers spend more time on admin than on calls.&rdquo;</em> &middot; <em>&ldquo;We need content and nobody has time to make it.&rdquo;</em></p>
+    <textarea name="message"></textarea></div>
   <button class="btn btn-primary" type="submit">Send it</button>
 </form>
 </div></section>
@@ -81,9 +86,9 @@
       for small and mid-size businesses, designed around each company's costliest constraint,
       installed on hardware the client owns, and trained until they pass a formal Independence
       Test. Then Tribune hands over the keys and leaves. Tribune Inc. is a Delaware corporation.
-      TribuneOS.com.</p>
+      TribuneInc.com.</p>
     </div>
-    <div><div class="col-title">Builds</div><ul><li><a href="/builds/the-recovery-agent/">The Recovery Agent</a></li><li><a href="/builds/the-intake-agent/">The Intake Agent</a></li><li><a href="/builds/the-signal-agent/">The Signal Agent</a></li><li><a href="/builds/the-ledger-agent/">The Ledger Agent</a></li><li><a href="/builds/the-sentinel/">The Sentinel</a></li><li><a href="/builds/the-producer/">The Producer</a></li></ul></div>
+    <div><div class="col-title">Builds</div><ul><li><a href="/builds/the-recovery-agent/">The Recovery Agent</a></li><li><a href="/builds/the-intake-agent/">The Intake Agent</a></li><li><a href="/builds/the-signal-agent/">The Signal Agent</a></li><li><a href="/builds/the-ledger-agent/">The Ledger Agent</a></li><li><a href="/builds/the-sentinel/">The Sentinel</a></li><li><a href="/builds/the-producer/">The Producer</a></li><li><a href="/builds/the-sales-agent/">The Sales Agent</a></li><li><a href="/builds/the-marketing-agent/">The Marketing Agent</a></li></ul></div>
     <div><div class="col-title">Details</div><ul>
       <li><a href="/details/method/">How we build</a></li>
       <li><a href="/details/proof/">Proof</a></li>
@@ -95,8 +100,38 @@
   </div>
   <div class="legal-row small muted">
     <span>&copy; 2026 Tribune Inc.</span>
+    <span><a href="mailto:jeff@tribuneinc.com">jeff@tribuneinc.com</a> &nbsp;&middot;&nbsp; <a href="mailto:ryan@tribuneinc.com">ryan@tribuneinc.com</a></span>
     <span><a href="/legal/">Legal</a></span>
   </div>
 </div></footer>
 <script src="/assets/site.js"></script>
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var build = params.get('build');
+  if (!build) return;
+  // Set hidden field
+  var bf = document.getElementById('build-field');
+  if (bf) bf.value = build;
+  // Update subject
+  var sf = document.querySelector('input[name="subject"]');
+  if (sf) sf.value = 'New Tribune inquiry — ' + build;
+  // Map slug to checkbox value
+  var map = {
+    'the-recovery-agent':    'Recover money owed',
+    'the-intake-agent':      'Handle incoming paperwork',
+    'the-signal-agent':      'Watch and brief',
+    'the-ledger-agent':      'Keep the books straight',
+    'the-sentinel':          'Guard the deadlines',
+    'the-producer':          'Produce and deliver',
+    'the-sales-agent':       'Keep the pipeline moving',
+    'the-marketing-agent':   'Build your brand'
+  };
+  var val = map[build];
+  if (val) {
+    var cb = document.querySelector('input[name="functions[]"][value="' + val + '"]');
+    if (cb) cb.checked = true;
+  }
+})();
+</script>
 </body></html>
