@@ -30,6 +30,8 @@
 .op-divider { margin-top: 56px; padding-top: 44px; border-top: 1px solid var(--line); }
 .op-plain { font-size: 18px; line-height: 1.7; max-width: 72ch; }
 .op-plain + .op-plain { margin-top: 18px; }
+.op-hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:.38; }
+@media(prefers-reduced-motion:reduce){.op-hero-video{display:none}}
 .pain-list { list-style: none; margin-top: 36px; max-width: 68ch; }
 .pain-list li { padding: 16px 0 16px 28px; border-bottom: 1px solid var(--line); color: var(--basalt); font-size: 16.5px; line-height: 1.6; position: relative; }
 .pain-list li::before { content: "›"; position: absolute; left: 0; color: var(--tyrian); font-weight: 700; }
@@ -65,7 +67,11 @@
 </div></header>
 
 <!-- S1: HERO -->
-<section class="hero dark"><div class="wrap">
+<section class="hero dark">
+<video class="op-hero-video" autoplay loop muted playsinline>
+  <source src="https://res.cloudinary.com/dthdxjmgb/video/upload/v1783972071/claims-visualization/claims-ai-battle-v1-10s.mp4" type="video/mp4">
+</video>
+<div class="wrap">
   <div class="eyebrow">O&amp;P Denial Recovery</div>
   <h1 class="display-xl" style="max-width:20ch">Payers are using AI to deny your practice's claims. <span class="accent">Now you can fight back with your own.</span></h1>
   <p class="lead" style="margin-top:24px;max-width:60ch">Every year, AI systems deny millions of O&amp;P claims in seconds, automatically, at scale, with no human review. Your billing team is spending hours on hold, chasing prior authorizations, and building appeals by hand.</p>
