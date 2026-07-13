@@ -32,13 +32,15 @@
 .op-plain + .op-plain { margin-top: 18px; }
 .op-hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:.38; }
 @media(prefers-reduced-motion:reduce){.op-hero-video{display:none}}
+.op-hero-backdrop { display:inline-block; background:rgba(255,255,255,0.78); border-radius:12px; padding:44px 52px; max-width:72ch; position:relative; z-index:1; }
+@media(max-width:640px){ .op-hero-backdrop { padding:28px 24px; } }
 .pain-list { list-style: none; margin-top: 36px; max-width: 68ch; }
 .pain-list li { padding: 16px 0 16px 28px; border-bottom: 1px solid var(--line); color: var(--basalt); font-size: 16.5px; line-height: 1.6; position: relative; }
 .pain-list li::before { content: "›"; position: absolute; left: 0; color: var(--tyrian); font-weight: 700; }
 .pain-list li:last-child { border-bottom: none; }
 .roi-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .roi-table { min-width: 560px; }
-.roi-table td:last-child { font-weight: 700; color: var(--obsidian); }
+.roi-table td:last-child { color: var(--obsidian); }
 @media(max-width:768px) { .stat-num { font-size: clamp(40px, 9vw, 56px); } }
 </style>
 </head>
@@ -72,13 +74,15 @@
   <source src="https://res.cloudinary.com/dthdxjmgb/video/upload/v1783972071/claims-visualization/claims-ai-battle-v1-10s.mp4" type="video/mp4">
 </video>
 <div class="wrap">
-  <div class="eyebrow">O&amp;P Denial Recovery</div>
-  <h1 class="display-xl" style="max-width:20ch">Payers are using AI to deny your practice's claims. <span class="accent">Now you can fight back with your own.</span></h1>
-  <p class="lead" style="margin-top:24px;max-width:60ch">Every year, AI systems deny millions of O&amp;P claims in seconds, automatically, at scale, with no human review. Your billing team is spending hours on hold, chasing prior authorizations, and building appeals by hand.</p>
-  <p class="lead" style="margin-top:14px;max-width:60ch">Tribune builds you an AI team that fights back. Trained on your practice. Installed on hardware you own. Working 24/7 on the denials that are bleeding your revenue.</p>
-  <div class="btn-row" style="margin-top:36px">
-    <!-- TODO: replace href with Calendly URL before launch -->
-    <a class="btn btn-primary" href="/reach-out/">Book a Free 30-Minute Discovery Call &rarr;</a>
+  <div class="op-hero-backdrop">
+    <div class="eyebrow">O&amp;P Denial Recovery</div>
+    <h1 class="display-xl" style="max-width:20ch">Payers are using AI to deny your practice's claims. <span class="accent">Now you can fight back with your own.</span></h1>
+    <p class="lead" style="margin-top:24px;max-width:60ch">Every year, AI systems deny millions of O&amp;P claims in seconds, automatically, at scale, with no human review. Your billing team is spending hours on hold, chasing prior authorizations, and building appeals by hand.</p>
+    <p class="lead" style="margin-top:14px;max-width:60ch">Tribune builds you an AI team that fights back. Trained on your practice. Installed on hardware you own. Working 24/7 on the denials that are bleeding your revenue.</p>
+    <div class="btn-row" style="margin-top:36px">
+      <!-- TODO: replace href with Calendly URL before launch -->
+      <a class="btn btn-primary" href="/reach-out/">Book a Free 30-Minute Discovery Call &rarr;</a>
+    </div>
   </div>
 </div></section>
 
@@ -180,18 +184,16 @@
           <th>Your Annual Billings</th>
           <th>Estimated Denied Revenue</th>
           <th>Tribune Recovers</th>
-          <th>You Keep</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>$1,000,000</td><td>~$120,000</td><td>up to $78,000</td><td>~$66,300</td></tr>
-        <tr><td>$2,000,000</td><td>~$240,000</td><td>up to $156,000</td><td>~$132,600</td></tr>
-        <tr><td>$3,000,000</td><td>~$360,000</td><td>up to $234,000</td><td>~$198,900</td></tr>
-        <tr><td>$5,000,000</td><td>~$600,000</td><td>up to $390,000</td><td>~$331,500</td></tr>
+        <tr><td>$1,000,000</td><td>~$120,000</td><td>up to $78,000</td></tr>
+        <tr><td>$2,000,000</td><td>~$240,000</td><td>up to $156,000</td></tr>
+        <tr><td>$3,000,000</td><td>~$360,000</td><td>up to $234,000</td></tr>
+        <tr><td>$5,000,000</td><td>~$600,000</td><td>up to $390,000</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="small muted reveal" style="margin-top:18px;max-width:72ch">Tribune's recovery share is 15% of successfully appealed claims, verified via ERA/835 remittance. You see every dollar. You approve every filing.</p>
   <p class="reveal" style="margin-top:28px;font-family:var(--display);font-weight:700;font-size:18px;color:var(--obsidian)">Every month you wait is another month of denials your team can't get to.</p>
 </div></section>
 
