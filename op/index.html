@@ -32,8 +32,19 @@
 .op-plain + .op-plain { margin-top: 18px; }
 .op-hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:.38; }
 @media(prefers-reduced-motion:reduce){.op-hero-video{display:none}}
-.op-hero-backdrop { display:block; background:rgba(255,255,255,0.20); border-radius:12px; padding:44px 52px; position:relative; z-index:1; }
-@media(max-width:640px){ .op-hero-backdrop { padding:28px 24px; } }
+@keyframes op-illuminate {
+  0%   { background-position: -100% center; }
+  22%  { background-position: 200% center; }
+  100% { background-position: 200% center; }
+}
+.op-illuminate {
+  background: linear-gradient(90deg, var(--tyrian) 30%, #d8aeff 50%, var(--tyrian) 70%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: op-illuminate 5s ease-in-out infinite;
+}
 .pain-list { list-style: none; margin-top: 36px; max-width: 68ch; }
 .pain-list li { padding: 16px 0 16px 28px; border-bottom: 1px solid var(--line); color: var(--basalt); font-size: 16.5px; line-height: 1.6; position: relative; }
 .pain-list li::before { content: "›"; position: absolute; left: 0; color: var(--tyrian); font-weight: 700; }
@@ -74,15 +85,13 @@
   <source src="https://res.cloudinary.com/dthdxjmgb/video/upload/v1783972071/claims-visualization/claims-ai-battle-v1-10s.mp4" type="video/mp4">
 </video>
 <div class="wrap">
-  <div class="op-hero-backdrop">
-    <div class="eyebrow">O&amp;P Denial Recovery</div>
-    <h1 class="display-xl" style="max-width:20ch">Payers are using AI to deny your practice's claims. <span class="accent">Now you can fight back with your own.</span></h1>
-    <p class="lead" style="margin-top:24px;max-width:60ch">Every year, AI systems deny millions of O&amp;P claims in seconds, automatically, at scale, with no human review. Your billing team is spending hours on hold, chasing prior authorizations, and building appeals by hand.</p>
-    <p class="lead" style="margin-top:14px;max-width:60ch">Tribune builds you an AI team that fights back. Trained on your practice. Installed on hardware you own. Working 24/7 on the denials that are bleeding your revenue.</p>
-    <div class="btn-row" style="margin-top:36px">
-      <!-- TODO: replace href with Calendly URL before launch -->
-      <a class="btn btn-primary" href="/reach-out/">Book a Free 30-Minute Discovery Call &rarr;</a>
-    </div>
+  <div class="eyebrow">O&amp;P Denial Recovery</div>
+  <h1 class="display-xl" style="max-width:20ch">Payers are using AI to deny your practice's claims. <span class="accent op-illuminate">Now you can fight back with your own.</span></h1>
+  <p class="lead" style="margin-top:24px;max-width:60ch">Every year, AI systems deny millions of O&amp;P claims in seconds, automatically, at scale, with no human review. Your billing team is spending hours on hold, chasing prior authorizations, and building appeals by hand.</p>
+  <p class="lead" style="margin-top:14px;max-width:60ch">Tribune builds you an AI team that fights back. Trained on your practice. Installed on hardware you own. Working 24/7 on the denials that are bleeding your revenue.</p>
+  <div class="btn-row" style="margin-top:36px">
+    <!-- TODO: replace href with Calendly URL before launch -->
+    <a class="btn btn-primary" href="/reach-out/">Book a Free 30-Minute Discovery Call &rarr;</a>
   </div>
 </div></section>
 
