@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tribune Inc. | The AI Counter-System — Across Every Vertical</title>
-  <meta name="description" content="Tribune builds AI counter-systems for businesses losing money to institutional friction — starting with O&P denial recovery, extending across healthcare, legal, sales, construction, and more.">
+  <title>Tribune Inc. | The AI Counter-System: Across Every Vertical</title>
+  <meta name="description" content="Tribune builds AI counter-systems for organizations losing money to operational friction, from O&P denial recovery to healthcare, legal, sales, construction, and more.">
   <link rel="canonical" href="https://tribuneinc.com/red/">
   <meta name="robots" content="noindex">
-  <meta property="og:title" content="Tribune Inc. | The AI Counter-System — Across Every Vertical">
-  <meta property="og:description" content="Tribune builds AI counter-systems for businesses losing money to institutional friction — starting with O&P denial recovery, extending across healthcare, legal, sales, construction, and more.">
+  <meta property="og:title" content="Tribune Inc. | The AI Counter-System: Across Every Vertical">
+  <meta property="og:description" content="Tribune builds AI counter-systems for organizations losing money to operational friction, from O&P denial recovery to healthcare, legal, sales, construction, and more.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tribuneinc.com/red/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -29,8 +29,21 @@
     .proof-entry { margin-top:20px; padding-bottom:20px; border-bottom:1px solid var(--line); }
     .proof-entry:last-child { border-bottom:none; }
     .proof-entry h4 { font-size:16px; font-weight:600; margin-bottom:6px; }
-    .diagnostic { font-family:var(--display); font-weight:700; font-size:clamp(20px,2.8vw,28px); line-height:1.3; color:var(--obsidian); border-left:6px solid var(--tyrian); padding-left:28px; margin:48px 0 0; max-width:68ch; }
+    .diagnostic { font-family:var(--display); font-weight:700; font-size:clamp(20px,2.8vw,28px); line-height:1.3; color:var(--obsidian); border-left:6px solid var(--tyrian); padding-left:28px; margin:48px 0 0; max-width:68ch; font-style:normal; }
     @media(max-width:768px){ .diagnostic { font-size:18px; } }
+    @keyframes red-illuminate {
+      0%   { background-position: -100% center; }
+      22%  { background-position: 200% center; }
+      100% { background-position: 200% center; }
+    }
+    .red-illuminate {
+      background: linear-gradient(90deg, var(--tyrian) 30%, #d8aeff 50%, var(--tyrian) 70%);
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: red-illuminate 5s ease-in-out infinite;
+    }
   </style>
 </head>
 <body>
@@ -59,17 +72,17 @@
 
 <main>
 
-  <!-- SECTION 1 — Hero -->
+  <!-- S1: Hero -->
   <section class="hero dark" style="position:relative;overflow:hidden">
     <video id="red-hero-vid" muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.45;pointer-events:none" aria-hidden="true">
       <source src="https://res.cloudinary.com/dthdxjmgb/video/upload/v1784052149/HrF7iSm9M5rz4tgnS4Gzd_video_tbd2az.mp4" type="video/mp4">
     </video>
     <div class="wrap" style="position:relative;z-index:1">
       <div class="eyebrow">The AI Counter-System</div>
-      <h1 class="display-xl" style="max-width:22ch">Your institution is losing money to automated decisions. <span class="accent">Tribune builds the machine that fights back.</span></h1>
-      <p class="lead" style="margin-top:24px;max-width:62ch">A payer's AI denied 300,000 claims in two months. Each decision took 1.2 seconds. The practice on the other side had a billing coordinator, a phone, and a fax machine.</p>
-      <p class="lead" style="margin-top:14px;max-width:62ch">That is not a fair fight. It is also not unique to healthcare. The same pattern — value already earned, trapped between automated institutions — runs through legal filings, sales operations, debt resolution, regulatory submissions, and construction payments. <strong>The tools to level that field exist. They are just sold as rent.</strong></p>
-      <p class="lead" style="margin-top:14px;max-width:62ch">Tribune builds the counter-system: your AI, on hardware you own, working the friction that is costing you the most. We prove it runs without us, then leave.</p>
+      <h1 class="display-xl" style="max-width:22ch">Your organization is losing money to automated decisions. <span class="accent red-illuminate">Tribune builds the machine that fights back.</span></h1>
+      <p class="lead" style="margin-top:24px;max-width:62ch">A payer's AI denied 300,000 claims in two months. Each decision took 1.2 seconds. The practice on the other side had a billing coordinator, a phone, and a fax machine. <span style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:rgba(239,235,226,.6)">ProPublica, 2023</span></p>
+      <p class="lead" style="margin-top:14px;max-width:62ch">That is not unique to healthcare. Every industry has value trapped between automated institutions and manual processes.</p>
+      <p class="lead" style="margin-top:14px;max-width:62ch">We build the counter-system: AI tailored to your business, running on hardware you own, working the operational friction that costs you time, money, and energy. We prove it works, then leave.</p>
       <div class="btn-row" style="margin-top:36px">
         <a class="btn btn-primary" href="/reach-out/">Map your constraint</a>
         <a class="btn btn-ghost" href="#verticals">Find your vertical &rarr;</a>
@@ -77,7 +90,7 @@
     </div>
   </section>
 
-  <!-- SECTION 2 — The anchor (O&P numbers) -->
+  <!-- S2: The anchor -->
   <section><div class="wrap">
     <div class="eyebrow reveal">The pattern, made concrete</div>
     <h2 class="reveal">Payers use AI at machine speed. Most practices still fight back by hand.</h2>
@@ -85,7 +98,7 @@
       <div class="reveal">
         <div class="stat-num" style="font-family:var(--display);font-weight:800;font-size:clamp(42px,5.5vw,64px);line-height:1.0;color:var(--aurum)">$48.4B</div>
         <div style="font-size:15.5px;color:var(--basalt);margin-top:10px;max-width:34ch;line-height:1.6">In provider revenue lost to insurance denials in 2025 alone, and climbing every year.</div>
-        <div style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ash);margin-top:8px">Kodiak Solutions / Experian Health, 2025–2026</div>
+        <div style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ash);margin-top:8px">Kodiak Solutions / Experian Health, 2025&#8211;2026</div>
       </div>
       <div class="reveal">
         <div class="stat-num" style="font-family:var(--display);font-weight:800;font-size:clamp(42px,5.5vw,64px);line-height:1.0;color:var(--aurum)">11.6%</div>
@@ -103,26 +116,27 @@
     </div>
   </div></section>
 
-  <!-- SECTION 3 — How It Works (two founders, one method) -->
+  <!-- S3: Two founders -->
   <section style="background:var(--marble)"><div class="wrap">
     <div class="eyebrow reveal">Two founders. One method.</div>
     <h2 class="reveal">A company-shaped AI hierarchy, engineered end-to-end and proven independent before handoff.</h2>
     <div class="grid grid-2" style="margin-top:40px">
       <div class="reveal">
-        <h3 style="margin-bottom:12px">Ryan's half — the agentic organization</h3>
-        <p>A company-shaped AI hierarchy: Chief Executive, CFO, strategist, counsel, operating as coordinated agents. Each agent ships with a written purpose, a refusal list, an escalation path to a named human, and a log of every action. <strong>Glass box, not black box.</strong> This is the Light &amp; Soul protocol — running live today at MaxximusAI, Ryan's company.</p>
+        <h3 style="margin-bottom:12px">Ryan's half: the agentic organization</h3>
+        <p>A company-shaped AI hierarchy: Chief Executive, CFO, strategist, counsel, operating as coordinated agents. Each agent ships with a written purpose, a refusal list, an escalation path to a named human, and a log of every action. <strong>Glass box, not black box.</strong> The Light &amp; Soul protocol gives Agentic AI purpose &amp; meaning. It moves beyond data retrieval, enabling systems to reason, prioritize, and strategize like an experienced CEO. Running live today at MaxximusAI, Ryan's company.</p>
       </div>
       <div class="reveal">
-        <h3 style="margin-bottom:12px">Jeff's half — the pipeline and the Senate</h3>
-        <p>End-to-end pipeline engineering: intake → processing → intelligence → action → feedback. And adversarial design review before every architecture is committed: models from multiple independent providers attack the plan, the Skeptic always from a different provider than the Architect. Agreement is computed from observed critiques, never self-reported.</p>
+        <h3 style="margin-bottom:12px">Jeffrey's half: the pipeline and the Senate</h3>
+        <p>End-to-end pipeline engineering: intake &#8594; processing &#8594; intelligence &#8594; action &#8594; feedback. AI is embedded throughout the workflow, orchestrating automation, making decisions where appropriate, and continuously adapting the pipeline as the business evolves.</p>
+        <p style="margin-top:12px">AI with an opinion, built around a Roman Senate model where independent agents debate, challenge, and defend competing ideas before decisions are made. Every architecture undergoes adversarial design review: models from multiple providers attack the plan, the Skeptic always comes from a different provider than the Architect, and agreement is computed from observed critiques, never self-reported.</p>
       </div>
     </div>
     <div class="reveal" style="margin-top:40px;padding-top:32px;border-top:1px solid var(--line)">
-      <p style="font-size:17px;max-width:70ch;line-height:1.7">The client-facing result: one Orchestrator as quality gate, two to four domain agents mapped to what requires judgment, one-way decisions always held by named humans, and an engagement that ends with an Independence Test — five business days, real operations, zero Tribune intervention, mechanical pass or fail. <a href="/details/method/">See the five phases &rarr;</a> &nbsp;<a href="/details/purpose/">Light, Soul &amp; Purpose &rarr;</a></p>
+      <p style="font-size:17px;max-width:70ch;line-height:1.7">The client-facing result: one Orchestrator as quality gate, two to four domain agents mapped to what requires judgment, one-way decisions always held by named humans, and an engagement that ends with an Independence Test: five business days, real operations, zero Tribune intervention, mechanical pass or fail. <a href="/details/method/">See the five phases &rarr;</a> &nbsp;<a href="/details/purpose/">Light, Soul &amp; Purpose &rarr;</a></p>
     </div>
   </div></section>
 
-  <!-- SECTION 4 — What It Runs On -->
+  <!-- S4: What it runs on -->
   <section><div class="wrap">
     <div class="eyebrow reveal">What it runs on</div>
     <h2 class="reveal">Three principles. One five-year argument.</h2>
@@ -133,35 +147,33 @@
       </div></div>
       <div class="proof-item reveal"><div class="proof-num">02</div><div>
         <h3>Proven automation platforms, controlled and alarmed.</h3>
-        <p style="margin-top:8px">Deterministic work runs on proven automation infrastructure (Make.com and similar), every pipe with a failure alarm and a runbook. Tribune's own independent workflow engine — Lobster flows, inside the agent gateway — is currently in development and will progressively replace third-party platforms where reliability demands it.</p>
+        <p style="margin-top:8px">Deterministic work runs on proven automation infrastructure (Make.com and similar), every pipe with a failure alarm and a runbook. Tribune's own independent workflow engine, Lobster flows, inside the agent gateway, is currently in development and will progressively replace third-party platforms where reliability demands it.</p>
       </div></div>
       <div class="proof-item reveal"><div class="proof-num">03</div><div>
         <h3>The five-year argument: connect, don't replace.</h3>
-        <p style="margin-top:8px">Tribune connects the systems a business already uses — practice management, EHR, accounting, fax, portals, email — rather than replacing them. Nothing needs replacing; everything becomes connected. The architecture separates your operational model from any single generation of tools. A year ago the frontier was Make.com-class automation; today it is agent orchestration; in five years it will be something else. Tribune-built organizations adapt without a rebuild.</p>
-        <p style="margin-top:10px">This is what we call <strong>Tribune OS</strong> — not a product page, not a subscription: an operational system that connects an organization's existing software, data, people, and AI into a continuously adapting operating model.</p>
+        <p style="margin-top:8px">Tribune connects the systems a business already uses: practice management, EHR, accounting, fax, portals, email. Nothing needs replacing; everything becomes connected. The architecture separates your operational model from any single generation of tools. A year ago the frontier was Make.com-class automation; today it is agent orchestration; in five years it will be something else. Tribune-built organizations adapt without a rebuild.</p>
+        <p style="margin-top:10px">This is what we call <strong>Tribune OS</strong>: not a product page, not a subscription. An operational system that connects an organization's existing software, data, people, and AI into a continuously adapting operating model.</p>
       </div></div>
     </div>
   </div></section>
 
-  <!-- SECTION 5 — Verticals -->
+  <!-- S5: Verticals -->
   <section id="verticals" style="background:var(--marble)"><div class="wrap">
     <div class="eyebrow reveal">Where Tribune fits</div>
     <h2 class="reveal">Find your world.</h2>
     <p class="reveal" style="margin-top:16px;max-width:64ch">Each entry below follows the same pattern: the friction your organization is losing to, what Tribune installs, and the honest status of each discussion or build. Find your bucket. The entry is written so you can forward it to a colleague who lives in that world.</p>
 
-    <!-- 1. Healthcare -->
     <div class="vertical-entry reveal">
-      <div class="vertical-entry-line">If your practice loses revenue to automated claim denials…</div>
+      <div class="vertical-entry-line">If your practice loses revenue to automated claim denials...</div>
       <div class="vertical-header">
-        <h3 style="margin:0">Healthcare Providers — Denial Recovery</h3>
+        <h3 style="margin:0">Healthcare Providers: Denial Recovery</h3>
         <span class="vertical-status">In active discussion</span>
       </div>
-      <p>Payers deny claims at machine speed. Practices still respond with human hours. Tribune builds the counter-system: denial classification by reason code, appeal drafting for human sign-off, eligibility and prior-authorization tracking, and deadline clocks that never miss a filing window. Installed on a sealed machine — no Protected Health Information leaves the building. Extends naturally from O&amp;P and DMEPOS to home health, PT/OT, and dental. The codes change; the pattern doesn't. <a href="/op/">Full O&amp;P case &rarr;</a></p>
+      <p>Payers deny claims at machine speed. Practices still respond with human hours. Tribune builds the counter-system: denial classification by reason code, appeal drafting for human sign-off, eligibility and prior-authorization tracking, and deadline clocks that never miss a filing window. Installed on a sealed machine. No Protected Health Information leaves the building. Extends naturally from O&amp;P and DMEPOS to home health, PT/OT, and dental. The codes change; the pattern doesn't. <a href="/op/">Full O&amp;P case &rarr;</a></p>
     </div>
 
-    <!-- 2. Sales & delivery operations -->
     <div class="vertical-entry reveal">
-      <div class="vertical-entry-line">If your firm's output quality doesn't scale with headcount…</div>
+      <div class="vertical-entry-line">If your firm's output quality doesn't scale with headcount...</div>
       <div class="vertical-header">
         <h3 style="margin:0">Sales &amp; Delivery Operations</h3>
         <span class="vertical-status">In active discussion</span>
@@ -169,77 +181,70 @@
       <p>A sales-intelligence firm operates with report production that must hold to a consistent methodology on every engagement. Tribune builds the operational layer: intake to delivery orchestrated end-to-end, signal monitoring across every account, quality enforcement to the firm's own methodology, and SLA tracking with escalation paths. Output scales. Headcount doesn't.</p>
     </div>
 
-    <!-- 3. Student loan program administration -->
     <div class="vertical-entry reveal">
-      <div class="vertical-entry-line">If your team manages federal program cases that span years, not transactions…</div>
+      <div class="vertical-entry-line">If your team manages federal program cases that span years, not transactions...</div>
       <div class="vertical-header">
         <h3 style="margin:0">Federal Program Administration</h3>
         <span class="vertical-status">In active discussion</span>
       </div>
       <p>Helping clients navigate federal forgiveness and repayment programs means managing years-long cases: eligibility paperwork, regulatory requirements that shift mid-case, annual recertifications, and continuous communication across a portfolio of hundreds or thousands of files.</p>
-      <p style="margin-top:12px">Tribune builds an AI workforce for that operational layer — automating repetitive document workflows, monitoring regulatory changes as they happen, managing ongoing client communication, and tracking every deadline across every open case. The team stays focused on the work that requires human judgment. The machine handles the rest.</p>
+      <p style="margin-top:12px">Tribune builds an AI workforce for that operational layer, automating repetitive document workflows, monitoring regulatory changes as they happen, managing ongoing client communication, and tracking every deadline across every open case. The team stays focused on the work that requires human judgment. The machine handles the rest.</p>
     </div>
 
-    <!-- 4. Legal -->
     <div class="vertical-entry reveal">
-      <div class="vertical-entry-line">If privileged material can never touch a public cloud model…</div>
+      <div class="vertical-entry-line">If privileged material can never touch a public cloud model...</div>
       <div class="vertical-header">
-        <h3 style="margin:0">Legal — Case &amp; Evidence Intelligence</h3>
+        <h3 style="margin:0">Legal: Case &amp; Evidence Intelligence</h3>
         <span class="vertical-status">Working prototype</span>
       </div>
-      <p>Automated ingestion, classification, evidence scoring, and structured summaries — running on local sealed hardware so privileged material never leaves the building. Built under HIPAA-pattern architecture: the same compliance posture that works for a healthcare practice applies directly to a law firm handling sensitive client files. <a href="https://law.horizon.space" target="_blank" rel="noopener">See the legal intelligence prototype &rarr;</a></p>
+      <p>Automated ingestion, classification, evidence scoring, and structured summaries, running on local sealed hardware so privileged material never leaves the building. Built under HIPAA-pattern architecture: the same compliance posture that works for a healthcare practice applies directly to a law firm handling sensitive client files. <a href="https://law.horizon.space" target="_blank" rel="noopener">See the legal intelligence prototype &rarr;</a></p>
     </div>
 
-    <!-- 5. Construction -->
     <div class="vertical-entry reveal">
-      <div class="vertical-entry-line">If your subcontractors are missing lien deadlines…</div>
+      <div class="vertical-entry-line">If your subcontractors are missing lien deadlines...</div>
       <div class="vertical-header">
-        <h3 style="margin:0">Construction — Filings &amp; Payment Friction</h3>
+        <h3 style="margin:0">Construction: Filings &amp; Payment Friction</h3>
         <span class="vertical-status">Built</span>
       </div>
-      <p>Notice-to-owner filing automation: the system finds the property owner, resolves the correct address, generates the certified filing that preserves lien rights, and tracks every deadline. Payment rights that exist on paper but are lost to process are exactly the institutional friction Tribune was built for. <a href="https://ai-filings.com" target="_blank" rel="noopener">AI Filings — built by Tribune's co-founder &rarr;</a></p>
+      <p>Notice-to-owner filing automation: the system finds the property owner, resolves the correct address, generates the certified filing that preserves lien rights, and tracks every deadline. Payment rights that exist on paper but are lost to process are exactly the institutional friction Tribune was built for. <a href="https://ai-filings.com" target="_blank" rel="noopener">AI Filings, built by Tribune's co-founder &rarr;</a></p>
     </div>
 
-    <!-- 6. E-commerce -->
     <div class="vertical-entry reveal">
-      <div class="vertical-entry-line">If you have inventory data that isn't doing anything…</div>
+      <div class="vertical-entry-line">If you have inventory data that isn't doing anything...</div>
       <div class="vertical-header">
         <h3 style="margin:0">E-Commerce &amp; Product Businesses</h3>
         <span class="vertical-status">Shipped</span>
       </div>
-      <p>Complete warehouse automation: barcode ingestion, metadata enrichment, AI-assisted pricing, multi-channel publishing across Shopify, eBay, and Amazon, and SEO generated at the item level. Built and running. The gap between physical inventory and revenue is a pipeline problem, not a sales problem. <a href="https://horizon.space" target="_blank" rel="noopener">Horizon Space — built by Tribune's co-founder &rarr;</a></p>
+      <p>Complete warehouse automation: barcode ingestion, metadata enrichment, AI-assisted pricing, multi-channel publishing across Shopify, eBay, and Amazon, and SEO generated at the item level. Built and running. The gap between physical inventory and revenue is a pipeline problem, not a sales problem. <a href="https://horizon.space" target="_blank" rel="noopener">See the project, built by Tribune's co-founder &rarr;</a></p>
     </div>
 
-    <!-- 7. Life sciences -->
     <div class="vertical-entry reveal">
-      <div class="vertical-entry-line">If your team monitors regulatory developments the way practitioners once read journals…</div>
+      <div class="vertical-entry-line">If your team monitors regulatory developments the way practitioners once read journals...</div>
       <div class="vertical-header">
         <h3 style="margin:0">Life Sciences &amp; Regulated Knowledge Work</h3>
-        <span class="vertical-status">Architecture ready — no engagements yet</span>
+        <span class="vertical-status">Architecture ready, no engagements yet</span>
       </div>
       <p>For advisory, medical affairs, market access, and L&amp;D teams: continuous monitoring of FDA guidance, CMS bulletins, payer coverage determinations, and published evidence. Each signal assessed for impact on a specific product, indication, or market-access file. Knowledge bases and training materials refreshed automatically. Evidence assembled for submissions and access dossiers.</p>
       <p style="margin-top:12px">The pattern is identical to O&amp;P denial recovery: a regulatory objection, an evidence gap, or a market-access barrier is a denial by another name. The counter-system is the same architecture wearing different compliance clothes. <strong>The architecture is ready. The engagements are not yet open.</strong></p>
     </div>
 
     <blockquote class="diagnostic reveal">
-      "Where is your organization — or your client's — losing money, time, approval, or momentum because its systems can't respond as fast as another institution's automation?"
+      Organizations lose momentum to paperwork, approvals, compliance, fragmented systems, or institutional inertia. The friction becomes so routine that they stop seeing it. Until someone builds a system that removes it.
     </blockquote>
-    <p class="reveal" style="margin-top:20px;max-width:64ch">Wherever that answer is expensive, Tribune fits.</p>
 
   </div></section>
 
-  <!-- SECTION 6 — Proof (founder work) -->
+  <!-- S6: Proof -->
   <section><div class="wrap">
     <div class="eyebrow reveal">Proof we ship</div>
     <h2 class="reveal">The founders build. Here is what exists.</h2>
-    <p class="muted reveal" style="margin-top:8px;font-family:var(--mono);font-size:12px;letter-spacing:.08em">Tribune has no closed client engagements yet. What follows is founder work — evidence of capability, honestly labeled.</p>
+    <p class="muted reveal" style="margin-top:8px;font-family:var(--mono);font-size:12px;letter-spacing:.08em">Tribune has no closed client engagements yet. What follows is founder work: evidence of capability, honestly labeled.</p>
     <div class="grid grid-2" style="margin-top:40px">
       <div class="founder-col reveal">
-        <div class="eyebrow">Built by Jeff — systems &amp; pipelines</div>
-        <p class="small muted" style="margin-bottom:24px">Jeff Rey, Tribune co-founder. Built under Quantum Horizons LLC.</p>
+        <div class="eyebrow">Jeffrey Reinhold, co-founder</div>
         <div class="proof-entry">
-          <h4>AI Filings — NTO Automation</h4>
-          <p class="small">Agentic pipeline: property owner lookup, address resolution, certified notice-to-owner generation and filing. Full stack: website, backend, automation flow. <strong>Status: live.</strong> <a href="https://ai-filings.com" target="_blank" rel="noopener">ai-filings.com &rarr;</a></p>
+          <h4>AI Filings: NTO Automation</h4>
+          <p class="small">Agentic pipeline: property owner lookup, address resolution, certified notice-to-owner generation and filing. Full stack: website, backend, automation flow. <strong>Status: live, pre-launch (legal review in progress).</strong> <a href="https://ai-filings.com" target="_blank" rel="noopener">ai-filings.com &rarr;</a></p>
         </div>
         <div class="proof-entry">
           <h4>Warehouse Automation</h4>
@@ -247,19 +252,18 @@
         </div>
         <div class="proof-entry">
           <h4>Legal Intelligence</h4>
-          <p class="small">HIPAA-pattern prototype: document ingestion, case classification, evidence scoring, privileged-material handling on sealed local hardware. <strong>Status: working prototype.</strong> <a href="https://law.horizon.space" target="_blank" rel="noopener">law.horizon.space &rarr;</a></p>
+          <p class="small">HIPAA-pattern prototype: document ingestion, case classification, evidence scoring, privileged-material handling on sealed local hardware. <strong>Status: working prototype.</strong> <a href="https://law.horizon.space" target="_blank" rel="noopener">See the prototype &rarr;</a></p>
         </div>
         <div class="proof-entry">
-          <h4>Other Horizon systems</h4>
-          <p class="small">AI voice gateway, agent deployment infrastructure, and additional automation pipelines. <a href="https://horizon.space" target="_blank" rel="noopener">horizon.space &rarr;</a></p>
+          <h4>Selected Projects</h4>
+          <p class="small">Additional pipeline automation and agent infrastructure systems, feeding Tribune's current methodology. <a href="https://horizon.space" target="_blank" rel="noopener">See past work &rarr;</a></p>
         </div>
       </div>
       <div class="founder-col reveal">
-        <div class="eyebrow">Built by Ryan — agentic organizations</div>
-        <p class="small muted" style="margin-bottom:24px">Ryan Poole, Tribune co-founder. Built under MaxximusAI — Ryan's company, running Tribune's methodology in production.</p>
+        <div class="eyebrow">Ryan Poole, co-founder</div>
         <div class="proof-entry">
-          <h4>MaxximusAI — A Live AI C-Suite</h4>
-          <p class="small">Marcus (AI Chief Executive) and a full AI C-suite operating MaxximusAI day to day: coordinating in Discord channels, governed by the Light &amp; Soul protocol — written purpose, refusal list, escalation path, action log for every agent. This is not a demo environment. <strong>Status: live and operating.</strong> <a href="https://maxximus.ai" target="_blank" rel="noopener">maxximus.ai &rarr;</a></p>
+          <h4>MaxximusAI: A Live AI C-Suite</h4>
+          <p class="small">Marcus (AI Chief Executive) and a full AI C-suite operating MaxximusAI day to day: coordinating in Discord channels, governed by the Light &amp; Soul protocol, written purpose, refusal list, escalation path, action log for every agent. This is not a demo environment. <strong>Status: live and operating.</strong> <a href="https://maxximus.ai" target="_blank" rel="noopener">maxximus.ai &rarr;</a></p>
         </div>
         <div class="proof-entry">
           <h4>The Light &amp; Soul Protocol</h4>
@@ -269,10 +273,11 @@
     </div>
   </div></section>
 
-  <!-- SECTION 7 — CTA -->
+  <!-- S7: CTA -->
   <section class="dark"><div class="wrap reveal" style="text-align:left">
-    <h2 style="max-width:22ch">One conversation. We map the constraint actually costing you money.</h2>
-    <p style="margin-top:16px;max-width:58ch">No pitch deck, no jargon. Tell us where it hurts — revenue blocked, deadlines missed, information that never reaches the right person in time — and we will tell you what a build looks like, what it takes, and what happens when we leave.</p>
+    <div class="eyebrow" style="color:var(--ash);border-left-color:var(--murex)">Discovery Before Architecture</div>
+    <h2 style="max-width:22ch;margin-top:16px">One conversation. We map the constraint actually costing you money.</h2>
+    <p style="margin-top:16px;max-width:58ch">No pitch deck, no jargon. Tell us where it hurts: revenue blocked, deadlines missed, information that never reaches the right person in time. We will tell you what a build looks like, what it takes, and what happens when we leave.</p>
     <div class="btn-row" style="margin-top:32px">
       <a class="btn btn-primary" href="/reach-out/">Map your constraint</a>
       <a class="btn btn-ghost" href="/builds/">See all builds &rarr;</a>
@@ -306,6 +311,7 @@
     <span>Last updated: July 2026</span>
   </div>
 </div></footer>
+
 <script src="/assets/site.js"></script>
 <script>
 (function(){
@@ -313,7 +319,6 @@
   if (!vid) return;
   var prev = null;
   var dir = 1;
-  var raf;
 
   function step(now) {
     if (prev !== null) {
@@ -330,13 +335,13 @@
       }
     }
     prev = now;
-    raf = requestAnimationFrame(step);
+    requestAnimationFrame(step);
   }
 
   function start() {
     vid.pause();
     vid.currentTime = 0;
-    raf = requestAnimationFrame(step);
+    requestAnimationFrame(step);
   }
 
   if (vid.readyState >= 1) {
