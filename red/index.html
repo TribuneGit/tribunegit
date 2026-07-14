@@ -317,38 +317,32 @@
 (function(){
   var vid = document.getElementById('red-hero-vid');
   if (!vid) return;
-  var prev = null;
-  var dir = 1;
 
-  function step(now) {
-    if (prev !== null) {
-      var dt = (now - prev) / 1000;
-      var next = vid.currentTime + dt * dir;
-      if (dir === 1 && next >= vid.duration) {
-        vid.currentTime = vid.duration;
-        dir = -1;
-      } else if (dir === -1 && next <= 0) {
-        vid.currentTime = 0;
-        dir = 1;
-      } else {
-        vid.currentTime = next;
-      }
-    }
-    prev = now;
-    requestAnimationFrame(step);
-  }
-
-  function start() {
+  function goBackward() {
     vid.pause();
-    vid.currentTime = 0;
+    var last = performance.now();
+    function step(now) {
+      var dt = (now - last) / 1000;
+      last = now;
+      var t = vid.currentTime - dt;
+      if (t <= 0.05) {
+        vid.currentTime = 0;
+        vid.play().catch(function(){});
+        return;
+      }
+      vid.currentTime = t;
+      requestAnimationFrame(step);
+    }
     requestAnimationFrame(step);
   }
 
-  if (vid.readyState >= 1) {
-    start();
-  } else {
-    vid.addEventListener('loadedmetadata', start, {once: true});
+  function init() {
+    vid.addEventListener('ended', goBackward);
+    vid.play().catch(function(){});
   }
+
+  if (vid.readyState >= 1) { init(); }
+  else { vid.addEventListener('loadedmetadata', init, {once:true}); }
 })();
 </script>
 
