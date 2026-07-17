@@ -62,7 +62,7 @@
 <section style="padding-top:0"><div class="wrap">
 <form name="reach-out" method="POST" action="https://api.web3forms.com/submit">
   <input type="hidden" name="access_key" value="513708c1-033f-40ab-850b-33672a05c8bd">
-  <input type="hidden" name="subject" value="New Tribune inquiry — reach out form">
+  <input type="hidden" name="subject" value="New Tribune inquiry: reach out form">
   <input type="hidden" name="build" id="build-field" value="">
   <input type="hidden" name="redirect" value="https://www.tribuneinc.com/reach-out/thanks/">
   <p style="display:none"><label>Leave empty <input name="botcheck" type="checkbox"></label></p>
@@ -126,7 +126,7 @@
   if (bf) bf.value = build;
   // Update subject
   var sf = document.querySelector('input[name="subject"]');
-  if (sf) sf.value = 'New Tribune inquiry — ' + build;
+  if (sf) sf.value = 'New Tribune inquiry: ' + build;
   // Map slug to checkbox value
   var map = {
     'the-recovery-agent':    'Recover money owed',
