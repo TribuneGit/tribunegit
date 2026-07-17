@@ -1,0 +1,41 @@
+# Tribune Inc.
+
+> Tribune builds autonomous operational infrastructure for regulated industries. We design, build, and train AI organizations for small and mid-size businesses, installed on hardware you own, proven with a formal Independence Test. Power that stays. Help that leaves.
+
+## Primary pages
+
+- [Homepage](https://tribuneinc.com/index.md)
+- [About Tribune](https://tribuneinc.com/about.md)
+- [Functions](https://tribuneinc.com/functions.md)
+- [Builds](https://tribuneinc.com/builds.md)
+- [Contact](https://tribuneinc.com/reach-out.md)
+
+## Industries
+
+- [Industries Overview](https://tribuneinc.com/industries.md)
+- [Orthotics and Prosthetics](https://tribuneinc.com/orthotics-and-prosthetics.md)
+- [Behavioral Health](https://tribuneinc.com/behavioral-health.md)
+- [Red Discovery](https://tribuneinc.com/red.md)
+
+## Method, proof, and trust
+
+- [Method](https://tribuneinc.com/details/method.md)
+- [Proof](https://tribuneinc.com/details/proof.md)
+- [Purpose](https://tribuneinc.com/details/purpose.md)
+- [Trust and Compliance](https://tribuneinc.com/details/trust.md)
+- [FAQ](https://tribuneinc.com/details/faq.md)
+
+## Agent builds
+
+- [Recovery Agent](https://tribuneinc.com/builds/the-recovery-agent.md)
+- [Intake Agent](https://tribuneinc.com/builds/the-intake-agent.md)
+- [Signal Agent](https://tribuneinc.com/builds/the-signal-agent.md)
+- [Ledger Agent](https://tribuneinc.com/builds/the-ledger-agent.md)
+- [Sentinel](https://tribuneinc.com/builds/the-sentinel.md)
+- [Producer](https://tribuneinc.com/builds/the-producer.md)
+- [Sales Agent](https://tribuneinc.com/builds/the-sales-agent.md)
+- [Marketing Agent](https://tribuneinc.com/builds/the-marketing-agent.md)
+
+## Usage
+
+The HTML pages are canonical for public web indexing. The `.md` files are curated, machine-readable mirrors intended for AI systems and other text-oriented clients.
