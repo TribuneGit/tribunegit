@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tribune Inc. | Behavioral Health</title>
-<meta name="description" content="Tribune builds AI agent systems for behavioral health organizations. Coming soon.">
+<title>Tribune Inc | AI Denial Recovery for Behavioral Health Practices</title>
+<meta name="description" content="Behavioral health claims are denied at nearly double the rate of medical claims. Tribune builds your AI team to fight back. Free 30-minute call.">
 <link rel="canonical" href="https://tribuneinc.com/behavioral-health/">
-<meta property="og:title" content="Tribune Inc. | Behavioral Health">
-<meta property="og:description" content="Tribune builds AI agent systems for behavioral health organizations.">
+<meta property="og:title" content="Tribune Inc | AI Denial Recovery for Behavioral Health Practices">
+<meta property="og:description" content="Behavioral health claims are denied at nearly double the rate of medical claims. Tribune builds your AI team to fight back. Free 30-minute call.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tribuneinc.com/behavioral-health/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -15,8 +15,47 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Cinzel:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
+<style>
+/* /behavioral-health additions */
+.stat-num {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(48px, 6vw, 72px);
+  line-height: 1.0;
+  color: var(--aurum);
+  letter-spacing: -.01em;
+}
+.stat-label { font-size: 15.5px; color: var(--basalt); margin-top: 10px; max-width: 34ch; line-height: 1.6; }
+.stat-source { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; color: var(--ash); margin-top: 8px; }
+.op-divider { margin-top: 56px; padding-top: 44px; border-top: 1px solid var(--line); }
+.op-plain { font-size: 18px; line-height: 1.7; max-width: 72ch; }
+.op-plain + .op-plain { margin-top: 18px; }
+.bh-hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:.38; }
+@keyframes op-illuminate {
+  0%   { background-position: -100% center; }
+  22%  { background-position: 200% center; }
+  100% { background-position: 200% center; }
+}
+.op-illuminate {
+  background: linear-gradient(90deg, var(--tyrian) 30%, #d8aeff 50%, var(--tyrian) 70%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: op-illuminate 5s ease-in-out infinite;
+}
+.pain-list { list-style: none; margin-top: 36px; max-width: 68ch; }
+.pain-list li { padding: 16px 0 16px 28px; border-bottom: 1px solid var(--line); color: var(--basalt); font-size: 16.5px; line-height: 1.6; position: relative; }
+.pain-list li::before { content: "›"; position: absolute; left: 0; color: var(--tyrian); font-weight: 700; }
+.pain-list li:last-child { border-bottom: none; }
+.roi-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.roi-table { min-width: 560px; }
+.roi-table td:last-child { color: var(--obsidian); }
+@media(max-width:768px) { .stat-num { font-size: clamp(40px, 9vw, 56px); } }
+</style>
 </head>
 <body>
+
 <div class="u-header"><div class="wrap">
   <a href="/about/">About</a>
   <a href="/us/west-palm-beach/">Location</a>
@@ -28,11 +67,11 @@
     <div class="dropdown"><a href="/builds/">Builds</a>
       <div class="dropdown-menu"><a href="/builds/the-recovery-agent/">The Recovery Agent</a><a href="/builds/the-intake-agent/">The Intake Agent</a><a href="/builds/the-signal-agent/">The Signal Agent</a><a href="/builds/the-ledger-agent/">The Ledger Agent</a><a href="/builds/the-sentinel/">The Sentinel</a><a href="/builds/the-producer/">The Producer</a><a href="/builds/the-sales-agent/">The Sales Agent</a><a href="/builds/the-marketing-agent/">The Marketing Agent</a><a href="/builds/">All builds</a></div></div>
     <div class="dropdown"><a href="#" aria-haspopup="true">Industries</a>
-      <div class="dropdown-menu">
-        <a href="/behavioral-health/">Behavioral Health</a>
-        <a href="/orthotics-and-prosthetics/">Orthotics &amp; Prosthetics</a>
-        <a href="/red/">Red Discovery</a>
-      </div></div>
+  <div class="dropdown-menu">
+    <a href="/behavioral-health/">Behavioral Health</a>
+    <a href="/orthotics-and-prosthetics/">Orthotics &amp; Prosthetics</a>
+    <a href="/red/">Red Discovery</a>
+  </div></div>
     <a href="/functions/">Functions</a>
     <div class="dropdown"><a href="#" aria-haspopup="true">Details</a>
       <div class="dropdown-menu">
@@ -44,23 +83,184 @@
       </div></div>
   </nav>
 </div></header>
-<main>
-  <section class="hero"><div class="wrap">
-    <div class="eyebrow">Behavioral Health</div>
-    <h1>Coming soon.</h1>
-    <p class="lead">Tribune is building AI agent systems for behavioral health organizations. Detailed content coming soon.</p>
-    <a href="/reach-out/" class="btn-primary">Reach out</a>
-  </div></section>
-</main>
+
+<!-- S1: HERO -->
+<section class="hero dark">
+<img src="https://res.cloudinary.com/dthdxjmgb/image/upload/f_auto,q_auto,w_1600/tribune/bh-hero-placeholder.jpg" alt="" class="op-hero-video" style="object-fit:cover;position:absolute;inset:0;width:100%;height:100%;opacity:.38;z-index:0;" aria-hidden="true">
+<div class="wrap">
+  <div class="eyebrow">Behavioral Health Denial Recovery</div>
+  <h1 class="display-xl" style="max-width:20ch">Payers are using AI to deny your practice's claims. <span class="accent op-illuminate">Now you can fight back with your own.</span></h1>
+  <p class="lead" style="margin-top:24px;max-width:60ch">Behavioral health claims are denied at nearly double the rate of medical claims. Payer algorithms flag your 90837s, cut off authorizations mid-treatment, and reject claims in seconds — while your team fights back with a phone, a portal login, and whatever hours are left in the day.</p>
+  <p class="lead" style="margin-top:14px;max-width:60ch">Tribune builds you an AI team that fights back. Trained on your practice, your payers, your levels of care. Installed on hardware you own. Working 24/7 on the denials that are bleeding your revenue.</p>
+  <div class="btn-row" style="margin-top:36px">
+    <a class="btn btn-primary" href="/reach-out/">Book a Free 30-Minute Discovery Call &rarr;</a>
+  </div>
+</div></section>
+
+<!-- S2: THE NUMBERS -->
+<section><div class="wrap">
+  <div class="eyebrow reveal">The scale of the problem</div>
+  <h2 class="reveal">Here's what's happening to your practice right now.</h2>
+  <div class="grid grid-3" style="margin-top:48px">
+    <div class="reveal">
+      <div class="stat-num">15–25%</div>
+      <div class="stat-label">Typical initial denial rate for behavioral health claims — roughly double the 8–12% seen in general medicine.</div>
+      <div class="stat-source">Behavioral health RCM industry analyses, 2025–2026</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-num">~30% vs 19%</div>
+      <div class="stat-label">Mental health claims denied vs. all other claim types — nearly 60% higher scrutiny.</div>
+      <div class="stat-source">Industry claims analysis, 2023</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-num">~82%</div>
+      <div class="stat-label">Of appealed behavioral health denials are overturned. The money was earned. Most practices never have the hours to go get it.</div>
+      <div class="stat-source">Behavioral health RCM industry data, 2026</div>
+    </div>
+  </div>
+  <div class="op-divider reveal">
+    <p class="op-plain">For a <strong>$3 million IOP/PHP program</strong> at an 18% denial rate, that's <strong>$540,000 in denied claims</strong> sitting in your AR right now — and roughly four out of five of those denials would be overturned if someone had the time to fight them.</p>
+    <p class="op-plain">Your payer has an AI system that flagged and denied those claims automatically. You have a biller, a UR coordinator wearing three hats, and a stack of authorization deadlines.</p>
+    <p class="op-plain"><strong>That is not a fair fight. And it is getting less fair every year.</strong></p>
+  </div>
+</div></section>
+
+<!-- S3: PAIN POINTS -->
+<section style="background:var(--marble)"><div class="wrap">
+  <div class="eyebrow reveal">We know your practice</div>
+  <h2 class="reveal">We know what your billing team is dealing with.</h2>
+  <ul class="pain-list pain-list-light">
+    <li class="reveal">Prior authorization for nearly everything — and concurrent reviews every few days that can cut off a residential or PHP stay mid-treatment</li>
+    <li class="reveal">Authorization expirations that slip through the cracks: one missed renewal date and a full week of per-diem revenue is gone</li>
+    <li class="reveal">Behavioral carve-outs: claims bounced automatically because the plan routes mental health to a different payer than the card in your patient's hand</li>
+    <li class="reveal">Medical-necessity reviews on ongoing therapy — payer algorithms flagging your 90837 frequency and scanning notes for repeated language</li>
+    <li class="reveal">Time-bound CPT codes and modifier rules where one wrong digit produces a clean, automatic denial</li>
+    <li class="reveal">Appeals that could be won under federal parity law — but nobody on staff has the hours to research and draft them</li>
+  </ul>
+  <p class="reveal" style="margin-top:44px;font-family:var(--display);font-weight:700;font-size:20px;color:var(--obsidian);max-width:56ch;line-height:1.35">Your practice is not broken. You're fighting an AI system with human hours. Tribune changes that.</p>
+</div></section>
+
+<!-- S4: THE SOLUTION -->
+<section><div class="wrap">
+  <div class="eyebrow reveal">The solution</div>
+  <h2 class="reveal" style="max-width:22ch">Tribune builds your AI team. Then hands you the keys.</h2>
+  <p class="reveal" style="margin-top:20px;max-width:64ch">Tribune designs, builds, and trains a complete AI back office for your practice, starting with your highest-cost constraint: authorizations and denials.</p>
+  <p class="reveal" style="margin-top:12px;max-width:64ch">Your AI team handles benefits verification, authorization tracking, concurrent-review preparation, and denial appeals — the work consuming your staff's time and costing your practice hundreds of thousands in earned but unpaid revenue.</p>
+  <p class="reveal" style="margin-top:12px;max-width:64ch">Every system is installed on hardware you own — not our cloud, not a subscription you can be priced out of. Your accounts, your repositories, your AI. Built for the privacy standards behavioral health actually requires: HIPAA and 42 CFR Part 2.</p>
+  <div class="grid grid-3" style="margin-top:48px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+    <div class="card reveal">
+      <h3>Intake &amp; Benefits Agent</h3>
+      <p style="margin-top:12px">Verifies benefits before admission, catches terminated plans and unmet deductibles, and identifies behavioral carve-outs on day one — so claims go to the right payer the first time. No more denials for preventable front-end errors.</p>
+    </div>
+    <div class="card reveal">
+      <span class="stat-source" style="color:var(--tyrian);border:1px solid var(--tyrian);padding:2px 8px;border-radius:999px;display:inline-block;margin-bottom:10px">Most Requested</span>
+      <h3>Authorization Agent</h3>
+      <p style="margin-top:12px">Tracks every authorization window across every level of care. Renewal alerts before deadlines, not after denials. Assembles concurrent-review packets from your clinicians' documentation, ready for clinical sign-off — so continued stays get justified on time, every time.</p>
+    </div>
+    <div class="card reveal">
+      <h3>Denial Response Agent</h3>
+      <p style="margin-top:12px">When a claim is denied, your AI immediately builds the appeal: pulling the supporting documentation, citing the correct codes, and — where the denial violates federal mental health parity law — making the parity argument most practices never have time to research. Filed within the optimal window. Faster, more consistent, 24/7.</p>
+    </div>
+    <div class="card reveal">
+      <h3>The Sentinel</h3>
+      <p style="margin-top:12px">Compliance is not an afterthought in behavioral health. The Sentinel enforces 42 CFR Part 2 consent handling, keeps a full audit log, and verifies every appeal is grounded in your clinicians' actual documentation. Your AI never invents a clinical word. Ever.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;background:var(--obsidian);border-radius:12px;padding:36px 40px;color:var(--marble)">
+    <h3 style="color:var(--marble);font-size:22px;margin-bottom:16px">Your EHR has AI. This is not that.</h3>
+    <p style="color:rgba(255,255,255,0.72);line-height:1.7;max-width:64ch">Your EHR's AI writes notes. Tribune builds the organization around them — the system that verifies the benefits, tracks the authorizations, fights the denials, and hands your staff their hours back. An AI scribe saves your clinicians minutes. An AI back office recovers your revenue.</p>
+  </div>
+
+  <div style="margin-top:32px;border-left:4px solid var(--tyrian);background:var(--marble);border-radius:0 12px 12px 0;padding:32px 36px">
+    <h3 style="font-size:20px;margin-bottom:14px;color:var(--obsidian)">The Parity Argument Your Payer Hopes You Never Make.</h3>
+    <p style="color:var(--basalt);line-height:1.7;max-width:64ch">Federal law — the Mental Health Parity and Addiction Equity Act — requires payers to apply the same utilization management standards to behavioral health that they apply to medical and surgical care. Many routinely don't. And most practices never challenge it, because building a parity argument takes research and drafting hours no billing team has. Tribune's agents build that argument automatically, on every applicable denial. The law has been on your side the whole time. Now something in your office finally has the hours to use it.</p>
+  </div>
+</div></section>
+
+<!-- S5: PROCESS -->
+<section style="background:var(--marble)"><div class="wrap">
+  <div class="eyebrow reveal">The process</div>
+  <h2 class="reveal">Four steps. A fixed timeline. A clear exit.</h2>
+  <div style="margin-top:16px">
+    <div class="proof-item reveal"><div class="proof-num">01</div><div>
+      <h3 style="color:var(--obsidian)">Discovery Call <span class="muted" style="font-weight:400;font-size:15px">(30 minutes)</span></h3>
+      <p style="margin-top:8px;color:var(--basalt)">We map your practice's denial profile: your payer mix, your levels of care, where authorizations are slipping, and exactly which agents will deliver the fastest ROI.</p></div></div>
+    <div class="proof-item reveal"><div class="proof-num">02</div><div>
+      <h3 style="color:var(--obsidian)">Build + Train</h3>
+      <p style="margin-top:8px;color:var(--basalt)">Tribune builds your AI agents, trained specifically on your payer patterns, your documentation standards, and your levels of care — outpatient, IOP, PHP, or residential. No generic software. Built for your practice, alongside the EHR you already run.</p></div></div>
+    <div class="proof-item reveal"><div class="proof-num">03</div><div>
+      <h3 style="color:var(--obsidian)">The Independence Test</h3>
+      <p style="margin-top:8px;color:var(--basalt)">Five full business days of live operations: real claims, real payers, zero Tribune intervention. Mechanical pass or fail. Your team runs it. We observe.</p></div></div>
+    <div class="proof-item reveal"><div class="proof-num">04</div><div>
+      <h3 style="color:var(--obsidian)">You Own It. We Leave.</h3>
+      <p style="margin-top:8px;color:var(--basalt)">Hardware in your name. Accounts in your control. Repositories yours from day one. Tribune's access ends. Your AI doesn't.</p></div></div>
+  </div>
+</div></section>
+
+<!-- S6: THE SCREEN -->
+<section><div class="wrap">
+  <div class="eyebrow reveal">We screen every client before we build.</div>
+  <p class="op-plain reveal" style="margin-top:36px">Behavioral health has been burned by bad actors, and payers know it — it's part of why legitimate practices face so much scrutiny. Tribune only builds for accredited, independently owned practices with clean standing. Before any engagement begins, we verify accreditation, payer relationships, and ownership.</p>
+  <p class="op-plain reveal">If your practice does honest work and drowns in the administrative war anyway, we built Tribune for you. If you're looking for a machine to game payers, we're not your company — and our systems are designed so they can't be used that way.</p>
+</div></section>
+
+<!-- S7: ROI TABLE -->
+<section style="background:var(--marble)"><div class="wrap">
+  <div class="eyebrow reveal">The numbers</div>
+  <h2 class="reveal">What could your practice recover?</h2>
+  <p class="muted reveal" style="margin-top:10px;font-family:var(--mono);font-size:12px;letter-spacing:.1em">Based on an 18% average behavioral health denial rate and an 80% successful appeal rate on pursued denials.</p>
+  <div class="roi-table-wrap reveal" style="margin-top:36px">
+    <table class="roi-table">
+      <thead>
+        <tr>
+          <th>Your Annual Billings</th>
+          <th>Estimated Denied Revenue</th>
+          <th>Tribune Recovers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>$1,000,000</td><td>~$180,000</td><td>up to $144,000</td></tr>
+        <tr><td>$2,000,000</td><td>~$360,000</td><td>up to $288,000</td></tr>
+        <tr><td>$3,000,000</td><td>~$540,000</td><td>up to $432,000</td></tr>
+        <tr><td>$5,000,000</td><td>~$900,000</td><td>up to $720,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="reveal" style="margin-top:28px;font-family:var(--display);font-weight:700;font-size:18px;color:var(--obsidian)">Every month you wait is another month of authorizations expiring and denials your team can't get to.</p>
+</div></section>
+
+<!-- S8: FINAL CTA -->
+<section style="background:var(--marble);text-align:center"><div class="wrap">
+  <h2 class="reveal" style="font-size:clamp(28px,4vw,40px);max-width:100%;color:var(--obsidian)">30 minutes. Your numbers. No obligation.</h2>
+  <p class="lead reveal" style="max-width:58ch;margin:24px auto 0;color:var(--basalt)">We'll show you exactly what Tribune can recover for your practice — using your payer mix, your denial profile, your levels of care, your billing volume. No pitch deck. No generic demo. Just your practice, and what it's leaving on the table.</p>
+  <p class="reveal" style="margin-top:16px;color:var(--ash);max-width:52ch;margin-left:auto;margin-right:auto">The call is free. The information is yours to keep either way.</p>
+  <div class="btn-row reveal" style="margin-top:40px;justify-content:center">
+    <a class="btn btn-primary" href="/reach-out/">Book a Free 30-Minute Discovery Call &rarr;</a>
+  </div>
+  <p class="reveal" style="margin-top:20px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--ash)">
+    Questions first? <a href="mailto:ryan@tribuneinc.com">ryan@tribuneinc.com</a>
+  </p>
+</div></section>
+
 <footer><div class="wrap">
   <p class="tagline">Power that stays. Help that leaves.</p>
   <div class="cols">
-    <div><p class="small muted" style="max-width:52ch">Tribune Inc. builds complete AI organizations for small and mid-size businesses, installed on hardware the client owns, and handed over. Tribune Inc. is a Delaware corporation. TribuneInc.com.</p></div>
+    <div>
+      <p class="small muted" style="max-width:52ch">Tribune Inc. builds complete AI organizations
+      for small and mid-size businesses, designed around each company's costliest constraint,
+      installed on hardware the client owns, and trained until they pass a formal Independence
+      Test. Then Tribune hands over the keys and leaves. Tribune Inc. is a Delaware corporation.
+      TribuneInc.com.</p>
+    </div>
     <div><div class="col-title">Builds</div><ul><li><a href="/builds/the-recovery-agent/">The Recovery Agent</a></li><li><a href="/builds/the-intake-agent/">The Intake Agent</a></li><li><a href="/builds/the-signal-agent/">The Signal Agent</a></li><li><a href="/builds/the-ledger-agent/">The Ledger Agent</a></li><li><a href="/builds/the-sentinel/">The Sentinel</a></li><li><a href="/builds/the-producer/">The Producer</a></li><li><a href="/builds/the-sales-agent/">The Sales Agent</a></li><li><a href="/builds/the-marketing-agent/">The Marketing Agent</a></li></ul></div>
-    <div><div class="col-title">Industries</div><ul>
-      <li><a href="/behavioral-health/">Behavioral Health</a></li>
-      <li><a href="/orthotics-and-prosthetics/">Orthotics &amp; Prosthetics</a></li>
-      <li><a href="/red/">Red Discovery</a></li>
+    <div><div class="col-title">Details</div><ul>
+      <li><a href="/details/method/">How we build</a></li>
+      <li><a href="/details/proof/">Proof</a></li>
+      <li><a href="/details/purpose/">Doctrine</a></li>
+      <li><a href="/details/trust/">Trust &amp; compliance</a></li>
+      <li><a href="/details/faq/">FAQ</a></li>
+      <li><a href="/reach-out/">Reach out</a></li>
     </ul></div>
   </div>
   <div class="legal-row small muted">
@@ -69,5 +269,7 @@
     <span><a href="/legal/">Legal</a></span>
   </div>
 </div></footer>
+
+<script src="/assets/site.js"></script>
 </body>
 </html>
