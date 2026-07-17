@@ -1,15 +1,15 @@
 ---
 title: FAQ — Tribune
 description: Who owns the system, what it costs to start, what happens to your team, and what happens after we leave — answered plainly.
-url: https://www.tribuneinc.com/details/faq/
+url: https://tribuneinc.com/details/faq/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
 # Tribune FAQ — Answered plainly.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

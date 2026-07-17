@@ -1,9 +1,9 @@
 ---
 title: The Recovery Agent — AI for Recovering Money Owed | Tribune
 description: Denials, rejections, and unpaid invoices, chased automatically — drafted for human sign-off, deadline attached. Money you earned, recovered.
-url: https://www.tribuneinc.com/builds/the-recovery-agent/
+url: https://tribuneinc.com/builds/the-recovery-agent/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > Every day, revenue leaks out of your business through denials, rejections, and invoices nobody had time to chase. The Recovery Agent chases all of it, and brings your team a signed-off plan instead of a backlog.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: The Sentinel — AI for Deadlines and Credentials | Tribune
 description: Licenses, credentials, renewals, filings — tracked with the deadline attached. The deadline that could hurt you is never a surprise.
-url: https://www.tribuneinc.com/builds/the-sentinel/
+url: https://tribuneinc.com/builds/the-sentinel/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > Licenses, credentials, renewals, filings, payer windows. The Sentinel tracks every clock in your business and raises its hand early, loudly, and to the right person.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

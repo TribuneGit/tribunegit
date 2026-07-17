@@ -1,17 +1,17 @@
 ---
 title: Tribune — AI Agents for Small Business, Built to Be Handed Over
 description: Tribune designs, builds, and trains a complete AI organization for your business, on hardware you own. Then we prove it runs without us, and leave.
-url: https://www.tribuneinc.com/
+url: https://tribuneinc.com/
 company: Tribune Inc.
-email: admin@tribuneinc.com
-generated: 2026-07-03
+email: jeff@tribuneinc.com
+generated: 2026-07-17
 ---
 
 # Tribune — We build AI agents for your business.
 
 > Tribune designs, builds, and trains a complete AI organization for your business, on hardware you own. Then we prove it runs without us, and leave.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 
@@ -60,9 +60,9 @@ Eight builds. One complete business.
 
 ## Contact
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
-**Reach out:** https://www.tribuneinc.com/reach-out/
+**Reach out:** https://tribuneinc.com/reach-out/
 
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: The Intake Agent — AI for Incoming Paperwork | Tribune
 description: Faxes, referrals, orders, and forms — read, sorted, and filed the moment they arrive. Nothing lost, nobody retyping what a machine can read.
-url: https://www.tribuneinc.com/builds/the-intake-agent/
+url: https://tribuneinc.com/builds/the-intake-agent/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > Faxes, referrals, orders, forms, email attachments. The Intake Agent reads them the moment they land, checks them for completeness, and routes them where they belong.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

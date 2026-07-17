@@ -1,9 +1,9 @@
 ---
 title: About Tribune Inc.
 description: Tribune Inc. builds AI organizations for small and mid-size businesses — founded by two builders who run the same system they sell.
-url: https://www.tribuneinc.com/about/
+url: https://tribuneinc.com/about/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > Founded by two builders who run their own operations on the discipline they sell.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

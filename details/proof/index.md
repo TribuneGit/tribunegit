@@ -1,9 +1,9 @@
 ---
 title: The Proof — Tribune's Four-Layer Trust Model
 description: The Independence Test, literal ownership, adversarial design review, and an engagement designed to end. Trust from stated limits and kept promises.
-url: https://www.tribuneinc.com/details/proof/
+url: https://tribuneinc.com/details/proof/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > Every claim Tribune makes about independence, ownership, and accountability is backed by a specific, verifiable mechanism.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

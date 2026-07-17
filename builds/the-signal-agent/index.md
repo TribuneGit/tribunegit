@@ -1,9 +1,9 @@
 ---
 title: The Signal Agent — AI Account Intelligence | Tribune
 description: Your accounts leave a trail. The Signal Agent watches it and briefs every seller each morning and before every call. Walk in knowing more.
-url: https://www.tribuneinc.com/builds/the-signal-agent/
+url: https://tribuneinc.com/builds/the-signal-agent/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > Your accounts leave a trail: hiring, funding, leadership moves, quiet signals that a deal is warming or cooling. The Signal Agent watches all of it and briefs your team every morning and before every call.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

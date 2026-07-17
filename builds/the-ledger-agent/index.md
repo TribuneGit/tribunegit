@@ -1,9 +1,9 @@
 ---
 title: The Ledger Agent — AI for Clean Books | Tribune
 description: From your operational systems to a clean ledger, daily. Books that close themselves — with a human's final eye.
-url: https://www.tribuneinc.com/builds/the-ledger-agent/
+url: https://tribuneinc.com/builds/the-ledger-agent/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > From your operational systems to your ledger, cleanly, daily. Summary entries posted to the right accounts, reconciliation flagged the day it drifts, and a month end that takes an afternoon instead of a week.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

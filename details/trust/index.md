@@ -1,9 +1,9 @@
 ---
 title: Trust & Compliance — Tribune
 description: For regulated builds, reasoning on records happens on a sealed machine in your building. A filter can fail open. Architecture cannot.
-url: https://www.tribuneinc.com/details/trust/
+url: https://tribuneinc.com/details/trust/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > A filter can fail open. Architecture cannot.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

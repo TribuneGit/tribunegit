@@ -1,7 +1,7 @@
 ---
 title: Tribune — O&P Denial Recovery
 description: Payers use AI to deny your O&P claims. Tribune builds you an AI team to fight back, on hardware you own. Book a free 30-minute discovery call.
-url: https://tribuneinc.com/op/
+url: https://tribuneinc.com/orthotics-and-prosthetics/
 company: Tribune Inc.
 email: jeff@tribuneinc.com
 generated: 2026-07-13
@@ -11,7 +11,7 @@ generated: 2026-07-13
 
 > Payers are using AI to deny your practice's claims. Now you can fight back with your own.
 
-**Email:** jeff@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/op/
+**Email:** jeff@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/orthotics-and-prosthetics/
 
 ---
 
@@ -120,4 +120,4 @@ We'll show you exactly what Tribune can recover for your practice, using your pa
 
 ---
 
-*This markdown mirror is maintained for AI readability. Primary domain: tribuneinc.com/op*
+*This markdown mirror is maintained for AI readability. Primary domain: tribuneinc.com/orthotics-and-prosthetics*

@@ -1,9 +1,9 @@
 ---
 title: How We Build — Five Phases | Tribune
 description: Five phases with human-signed gates: Discovery, Architecture, Build, Train, Handoff — ending in an Independence Test and a scheduled departure.
-url: https://www.tribuneinc.com/details/method/
+url: https://tribuneinc.com/details/method/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > Every build follows five phases with human-signed gates. The engagement is designed to end.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

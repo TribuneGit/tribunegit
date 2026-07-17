@@ -1,9 +1,9 @@
 ---
 title: Reach Out — Map Your Constraint | Tribune
 description: Tell us where it hurts. A human reads it and replies within one business day.
-url: https://www.tribuneinc.com/reach-out/
+url: https://tribuneinc.com/reach-out/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > Tell us where it hurts. A human reads this and replies within one business day. Pricing is a discovery conversation — no budget field, on purpose.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 
@@ -19,8 +19,8 @@ generated: 2026-07-03
 
 **Keywords:** contact Tribune Inc, reach Tribune AI, get started Tribune, map your AI constraint, Tribune consultation
 
-**Form:** https://www.tribuneinc.com/reach-out/
-**Email:** admin@tribuneinc.com
+**Form:** https://tribuneinc.com/reach-out/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com
 **Reply time:** One business day
 **Based in:** West Palm Beach, FL — working with clients nationwide
 

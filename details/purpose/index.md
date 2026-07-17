@@ -1,9 +1,9 @@
 ---
 title: Doctrine: Light, Soul & Purpose | Tribune
 description: Every agent ships with a written purpose: why it exists, who it serves, what it refuses to do. A glass box, not a black box.
-url: https://www.tribuneinc.com/details/purpose/
+url: https://tribuneinc.com/details/purpose/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > A glass box, not a black box.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

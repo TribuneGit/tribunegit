@@ -1,9 +1,9 @@
 ---
 title: The Producer — AI for Reports and Deliverables | Tribune
 description: Recurring reports and client deliverables assembled, checked against your standards, and staged for human review. Out the door on time.
-url: https://www.tribuneinc.com/builds/the-producer/
+url: https://tribuneinc.com/builds/the-producer/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > Recurring reports and deliverables assembled from your sources, checked against your standards, and staged for a human's final eye before anything ships.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

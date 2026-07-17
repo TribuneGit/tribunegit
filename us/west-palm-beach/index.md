@@ -1,9 +1,9 @@
 ---
 title: AI Agents Built in West Palm Beach | Tribune
 description: AI agents built in West Palm Beach, serving businesses nationwide — deployed on your hardware, in your building, owned by you.
-url: https://www.tribuneinc.com/us/west-palm-beach/
+url: https://tribuneinc.com/us/west-palm-beach/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > Tribune is headquartered in West Palm Beach, Florida. We design, build, and hand off AI agent organizations for businesses across the United States.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 
@@ -29,7 +29,7 @@ Tribune builds for any business where a repeatable, costly process is bleeding t
 
 ## All Eight Builds Available
 
-Every Tribune build ships to any US location. [See all builds →](https://www.tribuneinc.com/builds/)
+Every Tribune build ships to any US location. [See all builds →](https://tribuneinc.com/builds/)
 
 **Based in:** West Palm Beach, FL 33401 | **Serving:** US businesses nationwide
 

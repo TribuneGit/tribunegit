@@ -1,23 +1,23 @@
 ---
 title: Legal | Tribune Inc.
 description: Terms of service, privacy policy, and legal notices for Tribune Inc.
-url: https://www.tribuneinc.com/legal/
+url: https://tribuneinc.com/legal/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
 # Legal — Tribune Inc.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 
 **Tribune Inc.** is a Delaware corporation.
 
-For legal inquiries: admin@tribuneinc.com
+For legal inquiries: jeff@tribuneinc.com · ryan@tribuneinc.com
 
-Full legal notices, terms of service, and privacy policy: https://www.tribuneinc.com/legal/
+Full legal notices, terms of service, and privacy policy: https://tribuneinc.com/legal/
 
 ---
 

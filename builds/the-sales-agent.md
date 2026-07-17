@@ -1,9 +1,9 @@
 ---
 title: The Sales Agent — AI for Pipeline Motion | Tribune
 description: Follow-ups fire on time, the CRM stays current, stalled deals get flagged. No deal dies of neglect. Built for any team that sells.
-url: https://www.tribuneinc.com/builds/the-sales-agent/
+url: https://tribuneinc.com/builds/the-sales-agent/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > Deals rarely die in the meeting. They die in the week after it: the follow-up that slipped, the record nobody updated, the quiet account no one noticed going quiet. The Sales Agent runs the machine between the conversations, so your sellers can be in them.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: Tribune Functions — Pick the Job, Meet the Agent
 description: Pick the job, meet the agent that carries it: recover money, handle intake, brief the team, keep books, guard deadlines, move pipeline, build brand, deliver.
-url: https://www.tribuneinc.com/functions/
+url: https://tribuneinc.com/functions/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > Every Tribune build is designed around one function — one expensive problem that drains time or money every day.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

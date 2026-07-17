@@ -1,9 +1,9 @@
 ---
 title: The Marketing Agent — AI for Brand and Content | Tribune
 description: Content, social, email, and PR — planned and drafted in your voice, staged for your approval. Show up everywhere without being everywhere.
-url: https://www.tribuneinc.com/builds/the-marketing-agent/
+url: https://tribuneinc.com/builds/the-marketing-agent/
 company: Tribune Inc.
-email: admin@tribuneinc.com
+email: jeff@tribuneinc.com
 generated: 2026-07-03
 ---
 
@@ -11,7 +11,7 @@ generated: 2026-07-03
 
 > Marketing is the growth lever every small business knows it needs and never has time to pull. The Marketing Agent produces what you need — in your voice — and stages it for your approval.
 
-**Email:** admin@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://www.tribuneinc.com/
+**Email:** jeff@tribuneinc.com · ryan@tribuneinc.com | **Based in:** West Palm Beach, FL | **Website:** https://tribuneinc.com/
 
 ---
 

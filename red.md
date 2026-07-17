@@ -2,20 +2,11 @@
 title: "Tribune Inc. | The AI Counter-System — Across Every Vertical"
 description: "Tribune builds AI counter-systems for businesses losing money to institutional friction — starting with O&P denial recovery, extending across healthcare, legal, sales, construction, and more."
 canonical: "https://tribuneinc.com/red/"
-noindex: true
 ---
 
 # The AI Counter-System — Across Every Vertical
 
 **Keywords:** AI counter-system, institutional friction, denial recovery, agentic organization, O&P AI, AI agents for business, Tribune Inc., Tribune OS, Independence Test, Light and Soul protocol, healthcare AI, legal intelligence, sales operations AI, construction payments AI, life sciences AI, debt resolution automation, owned AI hardware, on-premise AI
-
----
-
-## Purpose
-
-This page does the reader's placement work. It walks through the verticals Tribune is in conversation with and the ones the architecture extends to, each framed so a reader can recognize their world and pick their own entry point. One concrete, costed anchor (O&P denial recovery) proves the pattern; every other entry is the same pattern in different clothes.
-
-**Intended audience:** business owners, operators, and advisors across regulated and complex verticals who are evaluating whether AI can address their specific institutional friction. Optimized for forwarding — a reader in healthcare, legal, life sciences, construction, or sales can find their bucket in under a minute.
 
 ---
 
@@ -45,9 +36,9 @@ Denial classification by reason code, appeal drafting for human sign-off, eligib
 **Status:** In active discussion  
 Intake-to-delivery orchestration, signal monitoring, quality enforcement to methodology, SLA tracking. Output scales. Headcount doesn't.
 
-### Debt Resolution & Receivables Services
+### Federal Program Administration
 **Status:** In active discussion  
-Document intake, case classification, evidence assembly, deadline-tracked follow-up sequences, escalation to named humans. Money trapped in process.
+Helping clients navigate federal forgiveness and repayment programs means managing years-long cases: eligibility paperwork, regulatory requirements that shift mid-case, annual recertifications, and continuous communication across a portfolio of hundreds or thousands of files. AI workforce for the operational layer; humans keep the judgment work.
 
 ### Legal — Case & Evidence Intelligence
 **Status:** Working prototype  
@@ -89,13 +80,13 @@ Wherever that answer is expensive, Tribune fits.
 
 Tribune has no closed client engagements yet. What follows is founder work — evidence of capability, honestly labeled.
 
-**Jeff Rey (Quantum Horizons LLC):**
+**Jeffrey Reinhold, co-founder:**
 - ai-filings.com — NTO agentic pipeline: property owner lookup, address resolution, certified filing. Status: live.
 - Warehouse automation — barcode ingestion, metadata enrichment, multi-channel publish to Shopify/eBay/Amazon, AI-assisted pricing. Status: shipped.
 - Legal intelligence prototype — HIPAA-pattern architecture, sealed local hardware. Status: working prototype. law.horizon.space
 - AI voice gateway, agent deployment infrastructure, additional automation pipelines. horizon.space
 
-**Ryan Poole (MaxximusAI — running Tribune's methodology in production):**
+**Ryan Poole, co-founder:**
 - Marcus (AI Chief Executive) and full AI C-suite operating MaxximusAI day to day, coordinating in Discord channels, governed by the Light & Soul protocol. Status: live and operating. maxximus.ai
 - The Light & Soul protocol — written purpose, refusal list, named human escalation, complete action log for every agent. Developed and proven at MaxximusAI before client deployment.
 
@@ -107,4 +98,4 @@ Not a product page. Not a URL. The concept: an operational system that connects 
 
 ---
 
-*Last updated: July 2026*
+*Last updated: July 17, 2026*
