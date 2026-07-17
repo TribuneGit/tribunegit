@@ -1,0 +1,78 @@
+/*.md
+  Content-Type: text/markdown; charset=utf-8
+  X-Robots-Tag: noindex, follow
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/
+  Link: <https://tribuneinc.com/index.md>; rel="alternate"; type="text/markdown", <https://tribuneinc.com/llms.txt>; rel="describedby"; type="text/plain"
+
+/about/
+  Link: <https://tribuneinc.com/about.md>; rel="alternate"; type="text/markdown"
+
+/functions/
+  Link: <https://tribuneinc.com/functions.md>; rel="alternate"; type="text/markdown"
+
+/builds/
+  Link: <https://tribuneinc.com/builds.md>; rel="alternate"; type="text/markdown"
+
+/builds/the-recovery-agent/
+  Link: <https://tribuneinc.com/builds/the-recovery-agent.md>; rel="alternate"; type="text/markdown"
+
+/builds/the-intake-agent/
+  Link: <https://tribuneinc.com/builds/the-intake-agent.md>; rel="alternate"; type="text/markdown"
+
+/builds/the-signal-agent/
+  Link: <https://tribuneinc.com/builds/the-signal-agent.md>; rel="alternate"; type="text/markdown"
+
+/builds/the-ledger-agent/
+  Link: <https://tribuneinc.com/builds/the-ledger-agent.md>; rel="alternate"; type="text/markdown"
+
+/builds/the-sentinel/
+  Link: <https://tribuneinc.com/builds/the-sentinel.md>; rel="alternate"; type="text/markdown"
+
+/builds/the-producer/
+  Link: <https://tribuneinc.com/builds/the-producer.md>; rel="alternate"; type="text/markdown"
+
+/builds/the-sales-agent/
+  Link: <https://tribuneinc.com/builds/the-sales-agent.md>; rel="alternate"; type="text/markdown"
+
+/builds/the-marketing-agent/
+  Link: <https://tribuneinc.com/builds/the-marketing-agent.md>; rel="alternate"; type="text/markdown"
+
+/orthotics-and-prosthetics/
+  Link: <https://tribuneinc.com/orthotics-and-prosthetics.md>; rel="alternate"; type="text/markdown"
+
+/behavioral-health/
+  Link: <https://tribuneinc.com/behavioral-health.md>; rel="alternate"; type="text/markdown"
+
+/industries/
+  Link: <https://tribuneinc.com/industries.md>; rel="alternate"; type="text/markdown"
+
+/red/
+  Link: <https://tribuneinc.com/red.md>; rel="alternate"; type="text/markdown"
+
+/details/method/
+  Link: <https://tribuneinc.com/details/method.md>; rel="alternate"; type="text/markdown"
+
+/details/proof/
+  Link: <https://tribuneinc.com/details/proof.md>; rel="alternate"; type="text/markdown"
+
+/details/purpose/
+  Link: <https://tribuneinc.com/details/purpose.md>; rel="alternate"; type="text/markdown"
+
+/details/trust/
+  Link: <https://tribuneinc.com/details/trust.md>; rel="alternate"; type="text/markdown"
+
+/details/faq/
+  Link: <https://tribuneinc.com/details/faq.md>; rel="alternate"; type="text/markdown"
+
+/reach-out/
+  Link: <https://tribuneinc.com/reach-out.md>; rel="alternate"; type="text/markdown"
+
+/legal/
+  Link: <https://tribuneinc.com/legal.md>; rel="alternate"; type="text/markdown"
+
+/us/west-palm-beach/
+  Link: <https://tribuneinc.com/us/west-palm-beach.md>; rel="alternate"; type="text/markdown"
