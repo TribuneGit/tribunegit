@@ -14,9 +14,9 @@ keywords: behavioral health denial recovery, AI denial appeals behavioral health
 
 **Eyebrow:** Behavioral Health Denial Recovery
 
-**Headline:** Payers are using AI to deny your practice's claims. Now you can fight back with your own.
+**Headline:** Payers are using AI to deny your behavioral health claims. Now you can fight back with your own.
 
-Behavioral health claims are denied at nearly double the rate of medical claims. Payer algorithms flag your 90837s, cut off authorizations mid-treatment, and reject claims in seconds, while your team fights back with a phone, a portal login, and whatever hours are left in the day.
+Behavioral health claims are denied at nearly double the rate of medical claims. Payer algorithms cut off authorizations mid-treatment, flag ongoing therapy for review, and reject claims in seconds, while your team fights back with a phone, a portal login, and whatever hours are left in the day.
 
 Tribune builds you an AI team that fights back. Trained on your practice, your payers, your levels of care. Installed on hardware you own. Working 24/7 on the denials that are bleeding your revenue.
 
@@ -55,7 +55,7 @@ Your payer has an AI system that flagged and denied those claims automatically. 
 - Prior authorization for nearly everything, and concurrent reviews every few days that can cut off a residential or PHP stay mid-treatment
 - Authorization expirations that slip through the cracks: one missed renewal date and a full week of per-diem revenue is gone
 - Behavioral carve-outs: claims bounced automatically because the plan routes mental health to a different payer than the card in your patient's hand
-- Medical-necessity reviews on ongoing therapy: payer algorithms flag your 90837 frequency and scanning notes for repeated language
+- Medical-necessity reviews on ongoing therapy: payer algorithms flagging your 90837 frequency and scanning your notes for repeated language
 - Time-bound CPT codes and modifier rules where one wrong digit produces a clean, automatic denial
 - Appeals that could be won under federal parity law, but nobody on staff has the hours to research and draft them
 
@@ -115,7 +115,7 @@ Hardware in your name. Accounts in your control. Repositories yours from day one
 
 ## We Screen Every Client Before We Build.
 
-Behavioral health has been burned by bad actors, and payers know it, which is why it's part of why legitimate practices face so much scrutiny. Tribune only builds for accredited, independently owned practices with clean standing. Before any engagement begins, we verify accreditation, payer relationships, and ownership.
+Behavioral health has been burned by bad actors, and payers know it. That history is part of why legitimate practices face so much scrutiny. Tribune only builds for accredited, independently owned practices with clean standing. Before any engagement begins, we verify accreditation, payer relationships, and ownership.
 
 If your practice does honest work and drowns in the administrative war anyway, we built Tribune for you. If you're looking for a machine to game payers, we're not your company; our systems are designed so they can't be used that way.
 
