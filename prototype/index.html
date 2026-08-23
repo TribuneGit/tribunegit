@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Prototype | Tribune</title>
+<meta name="description" content="Early access prototype — password required.">
+<link rel="canonical" href="https://tribuneinc.com/prototype/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Cinzel:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBXDTK89FG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MBXDTK89FG');
+</script>
+</head>
+<body>
+
+<div class="u-header"><div class="wrap">
+  <a href="/about/">About</a>
+  <a href="/us/west-palm-beach/">Location</a>
+  <a class="reach" href="/reach-out/">Reach out</a>
+</div></div>
+<header class="m-header"><div class="wrap">
+  <a class="lockup" href="/"><svg viewBox="0 0 100 112" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tribune"><rect x="18" y="10" width="64" height="16" rx="2" fill="#0A0B12"/><polygon points="18,33 46,33 46,86 37,86 18,60" fill="#0A0B12"/><polygon points="54,33 82,33 82,60 63,86 54,86" fill="#0A0B12"/><polygon points="40,90 60,90 50,104" fill="#7A1A5C"/></svg><span class="wordmark">TRIBUNE</span></a>
+</div></header>
+
+<section class="hero"><div class="wrap" style="max-width:480px">
+  <div class="eyebrow">Early access</div>
+  <h1 style="max-width:16ch">Prototype</h1>
+  <p class="lead" style="margin-top:18px">This is a restricted preview build. Enter the access
+  password to continue.</p>
+
+  <form id="proto-form" style="margin-top:28px;display:flex;flex-direction:column;gap:14px" autocomplete="off">
+    <input type="password" id="proto-pass" name="password" placeholder="Access password" required
+      style="padding:14px 16px;border-radius:8px;border:1px solid rgba(10,11,18,0.2);font-size:16px;font-family:inherit;width:100%">
+    <button type="submit" class="btn btn-primary" style="width:100%">Continue &rarr;</button>
+  </form>
+  <p id="proto-msg" class="small muted" style="margin-top:14px;min-height:20px"></p>
+</div></section>
+
+<footer><div class="wrap">
+  <p class="tagline">Power that stays. Help that leaves.</p>
+  <div class="legal-row small muted">
+    <span>&copy; 2026 Tribune Inc.</span>
+    <span><a href="/">Back to Tribune Inc.</a></span>
+  </div>
+</div></footer>
+
+<script>
+(function () {
+  var PASSWORD = "Tribune2000!EarlyAccess#";
+  var DEST = "https://denialengine.netlify.app";
+  var form = document.getElementById("proto-form");
+  var input = document.getElementById("proto-pass");
+  var msg = document.getElementById("proto-msg");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (input.value === PASSWORD) {
+      msg.textContent = "Access granted. Redirecting\u2026";
+      window.location.href = DEST;
+    } else {
+      msg.textContent = "Incorrect password. Returning to Tribune Inc.\u2026";
+      setTimeout(function () {
+        window.location.href = "/";
+      }, 1200);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
