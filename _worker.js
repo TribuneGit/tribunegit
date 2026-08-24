@@ -208,6 +208,15 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    // -1. Force HTTPS site-wide. Browsers silently refuse to set/send
+    //     __Secure-prefixed cookies (used by the /techstack gate) over
+    //     plain HTTP, which otherwise causes an invisible, unexplained
+    //     login loop plus a genuine "not secure" browser warning.
+    if (url.protocol === "http:") {
+      url.protocol = "https:";
+      return Response.redirect(url.toString(), 301);
+    }
+
     // 0. Password gate for /techstack (and any sub-paths)
     const isGatedPath = url.pathname === GATE_PATH_PREFIX || url.pathname.startsWith(GATE_PATH_PREFIX + "/");
     if (isGatedPath) {
