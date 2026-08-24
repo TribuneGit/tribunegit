@@ -176,11 +176,16 @@ async function handleGate(request, url) {
         "Set-Cookie",
         `${GATE_COOKIE}=${encodeURIComponent(token)}; Path=/techstack; HttpOnly; Secure; SameSite=Lax; Max-Age=${GATE_TTL_DAYS * 24 * 60 * 60}`
       );
+      headers.set("Cache-Control", "private, no-store, no-cache, must-revalidate");
       return new Response(null, { status: 303, headers });
     }
     return new Response(gatePage({ error: true }), {
       status: 401,
-      headers: { "Content-Type": "text/html; charset=utf-8", "X-Robots-Tag": "noindex, nofollow" }
+      headers: {
+        "Content-Type": "text/html; charset=utf-8",
+        "X-Robots-Tag": "noindex, nofollow",
+        "Cache-Control": "private, no-store, no-cache, must-revalidate"
+      }
     });
   }
 
@@ -191,7 +196,11 @@ async function handleGate(request, url) {
 
   return new Response(gatePage(), {
     status: 401,
-    headers: { "Content-Type": "text/html; charset=utf-8", "X-Robots-Tag": "noindex, nofollow" }
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "X-Robots-Tag": "noindex, nofollow",
+      "Cache-Control": "private, no-store, no-cache, must-revalidate"
+    }
   });
 }
 
@@ -200,10 +209,19 @@ export default {
     const url = new URL(request.url);
 
     // 0. Password gate for /techstack (and any sub-paths)
-    if (url.pathname === GATE_PATH_PREFIX || url.pathname.startsWith(GATE_PATH_PREFIX + "/")) {
+    const isGatedPath = url.pathname === GATE_PATH_PREFIX || url.pathname.startsWith(GATE_PATH_PREFIX + "/");
+    if (isGatedPath) {
       const gateResponse = await handleGate(request, url);
       if (gateResponse) return gateResponse;
-      // else: authorized, fall through to normal asset serving below
+      // else: authorized, fall through to normal asset serving below,
+      // but never let the CDN or browser cache this path publicly —
+      // caching ignores the auth cookie and can leak content or serve
+      // a stale gate page regardless of login state.
+      const assetResponse = await env.ASSETS.fetch(request);
+      const headers = new Headers(assetResponse.headers);
+      headers.set("Cache-Control", "private, no-store, no-cache, must-revalidate");
+      headers.set("Vary", "Cookie");
+      return new Response(assetResponse.body, { status: assetResponse.status, headers });
     }
 
     // 1. www → apex
