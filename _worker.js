@@ -1,7 +1,8 @@
 /**
  * Tribune Inc. Cloudflare Worker
  * Handles: 301 redirects, HTTP Link headers (agent discovery),
- *          Markdown content-type + X-Robots-Tag, www → apex redirect
+ *          Markdown content-type + X-Robots-Tag, www → apex redirect,
+ *          server-side password gate for /techstack/
  */
 
 // Alias → canonical 301 redirects
@@ -55,9 +56,155 @@ function getMdRedirect(pathname) {
   return null;
 }
 
+// ---------------------------------------------------------------------------
+// Password gate — /techstack/
+// Server-side, edge-enforced. Content is never returned to the client
+// unless a valid signed session cookie is present. Password itself is
+// never sent in cleartext over a GET; it is submitted via POST from the
+// gate form and never stored — only a time-windowed HMAC token is issued.
+// ---------------------------------------------------------------------------
+const GATE_PATH_PREFIX = "/techstack";
+const GATE_PASSWORD = "Make!MoreMoney26";
+const GATE_SECRET = "tribune-techstack-gate-v1-9f3a7c2e5b";
+const GATE_COOKIE = "__Secure-tt_gate";
+const GATE_TTL_DAYS = 7;
+
+function currentWeekNumber() {
+  // Rotates the valid token weekly so a leaked cookie expires on its own.
+  return Math.floor(Date.now() / (GATE_TTL_DAYS * 24 * 60 * 60 * 1000));
+}
+
+async function hmacSign(message, secret) {
+  const enc = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw", enc.encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false, ["sign"]
+  );
+  const sig = await crypto.subtle.sign("HMAC", key, enc.encode(message));
+  return [...new Uint8Array(sig)].map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+function timingSafeEqual(a, b) {
+  if (a.length !== b.length) return false;
+  let out = 0;
+  for (let i = 0; i < a.length; i++) out |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return out === 0;
+}
+
+async function issueGateToken() {
+  const week = currentWeekNumber();
+  const sig = await hmacSign(`techstack:${week}`, GATE_SECRET);
+  return `${week}.${sig}`;
+}
+
+async function verifyGateToken(token) {
+  if (!token || !token.includes(".")) return false;
+  const [weekStr, sig] = token.split(".");
+  const week = Number(weekStr);
+  if (!Number.isFinite(week)) return false;
+  // accept current or previous week (grace period across the rotation boundary)
+  for (const w of [currentWeekNumber(), currentWeekNumber() - 1]) {
+    if (w !== week) continue;
+    const expected = await hmacSign(`techstack:${w}`, GATE_SECRET);
+    if (timingSafeEqual(expected, sig)) return true;
+  }
+  return false;
+}
+
+function getCookie(request, name) {
+  const cookie = request.headers.get("Cookie") || "";
+  const match = cookie.match(new RegExp(`(?:^|;\\s*)${name}=([^;]+)`));
+  return match ? decodeURIComponent(match[1]) : null;
+}
+
+function gatePage({ error } = {}) {
+  return `<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restricted — Tribune Inc.</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--daylight:#FFFFFF;--marble:#EFEBE2;--obsidian:#0A0B12;--basalt:#16141F;--ash:#8C8896;
+--tyrian:#7A1A5C;--tyrian-deep:#4E0E3C;--line:rgba(10,11,18,.12);--line-strong:rgba(10,11,18,.24);
+--radius:10px;--display:'Archivo',sans-serif;--body:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--obsidian);color:var(--marble);font-family:var(--body);min-height:100vh;
+display:flex;align-items:center;justify-content:center;padding:24px}
+.card{max-width:420px;width:100%;background:var(--daylight);color:var(--basalt);border-radius:16px;
+padding:44px 38px;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+color:var(--ash);border-left:3px solid var(--tyrian);padding-left:10px;margin-bottom:18px;display:inline-block}
+h1{font-family:var(--display);font-weight:800;font-size:22px;color:var(--obsidian);margin-bottom:10px}
+p.sub{font-size:14px;color:var(--ash);margin-bottom:26px;line-height:1.5}
+label{display:block;font-family:var(--display);font-weight:600;font-size:13px;color:var(--obsidian);margin-bottom:8px}
+input[type=password]{width:100%;font-size:16px;padding:12px 14px;border:1px solid var(--line-strong);
+border-radius:8px;background:#fff;color:var(--basalt);margin-bottom:16px}
+button{width:100%;font-family:var(--display);font-weight:700;font-size:15px;padding:13px;
+border:none;border-radius:8px;background:var(--tyrian);color:var(--marble);cursor:pointer}
+button:hover{background:var(--tyrian-deep)}
+.err{background:#FBEAEA;border:1px solid #E24B4A;color:#9A2323;font-size:13px;padding:10px 12px;
+border-radius:8px;margin-bottom:16px}
+</style></head>
+<body>
+<div class="card">
+  <span class="eyebrow">Confidential</span>
+  <h1>Tribune Trading AI — Technical Overview</h1>
+  <p class="sub">This document is restricted to invited reviewers. Enter the access password to continue.</p>
+  ${error ? '<div class="err">Incorrect password. Try again.</div>' : ''}
+  <form method="POST" action="/techstack/">
+    <label for="pw">Password</label>
+    <input type="password" id="pw" name="password" autofocus required>
+    <button type="submit">Enter</button>
+  </form>
+</div>
+</body></html>`;
+}
+
+async function handleGate(request, url) {
+  // POST = password submission
+  if (request.method === "POST") {
+    const form = await request.formData();
+    const submitted = (form.get("password") || "").toString();
+    if (timingSafeEqual(submitted, GATE_PASSWORD)) {
+      const token = await issueGateToken();
+      const headers = new Headers({ "Location": url.pathname, "Content-Type": "text/plain" });
+      headers.append(
+        "Set-Cookie",
+        `${GATE_COOKIE}=${encodeURIComponent(token)}; Path=/techstack; HttpOnly; Secure; SameSite=Lax; Max-Age=${GATE_TTL_DAYS * 24 * 60 * 60}`
+      );
+      return new Response(null, { status: 303, headers });
+    }
+    return new Response(gatePage({ error: true }), {
+      status: 401,
+      headers: { "Content-Type": "text/html; charset=utf-8", "X-Robots-Tag": "noindex, nofollow" }
+    });
+  }
+
+  // GET = check cookie
+  const token = getCookie(request, GATE_COOKIE);
+  const valid = await verifyGateToken(token);
+  if (valid) return null; // pass through to normal handling
+
+  return new Response(gatePage(), {
+    status: 401,
+    headers: { "Content-Type": "text/html; charset=utf-8", "X-Robots-Tag": "noindex, nofollow" }
+  });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    // 0. Password gate for /techstack (and any sub-paths)
+    if (url.pathname === GATE_PATH_PREFIX || url.pathname.startsWith(GATE_PATH_PREFIX + "/")) {
+      const gateResponse = await handleGate(request, url);
+      if (gateResponse) return gateResponse;
+      // else: authorized, fall through to normal asset serving below
+    }
 
     // 1. www → apex
     if (url.hostname === "www.tribuneinc.com") {

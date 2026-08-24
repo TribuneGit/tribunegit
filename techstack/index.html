@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tribune Trading AI — Technical Overview | Tribune Inc.</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Cinzel:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+/* Document layout built on top of Tribune brand tokens from /assets/style.css */
+.doc-note{background:var(--obsidian);color:var(--marble)}
+.doc-note .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;flex-wrap:wrap}
+.doc-note .tag{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--aurum)}
+.doc-note .who{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--ash)}
+
+.doc-hero{padding:72px 0 52px;border-bottom:1px solid var(--line)}
+.doc-hero h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.08;max-width:17ch;margin-bottom:26px}
+.doc-hero h1 em{font-style:normal;color:var(--tyrian-deep)}
+.doc-lede{font-size:1.15rem;line-height:1.55;color:var(--basalt);max-width:60ch;margin-bottom:16px}
+.doc-lede strong{color:var(--obsidian);font-weight:600}
+.howto{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ash);border:1px dashed var(--line-strong);border-radius:var(--radius-control);padding:12px 16px;max-width:60ch;margin-top:22px}
+.howto b{color:var(--tyrian-deep)}
+
+.hero-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:36px;border-radius:var(--radius-control);overflow:hidden}
+.fact{background:var(--daylight);padding:20px 22px}
+.fact dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash);margin:0 0 8px}
+.fact dd{margin:0;font-family:var(--display);font-size:1.3rem;line-height:1.2;font-weight:600;color:var(--obsidian)}
+.fact dd small{display:block;font-family:var(--body);font-size:.8rem;font-weight:400;color:var(--basalt);line-height:1.4;margin-top:6px}
+
+.shell{max-width:var(--max-width);margin:0 auto;padding:0 24px 110px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:60px;align-items:start}
+.index-nav{position:sticky;top:88px;padding-top:56px}
+.index-nav h2{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);margin:0 0 16px;font-weight:600}
+.index-nav ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.index-nav a{display:grid;grid-template-columns:24px 1fr;gap:6px;padding:5px 0;font-size:13px;line-height:1.35;color:var(--basalt);text-decoration:none}
+.index-nav a .n{font-family:var(--mono);font-size:10.5px;color:var(--ash);padding-top:2px}
+.index-nav a:hover{color:var(--obsidian);text-decoration:none}
+.index-nav a.on{color:var(--tyrian-deep);font-weight:600}
+.index-nav a.on .n{color:var(--tyrian)}
+.index-nav .glossary-link{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.index-nav .glossary-link a{color:var(--tyrian-deep);font-weight:600}
+
+main.doc{min-width:0}
+.sec{padding:56px 0 6px;scroll-margin-top:88px;border-top:1px solid var(--line)}
+.sec:first-child{border-top:none}
+.sec-no{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--tyrian);margin:0 0 14px}
+.sec h2{font-family:var(--display);font-weight:700;font-size:clamp(1.55rem,3vw,2.1rem);line-height:1.16;margin:0 0 20px;max-width:24ch}
+.sec h3{font-family:var(--display);font-weight:600;font-size:1.02rem;margin:36px 0 12px;color:var(--obsidian)}
+.sec p{max-width:66ch;margin:0 0 18px;color:var(--basalt)}
+.sec p.lead{font-size:1.06rem;color:var(--basalt);max-width:62ch}
+.sec strong{font-weight:600;color:var(--obsidian)}
+
+.pull{font-family:var(--display);font-size:1.3rem;line-height:1.4;font-weight:600;border-left:3px solid var(--tyrian);padding:4px 0 4px 24px;margin:32px 0;max-width:46ch;color:var(--obsidian)}
+.pull em{font-style:normal;color:var(--tyrian-deep)}
+
+ul.plain{list-style:none;margin:0 0 20px;padding:0;max-width:66ch;display:flex;flex-direction:column;gap:9px}
+ul.plain li{padding-left:20px;position:relative;color:var(--basalt)}
+ul.plain li::before{content:"";position:absolute;left:2px;top:.72em;width:7px;height:1px;background:var(--tyrian)}
+ul.plain li b{color:var(--obsidian);font-weight:600}
+
+figure{margin:36px 0}
+.frame{background:var(--daylight);border:1px solid var(--line);border-radius:var(--radius-card);padding:24px 24px 18px;overflow-x:auto;box-shadow:0 1px 2px rgba(10,11,18,.05),0 8px 24px -18px rgba(10,11,18,.35)}
+figure svg{display:block;width:100%;max-width:100%;height:auto;color:var(--obsidian)}
+figcaption{margin-top:14px;font-size:13.5px;line-height:1.5;color:var(--basalt);max-width:64ch}
+figcaption b{color:var(--obsidian);font-weight:600}
+
+.d-box{fill:var(--marble);stroke:var(--line-strong)}
+.d-box-a{fill:rgba(122,26,92,.10);stroke:var(--tyrian)}
+.d-line{stroke:currentColor;stroke-width:1.2;fill:none;opacity:.5}
+.d-line-a{stroke:var(--tyrian);stroke-width:1.5;fill:none}
+.d-t{font-family:'Inter',sans-serif;font-size:13px;fill:currentColor}
+.d-s{font-family:'JetBrains Mono',monospace;font-size:10.5px;fill:currentColor;opacity:.65;letter-spacing:.05em}
+.d-lab{font-family:'JetBrains Mono',monospace;font-size:10.5px;fill:var(--tyrian-deep);letter-spacing:.07em}
+.d-warn{fill:var(--aurum)}
+
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 24px;max-width:70ch}
+.chip{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;border:1px solid var(--line-strong);background:var(--daylight);border-radius:6px;padding:5px 9px;color:var(--basalt)}
+.chip.on{border-color:var(--tyrian);color:var(--tyrian-deep);background:rgba(122,26,92,.07)}
+
+.readout{background:var(--daylight);border:1px solid var(--line);border-radius:var(--radius-card);font-family:var(--mono);font-size:12.5px;line-height:1.85;padding:22px 24px;margin:28px 0;overflow-x:auto;box-shadow:0 1px 2px rgba(10,11,18,.05),0 8px 24px -18px rgba(10,11,18,.35)}
+.readout .k{color:var(--ash)}
+.readout .g{display:block;color:var(--tyrian-deep);letter-spacing:.09em;text-transform:uppercase;font-size:10.5px;margin:14px 0 4px}
+.readout .g:first-child{margin-top:0}
+.readout .v{color:var(--obsidian)}
+.readout .v-a{color:var(--tyrian-deep);font-weight:600}
+.readout .v-w{color:#8C6412;font-weight:600}
+
+.tbl-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--line);border-radius:var(--radius-card);background:var(--daylight)}
+.tbl-wrap table{border-collapse:collapse;width:100%;min-width:520px;font-size:14px}
+.tbl-wrap th,.tbl-wrap td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl-wrap thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);font-weight:600;background:var(--marble)}
+.tbl-wrap tbody tr:last-child td{border-bottom:none}
+.tbl-wrap td.fn{font-weight:600;white-space:nowrap;color:var(--obsidian)}
+.tbl-wrap td .mono{font-family:var(--mono);font-size:12.5px;color:var(--basalt)}
+
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:28px 0;border-radius:var(--radius-card);overflow:hidden}
+.opt{background:var(--daylight);padding:20px 20px 22px;display:flex;flex-direction:column;gap:10px}
+.opt.pref{background:rgba(122,26,92,.06)}
+.opt-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--tyrian-deep)}
+.opt h4{margin:0;font-family:var(--display);font-weight:600;font-size:1.15rem;line-height:1.2;color:var(--obsidian)}
+.opt p{margin:0;font-size:13.5px;line-height:1.5;color:var(--basalt);max-width:none}
+.opt .verdict{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);font-size:12.5px;color:var(--obsidian)}
+.opt .verdict b{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ash);display:block;margin-bottom:3px;font-weight:600}
+
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:26px 0;border-radius:var(--radius-card);overflow:hidden}
+.ph{background:var(--daylight);padding:16px 18px 18px}
+.ph .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--ash)}
+.ph h4{margin:5px 0 6px;font-size:.94rem;font-weight:600;color:var(--obsidian)}
+.ph p{margin:0;font-size:13px;line-height:1.5;color:var(--basalt);max-width:none}
+.ph.live{background:rgba(122,26,92,.07)}
+.ph.live .n{color:var(--tyrian-deep)}
+
+.callout{border:1px solid var(--line);border-left:3px solid var(--aurum);background:#FBF6EA;border-radius:var(--radius-card);padding:20px 24px;margin:28px 0;max-width:68ch}
+.callout h3{margin:0 0 8px;font-size:.94rem;color:var(--obsidian)}
+.callout p{margin:0;font-size:14.5px;color:var(--obsidian);max-width:none}
+
+.close{border-top:1px solid var(--line);margin-top:64px;padding-top:50px}
+.close .big{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.3;max-width:26ch;margin:0 0 20px;color:var(--obsidian)}
+.close .big em{font-style:normal;color:var(--tyrian-deep)}
+
+/* Term annotation system */
+.term{font:inherit;background:none;border:none;padding:0;margin:0;cursor:help;color:inherit;border-bottom:1px dotted var(--tyrian);text-decoration:none;display:inline}
+.term:hover,.term:focus-visible{color:var(--tyrian-deep)}
+.term.open{color:var(--tyrian-deep);border-bottom-style:solid}
+.tip{position:absolute;z-index:200;max-width:320px;background:var(--obsidian);color:var(--marble);font-family:var(--body);font-size:13.5px;line-height:1.5;padding:12px 14px;border-radius:8px;box-shadow:0 12px 30px -10px rgba(10,11,18,.5);display:none}
+.tip.show{display:block}
+.tip b{color:var(--aurum);font-weight:600;display:block;margin-bottom:4px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
+
+.glossary{padding:60px 0 100px;border-top:1px solid var(--line)}
+.glossary h2{margin-bottom:10px}
+.glossary .lead{margin-bottom:34px}
+.gloss-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.gloss-item{border:1px solid var(--line);border-radius:var(--radius-control);padding:16px 18px;background:var(--daylight)}
+.gloss-item dt{font-family:var(--mono);font-weight:600;font-size:13px;color:var(--tyrian-deep);margin-bottom:6px;letter-spacing:.02em}
+.gloss-item dd{margin:0;font-size:13.5px;line-height:1.5;color:var(--basalt)}
+
+@media(max-width:900px){
+  .shell{grid-template-columns:minmax(0,1fr);gap:0;padding:0 20px 90px}
+  .index-nav{position:static;padding-top:40px;border-bottom:1px solid var(--line);padding-bottom:20px}
+  .index-nav ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0 16px}
+  .opts{grid-template-columns:minmax(0,1fr)}
+  .frame{padding:16px 14px 12px}
+}
+</style>
+</head>
+<body>
+<div class="doc-note"><div class="wrap">
+  <span class="tag">Confidential · For client review</span>
+  <span class="who">Tribune Trading AI — Technical Overview</span>
+</div></div>
+<header class="m-header"><div class="wrap">
+  <a class="lockup" href="/"><svg viewBox="0 0 100 112" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tribune"><rect x="18" y="10" width="64" height="16" rx="2" fill="#0A0B12"/><polygon points="18,33 46,33 46,86 37,86 18,60" fill="#0A0B12"/><polygon points="54,33 82,33 82,60 63,86 54,86" fill="#0A0B12"/><polygon points="40,90 60,90 50,104" fill="#7A1A5C"/></svg><span class="wordmark">TRIBUNE</span></a>
+  <nav class="m-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/reach-out/">Reach out</a>
+  </nav>
+</div></header>
+<section class="doc-hero"><div class="wrap">
+  <p class="eyebrow">Discovery &amp; architecture brief</p>
+  <h1>Encoding a trader's <em>judgment</em>, not his trade history.</h1>
+  <p class="doc-lede">
+    The objective is not a program that places orders. It is a system that observes what the
+    trader observes, understands the method behind what he does, and applies that method
+    independently — including the decision to <strong>stay out</strong>. Most of the engineering
+    effort goes into discovering and formalizing rules that currently exist only as expertise.
+  </p>
+  <div class="howto">
+    <b>How to read this page</b> — Any word with a dotted underline (like
+    <button class="term" data-k="nq" type="button">NQ</button>) is a technical or trading term.
+    Click or tap it for a plain-language definition on the spot. Every term also appears in the
+    <a href="#glossary">full glossary</a> at the bottom of the page.
+  </div>
+  <dl class="hero-facts">
+    <div class="fact"><dt>Core problem</dt><dd>Perception<small>Reading charts, oscillators, order flow and audio the way a human does</small></dd></div>
+    <div class="fact"><dt>Core risk</dt><dd>Imitation<small>Copying past trades teaches the mistakes along with the method</small></dd></div>
+    <div class="fact"><dt>Approach</dt><dd>Rules first<small>Explicit logic where possible; machine learning only where it stops working</small></dd></div>
+    <div class="fact"><dt>Path to live</dt><dd>Nine phases<small>Autonomy earned in stages, each validated before the next</small></dd></div>
+  </dl>
+</div></section>
+<div class="shell">
+  <nav class="index-nav" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#s1"><span class="n">01</span><span>What we are building</span></a></li>
+      <li><a href="#s2"><span class="n">02</span><span>The perception problem</span></a></li>
+      <li><a href="#s3"><span class="n">03</span><span>The training problem</span></a></li>
+      <li><a href="#s4"><span class="n">04</span><span>Machine-readable method</span></a></li>
+      <li><a href="#s5"><span class="n">05</span><span>Real-time architecture</span></a></li>
+      <li><a href="#s6"><span class="n">06</span><span>How trades get placed</span></a></li>
+      <li><a href="#s7"><span class="n">07</span><span>The risk controller</span></a></li>
+      <li><a href="#s8"><span class="n">08</span><span>Phased roadmap</span></a></li>
+      <li><a href="#s9"><span class="n">09</span><span>Candidate stack</span></a></li>
+    </ol>
+    <div class="glossary-link"><a href="#glossary">Full glossary &rarr;</a></div>
+  </nav>
+
+  <main class="doc">
+<section class="sec" id="s1">
+  <p class="sec-no">01 — The shape of the system</p>
+  <h2>Five layers, each a different engineering problem</h2>
+  <p class="lead">
+    A conventional trading algorithm begins with mathematics that is already defined. Here, a
+    large part of phase one is discovering the rules themselves. The system splits cleanly into
+    five layers, and every layer fails for different reasons — so each is built and validated
+    separately.
+  </p>
+
+  <figure>
+    <div class="frame">
+      <svg viewBox="0 0 900 212" role="img" aria-label="A five-stage pipeline: Observe, Understand, Decide, Execute, Evaluate, with a feedback arrow returning from Evaluate to Understand.">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="currentColor"/></marker>
+          <marker id="ah-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="var(--tyrian)"/></marker>
+        </defs>
+        <rect class="d-box" x="15" y="46" width="150" height="62" rx="2"/>
+        <text class="d-t" x="90" y="72" text-anchor="middle">Observe</text>
+        <text class="d-s" x="90" y="90" text-anchor="middle">screen · audio · data</text>
+        <rect class="d-box" x="195" y="46" width="150" height="62" rx="2"/>
+        <text class="d-t" x="270" y="72" text-anchor="middle">Understand</text>
+        <text class="d-s" x="270" y="90" text-anchor="middle">market state</text>
+        <rect class="d-box-a" x="375" y="46" width="150" height="62" rx="2"/>
+        <text class="d-t" x="450" y="72" text-anchor="middle">Decide</text>
+        <text class="d-s" x="450" y="90" text-anchor="middle">trade · wait · ignore</text>
+        <rect class="d-box" x="555" y="46" width="150" height="62" rx="2"/>
+        <text class="d-t" x="630" y="72" text-anchor="middle">Execute</text>
+        <text class="d-s" x="630" y="90" text-anchor="middle">risk-checked order</text>
+        <rect class="d-box" x="735" y="46" width="150" height="62" rx="2"/>
+        <text class="d-t" x="810" y="72" text-anchor="middle">Evaluate</text>
+        <text class="d-s" x="810" y="90" text-anchor="middle">did it behave?</text>
+        <g class="d-line" marker-end="url(#ah)">
+          <line x1="167" y1="77" x2="191" y2="77"/>
+          <line x1="347" y1="77" x2="371" y2="77"/>
+          <line x1="527" y1="77" x2="551" y2="77"/>
+          <line x1="707" y1="77" x2="731" y2="77"/>
+        </g>
+        <path class="d-line-a" d="M810,110 V160 H270 V113" marker-end="url(#ah-a)" stroke-dasharray="5 4"/>
+        <text class="d-lab" x="540" y="180" text-anchor="middle">every decision is recorded and becomes training material</text>
+        <text class="d-s" x="15" y="26">PIPELINE</text>
+      </svg>
+    </div>
+    <figcaption>
+      <b>The loop, not the line.</b> The first four stages are what most people picture when they hear
+      "trading bot". The fifth is what makes the system improve: every decision — taken or declined
+      — is logged with the state that produced it and fed back into the method.
+    </figcaption>
+  </figure>
+
+  <p>
+    Keeping the layers separate has a practical payoff. The
+    <button class="term" data-k="perception-layer" type="button">perception layer</button> and the
+    execution layer are independent services, so the trading platform can be changed later without
+    retraining any of the trading intelligence.
+  </p>
+</section>
+<section class="sec" id="s2">
+  <p class="sec-no">02 — Observation</p>
+  <h2>The inputs are multimodal, not a spreadsheet of prices</h2>
+  <p class="lead">
+    The system needs access to substantially the same information the trader has in front of him.
+    That is video, graphics, sound, numbers, timing and human action arriving simultaneously —
+    which is why this is a <button class="term" data-k="computer-vision" type="button">computer-vision</button>
+    project as much as a market-data one.
+  </p>
+
+  <div class="chips">
+    <span class="chip">live chart movement</span>
+    <span class="chip">candlestick structure</span>
+    <span class="chip">price levels</span>
+    <span class="chip on">S949 oscillator</span>
+    <span class="chip on">Type 1 divergence</span>
+    <span class="chip on">Type 2 divergence</span>
+    <span class="chip on">Fibonacci retracement</span>
+    <span class="chip on">TickStrike order-flow meter</span>
+    <span class="chip on">TickStrike sounds &amp; alerts</span>
+    <span class="chip">order-flow behaviour</span>
+    <span class="chip">cursor activity</span>
+    <span class="chip">entries &amp; exits</span>
+    <span class="chip">position size</span>
+    <span class="chip">signal-to-execution timing</span>
+    <span class="chip">spoken commentary</span>
+    <span class="chip">deliberate non-entries</span>
+  </div>
+  <p class="small muted" style="font-size:13px;margin-top:-14px">
+    Highlighted chips are trading-specific tools — see
+    <button class="term" data-k="s949" type="button">S949</button>,
+    <button class="term" data-k="divergence" type="button">divergence</button>,
+    <button class="term" data-k="fibonacci" type="button">Fibonacci retracement</button> and
+    <button class="term" data-k="tickstrike" type="button">TickStrike</button> in the glossary.
+  </p>
+
+  <figure>
+    <div class="frame">
+      <svg viewBox="0 0 900 330" role="img" aria-label="Multiple input streams from screen, audio and market data converge on a perception engine, which produces a single structured market state, while the original recording is retained as the source of truth.">
+        <text class="d-s" x="12" y="20">RAW STREAMS</text>
+        <text class="d-s" x="352" y="20">PERCEPTION</text>
+        <text class="d-s" x="628" y="20">STRUCTURED STATE</text>
+        <g>
+          <rect class="d-box" x="12" y="36" width="196" height="28" rx="2"/>
+          <text class="d-t" x="24" y="55">Chart &amp; candles (video)</text>
+          <rect class="d-box" x="12" y="74" width="196" height="28" rx="2"/>
+          <text class="d-t" x="24" y="93">S949 oscillator shape</text>
+          <rect class="d-box" x="12" y="112" width="196" height="28" rx="2"/>
+          <text class="d-t" x="24" y="131">Fibonacci overlays</text>
+          <rect class="d-box" x="12" y="150" width="196" height="28" rx="2"/>
+          <text class="d-t" x="24" y="169">TickStrike meter</text>
+          <rect class="d-box" x="12" y="188" width="196" height="28" rx="2"/>
+          <text class="d-t" x="24" y="207">TickStrike audio</text>
+          <rect class="d-box" x="12" y="226" width="196" height="28" rx="2"/>
+          <text class="d-t" x="24" y="245">Cursor &amp; order actions</text>
+          <rect class="d-box" x="12" y="264" width="196" height="28" rx="2"/>
+          <text class="d-t" x="24" y="283">Spoken commentary</text>
+        </g>
+        <g class="d-line">
+          <path d="M208,50 C270,50 290,150 344,164"/>
+          <path d="M208,88 C270,88 290,150 344,164"/>
+          <path d="M208,126 C270,126 300,152 344,164"/>
+          <path d="M208,164 H344"/>
+          <path d="M208,202 C270,202 300,176 344,164"/>
+          <path d="M208,240 C270,240 290,178 344,164"/>
+          <path d="M208,278 C270,278 290,178 344,164"/>
+        </g>
+        <rect class="d-box-a" x="348" y="104" width="176" height="120" rx="2"/>
+        <text class="d-t" x="436" y="146" text-anchor="middle">Perception engine</text>
+        <text class="d-s" x="436" y="166" text-anchor="middle">vision · OCR · geometry</text>
+        <text class="d-s" x="436" y="182" text-anchor="middle">audio classification</text>
+        <text class="d-s" x="436" y="198" text-anchor="middle">temporal tracking</text>
+        <line class="d-line-a" x1="528" y1="164" x2="620" y2="164" marker-end="url(#ah-a)"/>
+        <text class="d-lab" x="574" y="152" text-anchor="middle">state</text>
+        <rect class="d-box" x="624" y="104" width="264" height="120" rx="2"/>
+        <text class="d-t" x="644" y="132">One timestamped snapshot</text>
+        <text class="d-s" x="644" y="154">price structure · divergence type</text>
+        <text class="d-s" x="644" y="172">fib level · flow direction</text>
+        <text class="d-s" x="644" y="190">context · confidence · trigger</text>
+        <text class="d-s" x="644" y="208">— machine-readable, replayable</text>
+        <path class="d-line" d="M110,292 V312 H756 V228" marker-end="url(#ah)" stroke-dasharray="4 4"/>
+        <text class="d-s" x="433" y="326" text-anchor="middle">ORIGINAL RECORDING RETAINED — RE-EXTRACTABLE IF A NEW FEATURE MATTERS LATER</text>
+      </svg>
+    </div>
+    <figcaption>
+      <b>Why the raw footage is kept.</b> Extraction is not a one-way door. If in six months a visual
+      feature turns out to matter that nobody thought to capture, the source recordings are still there
+      to re-derive it from. Discarding the video after the first extraction would permanently cap what
+      the dataset can ever contain.
+    </figcaption>
+  </figure>
+</section>
+<section class="sec" id="s3">
+  <p class="sec-no">03 — The central risk</p>
+  <h2>What happened is not the same as what should have happened</h2>
+  <p class="lead">
+    The single largest technical risk in this project is training the system to
+    <button class="term" data-k="imitation-learning" type="button">imitate</button> the trade
+    history. A trade taken out of frustration, hesitation or overconfidence looks identical in the
+    data to a trade taken by the book — and a pure imitation model will learn both with equal
+    enthusiasm.
+  </p>
+
+  <div class="pull">
+    An imitation model learns <em>“when the screen looks like this, enter.”</em>
+    The correct lesson is often <em>“the method says do not enter here — the human entered anyway.”</em>
+  </div>
+
+  <figure>
+    <div class="frame">
+      <svg viewBox="0 0 900 316" role="img" aria-label="A price track above two parallel timelines: the trader's observed actions and the method's intended actions. They agree on two events and diverge on two others: an emotional entry the method rejects, and a valid setup the trader skipped.">
+        <polyline class="d-line" points="60,86 130,62 190,96 250,74 320,110 390,52 450,88 510,66 570,104 630,78 700,118 760,70 820,98 860,80"/>
+        <text class="d-s" x="60" y="34">NQ PRICE — ONE SESSION</text>
+        <text class="d-s" x="60" y="152">OBSERVED · WHAT THE TRADER DID</text>
+        <line class="d-line" x1="60" y1="176" x2="864" y2="176" marker-end="url(#ah)"/>
+        <polygon points="180,168 188,182 172,182" fill="currentColor"/>
+        <text class="d-s" x="180" y="196" text-anchor="middle">ENTRY</text>
+        <polygon points="380,168 388,182 372,182" class="d-warn"/>
+        <text class="d-s" x="380" y="196" text-anchor="middle">ENTRY</text>
+        <polygon points="560,182 568,168 552,168" fill="currentColor"/>
+        <text class="d-s" x="560" y="196" text-anchor="middle">EXIT</text>
+        <circle cx="740" cy="176" r="5" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".4"/>
+        <text class="d-s" x="740" y="196" text-anchor="middle">NOTHING</text>
+        <text class="d-s" x="60" y="228">INTENDED · WHAT THE METHOD PRESCRIBES</text>
+        <line class="d-line" x1="60" y1="252" x2="864" y2="252" marker-end="url(#ah)"/>
+        <polygon points="180,244 188,258 172,258" fill="currentColor"/>
+        <text class="d-s" x="180" y="272" text-anchor="middle">ENTRY</text>
+        <circle cx="380" cy="252" r="7" fill="none" stroke="var(--aurum)" stroke-width="1.4"/>
+        <line x1="375" y1="257" x2="385" y2="247" stroke="var(--aurum)" stroke-width="1.4"/>
+        <text class="d-s" x="380" y="272" text-anchor="middle">NO TRADE</text>
+        <polygon points="560,258 568,244 552,244" fill="currentColor"/>
+        <text class="d-s" x="560" y="272" text-anchor="middle">EXIT</text>
+        <polygon points="740,244 748,258 732,258" fill="var(--tyrian)"/>
+        <text class="d-s" x="740" y="272" text-anchor="middle">ENTRY</text>
+        <line x1="380" y1="160" x2="380" y2="240" stroke="var(--aurum)" stroke-width="1.2" stroke-dasharray="4 4"/>
+        <line x1="740" y1="160" x2="740" y2="240" stroke="var(--tyrian)" stroke-width="1.2" stroke-dasharray="4 4"/>
+        <text class="d-s" x="380" y="300" text-anchor="middle" fill="#8C6412" opacity="1">DIVERGENCE — EMOTIONAL ENTRY, LABELLED "VIOLATION"</text>
+        <text class="d-s" x="740" y="300" text-anchor="middle" fill="var(--tyrian-deep)" opacity="1">DIVERGENCE — VALID SETUP, LABELLED "MISSED"</text>
+      </svg>
+    </div>
+    <figcaption>
+      <b>Two tracks, deliberately.</b> Training data has to carry both: the action and the verdict on
+      that action. Where the tracks agree, the example is a clean positive. Where they diverge, the
+      label — not the behaviour — is what the system learns from.
+    </figcaption>
+  </figure>
+
+  <h3>The label set the dataset needs</h3>
+  <ul class="plain">
+    <li><b>Correct trades</b> — the method executed as intended, entry and exit.</li>
+    <li><b>Incorrect trades</b> — premature entries, late entries, emotional entries, bad exits.</li>
+    <li><b>Missed trades</b> — a valid setup formed and no position was taken.</li>
+    <li><b>Near-signals and false signals</b> — conditions that resemble a setup but fail confirmation.</li>
+    <li><b>Ambiguous situations</b> — where the trader himself would not commit either way.</li>
+    <li><b>Correct no-trade periods</b> — doing nothing was the right decision.</li>
+  </ul>
+
+  <div class="callout">
+    <h3>The quiet periods carry as much signal as the trades</h3>
+    <p>
+      A system trained only on entries has never been shown what restraint looks like. Long stretches of
+      deliberate inaction are among the most valuable material in the entire dataset, and they cost
+      nothing extra to record.
+    </p>
+  </div>
+</section>
+<section class="sec" id="s4">
+  <p class="sec-no">04 — Formalisation</p>
+  <h2>Turning simultaneous intuition into a written state</h2>
+  <p class="lead">
+    The trader currently reads a dozen signals at once and arrives at a conclusion without
+    decomposing it. The system cannot do that. Every input has to be resolved into an explicit,
+    timestamped state that can be logged, replayed and argued with. Building this representation is
+    one of the core engineering tasks — and it will keep evolving as the methodology is documented.
+  </p>
+
+  <div class="readout">
+    <span class="g">Instrument</span>
+    <span class="k">market</span> &nbsp;<span class="v">NASDAQ futures — NQ</span><br>
+    <span class="k">time</span> &nbsp;&nbsp;&nbsp;<span class="v">09:47:12.480</span>
+    <span class="g">Price structure</span>
+    <span class="k">swing high</span> &nbsp;<span class="v">identified, 3m ago</span><br>
+    <span class="k">momentum</span> &nbsp;&nbsp;<span class="v">weakening short-term</span>
+    <span class="g">S949 oscillator</span>
+    <span class="k">oscillator</span> &nbsp;<span class="v">rising</span><br>
+    <span class="k">price</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="v">falling</span><br>
+    <span class="k">divergence</span> &nbsp;<span class="v-a">detected — Type 1</span>
+    <span class="g">Fibonacci</span>
+    <span class="k">level</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="v-a">price at 61.8% retracement</span>
+    <span class="g">TickStrike</span>
+    <span class="k">intensity</span> &nbsp;&nbsp;<span class="v">increasing</span><br>
+    <span class="k">direction</span> &nbsp;&nbsp;<span class="v">buyers</span><br>
+    <span class="k">accel</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="v">recent burst detected</span>
+    <span class="g">Context</span>
+    <span class="k">prior div</span> &nbsp;&nbsp;<span class="v">3 minutes ago</span><br>
+    <span class="k">move</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="v">extended</span><br>
+    <span class="k">volatility</span> &nbsp;<span class="v-w">elevated</span>
+    <span class="g">Methodology verdict</span>
+    <span class="k">confidence</span> <span class="v-a">high</span><br>
+    <span class="k">action</span> &nbsp;&nbsp;&nbsp;&nbsp;<span class="v-a">prepare long</span><br>
+    <span class="k">trigger</span> &nbsp;&nbsp;&nbsp;<span class="v-w">not yet satisfied — hold</span>
+  </div>
+
+  <h3>How the method gets taught, in order</h3>
+  <p>
+    The first stage is deliberately not "train a large neural network". Starting with an opaque
+    model before the methodology is understood produces a
+    <button class="term" data-k="black-box" type="button">black box</button> nobody can audit or
+    correct. The progression instead runs:
+  </p>
+  <ul class="plain">
+    <li><b>1 &middot; Document the methodology</b> — translate the trader's reasoning into explicit concepts.</li>
+    <li><b>2 &middot; Build automated observation</b> — teach the system to recognise the indicators and conditions.</li>
+    <li><b>3 &middot; Create a structured timeline</b> — convert sessions into machine-readable sequences.</li>
+    <li><b>4 &middot; Build the human-reviewed gold set</b> — the trader marks what the system saw right, what it misread, and what the correct decision was.</li>
+    <li><b>5 &middot; Build the first decision model</b> — explicit rules and measurable conditions wherever they hold.</li>
+    <li><b>6 &middot; Add learning only where rules break</b> — <button class="term" data-k="supervised-learning" type="button">supervised models</button>, <button class="term" data-k="sequence-model" type="button">sequence models</button>, imitation and preference learning, <button class="term" data-k="reinforcement-learning" type="button">reinforcement learning</button>, <button class="term" data-k="vlm" type="button">multimodal vision-language models</button>.</li>
+  </ul>
+  <p>
+    Machine learning is introduced where deterministic logic demonstrably runs out — not before,
+    and not as the default.
+  </p>
+
+  <h3>Where an outside specialist earns their fee</h3>
+  <p>
+    Several parts of this cross into specialised visual computing: recognising indicator states and
+    divergence shapes directly from video, tracking what changed over the last 200&nbsp;milliseconds
+    versus the last several minutes, and recovering values from the screen when a platform exposes
+    no <button class="term" data-k="api" type="button">API</button>. A computer-vision expert is
+    most valuable as a <strong>technical reviewer</strong> at these decision points — choosing
+    between conventional CV, neural vision models, multimodal AI or a hybrid — rather than as
+    another pair of hands. One review at the right moment can prevent months spent on the wrong
+    architecture.
+  </p>
+</section>
+<section class="sec" id="s5">
+  <p class="sec-no">05 — Runtime</p>
+  <h2>Perception and execution are separate systems</h2>
+  <p class="lead">
+    Once the method can be recognised reliably, it has to run continuously. The architecture below
+    is deliberately split: everything that understands the market sits on one side of the decision
+    engine, everything that touches a broker sits on the other.
+  </p>
+
+  <figure>
+    <div class="frame">
+      <svg viewBox="0 0 900 718" role="img" aria-label="Vertical runtime architecture: market and interface feed capture, perception engine and trading state model, which reach the decision engine; the decision engine's output passes through a risk controller, an execution adapter and finally the trading platform. Perception and execution are grouped as separately swappable subsystems.">
+        <rect x="126" y="92" width="368" height="252" rx="4" fill="none" stroke="var(--tyrian)" stroke-width="1" stroke-dasharray="4 4" opacity=".7"/>
+        <text class="d-lab" transform="rotate(-90 116 218)" x="116" y="218" text-anchor="middle">PERCEPTION · PORTABLE</text>
+        <rect x="126" y="436" width="368" height="252" rx="4" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity=".45"/>
+        <text class="d-s" transform="rotate(-90 116 562)" x="116" y="562" text-anchor="middle">EXECUTION · SWAPPABLE</text>
+        <rect class="d-box" x="150" y="20" width="320" height="52" rx="2"/>
+        <text class="d-t" x="310" y="51" text-anchor="middle">Market + trading interface</text>
+        <rect class="d-box" x="150" y="106" width="320" height="52" rx="2"/>
+        <text class="d-t" x="310" y="130" text-anchor="middle">Capture</text>
+        <text class="d-s" x="310" y="148" text-anchor="middle">screen · audio · market data</text>
+        <rect class="d-box" x="150" y="192" width="320" height="52" rx="2"/>
+        <text class="d-t" x="310" y="223" text-anchor="middle">Perception engine</text>
+        <rect class="d-box" x="150" y="278" width="320" height="52" rx="2"/>
+        <text class="d-t" x="310" y="309" text-anchor="middle">Trading state model</text>
+        <rect class="d-box-a" x="150" y="364" width="320" height="52" rx="2"/>
+        <text class="d-t" x="310" y="395" text-anchor="middle">Decision engine</text>
+        <rect class="d-box" x="150" y="450" width="320" height="52" rx="2"/>
+        <text class="d-t" x="310" y="481" text-anchor="middle">Risk / execution controller</text>
+        <rect class="d-box" x="150" y="536" width="320" height="52" rx="2"/>
+        <text class="d-t" x="310" y="567" text-anchor="middle">Execution adapter</text>
+        <rect class="d-box" x="150" y="622" width="320" height="52" rx="2"/>
+        <text class="d-t" x="310" y="653" text-anchor="middle">Trading platform</text>
+        <g class="d-line" marker-end="url(#ah)">
+          <line x1="310" y1="74" x2="310" y2="102"/>
+          <line x1="310" y1="160" x2="310" y2="188"/>
+          <line x1="310" y1="246" x2="310" y2="274"/>
+          <line x1="310" y1="332" x2="310" y2="360"/>
+          <line x1="310" y1="418" x2="310" y2="446"/>
+          <line x1="310" y1="504" x2="310" y2="532"/>
+          <line x1="310" y1="590" x2="310" y2="618"/>
+        </g>
+        <path class="d-line" d="M474,218 H510"/>
+        <g>
+          <rect class="d-box" x="516" y="176" width="170" height="26" rx="2"/>
+          <text class="d-s" x="528" y="193">price structure</text>
+          <rect class="d-box" x="516" y="208" width="170" height="26" rx="2"/>
+          <text class="d-s" x="528" y="225">S949 oscillator</text>
+          <rect class="d-box" x="516" y="240" width="170" height="26" rx="2"/>
+          <text class="d-s" x="528" y="257">divergence type</text>
+          <rect class="d-box" x="700" y="176" width="170" height="26" rx="2"/>
+          <text class="d-s" x="712" y="193">fibonacci levels</text>
+          <rect class="d-box" x="700" y="208" width="170" height="26" rx="2"/>
+          <text class="d-s" x="712" y="225">TickStrike flow</text>
+          <rect class="d-box" x="700" y="240" width="170" height="26" rx="2"/>
+          <text class="d-s" x="712" y="257">session context</text>
+        </g>
+        <path class="d-line-a" d="M474,390 H510"/>
+        <g>
+          <rect class="d-box-a" x="516" y="348" width="170" height="26" rx="2"/>
+          <text class="d-s" x="528" y="365">no trade</text>
+          <rect class="d-box-a" x="516" y="380" width="170" height="26" rx="2"/>
+          <text class="d-s" x="528" y="397">prepare</text>
+          <rect class="d-box-a" x="516" y="412" width="170" height="26" rx="2"/>
+          <text class="d-s" x="528" y="429">enter</text>
+          <rect class="d-box-a" x="700" y="348" width="170" height="26" rx="2"/>
+          <text class="d-s" x="712" y="365">hold</text>
+          <rect class="d-box-a" x="700" y="380" width="170" height="26" rx="2"/>
+          <text class="d-s" x="712" y="397">reduce</text>
+          <rect class="d-box-a" x="700" y="412" width="170" height="26" rx="2"/>
+          <text class="d-s" x="712" y="429">exit</text>
+        </g>
+        <path class="d-line" d="M474,564 H560 V620" marker-end="url(#ah)" stroke-dasharray="4 4"/>
+        <text class="d-s" x="576" y="568">one of four paths — see 06</text>
+        <path class="d-line" d="M470,648 H720 V690 H60 V400 H146" marker-end="url(#ah)" stroke-dasharray="4 4"/>
+        <text class="d-s" x="392" y="710" text-anchor="middle">FILL CONFIRMATION AND POSITION STATE RETURN TO THE DECISION ENGINE</text>
+      </svg>
+    </div>
+    <figcaption>
+      <b>Why the split matters commercially.</b> The trading intelligence is the asset; the broker
+      connection is plumbing. Because the decision engine only emits abstract intents — enter,
+      reduce, exit — the platform underneath can be replaced without retraining anything above it.
+    </figcaption>
+  </figure>
+</section>
+<section class="sec" id="s6">
+  <p class="sec-no">06 — Execution</p>
+  <h2>Four ways to reach the market, chosen per component</h2>
+  <p class="lead">
+    The final execution mechanism has not been selected, and it does not have to be a single
+    choice. The options differ mainly in how many hops sit between the decision and the fill — and
+    every extra hop is somewhere the order can be delayed, misread or lost.
+  </p>
+
+  <figure>
+    <div class="frame">
+      <svg viewBox="0 0 900 406" role="img" aria-label="Four execution routes from the decision engine to the broker, drawn as parallel lanes with increasing numbers of intermediate hops: direct API with none, native platform add-on with one, browser automation with one, and human-like GUI control with two.">
+        <rect class="d-box" x="10" y="30" width="86" height="352" rx="2"/>
+        <text class="d-t" transform="rotate(-90 53 206)" x="53" y="206" text-anchor="middle">DECISION ENGINE</text>
+        <rect class="d-box" x="804" y="30" width="86" height="352" rx="2"/>
+        <text class="d-t" transform="rotate(-90 847 206)" x="847" y="206" text-anchor="middle">BROKER / MARKET</text>
+        <text class="d-lab" x="106" y="52">A · DIRECT BROKER API</text>
+        <text class="d-s" x="796" y="52" text-anchor="end">0 HOPS</text>
+        <line class="d-line-a" x1="100" y1="74" x2="798" y2="74" marker-end="url(#ah-a)"/>
+        <text class="d-s" x="106" y="94">BUY 1 NQ MARKET · STOP 20 · TARGET 35 — REST / WebSocket / FIX</text>
+        <text class="d-lab" x="106" y="142">B · NATIVE PLATFORM INTEGRATION</text>
+        <text class="d-s" x="796" y="142" text-anchor="end">1 HOP</text>
+        <g class="d-line" marker-end="url(#ah)">
+          <line x1="100" y1="164" x2="372" y2="164"/>
+          <line x1="574" y1="164" x2="798" y2="164"/>
+        </g>
+        <rect class="d-box" x="376" y="147" width="196" height="34" rx="2"/>
+        <text class="d-t" x="474" y="169" text-anchor="middle">NinjaScript add-on</text>
+        <text class="d-s" x="106" y="196">EXPOSES POSITIONS, FILLS, BID/ASK AND INDICATORS THE TRADER ALREADY USES</text>
+        <text class="d-lab" x="106" y="232">C · BROWSER AUTOMATION</text>
+        <text class="d-s" x="796" y="232" text-anchor="end">1 HOP</text>
+        <g class="d-line" marker-end="url(#ah)">
+          <line x1="100" y1="254" x2="372" y2="254"/>
+          <line x1="574" y1="254" x2="798" y2="254"/>
+        </g>
+        <rect class="d-box" x="376" y="237" width="196" height="34" rx="2"/>
+        <text class="d-t" x="474" y="259" text-anchor="middle">Playwright / Puppeteer</text>
+        <text class="d-s" x="106" y="286">DRIVES THE WEB TRADING UI WHEN NO API EXISTS</text>
+        <text class="d-lab" x="106" y="322">D · HUMAN-LIKE GUI CONTROL</text>
+        <text class="d-s" x="796" y="322" text-anchor="end">2 HOPS</text>
+        <g class="d-line" marker-end="url(#ah)">
+          <line x1="100" y1="344" x2="288" y2="344"/>
+          <line x1="454" y1="344" x2="522" y2="344"/>
+          <line x1="700" y1="344" x2="798" y2="344"/>
+        </g>
+        <rect class="d-box" x="292" y="327" width="158" height="34" rx="2"/>
+        <text class="d-t" x="371" y="349" text-anchor="middle">Visual state read</text>
+        <rect class="d-box" x="526" y="327" width="170" height="34" rx="2"/>
+        <text class="d-t" x="611" y="349" text-anchor="middle">Mouse + keyboard</text>
+        <text class="d-s" x="106" y="376">SCREEN RE-VERIFIED AFTER EVERY CLICK — NOT A REPLAYED MACRO</text>
+      </svg>
+    </div>
+    <figcaption>
+      <b>The choice is a hop count, not a philosophy.</b> Route A is preferred wherever the broker
+      supports it. Each route below it exists to bridge a platform that was never designed for
+      automation — at the cost of one more component that must be verified at runtime.
+    </figcaption>
+  </figure>
+
+  <div class="opts">
+    <div class="opt pref">
+      <div class="opt-h">Proposal A</div>
+      <h4>Direct broker <button class="term" data-k="api" type="button">API</button></h4>
+      <p>Structured commands translated straight into the broker's protocol. Fast, deterministic, easy
+      to log and test, with precise order status and direct fill confirmation.</p>
+      <div class="verdict"><b>Verdict</b>Preferred path wherever it is available.</div>
+    </div>
+    <div class="opt">
+      <div class="opt-h">Proposal B</div>
+      <h4>Native platform integration</h4>
+      <p>A <button class="term" data-k="ninjascript" type="button">NinjaScript</button> or C# add-on
+      inside the platform, bridged over local <button class="term" data-k="websocket" type="button">WebSocket</button>
+      or REST. May expose more than a generic broker API — chart state, indicators, live position.</p>
+      <div class="verdict"><b>Verdict</b>Potentially richer than A; same environment the trader uses.</div>
+    </div>
+    <div class="opt">
+      <div class="opt-h">Proposal C</div>
+      <h4>Browser automation</h4>
+      <p>Chromium under automation identifies interface elements and works the order ticket: instrument,
+      order type, quantity, submit, confirm.</p>
+      <div class="verdict"><b>Verdict</b>Bridges web platforms with no API.</div>
+    </div>
+    <div class="opt">
+      <div class="opt-h">Proposal D</div>
+      <h4>Human-like GUI control</h4>
+      <p>Vision plus mouse and keyboard, verifying the application's state at each step: confirm
+      instrument, confirm position, locate control, check quantity, click, observe fill, confirm result
+      — and halt if the expected state is not seen.</p>
+      <div class="verdict"><b>Verdict</b>Last-resort bridge and emergency fallback.</div>
+    </div>
+  </div>
+
+  <h3>Proposal E — the hybrid, and the likely answer</h3>
+  <p>
+    Nothing requires every part of the system to use the same interface. The strongest available
+    method can be used for each component independently:
+  </p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th scope="col">Component</th><th scope="col">Route</th></tr></thead>
+      <tbody>
+        <tr><td class="fn">Market data</td><td><span class="mono">Broker API</span></td></tr>
+        <tr><td class="fn">Indicator values</td><td><span class="mono">Native platform integration</span></td></tr>
+        <tr><td class="fn">TickStrike</td><td><span class="mono">Audio + visual recognition</span></td></tr>
+        <tr><td class="fn">Trading decision</td><td><span class="mono">AI decision engine</span></td></tr>
+        <tr><td class="fn">Position status</td><td><span class="mono">Broker API</span></td></tr>
+        <tr><td class="fn">Order execution</td><td><span class="mono">Platform integration</span></td></tr>
+        <tr><td class="fn">Emergency fallback</td><td><span class="mono">GUI automation</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="sec" id="s7">
+  <p class="sec-no">07 — Containment</p>
+  <h2>The AI requests trades; something else permits them</h2>
+  <p class="lead">
+    Whichever execution route is chosen, the trading intelligence should never hold direct control
+    of the account. An independent risk controller sits between the decision and the order, and it
+    is the component with final authority.
+  </p>
+
+  <figure>
+    <div class="frame">
+      <svg viewBox="0 0 880 232" role="img" aria-label="Two requests from the AI pass through an independent risk controller: a four-contract order is clamped to two, and an order outside permitted hours is rejected and logged.">
+        <text class="d-s" x="20" y="24">AI REQUEST</text>
+        <text class="d-s" x="344" y="24">INDEPENDENT CONTROLLER</text>
+        <text class="d-s" x="860" y="24" text-anchor="end">ACTUAL ORDER</text>
+        <rect class="d-box-a" x="20" y="40" width="280" height="48" rx="2"/>
+        <text class="d-t" x="38" y="70">BUY 4 contracts — NQ</text>
+        <rect class="d-box-a" x="20" y="140" width="280" height="48" rx="2"/>
+        <text class="d-t" x="38" y="170">BUY 2 contracts — outside hours</text>
+        <rect class="d-box" x="340" y="34" width="200" height="160" rx="2"/>
+        <text class="d-t" x="440" y="98" text-anchor="middle">Risk controller</text>
+        <text class="d-s" x="440" y="118" text-anchor="middle">max size · daily loss</text>
+        <text class="d-s" x="440" y="134" text-anchor="middle">hours · frequency</text>
+        <text class="d-s" x="440" y="150" text-anchor="middle">stale data · kill switch</text>
+        <line class="d-line-a" x1="304" y1="64" x2="336" y2="64" marker-end="url(#ah-a)"/>
+        <line class="d-line-a" x1="304" y1="164" x2="336" y2="164" marker-end="url(#ah-a)"/>
+        <line class="d-line-a" x1="544" y1="64" x2="576" y2="64" marker-end="url(#ah-a)"/>
+        <text class="d-lab" x="560" y="54" text-anchor="middle">clamped</text>
+        <rect class="d-box" x="580" y="40" width="280" height="48" rx="2"/>
+        <text class="d-t" x="598" y="70">BUY 2 contracts — max permitted</text>
+        <line x1="544" y1="164" x2="576" y2="164" stroke="var(--aurum)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#ah)"/>
+        <text class="d-s" x="560" y="154" text-anchor="middle" fill="#8C6412" opacity="1">blocked</text>
+        <rect x="580" y="140" width="280" height="48" rx="2" fill="#FBF6EA" stroke="var(--aurum)"/>
+        <text class="d-t" x="598" y="170">No order — rejected and logged</text>
+      </svg>
+    </div>
+    <figcaption>
+      <b>Separation of powers.</b> The intelligence proposes; the controller disposes. This one
+      boundary removes the largest category of technical risk in the project, because a model
+      failure becomes a blocked order rather than an unbounded position.
+    </figcaption>
+  </figure>
+
+  <h3>What the controller enforces</h3>
+  <ul class="plain">
+    <li><b>Position and loss limits</b> — maximum size, maximum daily loss, maximum trades per period.</li>
+    <li><b>Scope limits</b> — permitted instruments, permitted trading hours, mandatory stop-loss on every entry.</li>
+    <li><b>Order hygiene</b> — maximum order frequency, duplicate-order prevention.</li>
+    <li><b>Health checks</b> — stale-data detection, loss of market data, missing execution confirmation.</li>
+    <li><b>Emergency shutdown</b> — a single switch that stops all activity regardless of what the model wants.</li>
+  </ul>
+</section>
+<section class="sec" id="s8">
+  <p class="sec-no">08 — Roadmap</p>
+  <h2>Autonomy is earned one phase at a time</h2>
+  <p class="lead">
+    The system becomes progressively more autonomous rather than jumping to automated live trading.
+    Each phase produces something reviewable on its own, and no phase begins until the previous one
+    has been validated against the trader's judgment.
+  </p>
+
+  <figure>
+    <div class="frame">
+      <svg viewBox="0 0 900 346" role="img" aria-label="A nine-step staircase showing machine autonomy rising and human control falling across the project phases, with real capital first committed at phase eight.">
+        <line class="d-line" x1="56" y1="292" x2="880" y2="292"/>
+        <text class="d-s" transform="rotate(-90 26 176)" x="26" y="176" text-anchor="middle">MACHINE AUTONOMY</text>
+        <g fill="var(--tyrian)" stroke="var(--tyrian)" stroke-width="1">
+          <rect x="60" y="265" width="85" height="27" fill-opacity=".08"/>
+          <rect x="149" y="240" width="85" height="52" fill-opacity=".12"/>
+          <rect x="238" y="215" width="85" height="77" fill-opacity=".16"/>
+          <rect x="327" y="190" width="85" height="102" fill-opacity=".2"/>
+          <rect x="416" y="165" width="85" height="127" fill-opacity=".25"/>
+          <rect x="505" y="140" width="85" height="152" fill-opacity=".3"/>
+          <rect x="594" y="115" width="85" height="177" fill-opacity=".36"/>
+          <rect x="683" y="90" width="85" height="202" fill-opacity=".43"/>
+          <rect x="772" y="65" width="85" height="227" fill-opacity=".5"/>
+        </g>
+        <g class="d-s" opacity=".95">
+          <text transform="rotate(-90 102 285)" x="102" y="285">OBSERVATION</text>
+          <text transform="rotate(-90 191 285)" x="191" y="285">METHOD RECONSTRUCTION</text>
+          <text transform="rotate(-90 280 285)" x="280" y="285">AUTOMATED RECOGNITION</text>
+          <text transform="rotate(-90 369 285)" x="369" y="285">AI COMMENTARY</text>
+          <text transform="rotate(-90 458 285)" x="458" y="285">HISTORICAL SIMULATION</text>
+          <text transform="rotate(-90 547 285)" x="547" y="285">PAPER TRADING</text>
+          <text transform="rotate(-90 636 285)" x="636" y="285">LIVE ASSISTANT</text>
+          <text transform="rotate(-90 725 285)" x="725" y="285">CONTROLLED EXECUTION</text>
+          <text transform="rotate(-90 814 285)" x="814" y="285">EXPANDED AUTONOMY</text>
+        </g>
+        <line x1="679" y1="40" x2="679" y2="300" stroke="var(--aurum)" stroke-width="1.3" stroke-dasharray="5 4"/>
+        <text class="d-s" x="671" y="34" text-anchor="end" fill="#8C6412" opacity="1">NO CAPITAL AT RISK</text>
+        <text class="d-s" x="687" y="34" fill="#8C6412" opacity="1">REAL CAPITAL, BOUNDED</text>
+        <g class="d-s">
+          <text x="102" y="312" text-anchor="middle">1</text>
+          <text x="191" y="312" text-anchor="middle">2</text>
+          <text x="280" y="312" text-anchor="middle">3</text>
+          <text x="369" y="312" text-anchor="middle">4</text>
+          <text x="458" y="312" text-anchor="middle">5</text>
+          <text x="547" y="312" text-anchor="middle">6</text>
+          <text x="636" y="312" text-anchor="middle">7</text>
+          <text x="725" y="312" text-anchor="middle">8</text>
+          <text x="814" y="312" text-anchor="middle">9</text>
+        </g>
+        <text class="d-s" x="458" y="338" text-anchor="middle">PHASE</text>
+      </svg>
+    </div>
+    <figcaption>
+      <b>Where the line falls.</b> Everything through phase&nbsp;7 runs on recordings, simulations or
+      human-approved orders. The first automated order against real capital does not happen until
+      phase&nbsp;8, inside the risk boundaries described in section&nbsp;07.
+    </figcaption>
+  </figure>
+
+  <div class="phases">
+    <div class="ph"><span class="n">PHASE 1</span><h4>Observation</h4><p>Record and study trading sessions in full.</p></div>
+    <div class="ph"><span class="n">PHASE 2</span><h4>Method reconstruction</h4><p>Document how the signals actually interact.</p></div>
+    <div class="ph"><span class="n">PHASE 3</span><h4>Automated recognition</h4><p>The system identifies S949, divergence, Fibonacci, TickStrike and context — and places no trades.</p></div>
+    <div class="ph"><span class="n">PHASE 4</span><h4>AI commentary</h4><p>It watches live and says what it sees — "possible Type&nbsp;1 forming", "resembles a setup but TickStrike confirmation is missing". The trader corrects it.</p></div>
+    <div class="ph"><span class="n">PHASE 5</span><h4>Historical simulation</h4><p>The decision system is run against past sessions end to end.</p></div>
+    <div class="ph"><span class="n">PHASE 6</span><h4>Paper trading</h4><p>Complete decisions in a simulated environment.</p></div>
+    <div class="ph"><span class="n">PHASE 7</span><h4>Live assistant</h4><p>The AI proposes; a human approves and executes.</p></div>
+    <div class="ph live"><span class="n">PHASE 8</span><h4>Controlled execution</h4><p>Automated trading within tightly defined risk boundaries.</p></div>
+    <div class="ph live"><span class="n">PHASE 9</span><h4>Expanded autonomy</h4><p>Wider latitude, only after sustained validation.</p></div>
+  </div>
+
+  <p>
+    Phase&nbsp;4 deserves particular attention: it is the cheapest possible way to find out whether
+    the system has actually understood the method. A running commentary can be corrected in real
+    time by the trader, and every correction is a labelled training example.
+  </p>
+</section>
+<section class="sec" id="s9">
+  <p class="sec-no">09 — Technology</p>
+  <h2>Candidate stack, deliberately uncommitted</h2>
+  <p class="lead">
+    There is no reason yet to lock in a single stack, and the final architecture will almost
+    certainly be hybrid rather than resting on one model or one vendor. These are the credible
+    candidates per function.
+  </p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th scope="col">Function</th><th scope="col">Candidate technologies</th></tr></thead>
+      <tbody>
+        <tr><td class="fn">Video capture</td><td><span class="mono"><button class="term" data-k="obs" type="button">OBS</button></span></td></tr>
+        <tr><td class="fn">Video processing</td><td><span class="mono"><button class="term" data-k="ffmpeg" type="button">FFmpeg</button></span></td></tr>
+        <tr><td class="fn">Image processing</td><td><span class="mono"><button class="term" data-k="opencv" type="button">OpenCV</button></span></td></tr>
+        <tr><td class="fn">Visual recognition</td><td><span class="mono"><button class="term" data-k="yolo" type="button">YOLO</button> · <button class="term" data-k="vision-transformer" type="button">vision transformers</button> · <button class="term" data-k="vlm" type="button">multimodal models</button></span></td></tr>
+        <tr><td class="fn">Audio processing</td><td><span class="mono"><button class="term" data-k="whisper" type="button">Whisper</button> · audio classifiers</span></td></tr>
+        <tr><td class="fn">TickStrike interpretation</td><td><span class="mono">Audio analysis + visual recognition</span></td></tr>
+        <tr><td class="fn">Data processing</td><td><span class="mono"><button class="term" data-k="python" type="button">Python</button></span></td></tr>
+        <tr><td class="fn">High-performance components</td><td><span class="mono"><button class="term" data-k="cpp-rust" type="button">C++ · Rust</button></span></td></tr>
+        <tr><td class="fn">Platform integration</td><td><span class="mono">C# · <button class="term" data-k="ninjascript" type="button">NinjaScript</button></span></td></tr>
+        <tr><td class="fn">State storage</td><td><span class="mono"><button class="term" data-k="postgresql" type="button">PostgreSQL</button> · <button class="term" data-k="timescaledb" type="button">TimescaleDB</button></span></td></tr>
+        <tr><td class="fn">Fast event storage</td><td><span class="mono"><button class="term" data-k="redis" type="button">Redis</button></span></td></tr>
+        <tr><td class="fn">Training</td><td><span class="mono"><button class="term" data-k="pytorch" type="button">PyTorch</button></span></td></tr>
+        <tr><td class="fn">Experiment compute</td><td><span class="mono"><button class="term" data-k="runpod" type="button">RunPod</button> <button class="term" data-k="gpu" type="button">GPUs</button></span></td></tr>
+        <tr><td class="fn">Local inference</td><td><span class="mono">Dedicated GPU workstation / server</span></td></tr>
+        <tr><td class="fn">Browser control</td><td><span class="mono"><button class="term" data-k="playwright" type="button">Playwright</button> · <button class="term" data-k="puppeteer" type="button">Puppeteer</button></span></td></tr>
+        <tr><td class="fn">Desktop control</td><td><span class="mono">Windows UI Automation · OpenCV · custom agent</span></td></tr>
+        <tr><td class="fn">Broker communication</td><td><span class="mono"><button class="term" data-k="rest" type="button">REST</button> · <button class="term" data-k="websocket" type="button">WebSocket</button> · <button class="term" data-k="fix" type="button">FIX</button> · native broker APIs</span></td></tr>
+        <tr><td class="fn">Monitoring</td><td><span class="mono">Custom telemetry and replay</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="close">
+    <p class="big">
+      The difficult part is not sending a buy order. It is making a machine
+      <em>recognise the same situation</em> a skilled human already recognises.
+    </p>
+    <p>
+      The project sits at the intersection of market-data engineering, computer vision, audio
+      analysis, temporal modelling, machine learning, human decision modelling, real-time software
+      and execution infrastructure. And it carries one requirement beyond all of those: the system
+      has to learn not merely what the trader did, but what he was trying to do when operating
+      according to the method at its best.
+    </p>
+    <p>
+      That distinction is what separates a trade copier from a genuine encoding of a methodology.
+      The long-term asset is therefore not a bot. It is a structured digital representation of the
+      trading method, together with the perception, decision, risk and execution infrastructure
+      required to apply it consistently and at machine speed.
+    </p>
+  </div>
+</section>
+  </main>
+</div>
+<section class="glossary" id="glossary"><div class="wrap">
+  <div class="eyebrow">Reference</div>
+  <h2>Full glossary</h2>
+  <p class="lead">Every technical, trading, and AI term used on this page, in plain language. This
+  list is generated from the same definitions used in the inline tooltips above.</p>
+  <dl class="gloss-grid" id="gloss-grid"></dl>
+</div></section>
+<footer><div class="wrap">
+  <p class="tagline">Power that stays. Help that leaves.</p>
+  <div class="legal-row small muted" style="margin-top:24px">
+    <span>&copy; 2026 Tribune Inc.</span>
+    <span>This page is confidential and intended for client review only.</span>
+    <span><a href="/">Back to tribuneinc.com</a></span>
+  </div>
+</div></footer>
+<script src="/assets/site.js"></script>
+<script>
+(function(){
+  var TERMS = {
+    "nq": ["NQ", "The ticker symbol for the E-mini Nasdaq-100 futures contract — a standardized agreement to buy or sell the Nasdaq-100 index at a set price on a future date. It is the specific market this trading system is designed to trade."],
+    "perception-layer": ["Perception layer", "The part of the system responsible for 'seeing' — reading the chart, indicators, and sounds — and turning them into data, as opposed to the part that decides what to do with that data."],
+    "computer-vision": ["Computer vision", "A field of AI focused on teaching computers to interpret images and video — for example, recognizing chart patterns or reading an indicator's shape directly from the screen, the way a person would look at it."],
+    "s949": ["S949", "A custom momentum oscillator (a chart indicator by Rob Mitchell / Ninza.co) used by the trader to spot shifts in market momentum. Its shape relative to price is central to this trading method."],
+    "divergence": ["Divergence (Type 1 / Type 2)", "A situation where price moves one way but an indicator (like S949) moves the opposite way — often a signal that the current price move is losing strength. 'Type 1' and 'Type 2' are the trader's own naming for two distinct divergence patterns with different reliability and follow-through."],
+    "fibonacci": ["Fibonacci retracement", "A charting tool that marks specific percentage levels (such as 38.2%, 50%, 61.8%) between a recent high and low. Traders watch these levels as places price is statistically likely to pause, reverse, or accelerate."],
+    "tickstrike": ["TickStrike", "A third-party order-flow tool that visualizes and sounds alerts based on real-time buying/selling pressure ('order flow') in the market — effectively a live gauge of who is currently more aggressive, buyers or sellers."],
+    "imitation-learning": ["Imitation learning", "A machine-learning approach where a model learns by copying examples of past behavior. The risk highlighted in this document: if the past behavior included mistakes, the model copies the mistakes too, unless the data is explicitly labeled right vs. wrong."],
+    "black-box": ["Black box (AI)", "An AI model whose internal decision-making can't be easily inspected or explained — it takes inputs and produces outputs, but a human can't clearly see 'why' it decided what it decided. The opposite of an explicit, rules-based system."],
+    "supervised-learning": ["Supervised learning", "A machine-learning method where a model is trained on labeled examples (input paired with the correct answer) so it can learn to predict the answer for new, unseen inputs."],
+    "sequence-model": ["Sequence model", "A type of AI model designed to understand data that unfolds over time (a 'sequence') — like a series of price moves or chart states in order — rather than a single snapshot."],
+    "reinforcement-learning": ["Reinforcement learning", "A machine-learning method where a model learns by trial and error, receiving a reward or penalty for its actions, and gradually improving its strategy to earn more reward — conceptually similar to how a person learns a game."],
+    "vlm": ["Vision-language model (multimodal AI)", "An AI model that can process more than one type of input at once — for example, looking at an image (like a chart) and reasoning about it in words simultaneously. 'Multimodal' means it handles multiple types of data (vision + text) together."],
+    "api": ["API (Application Programming Interface)", "A defined way for two pieces of software to talk to each other. A 'broker API' lets a trading program send orders and receive data directly from a brokerage's computers, without a human clicking buttons."],
+    "ninjascript": ["NinjaScript", "The custom programming language used to build add-ons and automated strategies inside NinjaTrader, a popular futures trading platform. Used here as a possible way to plug directly into the trader's existing software."],
+    "websocket": ["WebSocket", "A technology that keeps a constant, always-open connection between two computers so data (like live prices) can stream back and forth instantly, instead of one side having to repeatedly ask 'anything new?'"],
+    "rest": ["REST (API)", "A common, standardized style of building web APIs. When you see 'REST', think: a conventional, request-and-response way for software to talk to a server over the internet."],
+    "fix": ["FIX (protocol)", "Financial Information eXchange — an industry-standard messaging format that banks, brokers, and exchanges use to send trade orders and market data to each other electronically."],
+    "obs": ["OBS (Open Broadcaster Software)", "Free, widely used software for recording or streaming your screen — the tool that would capture the trader's monitor and audio for later analysis."],
+    "ffmpeg": ["FFmpeg", "A free command-line tool used to convert, edit, and process video and audio files — the industry-standard 'Swiss army knife' for video processing."],
+    "opencv": ["OpenCV", "A free, open-source software library (a collection of ready-made code) for computer vision tasks — detecting shapes, tracking objects, reading numbers off a screen, etc."],
+    "yolo": ["YOLO ('You Only Look Once')", "A fast, well-known family of AI models for detecting and locating objects within an image or video frame in real time — useful for spotting a specific chart pattern or on-screen element instantly."],
+    "vision-transformer": ["Vision transformer", "A modern type of neural network architecture (the same family behind ChatGPT-style AI) adapted to understand images instead of text — generally more flexible and powerful than older vision techniques."],
+    "whisper": ["Whisper", "An AI model (built by OpenAI) that converts spoken audio into written text — used here to transcribe the trader's spoken commentary during a session."],
+    "python": ["Python", "A widely used, relatively easy-to-read programming language. It's the dominant language for data science and AI, which is why it's proposed here for the main data-handling work."],
+    "cpp-rust": ["C++ / Rust", "Two programming languages known for speed and precision. They're used instead of Python for the small number of components where every millisecond matters, since Python is slower to execute."],
+    "postgresql": ["PostgreSQL", "A free, robust, and very widely used database system — software for reliably storing and organizing structured information, like trade records or system state."],
+    "timescaledb": ["TimescaleDB", "An extension to PostgreSQL specifically optimized for 'time-series' data — information that is naturally ordered by time, like a stream of prices, which is exactly what a trading system generates constantly."],
+    "redis": ["Redis", "An extremely fast, in-memory data store (meaning it keeps data in the computer's active memory rather than on disk) used for information that needs to be read or written almost instantly."],
+    "pytorch": ["PyTorch", "A leading open-source software framework (built by Meta) for building and training machine-learning and AI models. If a model in this system needs to 'learn' from data, it's likely built with PyTorch."],
+    "runpod": ["RunPod", "A cloud service that rents out powerful computers with GPUs by the hour — used for the heavy, temporary computing work of training AI models, without buying the hardware outright."],
+    "gpu": ["GPU (Graphics Processing Unit)", "A specialized computer chip, originally built for rendering graphics, that turns out to be extremely good at the type of math AI training and AI inference require. Essential hardware for any serious machine-learning work."],
+    "playwright": ["Playwright", "A software tool (by Microsoft) for automating and controlling a web browser programmatically — letting code click buttons, fill forms, and read a webpage the way a human user would, but automatically."],
+    "puppeteer": ["Puppeteer", "A software tool (by Google) similar to Playwright — it automates control of a Chrome browser, allowing a program to interact with a website without a human at the keyboard."]
+  };
+
+  // Populate tooltips on term buttons
+  var tip = document.createElement('div');
+  tip.className = 'tip';
+  document.body.appendChild(tip);
+  var openBtn = null;
+
+  function closeTip(){
+    tip.classList.remove('show');
+    if (openBtn) openBtn.classList.remove('open');
+    openBtn = null;
+  }
+
+  document.querySelectorAll('.term').forEach(function(btn){
+    var key = btn.getAttribute('data-k');
+    var entry = TERMS[key];
+    if (!entry) return;
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      if (openBtn === btn) { closeTip(); return; }
+      if (openBtn) openBtn.classList.remove('open');
+      tip.innerHTML = '<b>' + entry[0] + '</b>' + entry[1];
+      var r = btn.getBoundingClientRect();
+      var top = r.bottom + window.scrollY + 8;
+      var left = Math.min(r.left + window.scrollX, window.scrollX + document.documentElement.clientWidth - 336);
+      tip.style.top = top + 'px';
+      tip.style.left = Math.max(12, left) + 'px';
+      tip.classList.add('show');
+      btn.classList.add('open');
+      openBtn = btn;
+    });
+  });
+  document.addEventListener('click', closeTip);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeTip(); });
+  window.addEventListener('scroll', closeTip, { passive: true });
+
+  // Render glossary grid, alphabetically
+  var grid = document.getElementById('gloss-grid');
+  if (grid) {
+    Object.keys(TERMS).sort(function(a,b){
+      return TERMS[a][0].localeCompare(TERMS[b][0]);
+    }).forEach(function(k){
+      var entry = TERMS[k];
+      var item = document.createElement('div');
+      item.className = 'gloss-item';
+      item.innerHTML = '<dt>' + entry[0] + '</dt><dd>' + entry[1] + '</dd>';
+      grid.appendChild(item);
+    });
+  }
+
+  // Scroll-spy for section nav
+  var links = Array.prototype.slice.call(document.querySelectorAll('.index-nav a[href^="#s"]'));
+  var map = {};
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) map[id] = a;
+  });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          links.forEach(function(l){ l.classList.remove('on'); });
+          var a = map[e.target.id];
+          if (a) a.classList.add('on');
+        }
+      });
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    Object.keys(map).forEach(function(id){ io.observe(document.getElementById(id)); });
+  }
+})();
+</script>
+</body>
+</html>
