@@ -268,7 +268,7 @@ figcaption b{color:var(--obsidian);font-weight:600}
 
   <div class="chips">
     <span class="chip">live chart movement</span>
-    <span class="chip">candlestick structure</span>
+    <span class="chip on">candlestick structure</span>
     <span class="chip">price levels</span>
     <span class="chip on">S949 oscillator</span>
     <span class="chip on">Type 1 divergence</span>
@@ -276,20 +276,26 @@ figcaption b{color:var(--obsidian);font-weight:600}
     <span class="chip on">Fibonacci retracement</span>
     <span class="chip on">TickStrike order-flow meter</span>
     <span class="chip on">TickStrike sounds &amp; alerts</span>
-    <span class="chip">order-flow behaviour</span>
+    <span class="chip on">order-flow behaviour</span>
     <span class="chip">cursor activity</span>
-    <span class="chip">entries &amp; exits</span>
-    <span class="chip">position size</span>
-    <span class="chip">signal-to-execution timing</span>
+    <span class="chip on">entries &amp; exits</span>
+    <span class="chip on">position size</span>
+    <span class="chip on">signal-to-execution timing</span>
     <span class="chip">spoken commentary</span>
-    <span class="chip">deliberate non-entries</span>
+    <span class="chip on">deliberate non-entries</span>
   </div>
   <p class="small muted" style="font-size:13px;margin-top:-14px">
-    Highlighted chips are trading-specific tools — see
+    Highlighted chips are trading-specific or technical terms — see
+    <button class="term" data-k="candlestick" type="button">candlesticks</button>,
     <button class="term" data-k="s949" type="button">S949</button>,
     <button class="term" data-k="divergence" type="button">divergence</button>,
-    <button class="term" data-k="fibonacci" type="button">Fibonacci retracement</button> and
-    <button class="term" data-k="tickstrike" type="button">TickStrike</button> in the glossary.
+    <button class="term" data-k="fibonacci" type="button">Fibonacci retracement</button>,
+    <button class="term" data-k="tickstrike" type="button">TickStrike</button>,
+    <button class="term" data-k="order-flow" type="button">order flow</button>,
+    <button class="term" data-k="entry-exit" type="button">entries &amp; exits</button>,
+    <button class="term" data-k="position-size" type="button">position size</button>,
+    <button class="term" data-k="signal-latency" type="button">signal-to-execution timing</button> and
+    <button class="term" data-k="deliberate-non-entry" type="button">deliberate non-entries</button> in the glossary.
   </p>
 
   <figure>
@@ -344,7 +350,9 @@ figcaption b{color:var(--obsidian);font-weight:600}
       <b>Why the raw footage is kept.</b> Extraction is not a one-way door. If in six months a visual
       feature turns out to matter that nobody thought to capture, the source recordings are still there
       to re-derive it from. Discarding the video after the first extraction would permanently cap what
-      the dataset can ever contain.
+      the dataset can ever contain. The perception engine itself turns that raw video and sound into
+      structured data using computer vision, <button class="term" data-k="ocr" type="button">OCR</button>
+      (reading numbers and text directly off the screen), and audio classification.
     </figcaption>
   </figure>
 </section>
@@ -437,7 +445,7 @@ figcaption b{color:var(--obsidian);font-weight:600}
     <span class="k">market</span> &nbsp;<span class="v">NASDAQ futures — NQ</span><br>
     <span class="k">time</span> &nbsp;&nbsp;&nbsp;<span class="v">09:47:12.480</span>
     <span class="g">Price structure</span>
-    <span class="k">swing high</span> &nbsp;<span class="v">identified, 3m ago</span><br>
+    <span class="k"><button class="term" data-k="swing-high" type="button">swing high</button></span> &nbsp;<span class="v">identified, 3m ago</span><br>
     <span class="k">momentum</span> &nbsp;&nbsp;<span class="v">weakening short-term</span>
     <span class="g">S949 oscillator</span>
     <span class="k">oscillator</span> &nbsp;<span class="v">rising</span><br>
@@ -486,7 +494,8 @@ figcaption b{color:var(--obsidian);font-weight:600}
     versus the last several minutes, and recovering values from the screen when a platform exposes
     no <button class="term" data-k="api" type="button">API</button>. A computer-vision expert is
     most valuable as a <strong>technical reviewer</strong> at these decision points — choosing
-    between conventional CV, neural vision models, multimodal AI or a hybrid — rather than as
+    between conventional <button class="term" data-k="computer-vision" type="button">CV</button>,
+    neural vision models, multimodal AI or a hybrid — rather than as
     another pair of hands. One review at the right moment can prevent months spent on the wrong
     architecture.
   </p>
@@ -654,7 +663,9 @@ figcaption b{color:var(--obsidian);font-weight:600}
     <div class="opt">
       <div class="opt-h">Proposal C</div>
       <h4>Browser automation</h4>
-      <p>Chromium under automation identifies interface elements and works the order ticket: instrument,
+      <p><button class="term" data-k="chromium" type="button">Chromium</button> under automation
+      identifies interface elements and works the
+      <button class="term" data-k="order-ticket" type="button">order ticket</button>: instrument,
       order type, quantity, submit, confirm.</p>
       <div class="verdict"><b>Verdict</b>Bridges web platforms with no API.</div>
     </div>
@@ -839,14 +850,14 @@ figcaption b{color:var(--obsidian);font-weight:600}
         <tr><td class="fn">TickStrike interpretation</td><td><span class="mono">Audio analysis + visual recognition</span></td></tr>
         <tr><td class="fn">Data processing</td><td><span class="mono"><button class="term" data-k="python" type="button">Python</button></span></td></tr>
         <tr><td class="fn">High-performance components</td><td><span class="mono"><button class="term" data-k="cpp-rust" type="button">C++ · Rust</button></span></td></tr>
-        <tr><td class="fn">Platform integration</td><td><span class="mono">C# · <button class="term" data-k="ninjascript" type="button">NinjaScript</button></span></td></tr>
+        <tr><td class="fn">Platform integration</td><td><span class="mono"><button class="term" data-k="csharp" type="button">C#</button> · <button class="term" data-k="ninjascript" type="button">NinjaScript</button></span></td></tr>
         <tr><td class="fn">State storage</td><td><span class="mono"><button class="term" data-k="postgresql" type="button">PostgreSQL</button> · <button class="term" data-k="timescaledb" type="button">TimescaleDB</button></span></td></tr>
         <tr><td class="fn">Fast event storage</td><td><span class="mono"><button class="term" data-k="redis" type="button">Redis</button></span></td></tr>
         <tr><td class="fn">Training</td><td><span class="mono"><button class="term" data-k="pytorch" type="button">PyTorch</button></span></td></tr>
         <tr><td class="fn">Experiment compute</td><td><span class="mono"><button class="term" data-k="runpod" type="button">RunPod</button> <button class="term" data-k="gpu" type="button">GPUs</button></span></td></tr>
         <tr><td class="fn">Local inference</td><td><span class="mono">Dedicated GPU workstation / server</span></td></tr>
         <tr><td class="fn">Browser control</td><td><span class="mono"><button class="term" data-k="playwright" type="button">Playwright</button> · <button class="term" data-k="puppeteer" type="button">Puppeteer</button></span></td></tr>
-        <tr><td class="fn">Desktop control</td><td><span class="mono">Windows UI Automation · OpenCV · custom agent</span></td></tr>
+        <tr><td class="fn">Desktop control</td><td><span class="mono"><button class="term" data-k="ui-automation" type="button">Windows UI Automation</button> · <button class="term" data-k="opencv" type="button">OpenCV</button> · custom agent</span></td></tr>
         <tr><td class="fn">Broker communication</td><td><span class="mono"><button class="term" data-k="rest" type="button">REST</button> · <button class="term" data-k="websocket" type="button">WebSocket</button> · <button class="term" data-k="fix" type="button">FIX</button> · native broker APIs</span></td></tr>
         <tr><td class="fn">Monitoring</td><td><span class="mono">Custom telemetry and replay</span></td></tr>
       </tbody>
@@ -927,7 +938,19 @@ figcaption b{color:var(--obsidian);font-weight:600}
     "runpod": ["RunPod", "A cloud service that rents out powerful computers with GPUs by the hour — used for the heavy, temporary computing work of training AI models, without buying the hardware outright."],
     "gpu": ["GPU (Graphics Processing Unit)", "A specialized computer chip, originally built for rendering graphics, that turns out to be extremely good at the type of math AI training and AI inference require. Essential hardware for any serious machine-learning work."],
     "playwright": ["Playwright", "A software tool (by Microsoft) for automating and controlling a web browser programmatically — letting code click buttons, fill forms, and read a webpage the way a human user would, but automatically."],
-    "puppeteer": ["Puppeteer", "A software tool (by Google) similar to Playwright — it automates control of a Chrome browser, allowing a program to interact with a website without a human at the keyboard."]
+    "puppeteer": ["Puppeteer", "A software tool (by Google) similar to Playwright — it automates control of a Chrome browser, allowing a program to interact with a website without a human at the keyboard."],
+    "candlestick": ["Candlestick (chart)", "A way of drawing price on a chart where each bar ('candle') shows the open, close, high, and low price for a time period as a small rectangle with wick lines. Reading the shapes and sequences of candlesticks is one of the most basic skills in technical trading."],
+    "order-flow": ["Order flow", "The real-time stream of actual buy and sell orders hitting the market — who is aggressively buying versus selling right now, as opposed to just where the price is. TickStrike is one tool for reading it."],
+    "entry-exit": ["Entry / exit", "An 'entry' is the moment a trader opens a new position (buys or sells to start a trade). An 'exit' is the moment that position is closed out, for a profit or a loss."],
+    "position-size": ["Position size", "How many contracts or shares a trade uses — essentially, how much money and risk is committed to a single trade. A core lever for controlling risk independent of whether the trade idea itself is right."],
+    "signal-latency": ["Signal-to-execution timing", "The delay between the moment a valid trading signal actually appears and the moment an order is placed because of it. In fast markets, even a delay of a few hundred milliseconds can change the outcome of a trade."],
+    "deliberate-non-entry": ["Deliberate non-entry", "A moment where a setup looked tempting but the trader consciously chose not to take the trade, because the full method wasn't satisfied. Distinct from simply not noticing an opportunity — it's disciplined restraint, and this document treats it as valuable training data in its own right."],
+    "ocr": ["OCR (Optical Character Recognition)", "Technology that reads printed or on-screen text and numbers out of an image or video and converts them into actual, usable data — for example, pulling a price or indicator value directly off a screenshot of a trading platform."],
+    "chromium": ["Chromium", "The open-source web browser engine that powers Google Chrome (and several other browsers). Automation tools like Playwright and Puppeteer typically drive a Chromium browser instance to interact with websites programmatically."],
+    "order-ticket": ["Order ticket", "The form or panel in a trading platform's interface where you specify what to trade — instrument, buy or sell, order type, quantity — and submit it to the market."],
+    "csharp": ["C# ('C Sharp')", "A general-purpose programming language created by Microsoft. It's the language NinjaScript (used for NinjaTrader add-ons) is built on, making it a natural choice for platform-level integration work."],
+    "ui-automation": ["Windows UI Automation", "A built-in Microsoft Windows framework that lets a program identify and control the buttons, fields, and windows of other desktop applications — similar in spirit to browser automation, but for regular desktop software instead of web pages."],
+    "swing-high": ["Swing high / swing low", "A local peak (swing high) or trough (swing low) on a price chart — a point where price turned around, at least temporarily. Traders use recent swing highs and lows as reference points for tools like Fibonacci retracement."]
   };
 
   // Populate tooltips on term buttons
