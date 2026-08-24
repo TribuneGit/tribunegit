@@ -698,6 +698,98 @@ figcaption b{color:var(--obsidian);font-weight:600}
       </tbody>
     </table>
   </div>
+
+  <h3>Execution methods ranked by response time</h3>
+  <p>
+    Once the decision is made, how the order actually gets clicked, typed or sent matters. Human
+    <button class="term" data-k="reaction-time" type="button">visual reaction time</button> is
+    typically around 200–300&nbsp;ms before accounting for the deliberate
+    <button class="term" data-k="mouse-movement" type="button">mouse movement</button> and clicking
+    that follows it. A real-world screen recognition → decision → mouse click can easily take
+    300–700+&nbsp;ms in practice. The table below ranks the candidate execution methods from
+    section&nbsp;06 by roughly how fast each one can act, once a decision has already been made.
+  </p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th scope="col">Rank</th><th scope="col">Method</th><th scope="col">Approx. local response time*</th><th scope="col">Relative speed</th><th scope="col">How it works</th></tr></thead>
+      <tbody>
+        <tr><td class="fn">1</td><td>Native trading <button class="term" data-k="api" type="button">API</button> / <button class="term" data-k="ninjascript" type="button">NinjaScript</button></td><td><span class="mono">~1–20 ms</span></td><td>Extremely fast</td><td>Sends the order directly through software without touching the mouse.</td></tr>
+        <tr><td class="fn">2</td><td>Custom <button class="term" data-k="csharp" type="button">C#</button> / <button class="term" data-k="ui-automation" type="button">Windows UI Automation</button></td><td><span class="mono">~5–30 ms</span></td><td>Extremely fast</td><td>Directly activates Windows application controls.</td></tr>
+        <tr><td class="fn">3</td><td><button class="term" data-k="autohotkey" type="button">AutoHotkey</button></td><td><span class="mono">~5–40 ms</span></td><td>Extremely fast</td><td>Executes predefined mouse clicks, keyboard commands, hotkeys and window actions.</td></tr>
+        <tr><td class="fn">4</td><td><button class="term" data-k="pyautogui" type="button">PyAutoGUI</button>, known coordinates</td><td><span class="mono">~20–100 ms</span></td><td>Very fast</td><td>Programmatically moves and clicks the mouse at predetermined screen locations.</td></tr>
+        <tr><td class="fn">5</td><td><button class="term" data-k="opencv" type="button">OpenCV</button> + mouse automation</td><td><span class="mono">~30–150 ms</span></td><td>Very fast</td><td>Looks at the screen, finds the correct control, then clicks it.</td></tr>
+        <tr><td class="fn">6</td><td><button class="term" data-k="playwright" type="button">Playwright</button> / <button class="term" data-k="puppeteer" type="button">Puppeteer</button></td><td><span class="mono">~20–150 ms</span></td><td>Very fast</td><td>Controls browser-based trading interfaces directly.</td></tr>
+        <tr><td class="fn">7</td><td>Local <button class="term" data-k="vlm" type="button">vision AI</button> + computer control</td><td><span class="mono">~100–1,000+ ms</span></td><td>Variable</td><td>AI interprets the screen and determines what to click.</td></tr>
+        <tr><td class="fn">8</td><td>Cloud vision AI + computer control</td><td><span class="mono">~500 ms–several seconds</span></td><td>Slow</td><td>Sends the visual state to an AI service, receives a decision, then acts.</td></tr>
+        <tr><td class="fn">—</td><td><b>Comparison: human operator</b></td><td><span class="mono">~200–300 ms reaction only; ~300–700+ ms practical action</span></td><td>Baseline</td><td>Sees the event, recognises it, reacts, moves mouse or finger, and clicks.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted" style="font-size:12.5px;margin-top:-14px">
+    *These are engineering estimates for the local command/control portion only, not guaranteed
+    order-execution latency. Network, broker, exchange, operating-system, platform and market-data
+    latency come afterward, on top of these numbers.
+  </p>
+
+  <figure>
+    <div class="frame">
+      <svg viewBox="0 0 900 430" role="img" aria-label="Horizontal log-scale bar chart comparing approximate local response time in milliseconds across eight automated execution methods and a human operator baseline, ranging from about 1 millisecond for a native trading API to several seconds for cloud vision AI, with the human operator's practical action time of roughly 300 to 700 or more milliseconds shown for comparison.">
+        <text class="d-s" x="12" y="20">RESPONSE TIME — LOG SCALE, MILLISECONDS</text>
+        <g class="d-line" opacity=".35">
+          <line x1="110" y1="36" x2="110" y2="368"/>
+          <line x1="300" y1="36" x2="300" y2="368"/>
+          <line x1="490" y1="36" x2="490" y2="368"/>
+          <line x1="680" y1="36" x2="680" y2="368"/>
+          <line x1="870" y1="36" x2="870" y2="368"/>
+        </g>
+        <g class="d-s" text-anchor="middle">
+          <text x="110" y="384">1 ms</text>
+          <text x="300" y="384">10 ms</text>
+          <text x="490" y="384">100 ms</text>
+          <text x="680" y="384">1,000 ms</text>
+          <text x="870" y="384">10,000 ms</text>
+        </g>
+
+        <text class="d-t" x="12" y="54">1 · Native API / NinjaScript</text>
+        <rect class="d-box-a" x="110" y="60" width="247" height="18" rx="2"/>
+
+        <text class="d-t" x="12" y="92">2 · C# / UI Automation</text>
+        <rect class="d-box-a" x="243" y="98" width="148" height="18" rx="2"/>
+
+        <text class="d-t" x="12" y="130">3 · AutoHotkey</text>
+        <rect class="d-box-a" x="243" y="136" width="171" height="18" rx="2"/>
+
+        <text class="d-t" x="12" y="168">4 · PyAutoGUI, known coords</text>
+        <rect class="d-box" x="357" y="174" width="133" height="18" rx="2"/>
+
+        <text class="d-t" x="12" y="206">5 · OpenCV + mouse automation</text>
+        <rect class="d-box" x="391" y="212" width="132" height="18" rx="2"/>
+
+        <text class="d-t" x="12" y="244">6 · Playwright / Puppeteer</text>
+        <rect class="d-box" x="357" y="250" width="166" height="18" rx="2"/>
+
+        <text class="d-t" x="12" y="282">7 · Local vision AI + control</text>
+        <rect class="d-box" x="490" y="288" width="190" height="18" rx="2" opacity=".7"/>
+
+        <text class="d-t" x="12" y="320">8 · Cloud vision AI + control</text>
+        <rect class="d-box" x="623" y="326" width="190" height="18" rx="2" opacity=".5"/>
+
+        <text class="d-t" x="12" y="358">Human operator (practical action)</text>
+        <rect x="581" y="364" width="70" height="18" rx="2" fill="#8C6412" fill-opacity=".18" stroke="#8C6412" stroke-width="1"/>
+        <line x1="547" y1="36" x2="547" y2="368" stroke="#8C6412" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <text class="d-s" x="547" y="402" text-anchor="middle" fill="#8C6412" opacity="1">200 ms — REACTION ONLY, BEFORE THE CLICK</text>
+      </svg>
+    </div>
+    <figcaption>
+      <b>The important comparison.</b> A predefined automation path can react far faster than a human
+      operator, because it skips the see&nbsp;→&nbsp;recognise&nbsp;→&nbsp;decide&nbsp;→&nbsp;move&nbsp;→&nbsp;click
+      chain entirely for the final step. The strongest architecture generally uses AI or vision to
+      <em>understand</em> the situation, then hands off execution itself to something deterministic
+      and fast — a native API, C#, or AutoHotkey — rather than asking the same AI to also move the
+      mouse.
+    </figcaption>
+  </figure>
 </section>
 <section class="sec" id="s7">
   <p class="sec-no">07 — Containment</p>
@@ -950,7 +1042,11 @@ figcaption b{color:var(--obsidian);font-weight:600}
     "order-ticket": ["Order ticket", "The form or panel in a trading platform's interface where you specify what to trade — instrument, buy or sell, order type, quantity — and submit it to the market."],
     "csharp": ["C# ('C Sharp')", "A general-purpose programming language created by Microsoft. It's the language NinjaScript (used for NinjaTrader add-ons) is built on, making it a natural choice for platform-level integration work."],
     "ui-automation": ["Windows UI Automation", "A built-in Microsoft Windows framework that lets a program identify and control the buttons, fields, and windows of other desktop applications — similar in spirit to browser automation, but for regular desktop software instead of web pages."],
-    "swing-high": ["Swing high / swing low", "A local peak (swing high) or trough (swing low) on a price chart — a point where price turned around, at least temporarily. Traders use recent swing highs and lows as reference points for tools like Fibonacci retracement."]
+    "swing-high": ["Swing high / swing low", "A local peak (swing high) or trough (swing low) on a price chart — a point where price turned around, at least temporarily. Traders use recent swing highs and lows as reference points for tools like Fibonacci retracement."],
+    "reaction-time": ["Visual reaction time", "The time it takes a person to consciously notice something on screen and begin to respond to it — typically around 200–300 milliseconds for a simple visual event, before any physical movement like reaching for the mouse even starts."],
+    "mouse-movement": ["Mouse movement (as a time cost)", "The physical time it takes a hand to move a cursor to the right spot on screen and click, after the brain has already decided to act. It's a small delay on its own, but it stacks on top of reaction time and adds up in fast-moving markets."],
+    "autohotkey": ["AutoHotkey", "A free scripting tool for Windows that lets you automate mouse clicks, keystrokes, hotkeys, and window actions using simple pre-written scripts. It's fast because it's not 'thinking' — it just executes a fixed, predetermined sequence of actions."],
+    "pyautogui": ["PyAutoGUI", "A Python library that programmatically controls the mouse and keyboard — for example, moving the cursor to an exact pixel location and clicking, or typing text, all from code rather than a person's hand."]
   };
 
   // Populate tooltips on term buttons
