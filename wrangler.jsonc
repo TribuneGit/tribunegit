@@ -4,7 +4,8 @@
   "main": "./_worker.js",
   "assets": {
     "directory": "./",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    "run_worker_first": ["/techstack", "/techstack/*"]
   },
   "routes": [
     { "pattern": "tribuneinc.com/*", "zone_name": "tribuneinc.com" },
