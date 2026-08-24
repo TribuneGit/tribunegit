@@ -230,6 +230,7 @@ export default {
       const headers = new Headers(assetResponse.headers);
       headers.set("Cache-Control", "private, no-store, no-cache, must-revalidate");
       headers.set("Vary", "Cookie");
+      headers.set("X-Robots-Tag", "noindex, nofollow, noarchive, nosnippet");
       return new Response(assetResponse.body, { status: assetResponse.status, headers });
     }
 
