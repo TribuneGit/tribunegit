@@ -4,4 +4,6 @@ Disallow: /techstack
 Disallow: /techstack/
 Disallow: /partnership
 Disallow: /partnership/
+Disallow: /milestone
+Disallow: /milestone/
 Sitemap: https://tribuneinc.com/sitemap.xml

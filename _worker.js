@@ -92,7 +92,18 @@ const GATE_PARTNERSHIP = {
   subtext: "This document is restricted to invited reviewers. Enter the access password to continue.",
 };
 
-const GATES = [GATE_TECHSTACK, GATE_PARTNERSHIP];
+const GATE_MILESTONE = {
+  pathPrefix: "/milestone",
+  password: "Make!MoreMoney26",
+  secret: "tribune-milestone-gate-v1-3r6t9y2u5i",
+  cookie: "__Secure-tt_milestone_gate",
+  cookiePath: "/milestone",
+  formAction: "/milestone/",
+  heading: "Development Roadmap — Restricted Access",
+  subtext: "This document is restricted to invited reviewers. Enter the access password to continue.",
+};
+
+const GATES = [GATE_TECHSTACK, GATE_PARTNERSHIP, GATE_MILESTONE];
 
 function currentWeekNumber() {
   // Rotates the valid token weekly so a leaked cookie expires on its own.
