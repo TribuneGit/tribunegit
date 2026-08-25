@@ -1,0 +1,31 @@
+{
+  "_protocol": "tech-brief-ledger",
+  "_version": "1.0",
+  "_repo": "tribune-inc-website",
+  "_created": "2026-08-25T18:43:50Z",
+  "_created_by": "praecon@openclaw",
+  "_algorithm": "SHA-256",
+  "_normalization": "NFC + LF + strip-trailing-whitespace + strip-boundary-blank-lines",
+  "_chain_type": "linear-append-only",
+  "_genesis_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "entry_count": 1,
+  "tip_hash": "sha256:36d744105fb40d32b46c962b2783fcd22901aaf5aa26f1e198619bd5b3518a76",
+  "entries": [
+    {
+      "id": "e001",
+      "type": "TASK",
+      "timestamp": "2026-08-25T18:43:50Z",
+      "author": "praecon@openclaw",
+      "session": "manual",
+      "git_commit": "9f672745e6f6e284a8f0d637482086caa0ef7452",
+      "content_hash": "sha256:ed73c475be2c57fad5c2441dfe6b848d57e0040ec23a95bd0165ad53adb4d9e2",
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "chain_hash": "sha256:36d744105fb40d32b46c962b2783fcd22901aaf5aa26f1e198619bd5b3518a76",
+      "title": "Partnership page revision v2"
+    }
+  ],
+  "_last_verified": "2026-08-25T18:43:50Z",
+  "_last_verified_by": "praecon@openclaw",
+  "_last_verified_session": "manual",
+  "_verification_result": "PASS"
+}
