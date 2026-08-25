@@ -17,7 +17,7 @@
   // Month 3, so Month 3 stays marked active/done rather than snapping back.
   var MONTH_SECTIONS = {
     1: ['overview', 'tracks', 'm1-see', 'm1-act', 'm1-brainhands', 'm1-milestone'],
-    2: ['m2-intro', 'm2-training', 'm2-notrade', 'm2-method', 'm2-loop', 'm2-example', 'm2-milestone', 'm2-risk'],
+    2: ['m2-intro', 'm2-training', 'm2-notrade', 'm2-method', 'm2-loop', 'm2-example', 'm2-risk', 'm2-milestone'],
     3: ['m3-intro', 'm3-questions', 'm3-ladder', 'm3-milestone']
   };
   var TAIL_SECTIONS = ['funding', 'gates', 'deepdive', 'glossary'];
