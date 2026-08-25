@@ -8,8 +8,8 @@
   "_normalization": "NFC + LF + strip-trailing-whitespace + strip-boundary-blank-lines",
   "_chain_type": "linear-append-only",
   "_genesis_hash": "0000000000000000000000000000000000000000000000000000000000000000",
-  "entry_count": 1,
-  "tip_hash": "sha256:36d744105fb40d32b46c962b2783fcd22901aaf5aa26f1e198619bd5b3518a76",
+  "entry_count": 2,
+  "tip_hash": "sha256:a49841ee4638be2cf3378f4198220615830ff33f739debbbf47e0ac67996c256",
   "entries": [
     {
       "id": "e001",
@@ -22,9 +22,21 @@
       "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
       "chain_hash": "sha256:36d744105fb40d32b46c962b2783fcd22901aaf5aa26f1e198619bd5b3518a76",
       "title": "Partnership page revision v2"
+    },
+    {
+      "id": "e002",
+      "type": "COMPLETE",
+      "timestamp": "2026-08-25T18:55:05Z",
+      "author": "praecon@openclaw",
+      "session": "manual",
+      "git_commit": "e08c286b816d8b8faa461cc5058d8a7604539dbc",
+      "content_hash": "sha256:976c36c0c8f8f8639e8d2301215a755955bb685d7d35ecdf50726a75e86c394a",
+      "prev_hash": "36d744105fb40d32b46c962b2783fcd22901aaf5aa26f1e198619bd5b3518a76",
+      "chain_hash": "sha256:a49841ee4638be2cf3378f4198220615830ff33f739debbbf47e0ac67996c256",
+      "title": "Partnership page revision v2 complete"
     }
   ],
-  "_last_verified": "2026-08-25T18:43:50Z",
+  "_last_verified": "2026-08-25T18:55:05Z",
   "_last_verified_by": "praecon@openclaw",
   "_last_verified_session": "manual",
   "_verification_result": "PASS"
