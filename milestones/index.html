@@ -113,10 +113,11 @@
   </ul>
 
   <p class="small muted" style="font-size:13px">
-    Timeline note: the target for the core prototype is approximately two months. Month 3 is
-    reserved for validation, refinement and hardening where it is needed. It is not automatically
-    required if major milestones are reached sooner, and development advances immediately rather
-    than waiting out an artificial calendar boundary.
+    Timeline note: two months is a deliberately conservative estimate for the core prototype,
+    we're not padding it to look impressive, and we're not promising to beat it either. If Months
+    1 and 2 land on schedule, that's a signal we may be moving faster than planned, not a reason to
+    worry. Month 3 exists as a reserved safety margin for testing and hardening, used only if the
+    evidence calls for it. It's a buffer we built in on purpose, not a sign of expected delay.
   </p>
 </section>
 
@@ -187,6 +188,12 @@
     That is video, graphics, sound, numbers, timing and human action arriving simultaneously,
     which is why this is a <button class="term" data-k="computer-vision" type="button">computer-vision</button>
     project as much as a market-data one.
+  </p>
+  <p class="lead" style="margin-top:10px">
+    <strong>Computer vision is the hardest piece of the perception layer.</strong> It is also why
+    the roadmap does not depend on it alone: a <button class="term" data-k="ninjascript" type="button">NinjaScript</button>
+    integration is built in for Phase 2 as a direct platform-level path, so signal logic does not
+    have to wait on, or rely entirely on, vision accuracy.
   </p>
 
   <div class="chips">
@@ -832,6 +839,9 @@
   </div>
 </section>
 
+<!-- "funding" alignment section removed 2026-08-25 per Heisenberg (Flag 3): milestones page should
+     end on technical confidence, not funding numbers. Kept here commented out, not deleted, in
+     case it needs to come back.
 <section class="sec" id="funding">
   <p class="sec-no">Alignment</p>
   <h2>How the Roadmap Aligns With the Funding Structure</h2>
@@ -873,6 +883,7 @@
     stretched to fill three months.
   </p>
 </section>
+-->
 
 <section class="sec" id="gates">
   <p class="sec-no">Nine technical gates</p>
