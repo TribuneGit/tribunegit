@@ -1,4 +1,4 @@
-/* Tribune Trading Partnership — Market Territory Board.
+/* Tribune Trading Partnership: Market Territory Board.
    Vanilla JS, zero dependencies. Client-side only, no persistence, no backend.
    Supports mouse drag-and-drop (HTML5 DnD) and touch/pointer fallback so it
    works live in a meeting on a laptop or a tablet. */
