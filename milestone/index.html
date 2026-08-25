@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tribune Trading AI — Development Roadmap | Tribune Inc.</title>
+<title>Tribune Trading AI: Development Roadmap | Tribune Inc.</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
 <body>
 <div class="doc-note"><div class="wrap">
   <span class="tag">Confidential &middot; For client review</span>
-  <span class="who">Tribune Trading AI — Development Roadmap</span>
+  <span class="who">Tribune Trading AI: Development Roadmap</span>
 </div></div>
 <header class="m-header"><div class="wrap">
   <a class="lockup" href="/"><svg viewBox="0 0 100 112" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tribune"><rect x="18" y="10" width="64" height="16" rx="2" fill="#0A0B12"/><polygon points="18,33 46,33 46,86 37,86 18,60" fill="#0A0B12"/><polygon points="54,33 82,33 82,60 63,86 54,86" fill="#0A0B12"/><polygon points="40,90 60,90 50,104" fill="#7A1A5C"/></svg><span class="wordmark">TRIBUNE</span></a>
@@ -66,11 +66,11 @@
   <p class="doc-lede">
     The objective is not a program that places orders. It is a system that observes what the
     trader observes, understands the method behind what he does, and applies that method
-    independently — including the decision to <strong>stay out</strong>. Most of the engineering
+    independently, including the decision to <strong>stay out</strong>. Most of the engineering
     effort goes into discovering and formalizing rules that currently exist only as expertise.
   </p>
   <div class="howto">
-    <b>How to read this page</b> — Any word with a dotted underline (like
+    <b>How to read this page.</b> Any word with a dotted underline (like
     <button class="term" data-k="nq" type="button">NQ</button>) is a technical or trading term.
     Click or tap it for a plain-language definition on the spot. Every term also appears in the
     <a href="#glossary">full glossary</a> at the bottom of the page. The panel on the right (or the
@@ -97,24 +97,24 @@
   </div>
 
   <ul class="plain" style="margin-top:28px">
-    <li><b>Month 1 — See + Act.</b> Build the perception layer and the execution mechanism in
+    <li><b>Month 1: See + Act.</b> Build the perception layer and the execution mechanism in
     parallel. By the end of the month the system can analyze a recorded trading session, extract
     structured market state from it, recognize the key trading inputs, and execute a simulated
     trading instruction. It does not yet need to know, on its own, when it should trade.</li>
-    <li><b>Month 2 — Understand + Decide.</b> Connect the reconstructed trading method to the
+    <li><b>Month 2: Understand + Decide.</b> Connect the reconstructed trading method to the
     perception layer. The target is a closed-loop prototype: observe the market, interpret the
     state, evaluate the setup, decide to act or stay out, pass that decision through an
     independent risk controller, and execute in simulation. This is where reconstructing the
     trading methodology itself becomes the central engineering problem.</li>
-    <li><b>Month 3 — Test + Prove.</b> Validate, refine, harden, and try to break the system. The
+    <li><b>Month 3: Test + Prove.</b> Validate, refine, harden, and try to break the system. The
     question shifts from "can we build it" to "has it earned the right to advance toward
     real-money use." Real-money autonomous trading stays locked until predefined validation
-    criteria are satisfied — not on a calendar, on evidence.</li>
+    criteria are satisfied. Not on a calendar, on evidence.</li>
   </ul>
 
   <p class="small muted" style="font-size:13px">
     Timeline note: the target for the core prototype is approximately two months. Month 3 is
-    reserved for validation, refinement and hardening where it is needed — not automatically
+    reserved for validation, refinement and hardening where it is needed. It is not automatically
     required if major milestones are reached sooner, and development advances immediately rather
     than waiting out an artificial calendar boundary.
   </p>
@@ -130,10 +130,10 @@
   </p>
 
   <ul class="plain">
-    <li><b>A &middot; Perception</b> — can the machine understand what Stan sees?</li>
-    <li><b>B &middot; Execution</b> — can the machine physically perform the required trading
+    <li><b>A &middot; Perception</b>: can the machine understand what Stan sees?</li>
+    <li><b>B &middot; Execution</b>: can the machine physically perform the required trading
     action?</li>
-    <li><b>C &middot; Intelligence</b> — can the system determine when the method actually calls
+    <li><b>C &middot; Intelligence</b>: can the system determine when the method actually calls
     for action?</li>
   </ul>
 
@@ -159,7 +159,7 @@
         <div class="track-lane intelligence">
           <div class="tl-label"><span class="k">Track C</span><span class="v">Intelligence</span></div>
           <div class="tl-cells">
-            <div class="tl-cell"><span class="tc-m">Month 1</span><span class="tc-v">Not yet central — perception and execution come first.</span></div>
+            <div class="tl-cell"><span class="tc-m">Month 1</span><span class="tc-v">Not yet central. Perception and execution come first.</span></div>
             <div class="tl-cell fill-b"><span class="tc-m">Month 2</span><span class="tc-v">The hardest reasoning problem: when does the method actually call for action?</span></div>
             <div class="tl-cell fill-v"><span class="tc-m">Month 3</span><span class="tc-v">Decision quality and agreement with Stan's judgment tested under pressure.</span></div>
           </div>
@@ -170,7 +170,7 @@
     <figcaption>
       <b>A and B move first; C is where Month 2 lives.</b> Perception and execution develop
       significantly in parallel through Month 1 because they are, relatively speaking, engineering
-      problems with known solutions. Intelligence — knowing when the method calls for action — is a
+      problems with known solutions. Intelligence, knowing when the method calls for action, is a
       genuine reasoning problem, and it becomes the central focus once the first two tracks give it
       something reliable to reason over.
     </figcaption>
@@ -184,7 +184,7 @@
   <h2>Teach the System to See. Build the Hands.</h2>
   <p class="lead">
     The system needs access to substantially the same information the trader has in front of him.
-    That is video, graphics, sound, numbers, timing and human action arriving simultaneously —
+    That is video, graphics, sound, numbers, timing and human action arriving simultaneously,
     which is why this is a <button class="term" data-k="computer-vision" type="button">computer-vision</button>
     project as much as a market-data one.
   </p>
@@ -208,7 +208,7 @@
     <span class="chip on">deliberate non-entries</span>
   </div>
   <p class="small muted" style="font-size:13px;margin-top:-14px">
-    Highlighted chips are trading-specific or technical terms — see
+    Highlighted chips are trading-specific or technical terms. See
     <button class="term" data-k="candlestick" type="button">candlesticks</button>,
     <button class="term" data-k="s949" type="button">S949</button>,
     <button class="term" data-k="divergence" type="button">divergence</button>,
@@ -261,7 +261,7 @@
     </div>
     <figcaption>
       <b>Replayable, comparable, labelable.</b> A two-hour session becomes a timestamped sequence of
-      structured snapshots — not a summary, a full machine-readable record of what the market and
+      structured snapshots, not a summary: a full machine-readable record of what the market and
       the trader were doing at every moment, including the moments where the correct action was to
       do nothing.
     </figcaption>
@@ -318,9 +318,9 @@
         <text class="d-s" x="644" y="154">price structure &middot; divergence type</text>
         <text class="d-s" x="644" y="172">fib level &middot; flow direction</text>
         <text class="d-s" x="644" y="190">context &middot; confidence &middot; trigger</text>
-        <text class="d-s" x="644" y="208">&mdash; machine-readable, replayable</text>
+        <text class="d-s" x="644" y="208">machine-readable, replayable</text>
         <path class="d-line" d="M110,292 V312 H756 V228" marker-end="url(#ah)" stroke-dasharray="4 4"/>
-        <text class="d-s" x="433" y="326" text-anchor="middle">ORIGINAL RECORDING RETAINED &mdash; RE-EXTRACTABLE IF A NEW FEATURE MATTERS LATER</text>
+        <text class="d-s" x="433" y="326" text-anchor="middle">ORIGINAL RECORDING RETAINED: RE-EXTRACTABLE IF A NEW FEATURE MATTERS LATER</text>
       </svg>
     </div>
     <figcaption>
@@ -364,7 +364,7 @@
     </div>
     <figcaption>
       <b>Execution before intelligence, deliberately.</b> The system may be able to execute before it
-      knows when it should execute — and that is fine. Proving the hands can move is a separate,
+      knows when it should execute, and that is fine. Proving the hands can move is a separate,
       smaller problem than teaching the brain when to move them, and there is no reason to wait on
       one to start the other.
     </figcaption>
@@ -376,8 +376,8 @@
   <h2>The Brain and the Hands</h2>
   <p class="lead">
     Automating clicks and broker orders is not the primary intellectual challenge of this project.
-    Deciding the correct action is. Keeping the two cleanly separated — in the architecture and in
-    how progress is measured — is one of the more important design decisions in the whole system.
+    Deciding the correct action is. Keeping the two cleanly separated, in the architecture and in
+    how progress is measured, is one of the more important design decisions in the whole system.
   </p>
 
   <figure>
@@ -464,7 +464,7 @@
     The single largest technical risk in this project is training the system to
     <button class="term" data-k="imitation-learning" type="button">imitate</button> the trade
     history. A trade taken out of frustration, hesitation or overconfidence looks identical in the
-    data to a trade taken by the book — and a pure imitation model will learn both with equal
+    data to a trade taken by the book, and a pure imitation model will learn both with equal
     enthusiasm.
   </p>
 
@@ -477,7 +477,7 @@
     <div class="frame">
       <svg viewBox="0 0 900 316" role="img" aria-label="A price track above two parallel timelines: the trader's observed actions and the method's intended actions. They agree on two events and diverge on two others: an emotional entry the method rejects, and a valid setup the trader skipped.">
         <polyline class="d-line" points="60,86 130,62 190,96 250,74 320,110 390,52 450,88 510,66 570,104 630,78 700,118 760,70 820,98 860,80"/>
-        <text class="d-s" x="60" y="34">NQ PRICE &mdash; ONE SESSION</text>
+        <text class="d-s" x="60" y="34">NQ PRICE: ONE SESSION</text>
         <text class="d-s" x="60" y="152">OBSERVED &middot; WHAT THE TRADER DID</text>
         <line class="d-line" x1="60" y1="176" x2="864" y2="176" marker-end="url(#ah)"/>
         <polygon points="180,168 188,182 172,182" fill="currentColor"/>
@@ -501,25 +501,25 @@
         <text class="d-s" x="740" y="272" text-anchor="middle">ENTRY</text>
         <line x1="380" y1="160" x2="380" y2="240" stroke="var(--aurum)" stroke-width="1.2" stroke-dasharray="4 4"/>
         <line x1="740" y1="160" x2="740" y2="240" stroke="var(--trust)" stroke-width="1.2" stroke-dasharray="4 4"/>
-        <text class="d-s" x="380" y="300" text-anchor="middle" fill="#8C6412" opacity="1">DIVERGENCE &mdash; EMOTIONAL ENTRY, LABELLED "VIOLATION"</text>
-        <text class="d-s" x="740" y="300" text-anchor="middle" fill="var(--trust-deep)" opacity="1">DIVERGENCE &mdash; VALID SETUP, LABELLED "MISSED"</text>
+        <text class="d-s" x="380" y="300" text-anchor="middle" fill="#8C6412" opacity="1">DIVERGENCE: EMOTIONAL ENTRY, LABELLED "VIOLATION"</text>
+        <text class="d-s" x="740" y="300" text-anchor="middle" fill="var(--trust-deep)" opacity="1">DIVERGENCE: VALID SETUP, LABELLED "MISSED"</text>
       </svg>
     </div>
     <figcaption>
       <b>Two tracks, deliberately.</b> Training data has to carry both: the action and the verdict on
       that action. Where the tracks agree, the example is a clean positive. Where they diverge, the
-      label — not the behaviour — is what the system learns from.
+      label, not the behaviour, is what the system learns from.
     </figcaption>
   </figure>
 
   <h3>The label set the dataset needs</h3>
   <ul class="plain">
-    <li><b>Correct trades</b> — the method executed as intended, entry and exit.</li>
-    <li><b>Incorrect trades</b> — premature entries, late entries, emotional entries, bad exits.</li>
-    <li><b>Missed trades</b> — a valid setup formed and no position was taken.</li>
-    <li><b>Near-signals and false signals</b> — conditions that resemble a setup but fail confirmation.</li>
-    <li><b>Ambiguous situations</b> — where the trader himself would not commit either way.</li>
-    <li><b>Correct no-trade periods</b> — doing nothing was the right decision.</li>
+    <li><b>Correct trades</b>: the method executed as intended, entry and exit.</li>
+    <li><b>Incorrect trades</b>: premature entries, late entries, emotional entries, bad exits.</li>
+    <li><b>Missed trades</b>: a valid setup formed and no position was taken.</li>
+    <li><b>Near-signals and false signals</b>: conditions that resemble a setup but fail confirmation.</li>
+    <li><b>Ambiguous situations</b>: where the trader himself would not commit either way.</li>
+    <li><b>Correct no-trade periods</b>: doing nothing was the right decision.</li>
   </ul>
 </section>
 
@@ -543,12 +543,12 @@
     The trader currently reads a dozen signals at once and arrives at a conclusion without
     decomposing it. The system cannot do that. Every input has to be resolved into an explicit,
     timestamped state that can be logged, replayed and argued with. Building this representation is
-    one of the core engineering tasks — and it will keep evolving as the methodology is documented.
+    one of the core engineering tasks, and it will keep evolving as the methodology is documented.
   </p>
 
   <div class="readout b-accent">
     <span class="g">Instrument</span>
-    <span class="k">market</span> &nbsp;<span class="v">NASDAQ futures &mdash; NQ</span><br>
+    <span class="k">market</span> &nbsp;<span class="v">NASDAQ futures, NQ</span><br>
     <span class="k">time</span> &nbsp;&nbsp;&nbsp;<span class="v">09:47:12.480</span>
     <span class="g">Price structure</span>
     <span class="k"><button class="term" data-k="swing-high" type="button">swing high</button></span> &nbsp;<span class="v">identified, 3m ago</span><br>
@@ -556,7 +556,7 @@
     <span class="g">S949 oscillator</span>
     <span class="k">oscillator</span> &nbsp;<span class="v">rising</span><br>
     <span class="k">price</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="v">falling</span><br>
-    <span class="k">divergence</span> &nbsp;<span class="v-a">detected &mdash; Type 1</span>
+    <span class="k">divergence</span> &nbsp;<span class="v-a">detected, Type 1</span>
     <span class="g">Fibonacci</span>
     <span class="k">level</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="v-a">price at 61.8% retracement</span>
     <span class="g">TickStrike</span>
@@ -570,7 +570,7 @@
     <span class="g">Methodology verdict</span>
     <span class="k">confidence</span> <span class="v-a">high</span><br>
     <span class="k">action</span> &nbsp;&nbsp;&nbsp;&nbsp;<span class="v-a">prepare long</span><br>
-    <span class="k">trigger</span> &nbsp;&nbsp;&nbsp;<span class="v-w">not yet satisfied &mdash; hold</span>
+    <span class="k">trigger</span> &nbsp;&nbsp;&nbsp;<span class="v-w">not yet satisfied, hold</span>
   </div>
 
   <h3>How the method gets taught, in order</h3>
@@ -581,12 +581,12 @@
     correct. The progression instead runs:
   </p>
   <ul class="plain">
-    <li><b>1 &middot; Document the methodology</b> — translate the trader's reasoning into explicit concepts.</li>
-    <li><b>2 &middot; Build automated observation</b> — teach the system to recognise the indicators and conditions.</li>
-    <li><b>3 &middot; Create a structured timeline</b> — convert sessions into machine-readable sequences.</li>
-    <li><b>4 &middot; Build the human-reviewed gold set</b> — the trader marks what the system saw right, what it misread, and what the correct decision was.</li>
-    <li><b>5 &middot; Build the first decision model</b> — explicit rules and measurable conditions wherever they hold.</li>
-    <li><b>6 &middot; Add learning only where rules break</b> — <button class="term" data-k="supervised-learning" type="button">supervised models</button>, <button class="term" data-k="sequence-model" type="button">sequence models</button>, imitation and preference learning, <button class="term" data-k="reinforcement-learning" type="button">reinforcement learning</button>, <button class="term" data-k="vlm" type="button">multimodal vision-language models</button>.</li>
+    <li><b>1 &middot; Document the methodology</b>: translate the trader's reasoning into explicit concepts.</li>
+    <li><b>2 &middot; Build automated observation</b>: teach the system to recognise the indicators and conditions.</li>
+    <li><b>3 &middot; Create a structured timeline</b>: convert sessions into machine-readable sequences.</li>
+    <li><b>4 &middot; Build the human-reviewed gold set</b>: the trader marks what the system saw right, what it misread, and what the correct decision was.</li>
+    <li><b>5 &middot; Build the first decision model</b>: explicit rules and measurable conditions wherever they hold.</li>
+    <li><b>6 &middot; Add learning only where rules break</b>: <button class="term" data-k="supervised-learning" type="button">supervised models</button>, <button class="term" data-k="sequence-model" type="button">sequence models</button>, imitation and preference learning, <button class="term" data-k="reinforcement-learning" type="button">reinforcement learning</button>, <button class="term" data-k="vlm" type="button">multimodal vision-language models</button>.</li>
   </ul>
   <p>
     Machine learning is introduced where explicit logic demonstrably runs out, not as the default
@@ -651,7 +651,7 @@
   <p class="sec-no">Month 2 &middot; Worked example</p>
   <h2>An Example Decision Sequence</h2>
   <p class="lead">
-    This is the intelligence becoming operational — the moment structured perception, method
+    This is the intelligence becoming operational: the moment structured perception, method
     reasoning and risk control actually work together on the same timeline.
   </p>
 
@@ -715,7 +715,7 @@
   <div class="rc-flow">
     <div class="rc-card ok">
       <div class="rc-h">Approved / modified</div>
-      <div class="rc-req">AI REQUEST &mdash; "BUY 4 NQ"</div>
+      <div class="rc-req">AI REQUEST: "BUY 4 NQ"</div>
       <ul class="rc-checks">
         <li>Max size <b>2</b></li>
         <li>Daily loss <b>OK</b></li>
@@ -724,11 +724,11 @@
         <li>Duplicate order <b>No</b></li>
         <li>Kill switch <b>Armed</b></li>
       </ul>
-      <div class="rc-result">APPROVED &mdash; "BUY 2 NQ"<small>Execution proceeds at the clamped size.</small></div>
+      <div class="rc-result">APPROVED: "BUY 2 NQ"<small>Execution proceeds at the clamped size.</small></div>
     </div>
     <div class="rc-card blocked">
       <div class="rc-h">Blocked</div>
-      <div class="rc-req">AI REQUEST &mdash; "BUY 2 NQ"</div>
+      <div class="rc-req">AI REQUEST: "BUY 2 NQ"</div>
       <ul class="rc-checks">
         <li>Trading hours <b>Outside permitted hours</b></li>
       </ul>
@@ -738,11 +738,11 @@
 
   <h3>What the controller enforces</h3>
   <ul class="plain">
-    <li><b>Position and loss limits</b> — maximum size, maximum daily loss, maximum trades per period.</li>
-    <li><b>Scope limits</b> — permitted instruments, permitted trading hours, mandatory stop-loss on every entry.</li>
-    <li><b>Order hygiene</b> — maximum order frequency, duplicate-order prevention.</li>
-    <li><b>Health checks</b> — stale-data detection, loss of market data, missing execution confirmation.</li>
-    <li><b>Emergency shutdown</b> — a single switch that stops all activity regardless of what the model wants.</li>
+    <li><b>Position and loss limits</b>: maximum size, maximum daily loss, maximum trades per period.</li>
+    <li><b>Scope limits</b>: permitted instruments, permitted trading hours, mandatory stop-loss on every entry.</li>
+    <li><b>Order hygiene</b>: maximum order frequency, duplicate-order prevention.</li>
+    <li><b>Health checks</b>: stale-data detection, loss of market data, missing execution confirmation.</li>
+    <li><b>Emergency shutdown</b>: a single switch that stops all activity regardless of what the model wants.</li>
   </ul>
 </section>
 <div class="month-band v"><div class="wrap" style="padding:0 24px">
@@ -799,7 +799,7 @@
     <figcaption>
       <b>The locked stage is intentional.</b> It communicates discipline, not delay. Automated
       control of real capital sits behind human-approved live performance on purpose, and stays
-      there until the evidence — not the schedule — says otherwise.
+      there until the evidence, not the schedule, says otherwise.
     </figcaption>
   </figure>
 </section>
@@ -831,7 +831,7 @@
   <p class="sec-no">Alignment</p>
   <h2>How the Roadmap Aligns With the Funding Structure</h2>
   <p class="lead">
-    This roadmap runs on the same funding model already established with Stan — summarized here
+    This roadmap runs on the same funding model already established with Stan, summarized here
     for alignment only. The full funding cards, ownership structure and partnership terms live on
     the partnership brief, not duplicated on this page.
   </p>
@@ -864,7 +864,7 @@
   <p class="small muted" style="font-size:13px">
     Target core prototype: approximately two months. Month 3 is reserved for validation,
     refinement and hardening where needed. If major milestones are reached earlier, development
-    advances immediately rather than waiting for an artificial calendar boundary — the work is not
+    advances immediately rather than waiting for an artificial calendar boundary. The work is not
     stretched to fill three months.
   </p>
 </section>
@@ -872,7 +872,7 @@
 <section class="sec" id="gates">
   <p class="sec-no">Nine technical gates</p>
   <h2>Autonomy Is Earned Through Nine Technical Gates</h2>
-  <p class="gates-intro">Inside the three development stages, autonomy is earned one phase at a time — the same nine gates that structure the underlying architecture.</p>
+  <p class="gates-intro">Inside the three development stages, autonomy is earned one phase at a time: the same nine gates that structure the underlying architecture.</p>
 
   <figure>
     <div class="frame">
@@ -931,8 +931,8 @@
   <div class="phases">
     <div class="ph"><span class="n">PHASE 1</span><h4>Observation</h4><p>Record and study trading sessions in full.</p></div>
     <div class="ph"><span class="n">PHASE 2</span><h4>Method reconstruction</h4><p>Document how the signals actually interact.</p></div>
-    <div class="ph"><span class="n">PHASE 3</span><h4>Automated recognition</h4><p>The system identifies S949, divergence, Fibonacci, TickStrike and context &mdash; and places no trades.</p></div>
-    <div class="ph"><span class="n">PHASE 4</span><h4>AI commentary</h4><p>It watches live and says what it sees &mdash; "possible Type&nbsp;1 forming", "resembles a setup but TickStrike confirmation is missing". The trader corrects it.</p></div>
+    <div class="ph"><span class="n">PHASE 3</span><h4>Automated recognition</h4><p>The system identifies S949, divergence, Fibonacci, TickStrike and context, and places no trades.</p></div>
+    <div class="ph"><span class="n">PHASE 4</span><h4>AI commentary</h4><p>It watches live and says what it sees: "possible Type&nbsp;1 forming", "resembles a setup but TickStrike confirmation is missing". The trader corrects it.</p></div>
     <div class="ph"><span class="n">PHASE 5</span><h4>Historical simulation</h4><p>The decision system is run against past sessions end to end.</p></div>
     <div class="ph"><span class="n">PHASE 6</span><h4>Paper trading</h4><p>Complete decisions in a simulated environment.</p></div>
     <div class="ph"><span class="n">PHASE 7</span><h4>Live assistant</h4><p>The AI proposes; a human approves and executes.</p></div>
@@ -949,13 +949,13 @@
 <section class="sec" id="deepdive">
   <p class="sec-no">Deep dive</p>
   <h2>Full Architecture, for Readers Who Want to Go Deeper</h2>
-  <p class="deepdive-note">Everything below is the underlying technical architecture that supports the three-month roadmap above. It is not required reading to understand the plan — it is here for anyone who wants the full engineering picture.</p>
+  <p class="deepdive-note">Everything below is the underlying technical architecture that supports the three-month roadmap above. It is not required reading to understand the plan. It is here for anyone who wants the full engineering picture.</p>
 
   <h3>Five layers, each a different engineering problem</h3>
   <p class="lead">
     A conventional trading algorithm begins with mathematics that is already defined. Here, a
     large part of phase one is discovering the rules themselves. The system splits cleanly into
-    five layers, and every layer fails for different reasons — so each is built and validated
+    five layers, and every layer fails for different reasons, so each is built and validated
     separately.
   </p>
 
@@ -990,8 +990,8 @@
     </div>
     <figcaption>
       <b>The loop, not the line.</b> The first four stages are what most people picture when they hear
-      "trading bot". The fifth is what makes the system improve: every decision — taken or declined
-      — is logged with the state that produced it and fed back into the method.
+      "trading bot". The fifth is what makes the system improve: every decision, taken or declined,
+      is logged with the state that produced it and fed back into the method.
     </figcaption>
   </figure>
 
@@ -1005,7 +1005,7 @@
   <h3>Four ways to reach the market, chosen per component</h3>
   <p class="lead">
     The final execution mechanism has not been selected, and it does not have to be a single
-    choice. The options differ mainly in how many hops sit between the decision and the fill — and
+    choice. The options differ mainly in how many hops sit between the decision and the fill, and
     every extra hop is somewhere the order can be delayed, misread or lost.
   </p>
 
@@ -1019,7 +1019,7 @@
         <text class="d-lab" x="106" y="52">A &middot; DIRECT BROKER API</text>
         <text class="d-s" x="796" y="52" text-anchor="end">0 HOPS</text>
         <line class="d-line-a" x1="100" y1="74" x2="798" y2="74" marker-end="url(#ah-a)"/>
-        <text class="d-s" x="106" y="94">BUY 1 NQ MARKET &middot; STOP 20 &middot; TARGET 35 &mdash; REST / WebSocket / FIX</text>
+        <text class="d-s" x="106" y="94">BUY 1 NQ MARKET &middot; STOP 20 &middot; TARGET 35 &middot; REST / WebSocket / FIX</text>
         <text class="d-lab" x="106" y="142">B &middot; NATIVE PLATFORM INTEGRATION</text>
         <text class="d-s" x="796" y="142" text-anchor="end">1 HOP</text>
         <g class="d-line" marker-end="url(#ah)">
@@ -1049,13 +1049,13 @@
         <text class="d-t" x="371" y="349" text-anchor="middle">Visual state read</text>
         <rect class="d-box" x="526" y="327" width="170" height="34" rx="2"/>
         <text class="d-t" x="611" y="349" text-anchor="middle">Mouse + keyboard</text>
-        <text class="d-s" x="106" y="376">SCREEN RE-VERIFIED AFTER EVERY CLICK &mdash; NOT A REPLAYED MACRO</text>
+        <text class="d-s" x="106" y="376">SCREEN RE-VERIFIED AFTER EVERY CLICK: NOT A REPLAYED MACRO</text>
       </svg>
     </div>
     <figcaption>
       <b>The choice is a hop count, not a philosophy.</b> Route A is preferred wherever the broker
       supports it. Each route below it exists to bridge a platform that was never designed for
-      automation — at the cost of one more component that must be verified at runtime.
+      automation, at the cost of one more component that must be verified at runtime.
     </figcaption>
   </figure>
 
@@ -1072,7 +1072,7 @@
       <h4>Native platform integration</h4>
       <p>A <button class="term" data-k="ninjascript" type="button">NinjaScript</button> or C# add-on
       inside the platform, bridged over local <button class="term" data-k="websocket" type="button">WebSocket</button>
-      or REST. May expose more than a generic broker API &mdash; chart state, indicators, live position.</p>
+      or REST. May expose more than a generic broker API: chart state, indicators, live position.</p>
       <div class="verdict"><b>Verdict</b>Potentially richer than A; same environment the trader uses.</div>
     </div>
     <div class="opt">
@@ -1089,12 +1089,12 @@
       <h4>Human-like GUI control</h4>
       <p>Vision plus mouse and keyboard, verifying the application's state at each step: confirm
       instrument, confirm position, locate control, check quantity, click, observe fill, confirm result
-      — and halt if the expected state is not seen.</p>
+      and halt if the expected state is not seen.</p>
       <div class="verdict"><b>Verdict</b>Last-resort bridge and emergency fallback.</div>
     </div>
   </div>
 
-  <h3>Proposal E &mdash; the hybrid, and the likely answer</h3>
+  <h3>Proposal E: the hybrid, and the likely answer</h3>
   <p>
     Nothing requires every part of the system to use the same interface. The strongest available
     method can be used for each component independently:
@@ -1118,10 +1118,10 @@
   <p>
     Once the decision is made, how the order actually gets clicked, typed or sent matters. Human
     <button class="term" data-k="reaction-time" type="button">visual reaction time</button> is
-    typically around 200&ndash;300&nbsp;ms before accounting for the deliberate
+    typically around 200 to 300&nbsp;ms before accounting for the deliberate
     <button class="term" data-k="mouse-movement" type="button">mouse movement</button> and clicking
     that follows it. A real-world screen recognition &rarr; decision &rarr; mouse click can easily take
-    300&ndash;700+&nbsp;ms in practice. The table below ranks the candidate execution methods by
+    300 to 700+&nbsp;ms in practice. The table below ranks the candidate execution methods by
     roughly how fast each one can act, once a decision has already been made.
   </p>
 
@@ -1129,15 +1129,15 @@
     <table>
       <thead><tr><th scope="col">Rank</th><th scope="col">Method</th><th scope="col">Approx. local response time*</th><th scope="col">Relative speed</th><th scope="col">How it works</th></tr></thead>
       <tbody>
-        <tr><td class="fn">1</td><td>Native trading <button class="term" data-k="api" type="button">API</button> / <button class="term" data-k="ninjascript" type="button">NinjaScript</button></td><td><span class="mono">~1&ndash;20 ms</span></td><td>Extremely fast</td><td>Sends the order directly through software without touching the mouse.</td></tr>
-        <tr><td class="fn">2</td><td>Custom <button class="term" data-k="csharp" type="button">C#</button> / <button class="term" data-k="ui-automation" type="button">Windows UI Automation</button></td><td><span class="mono">~5&ndash;30 ms</span></td><td>Extremely fast</td><td>Directly activates Windows application controls.</td></tr>
-        <tr><td class="fn">3</td><td><button class="term" data-k="autohotkey" type="button">AutoHotkey</button></td><td><span class="mono">~5&ndash;40 ms</span></td><td>Extremely fast</td><td>Executes predefined mouse clicks, keyboard commands, hotkeys and window actions.</td></tr>
-        <tr><td class="fn">4</td><td><button class="term" data-k="pyautogui" type="button">PyAutoGUI</button>, known coordinates</td><td><span class="mono">~20&ndash;100 ms</span></td><td>Very fast</td><td>Programmatically moves and clicks the mouse at predetermined screen locations.</td></tr>
-        <tr><td class="fn">5</td><td><button class="term" data-k="opencv" type="button">OpenCV</button> + mouse automation</td><td><span class="mono">~30&ndash;150 ms</span></td><td>Very fast</td><td>Looks at the screen, finds the correct control, then clicks it.</td></tr>
-        <tr><td class="fn">6</td><td><button class="term" data-k="playwright" type="button">Playwright</button> / <button class="term" data-k="puppeteer" type="button">Puppeteer</button></td><td><span class="mono">~20&ndash;150 ms</span></td><td>Very fast</td><td>Controls browser-based trading interfaces directly.</td></tr>
-        <tr><td class="fn">7</td><td>Local <button class="term" data-k="vlm" type="button">vision AI</button> + computer control</td><td><span class="mono">~100&ndash;1,000+ ms</span></td><td>Variable</td><td>AI interprets the screen and determines what to click.</td></tr>
-        <tr><td class="fn">8</td><td>Cloud vision AI + computer control</td><td><span class="mono">~500 ms&ndash;several seconds</span></td><td>Slow</td><td>Sends the visual state to an AI service, receives a decision, then acts.</td></tr>
-        <tr><td class="fn">&mdash;</td><td><b>Comparison: human operator</b></td><td><span class="mono">~200&ndash;300 ms reaction only; ~300&ndash;700+ ms practical action</span></td><td>Baseline</td><td>Sees the event, recognises it, reacts, moves mouse or finger, and clicks.</td></tr>
+        <tr><td class="fn">1</td><td>Native trading <button class="term" data-k="api" type="button">API</button> / <button class="term" data-k="ninjascript" type="button">NinjaScript</button></td><td><span class="mono">~1 to 20 ms</span></td><td>Extremely fast</td><td>Sends the order directly through software without touching the mouse.</td></tr>
+        <tr><td class="fn">2</td><td>Custom <button class="term" data-k="csharp" type="button">C#</button> / <button class="term" data-k="ui-automation" type="button">Windows UI Automation</button></td><td><span class="mono">~5 to 30 ms</span></td><td>Extremely fast</td><td>Directly activates Windows application controls.</td></tr>
+        <tr><td class="fn">3</td><td><button class="term" data-k="autohotkey" type="button">AutoHotkey</button></td><td><span class="mono">~5 to 40 ms</span></td><td>Extremely fast</td><td>Executes predefined mouse clicks, keyboard commands, hotkeys and window actions.</td></tr>
+        <tr><td class="fn">4</td><td><button class="term" data-k="pyautogui" type="button">PyAutoGUI</button>, known coordinates</td><td><span class="mono">~20 to 100 ms</span></td><td>Very fast</td><td>Programmatically moves and clicks the mouse at predetermined screen locations.</td></tr>
+        <tr><td class="fn">5</td><td><button class="term" data-k="opencv" type="button">OpenCV</button> + mouse automation</td><td><span class="mono">~30 to 150 ms</span></td><td>Very fast</td><td>Looks at the screen, finds the correct control, then clicks it.</td></tr>
+        <tr><td class="fn">6</td><td><button class="term" data-k="playwright" type="button">Playwright</button> / <button class="term" data-k="puppeteer" type="button">Puppeteer</button></td><td><span class="mono">~20 to 150 ms</span></td><td>Very fast</td><td>Controls browser-based trading interfaces directly.</td></tr>
+        <tr><td class="fn">7</td><td>Local <button class="term" data-k="vlm" type="button">vision AI</button> + computer control</td><td><span class="mono">~100 to 1,000+ ms</span></td><td>Variable</td><td>AI interprets the screen and determines what to click.</td></tr>
+        <tr><td class="fn">8</td><td>Cloud vision AI + computer control</td><td><span class="mono">~500 ms to several seconds</span></td><td>Slow</td><td>Sends the visual state to an AI service, receives a decision, then acts.</td></tr>
+        <tr><td class="fn">Ref.</td><td><b>Comparison: human operator</b></td><td><span class="mono">~200 to 300 ms reaction only; ~300 to 700+ ms practical action</span></td><td>Baseline</td><td>Sees the event, recognises it, reacts, moves mouse or finger, and clicks.</td></tr>
       </tbody>
     </table>
   </div>
@@ -1222,56 +1222,56 @@
 <script>
 (function(){
   var TERMS = {
-    "nq": ["NQ", "The ticker symbol for the E-mini Nasdaq-100 futures contract — a standardized agreement to buy or sell the Nasdaq-100 index at a set price on a future date. It is the specific market this trading system is designed to trade."],
-    "perception-layer": ["Perception layer", "The part of the system responsible for 'seeing' — reading the chart, indicators, and sounds — and turning them into data, as opposed to the part that decides what to do with that data."],
-    "computer-vision": ["Computer vision", "A field of AI focused on teaching computers to interpret images and video — for example, recognizing chart patterns or reading an indicator's shape directly from the screen, the way a person would look at it."],
+    "nq": ["NQ", "The ticker symbol for the E-mini Nasdaq-100 futures contract: a standardized agreement to buy or sell the Nasdaq-100 index at a set price on a future date. It is the specific market this trading system is designed to trade."],
+    "perception-layer": ["Perception layer", "The part of the system responsible for 'seeing', reading the chart, indicators, and sounds, and turning them into data, as opposed to the part that decides what to do with that data."],
+    "computer-vision": ["Computer vision", "A field of AI focused on teaching computers to interpret images and video. For example, recognizing chart patterns or reading an indicator's shape directly from the screen, the way a person would look at it."],
     "s949": ["S949", "A custom momentum oscillator (a chart indicator by Rob Mitchell / Ninza.co) used by the trader to spot shifts in market momentum. Its shape relative to price is central to this trading method."],
-    "divergence": ["Divergence (Type 1 / Type 2)", "A situation where price moves one way but an indicator (like S949) moves the opposite way — often a signal that the current price move is losing strength. 'Type 1' and 'Type 2' are the trader's own naming for two distinct divergence patterns with different reliability and follow-through."],
+    "divergence": ["Divergence (Type 1 / Type 2)", "A situation where price moves one way but an indicator (like S949) moves the opposite way. Often a signal that the current price move is losing strength. 'Type 1' and 'Type 2' are the trader's own naming for two distinct divergence patterns with different reliability and follow-through."],
     "fibonacci": ["Fibonacci retracement", "A charting tool that marks specific percentage levels (such as 38.2%, 50%, 61.8%) between a recent high and low. Traders watch these levels as places price is statistically likely to pause, reverse, or accelerate."],
-    "tickstrike": ["TickStrike", "A third-party order-flow tool that visualizes and sounds alerts based on real-time buying/selling pressure ('order flow') in the market — effectively a live gauge of who is currently more aggressive, buyers or sellers."],
+    "tickstrike": ["TickStrike", "A third-party order-flow tool that visualizes and sounds alerts based on real-time buying/selling pressure ('order flow') in the market. Effectively a live gauge of who is currently more aggressive, buyers or sellers."],
     "imitation-learning": ["Imitation learning", "A machine-learning approach where a model learns by copying examples of past behavior. The risk highlighted in this document: if the past behavior included mistakes, the model copies the mistakes too, unless the data is explicitly labeled right vs. wrong."],
-    "black-box": ["Black box (AI)", "An AI model whose internal decision-making can't be easily inspected or explained — it takes inputs and produces outputs, but a human can't clearly see 'why' it decided what it decided. The opposite of an explicit, rules-based system."],
+    "black-box": ["Black box (AI)", "An AI model whose internal decision-making can't be easily inspected or explained. It takes inputs and produces outputs, but a human can't clearly see 'why' it decided what it decided. The opposite of an explicit, rules-based system."],
     "supervised-learning": ["Supervised learning", "A machine-learning method where a model is trained on labeled examples (input paired with the correct answer) so it can learn to predict the answer for new, unseen inputs."],
-    "sequence-model": ["Sequence model", "A type of AI model designed to understand data that unfolds over time (a 'sequence') — like a series of price moves or chart states in order — rather than a single snapshot."],
-    "reinforcement-learning": ["Reinforcement learning", "A machine-learning method where a model learns by trial and error, receiving a reward or penalty for its actions, and gradually improving its strategy to earn more reward — conceptually similar to how a person learns a game."],
-    "vlm": ["Vision-language model (multimodal AI)", "An AI model that can process more than one type of input at once — for example, looking at an image (like a chart) and reasoning about it in words simultaneously. 'Multimodal' means it handles multiple types of data (vision + text) together."],
+    "sequence-model": ["Sequence model", "A type of AI model designed to understand data that unfolds over time (a 'sequence'), like a series of price moves or chart states in order, rather than a single snapshot."],
+    "reinforcement-learning": ["Reinforcement learning", "A machine-learning method where a model learns by trial and error, receiving a reward or penalty for its actions, and gradually improving its strategy to earn more reward. Conceptually similar to how a person learns a game."],
+    "vlm": ["Vision-language model (multimodal AI)", "An AI model that can process more than one type of input at once. For example, looking at an image (like a chart) and reasoning about it in words simultaneously. 'Multimodal' means it handles multiple types of data (vision + text) together."],
     "api": ["API (Application Programming Interface)", "A defined way for two pieces of software to talk to each other. A 'broker API' lets a trading program send orders and receive data directly from a brokerage's computers, without a human clicking buttons."],
     "ninjascript": ["NinjaScript", "The custom programming language used to build add-ons and automated strategies inside NinjaTrader, a popular futures trading platform. Used here as a possible way to plug directly into the trader's existing software."],
     "websocket": ["WebSocket", "A technology that keeps a constant, always-open connection between two computers so data (like live prices) can stream back and forth instantly, instead of one side having to repeatedly ask 'anything new?'"],
     "rest": ["REST (API)", "A common, standardized style of building web APIs. When you see 'REST', think: a conventional, request-and-response way for software to talk to a server over the internet."],
-    "fix": ["FIX (protocol)", "Financial Information eXchange — an industry-standard messaging format that banks, brokers, and exchanges use to send trade orders and market data to each other electronically."],
-    "obs": ["OBS (Open Broadcaster Software)", "Free, widely used software for recording or streaming your screen — the tool that would capture the trader's monitor and audio for later analysis."],
-    "ffmpeg": ["FFmpeg", "A free command-line tool used to convert, edit, and process video and audio files — the industry-standard 'Swiss army knife' for video processing."],
-    "opencv": ["OpenCV", "A free, open-source software library (a collection of ready-made code) for computer vision tasks — detecting shapes, tracking objects, reading numbers off a screen, etc."],
-    "yolo": ["YOLO ('You Only Look Once')", "A fast, well-known family of AI models for detecting and locating objects within an image or video frame in real time — useful for spotting a specific chart pattern or on-screen element instantly."],
-    "vision-transformer": ["Vision transformer", "A modern type of neural network architecture (the same family behind ChatGPT-style AI) adapted to understand images instead of text — generally more flexible and powerful than older vision techniques."],
-    "whisper": ["Whisper", "An AI model (built by OpenAI) that converts spoken audio into written text — used here to transcribe the trader's spoken commentary during a session."],
+    "fix": ["FIX (protocol)", "Financial Information eXchange: an industry-standard messaging format that banks, brokers, and exchanges use to send trade orders and market data to each other electronically."],
+    "obs": ["OBS (Open Broadcaster Software)", "Free, widely used software for recording or streaming your screen: the tool that would capture the trader's monitor and audio for later analysis."],
+    "ffmpeg": ["FFmpeg", "A free command-line tool used to convert, edit, and process video and audio files: the industry-standard 'Swiss army knife' for video processing."],
+    "opencv": ["OpenCV", "A free, open-source software library (a collection of ready-made code) for computer vision tasks: detecting shapes, tracking objects, reading numbers off a screen, etc."],
+    "yolo": ["YOLO ('You Only Look Once')", "A fast, well-known family of AI models for detecting and locating objects within an image or video frame in real time. Useful for spotting a specific chart pattern or on-screen element instantly."],
+    "vision-transformer": ["Vision transformer", "A modern type of neural network architecture (the same family behind ChatGPT-style AI) adapted to understand images instead of text. Generally more flexible and powerful than older vision techniques."],
+    "whisper": ["Whisper", "An AI model (built by OpenAI) that converts spoken audio into written text. Used here to transcribe the trader's spoken commentary during a session."],
     "python": ["Python", "A widely used, relatively easy-to-read programming language. It's the dominant language for data science and AI, which is why it's proposed here for the main data-handling work."],
     "cpp-rust": ["C++ / Rust", "Two programming languages known for speed and precision. They're used instead of Python for the small number of components where every millisecond matters, since Python is slower to execute."],
-    "postgresql": ["PostgreSQL", "A free, robust, and very widely used database system — software for reliably storing and organizing structured information, like trade records or system state."],
-    "timescaledb": ["TimescaleDB", "An extension to PostgreSQL specifically optimized for 'time-series' data — information that is naturally ordered by time, like a stream of prices, which is exactly what a trading system generates constantly."],
+    "postgresql": ["PostgreSQL", "A free, robust, and very widely used database system: software for reliably storing and organizing structured information, like trade records or system state."],
+    "timescaledb": ["TimescaleDB", "An extension to PostgreSQL specifically optimized for 'time-series' data: information that is naturally ordered by time, like a stream of prices, which is exactly what a trading system generates constantly."],
     "redis": ["Redis", "An extremely fast, in-memory data store (meaning it keeps data in the computer's active memory rather than on disk) used for information that needs to be read or written almost instantly."],
     "pytorch": ["PyTorch", "A leading open-source software framework (built by Meta) for building and training machine-learning and AI models. If a model in this system needs to 'learn' from data, it's likely built with PyTorch."],
-    "runpod": ["RunPod", "A cloud service that rents out powerful computers with GPUs by the hour — used for the heavy, temporary computing work of training AI models, without buying the hardware outright."],
+    "runpod": ["RunPod", "A cloud service that rents out powerful computers with GPUs by the hour. Used for the heavy, temporary computing work of training AI models, without buying the hardware outright."],
     "gpu": ["GPU (Graphics Processing Unit)", "A specialized computer chip, originally built for rendering graphics, that turns out to be extremely good at the type of math AI training and AI inference require. Essential hardware for any serious machine-learning work."],
-    "playwright": ["Playwright", "A software tool (by Microsoft) for automating and controlling a web browser programmatically — letting code click buttons, fill forms, and read a webpage the way a human user would, but automatically."],
-    "puppeteer": ["Puppeteer", "A software tool (by Google) similar to Playwright — it automates control of a Chrome browser, allowing a program to interact with a website without a human at the keyboard."],
+    "playwright": ["Playwright", "A software tool (by Microsoft) for automating and controlling a web browser programmatically. Lets code click buttons, fill forms, and read a webpage the way a human user would, but automatically."],
+    "puppeteer": ["Puppeteer", "A software tool (by Google) similar to Playwright. It automates control of a Chrome browser, allowing a program to interact with a website without a human at the keyboard."],
     "candlestick": ["Candlestick (chart)", "A way of drawing price on a chart where each bar ('candle') shows the open, close, high, and low price for a time period as a small rectangle with wick lines. Reading the shapes and sequences of candlesticks is one of the most basic skills in technical trading."],
-    "order-flow": ["Order flow", "The real-time stream of actual buy and sell orders hitting the market — who is aggressively buying versus selling right now, as opposed to just where the price is. TickStrike is one tool for reading it."],
+    "order-flow": ["Order flow", "The real-time stream of actual buy and sell orders hitting the market: who is aggressively buying versus selling right now, as opposed to just where the price is. TickStrike is one tool for reading it."],
     "entry-exit": ["Entry / exit", "An 'entry' is the moment a trader opens a new position (buys or sells to start a trade). An 'exit' is the moment that position is closed out, for a profit or a loss."],
-    "position-size": ["Position size", "How many contracts or shares a trade uses — essentially, how much money and risk is committed to a single trade. A core lever for controlling risk independent of whether the trade idea itself is right."],
+    "position-size": ["Position size", "How many contracts or shares a trade uses. Essentially, how much money and risk is committed to a single trade. A core lever for controlling risk independent of whether the trade idea itself is right."],
     "signal-latency": ["Signal-to-execution timing", "The delay between the moment a valid trading signal actually appears and the moment an order is placed because of it. In fast markets, even a delay of a few hundred milliseconds can change the outcome of a trade."],
-    "deliberate-non-entry": ["Deliberate non-entry", "A moment where a setup looked tempting but the trader consciously chose not to take the trade, because the full method wasn't satisfied. Distinct from simply not noticing an opportunity — it's disciplined restraint, and this document treats it as valuable training data in its own right."],
-    "ocr": ["OCR (Optical Character Recognition)", "Technology that reads printed or on-screen text and numbers out of an image or video and converts them into actual, usable data — for example, pulling a price or indicator value directly off a screenshot of a trading platform."],
+    "deliberate-non-entry": ["Deliberate non-entry", "A moment where a setup looked tempting but the trader consciously chose not to take the trade, because the full method wasn't satisfied. Distinct from simply not noticing an opportunity: it's disciplined restraint, and this document treats it as valuable training data in its own right."],
+    "ocr": ["OCR (Optical Character Recognition)", "Technology that reads printed or on-screen text and numbers out of an image or video and converts them into actual, usable data. For example, pulling a price or indicator value directly off a screenshot of a trading platform."],
     "chromium": ["Chromium", "The open-source web browser engine that powers Google Chrome (and several other browsers). Automation tools like Playwright and Puppeteer typically drive a Chromium browser instance to interact with websites programmatically."],
-    "order-ticket": ["Order ticket", "The form or panel in a trading platform's interface where you specify what to trade — instrument, buy or sell, order type, quantity — and submit it to the market."],
+    "order-ticket": ["Order ticket", "The form or panel in a trading platform's interface where you specify what to trade: instrument, buy or sell, order type, quantity. Then submit it to the market."],
     "csharp": ["C# ('C Sharp')", "A general-purpose programming language created by Microsoft. It's the language NinjaScript (used for NinjaTrader add-ons) is built on, making it a natural choice for platform-level integration work."],
-    "ui-automation": ["Windows UI Automation", "A built-in Microsoft Windows framework that lets a program identify and control the buttons, fields, and windows of other desktop applications — similar in spirit to browser automation, but for regular desktop software instead of web pages."],
-    "swing-high": ["Swing high / swing low", "A local peak (swing high) or trough (swing low) on a price chart — a point where price turned around, at least temporarily. Traders use recent swing highs and lows as reference points for tools like Fibonacci retracement."],
-    "reaction-time": ["Visual reaction time", "The time it takes a person to consciously notice something on screen and begin to respond to it — typically around 200–300 milliseconds for a simple visual event, before any physical movement like reaching for the mouse even starts."],
+    "ui-automation": ["Windows UI Automation", "A built-in Microsoft Windows framework that lets a program identify and control the buttons, fields, and windows of other desktop applications. Similar in spirit to browser automation, but for regular desktop software instead of web pages."],
+    "swing-high": ["Swing high / swing low", "A local peak (swing high) or trough (swing low) on a price chart: a point where price turned around, at least temporarily. Traders use recent swing highs and lows as reference points for tools like Fibonacci retracement."],
+    "reaction-time": ["Visual reaction time", "The time it takes a person to consciously notice something on screen and begin to respond to it, typically around 200 to 300 milliseconds for a simple visual event, before any physical movement like reaching for the mouse even starts."],
     "mouse-movement": ["Mouse movement (as a time cost)", "The physical time it takes a hand to move a cursor to the right spot on screen and click, after the brain has already decided to act. It's a small delay on its own, but it stacks on top of reaction time and adds up in fast-moving markets."],
-    "autohotkey": ["AutoHotkey", "A free scripting tool for Windows that lets you automate mouse clicks, keystrokes, hotkeys, and window actions using simple pre-written scripts. It's fast because it's not 'thinking' — it just executes a fixed, predetermined sequence of actions."],
-    "pyautogui": ["PyAutoGUI", "A Python library that programmatically controls the mouse and keyboard — for example, moving the cursor to an exact pixel location and clicking, or typing text, all from code rather than a person's hand."]
+    "autohotkey": ["AutoHotkey", "A free scripting tool for Windows that lets you automate mouse clicks, keystrokes, hotkeys, and window actions using simple pre-written scripts. It's fast because it's not 'thinking'. It just executes a fixed, predetermined sequence of actions."],
+    "pyautogui": ["PyAutoGUI", "A Python library that programmatically controls the mouse and keyboard. For example, moving the cursor to an exact pixel location and clicking, or typing text, all from code rather than a person's hand."]
   };
 
   // Populate tooltips on term buttons

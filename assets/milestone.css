@@ -1,5 +1,5 @@
 /* ============================================================================
-   Tribune Trading — Development Roadmap (/milestone) page-specific stylesheet.
+   Tribune Trading: Development Roadmap (/milestone) page-specific stylesheet.
    Loaded ONLY on /milestone/index.html, after /assets/style.css.
    Builds on the existing brand tokens (--daylight, --marble, --obsidian,
    --basalt, --ash, --tyrian, --tyrian-deep, --murex, --aurum, --error, fonts,
@@ -16,7 +16,7 @@
                                                 new to this page, sits next
                                                 to --tyrian/--murex without
                                                 clashing. Never used for
-                                                blocked/violation states —
+                                                blocked/violation states.
                                                 --error (red) is reserved
                                                 strictly for those.
    ========================================================================== */
@@ -73,7 +73,7 @@
 .month-row .m.v .mk{color:var(--violet-deep)}
 @media(max-width:680px){.month-row{flex-direction:column}}
 
-/* ---------- Sticky month progress rail — DESKTOP (persistent, fixed) ----- */
+/* ---------- Sticky month progress rail: DESKTOP (persistent, fixed) ----- */
 .month-rail{position:fixed;top:50%;right:22px;transform:translateY(-50%);z-index:40;
   width:212px;background:var(--daylight);border:1px solid var(--line-strong);
   border-radius:var(--radius-card);padding:16px 16px 14px;
@@ -123,7 +123,7 @@
 
 @media(max-width:1180px){.month-rail{display:none}}
 
-/* ---------- Sticky month bar — MOBILE / narrow desktop -------------------- */
+/* ---------- Sticky month bar: MOBILE / narrow desktop -------------------- */
 .month-bar{display:none;position:sticky;top:0;z-index:45;background:var(--daylight);
   border-bottom:1px solid var(--line-strong);box-shadow:0 6px 18px -14px rgba(10,11,18,.3)}
 .month-bar ol{list-style:none;display:flex;max-width:var(--max-width);margin:0 auto}
@@ -151,7 +151,7 @@ main.doc{max-width:var(--max-width);margin:0 auto;padding:0 24px 110px}
 .sec p.lead{font-size:1.05rem;color:var(--basalt);max-width:64ch}
 .sec strong{font-weight:600;color:var(--obsidian)}
 
-/* Month section banner — sets the ambient accent color per month */
+/* Month section banner: sets the ambient accent color per month */
 .month-band{border-radius:var(--radius-card);padding:3px 0 0;margin:44px 0 0}
 .month-kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);
   font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:6px 14px 6px 12px;

@@ -1,4 +1,4 @@
-/* Tribune — /milestone development-roadmap page.
+/* Tribune: /milestone development-roadmap page.
    Sticky month scroll-spy rail (desktop) + horizontal sticky bar (mobile).
    Vanilla JS, zero dependencies, client-side only. Does not touch the
    term-tooltip/glossary mechanism, which lives inline in milestone/index.html
