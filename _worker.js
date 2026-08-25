@@ -93,12 +93,12 @@ const GATE_PARTNERSHIP = {
 };
 
 const GATE_MILESTONE = {
-  pathPrefix: "/milestone",
+  pathPrefix: "/milestones",
   password: "Make!MoreMoney26",
   secret: "tribune-milestone-gate-v1-3r6t9y2u5i",
   cookie: "__Secure-tt_milestone_gate",
-  cookiePath: "/milestone",
-  formAction: "/milestone/",
+  cookiePath: "/milestones",
+  formAction: "/milestones/",
   heading: "Development Roadmap — Restricted Access",
   subtext: "This document is restricted to invited reviewers. Enter the access password to continue.",
 };
