@@ -2,7 +2,7 @@
  * Tribune Inc. Cloudflare Worker
  * Handles: 301 redirects, HTTP Link headers (agent discovery),
  *          Markdown content-type + X-Robots-Tag, www → apex redirect,
- *          server-side password gate for /techstack/
+ *          server-side password gates for /techstack/ and /partnership/
  */
 
 // Alias → canonical 301 redirects
@@ -57,17 +57,42 @@ function getMdRedirect(pathname) {
 }
 
 // ---------------------------------------------------------------------------
-// Password gate — /techstack/
+// Password gate(s) — /techstack/ and /partnership/
 // Server-side, edge-enforced. Content is never returned to the client
 // unless a valid signed session cookie is present. Password itself is
 // never sent in cleartext over a GET; it is submitted via POST from the
 // gate form and never stored — only a time-windowed HMAC token is issued.
+//
+// Each gate is defined by a config object below. Every gate has its own
+// password, HMAC secret, and cookie name, so they are fully independent —
+// a leaked/rotated secret or cookie for one gate has zero effect on the
+// other.
 // ---------------------------------------------------------------------------
-const GATE_PATH_PREFIX = "/techstack";
-const GATE_PASSWORD = "Make!MoreMoney26";
-const GATE_SECRET = "tribune-techstack-gate-v1-9f3a7c2e5b";
-const GATE_COOKIE = "__Secure-tt_gate";
 const GATE_TTL_DAYS = 7;
+
+const GATE_TECHSTACK = {
+  pathPrefix: "/techstack",
+  password: "Make!MoreMoney26",
+  secret: "tribune-techstack-gate-v1-9f3a7c2e5b",
+  cookie: "__Secure-tt_gate",
+  cookiePath: "/techstack",
+  formAction: "/techstack/",
+  heading: "Tribune Trading AI — Technical Overview",
+  subtext: "This document is restricted to invited reviewers. Enter the access password to continue.",
+};
+
+const GATE_PARTNERSHIP = {
+  pathPrefix: "/partnership",
+  password: "Make!MoreMoney26",
+  secret: "tribune-partnership-gate-v1-8k2m4p9x1q",
+  cookie: "__Secure-tt_partner_gate",
+  cookiePath: "/partnership",
+  formAction: "/partnership/",
+  heading: "Partnership — Restricted Access",
+  subtext: "This document is restricted to invited reviewers. Enter the access password to continue.",
+};
+
+const GATES = [GATE_TECHSTACK, GATE_PARTNERSHIP];
 
 function currentWeekNumber() {
   // Rotates the valid token weekly so a leaked cookie expires on its own.
@@ -92,13 +117,13 @@ function timingSafeEqual(a, b) {
   return out === 0;
 }
 
-async function issueGateToken() {
+async function issueGateToken(gate) {
   const week = currentWeekNumber();
-  const sig = await hmacSign(`techstack:${week}`, GATE_SECRET);
+  const sig = await hmacSign(`${gate.pathPrefix}:${week}`, gate.secret);
   return `${week}.${sig}`;
 }
 
-async function verifyGateToken(token) {
+async function verifyGateToken(gate, token) {
   if (!token || !token.includes(".")) return false;
   const [weekStr, sig] = token.split(".");
   const week = Number(weekStr);
@@ -106,7 +131,7 @@ async function verifyGateToken(token) {
   // accept current or previous week (grace period across the rotation boundary)
   for (const w of [currentWeekNumber(), currentWeekNumber() - 1]) {
     if (w !== week) continue;
-    const expected = await hmacSign(`techstack:${w}`, GATE_SECRET);
+    const expected = await hmacSign(`${gate.pathPrefix}:${w}`, gate.secret);
     if (timingSafeEqual(expected, sig)) return true;
   }
   return false;
@@ -118,7 +143,7 @@ function getCookie(request, name) {
   return match ? decodeURIComponent(match[1]) : null;
 }
 
-function gatePage({ error } = {}) {
+function gatePage(gate, { error } = {}) {
   return `<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -152,10 +177,10 @@ border-radius:8px;margin-bottom:16px}
 <body>
 <div class="card">
   <span class="eyebrow">Confidential</span>
-  <h1>Tribune Trading AI — Technical Overview</h1>
-  <p class="sub">This document is restricted to invited reviewers. Enter the access password to continue.</p>
+  <h1>${gate.heading}</h1>
+  <p class="sub">${gate.subtext}</p>
   ${error ? '<div class="err">Incorrect password. Try again.</div>' : ''}
-  <form method="POST" action="/techstack/">
+  <form method="POST" action="${gate.formAction}">
     <label for="pw">Password</label>
     <input type="password" id="pw" name="password" autofocus required>
     <button type="submit">Enter</button>
@@ -164,22 +189,22 @@ border-radius:8px;margin-bottom:16px}
 </body></html>`;
 }
 
-async function handleGate(request, url) {
+async function handleGate(gate, request, url) {
   // POST = password submission
   if (request.method === "POST") {
     const form = await request.formData();
     const submitted = (form.get("password") || "").toString();
-    if (timingSafeEqual(submitted, GATE_PASSWORD)) {
-      const token = await issueGateToken();
+    if (timingSafeEqual(submitted, gate.password)) {
+      const token = await issueGateToken(gate);
       const headers = new Headers({ "Location": url.pathname, "Content-Type": "text/plain" });
       headers.append(
         "Set-Cookie",
-        `${GATE_COOKIE}=${encodeURIComponent(token)}; Path=/techstack; HttpOnly; Secure; SameSite=Lax; Max-Age=${GATE_TTL_DAYS * 24 * 60 * 60}`
+        `${gate.cookie}=${encodeURIComponent(token)}; Path=${gate.cookiePath}; HttpOnly; Secure; SameSite=Lax; Max-Age=${GATE_TTL_DAYS * 24 * 60 * 60}`
       );
       headers.set("Cache-Control", "private, no-store, no-cache, must-revalidate");
       return new Response(null, { status: 303, headers });
     }
-    return new Response(gatePage({ error: true }), {
+    return new Response(gatePage(gate, { error: true }), {
       status: 401,
       headers: {
         "Content-Type": "text/html; charset=utf-8",
@@ -190,11 +215,11 @@ async function handleGate(request, url) {
   }
 
   // GET = check cookie
-  const token = getCookie(request, GATE_COOKIE);
-  const valid = await verifyGateToken(token);
+  const token = getCookie(request, gate.cookie);
+  const valid = await verifyGateToken(gate, token);
   if (valid) return null; // pass through to normal handling
 
-  return new Response(gatePage(), {
+  return new Response(gatePage(gate), {
     status: 401,
     headers: {
       "Content-Type": "text/html; charset=utf-8",
@@ -217,10 +242,12 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
-    // 0. Password gate for /techstack (and any sub-paths)
-    const isGatedPath = url.pathname === GATE_PATH_PREFIX || url.pathname.startsWith(GATE_PATH_PREFIX + "/");
-    if (isGatedPath) {
-      const gateResponse = await handleGate(request, url);
+    // 0. Password gate for /techstack, /partnership (and any sub-paths)
+    const matchedGate = GATES.find(
+      (gate) => url.pathname === gate.pathPrefix || url.pathname.startsWith(gate.pathPrefix + "/")
+    );
+    if (matchedGate) {
+      const gateResponse = await handleGate(matchedGate, request, url);
       if (gateResponse) return gateResponse;
       // else: authorized, fall through to normal asset serving below,
       // but never let the CDN or browser cache this path publicly —

@@ -2,4 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /techstack
 Disallow: /techstack/
+Disallow: /partnership
+Disallow: /partnership/
 Sitemap: https://tribuneinc.com/sitemap.xml
