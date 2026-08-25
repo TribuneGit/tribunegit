@@ -225,7 +225,9 @@
   <p>
     The first major transformation is turning a trading session into machine-readable state. The
     system does not merely watch the video. It converts what happened into a structured timeline
-    that can be replayed, compared, labeled, and eventually reasoned over.
+    that can be replayed, compared, labeled, and eventually reasoned over, using computer vision
+    and <button class="term" data-k="ocr" type="button">OCR</button> to read numbers and text
+    directly off the screen.
   </p>
 
   <figure>
@@ -324,12 +326,9 @@
       </svg>
     </div>
     <figcaption>
-      <b>Why the raw footage is kept.</b> Extraction is not a one-way door. If in six months a visual
-      feature turns out to matter that nobody thought to capture, the source recordings are still there
-      to re-derive it from. Discarding the video after the first extraction would permanently cap what
-      the dataset can ever contain. The perception engine itself turns that raw video and sound into
-      structured data using computer vision, <button class="term" data-k="ocr" type="button">OCR</button>
-      (reading numbers and text directly off the screen), and audio classification.
+      <b>Why the raw footage is kept.</b> If a visual or behavioral feature we did not initially
+      extract turns out to matter later, the system can return to the original footage and derive
+      it without recreating the session.
     </figcaption>
   </figure>
 </section>
@@ -373,18 +372,24 @@
 
 <section class="sec" id="m1-brainhands">
   <p class="sec-no">Month 1 &middot; The core distinction</p>
-  <h2>The Brain and the Hands</h2>
+  <h2>The Eyes and the Hands</h2>
   <p class="lead">
     Automating clicks and broker orders is not the primary intellectual challenge of this project.
-    Deciding the correct action is. Keeping the two cleanly separated, in the architecture and in
+    Deciding the correct action is. Keeping the parts cleanly separated, in the architecture and in
     how progress is measured, is one of the more important design decisions in the whole system.
+  </p>
+  <p class="lead">
+    The full model has four parts: <b>THE EYES</b> (Perception), <b>THE BRAIN</b> (Method +
+    Decision Logic), <b>THE HANDS</b> (Execution), and <b>THE GUARDRAILS</b> (Independent Risk
+    Control). Month 1 builds perception and execution in parallel. Month 2 connects them through
+    the trading method and decision logic.
   </p>
 
   <figure>
     <div class="frame">
       <div class="bh-grid">
         <div class="bh-card hands">
-          <div class="bh-h">The hands &middot; likely demonstrable early</div>
+          <div class="bh-h">THE HANDS (Execution) &middot; likely demonstrable early</div>
           <ol class="bh-steps">
             <li><span class="si">1</span> Receive command</li>
             <li><span class="si">2</span> Check risk</li>
@@ -394,7 +399,7 @@
           </ol>
         </div>
         <div class="bh-card brain">
-          <div class="bh-h">The brain &middot; the core research problem</div>
+          <div class="bh-h">THE EYES (Perception) &middot; builds alongside the hands</div>
           <ol class="bh-steps">
             <li><span class="si">1</span> Observe</li>
             <li><span class="si">2</span> Understand context</li>
@@ -407,15 +412,15 @@
       <div class="bh-converge">
         <div class="lines"></div>
         <div class="bh-converge-block">
-          <div class="name">THE BRAIN + THE HANDS</div>
-          <div class="split">&rarr; <b>COMPLETE TRADING SYSTEM</b></div>
+          <div class="name">THE EYES + THE HANDS</div>
+          <div class="split">&rarr; <b>MONTH 1 FOUNDATION</b></div>
         </div>
       </div>
     </div>
     <figcaption>
-      <b>Neither half works alone.</b> Hands without a brain execute the wrong trades quickly. A
-      brain without hands is an opinion, not a system. Month 1 builds both in parallel precisely so
-      neither becomes a bottleneck for the other once Month 2 connects them.
+      <b>Neither half works alone.</b> Hands without eyes execute the wrong trades quickly. Eyes
+      without hands are an opinion, not a system. Month 1 builds both in parallel precisely so
+      neither becomes a bottleneck for the other once Month 2 adds the brain and the guardrails.
     </figcaption>
   </figure>
 </section>
@@ -454,6 +459,10 @@
     What happened is not always the same as what should have happened. Month 2 is where the
     project's central intellectual problem lives: teaching the system to reason about the method
     itself, not just to recognize what a screen looked like right before a trade.
+  </p>
+  <p class="lead">
+    <b>The difficult part is not sending a buy order. It is teaching a machine to recognize when
+    the method actually calls for one.</b>
   </p>
 </section>
 
@@ -529,9 +538,9 @@
   <div class="callout">
     <h3>The quiet periods carry as much signal as the trades</h3>
     <p>
-      A system trained only on entries has never been shown what disciplined inaction looks like.
-      Long stretches of deliberate inaction are among the most valuable material in the entire
-      dataset, and they cost nothing extra to record.
+      Quiet periods can be as informative as the trades themselves. A system trained only on
+      entries has never been shown what disciplined inaction looks like. Correct no-trade periods
+      therefore become explicit training examples.
     </p>
   </div>
 </section>
@@ -651,8 +660,8 @@
   <p class="sec-no">Month 2 &middot; Worked example</p>
   <h2>An Example Decision Sequence</h2>
   <p class="lead">
-    This is the intelligence becoming operational: the moment structured perception, method
-    reasoning and risk control actually work together on the same timeline.
+    <b>ILLUSTRATIVE EXAMPLE.</b> This is the intelligence becoming operational: the moment structured
+    perception, method reasoning and risk control actually work together on the same timeline.
   </p>
 
   <div class="readout b-accent">
@@ -665,7 +674,7 @@
     <span class="k">context</span> <span class="v-w">extended move</span>
     <span class="g">System verdict</span>
     <span class="k">verdict</span> <span class="v-a">prepare long</span><br>
-    <span class="k">confidence</span> <span class="v-a">84%</span><br>
+    <span class="k">confidence</span> <span class="v-a">High</span><br>
     <span class="k">action</span> <span class="v-w">wait</span><br>
     <span class="k">why</span> <span class="v">trigger not yet confirmed</span>
   </div>
@@ -683,9 +692,8 @@
   <h2>The AI Requests Trades. Something Else Permits Them.</h2>
   <p class="lead">
     Whichever execution route is chosen, the trading intelligence should never hold direct control
-    of the account. An independent risk controller sits between the decision and the order, and it
-    is the component with final authority. The intelligence never directly owns unrestricted
-    account control.
+    of the account. An independent risk controller sits between the decision and the order.
+    The intelligence proposes. The independent controller has final authority.
   </p>
 
   <div class="rc-flow">
@@ -713,19 +721,16 @@
   </div>
 
   <h3>What the controller enforces</h3>
-  <ul class="plain">
-    <li><b>Position and loss limits</b>: maximum size, maximum daily loss, maximum trades per period.</li>
-    <li><b>Scope limits</b>: permitted instruments, permitted trading hours, mandatory stop-loss on every entry.</li>
-    <li><b>Order hygiene</b>: maximum order frequency, duplicate-order prevention.</li>
-    <li><b>Health checks</b>: stale-data detection, loss of market data, missing execution confirmation.</li>
-    <li><b>Emergency shutdown</b>: a single switch that stops all activity regardless of what the model wants.</li>
-  </ul>
+  <p>
+    The controller enforces position limits, daily-loss limits, trading hours, duplicate-order
+    protection, mandatory risk parameters, data-health checks, and the emergency kill switch.
+  </p>
 </section>
 <section class="sec" id="m2-milestone">
   <p class="sec-no">Month 2 &middot; Target</p>
   <div class="milestone-box b">
     <div class="mb-target">Month 2 target</div>
-    <h3>A Complete Closed-Loop Prototype.</h3>
+    <h3>A Working Closed-Loop Prototype.</h3>
     <p>
       The system observes the market, interprets the trading state, evaluates it against the
       reconstructed methodology, produces a decision, passes that decision through the independent
@@ -874,6 +879,8 @@
   <h2>Autonomy Is Earned Through Nine Technical Gates</h2>
   <p class="gates-intro">Inside the three development stages, autonomy is earned one phase at a time: the same nine gates that structure the underlying architecture.</p>
 
+  <details class="expand-block">
+  <summary>Expand Technical Roadmap</summary>
   <figure>
     <div class="frame">
       <svg viewBox="0 0 900 346" role="img" aria-label="A nine-step staircase showing machine autonomy rising and human control falling across the project phases, with real capital first committed at phase eight.">
@@ -945,13 +952,16 @@
     the system has actually understood the method. A running commentary can be corrected in real
     time by the trader, and every correction is a labelled training example.
   </p>
+  </details>
 </section>
 <section class="sec" id="deepdive">
   <p class="sec-no">Deep dive</p>
   <h2>Full Architecture, for Readers Who Want to Go Deeper</h2>
   <p class="deepdive-note">Everything below is the underlying technical architecture that supports the three-month roadmap above. It is not required reading to understand the plan. It is here for anyone who wants the full engineering picture.</p>
 
-  <h3>Five layers, each a different engineering problem</h3>
+  <h3>Five-Layer Runtime Architecture</h3>
+  <details class="expand-block">
+  <summary>Expand</summary>
   <p class="lead">
     A conventional trading algorithm begins with mathematics that is already defined. Here, a
     large part of phase one is discovering the rules themselves. The system splits cleanly into
@@ -1001,8 +1011,11 @@
     execution layer are independent services, so the trading platform can be changed later without
     retraining any of the trading intelligence.
   </p>
+  </details>
 
-  <h3>Four ways to reach the market, chosen per component</h3>
+  <h3>Execution Options</h3>
+  <details class="expand-block">
+  <summary>Expand</summary>
   <p class="lead">
     The final execution mechanism has not been selected, and it does not have to be a single
     choice. The options differ mainly in how many hops sit between the decision and the fill, and
@@ -1093,6 +1106,7 @@
       <div class="verdict"><b>Verdict</b>Last-resort bridge and emergency fallback.</div>
     </div>
   </div>
+  </details>
 
   <h3>Proposal E: the hybrid, and the likely answer</h3>
   <p>
@@ -1114,7 +1128,9 @@
     </table>
   </div>
 
-  <h3>Execution methods ranked by response time</h3>
+  <h3>Execution-Speed Comparison</h3>
+  <details class="expand-block">
+  <summary>Expand</summary>
   <p>
     Once the decision is made, how the order actually gets clicked, typed or sent matters. Human
     <button class="term" data-k="reaction-time" type="button">visual reaction time</button> is
@@ -1146,8 +1162,11 @@
     order-execution latency. Network, broker, exchange, operating-system, platform and market-data
     latency come afterward, on top of these numbers.
   </p>
+  </details>
 
-  <h3>Candidate stack, deliberately uncommitted</h3>
+  <h3>Candidate Technology Stack</h3>
+  <details class="expand-block">
+  <summary>Expand</summary>
   <p class="lead">
     There is no reason yet to lock in a single stack, and the final architecture will almost
     certainly be hybrid rather than resting on one model or one vendor. These are the credible
@@ -1179,6 +1198,7 @@
       </tbody>
     </table>
   </div>
+  </details>
 
   <div class="close">
     <p class="big">
