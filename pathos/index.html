@@ -61,13 +61,29 @@ a{color:inherit}
 .pathos-header .pathos-dot{color:#7A1A5C}
 .pathos-header .fsbtn{color:#16141F;border-color:rgba(10,11,18,.24)}
 .pathos-header .fsbtn:hover{color:#7A1A5C;border-color:#7A1A5C;background:rgba(122,26,92,.08)}
+.pathos-header .progress{display:none;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8C8896;white-space:nowrap;align-items:center;gap:8px}
+.pathos-header .progress-track{display:inline-block;width:64px;height:3px;border-radius:2px;background:rgba(10,11,18,.12);overflow:hidden;vertical-align:middle}
+.pathos-header .progress-fill{display:block;height:100%;width:0;background:var(--crimson,#9E1B32);transition:width .3s ease}
 @media(max-width:760px){
   .pathos-header{height:auto}
   .pathos-header .wrap{flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
   .pathos-header .pathos-doctitle{display:none}
   .pathos-header .m-nav{margin-left:0}
+  .pathos-header .progress{display:flex;order:3;width:100%;margin-top:6px}
 }
 body.fs .pathos-header{display:none}
+/* ---------- Kindle-style mobile chrome toggle + swipe hint ---------- */
+@media (max-width:860px){
+  body.chrome-hidden .pathos-header,
+  body.chrome-hidden .ctl{transform:translateY(-140%);opacity:0;pointer-events:none}
+  body.chrome-hidden .ctl{transform:translateY(140%)}
+  .pathos-header,.ctl{transition:transform .28s ease,opacity .28s ease}
+  .swipehint{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);z-index:55;background:rgba(20,20,22,.92);color:#e8e8ec;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:9px 16px;border-radius:999px;
+    display:flex;align-items:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .4s}
+  .swipehint.show{opacity:1}
+}
+@media (min-width:861px){ .swipehint{display:none} }
 
 /* ---------- stage ---------- */
 .stage{min-height:100vh;display:grid;place-items:center;padding:104px 12px 96px}
@@ -600,6 +616,11 @@ template{display:none}
   .cover h1{font-size:clamp(46px,13vw,72px)}
   .margin{margin-top:24px}
   .slip{position:fixed;z-index:60;max-height:80vh;border-radius:10px 10px 0 0}
+  /* Kindle-style reading comfort: slightly larger type, roomier leading, narrower measure */
+  html,body{font-size:17.5px;line-height:1.68}
+  p{max-width:none}
+  h1{font-size:clamp(34px,9vw,48px)}
+  h2{font-size:clamp(28px,7.5vw,38px)}
 }
 /* hardcover overrides (declared last on purpose) */
 .cover .mark{color:var(--gold)}
@@ -618,12 +639,15 @@ template{display:none}
   <a class="lockup pathos-lockup" href="https://wearepathos.com/" target="_blank" rel="noopener"><img src="/assets/pathos-logo.svg" alt="Pathos" height="19"></a>
   <nav class="m-nav" aria-label="Primary">
     <span class="pathos-doctitle">The Red Thread <span class="pathos-dot">·</span> Proposal · September 2026</span>
+    <a class="fsbtn" href="https://tribuneinc.com/pathos/appendix">Appendix</a>
     <button class="fsbtn" id="fsbtn" aria-label="Read in full screen"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>Full screen</button>
+    <span class="progress" id="mProgress" aria-hidden="true"><span class="progress-track"><span class="progress-fill" id="mProgressFill"></span></span><span id="mProgressLabel">Page 1 of 1</span></span>
   </nav>
 </div></header>
 <div class="fsnav l" id="fsL" aria-label="Previous">‹</div>
 <div class="fsnav r" id="fsR" aria-label="Next">›</div>
 <div class="fshint" aria-hidden="true">Esc to leave full screen · arrows turn pages</div>
+<div class="swipehint" id="swipehint" aria-hidden="true">Swipe to turn the page · tap to hide this bar</div>
 
 <main class="stage">
   <div class="book-wrap" id="wrap">
@@ -703,7 +727,7 @@ template{display:none}
     <div class="inner">
       <p class="eyebrow g">Contents</p>
       <div class="toc" id="toc"></div>
-      <p class="small" style="margin-top:10px">Each chapter only works because the one before it exists. That order is the thread.</p>
+      <div class="margin"><div class="who">At a glance</div><p><a href="https://tribuneinc.com/pathos/appendix" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--crimson)">Here is a shorter version</a> <span style="color:var(--crimson)">›</span></p></div>
       <div class="folio"><span class="n">03</span><span>Contents</span></div>
     </div>
   </div>
@@ -1403,6 +1427,9 @@ template{display:none}
     nextBtn.textContent = cur===0 ? 'Open the book ›' : (cur===LAST ? 'The end' : (cur===LAST-1 ? 'Close the book ›' : 'Turn the page ›'));
     book.classList.toggle('closed', cur===0);
     book.classList.toggle('at-end', cur===LAST);
+    const mFill = document.getElementById('mProgressFill'), mLabel = document.getElementById('mProgressLabel');
+    if (mFill) mFill.style.width = (LAST ? (cur/LAST*100) : 0) + '%';
+    if (mLabel) mLabel.textContent = 'Page ' + (cur+1) + ' of ' + (LAST+1);
   }
   function show(i){
     cur = i; book.classList.remove('front-closed');
@@ -1667,15 +1694,38 @@ template{display:none}
     if (e.key==='Home') go(0);
     if (e.key==='End') go(LAST);
   });
-  let sx=null, sy=null;
-  book.addEventListener('touchstart', e=>{ sx=e.touches[0].clientX; sy=e.touches[0].clientY; }, {passive:true});
+  let sx=null, sy=null, st=0;
+  book.addEventListener('touchstart', e=>{ sx=e.touches[0].clientX; sy=e.touches[0].clientY; st=performance.now(); }, {passive:true});
   book.addEventListener('touchend', e=>{
     if (sx===null) return;
     if (e.target.closest('.slip')) { sx=sy=null; return; }
     const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
-    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)*1.5) go(dx<0 ? cur+1 : cur-1);
+    const dt = performance.now() - st;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)*1.5) { go(dx<0 ? cur+1 : cur-1); sx=sy=null; return; }
+    // Kindle-style tap-to-toggle chrome: a quick, short tap that wasn't a swipe and wasn't on
+    // interactive content (pin, link, button, slip) toggles the header/footer visibility.
+    if (!isDesk() && dt < 280 && Math.abs(dx) < 12 && Math.abs(dy) < 12) {
+      const t = e.target;
+      if (!t.closest('.pin, a, button, .slip, iframe, .tv')) {
+        document.body.classList.toggle('chrome-hidden');
+        hideSwipeHint();
+      }
+    }
     sx=sy=null;
   }, {passive:true});
+  // ---- mobile: first-visit swipe hint, dismissed on any interaction ----
+  const swipehint = document.getElementById('swipehint');
+  function hideSwipeHint(){ if (swipehint) swipehint.classList.remove('show'); }
+  if (swipehint && !isDesk()) {
+    try {
+      if (!localStorage.getItem('rt-swipehint-seen')) {
+        setTimeout(()=> swipehint.classList.add('show'), 900);
+        setTimeout(hideSwipeHint, 5500);
+        localStorage.setItem('rt-swipehint-seen', '1');
+      }
+    } catch(e){}
+    book.addEventListener('touchstart', hideSwipeHint, {passive:true, once:true});
+  }
   // ---- full screen: header and footer step out of the way; Esc brings them back ----
   const fsbtn = document.getElementById('fsbtn');
   function enterFS(){
