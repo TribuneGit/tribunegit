@@ -174,7 +174,7 @@ p strong{color:var(--ink);font-weight:500}
 .pin:hover{transform:scale(1.15);background:var(--crimson-2)}
 .pin:focus-visible{outline:2px solid var(--crimson);outline-offset:2px}
 .notes{display:none}
-.slip{position:absolute;left:0;right:0;bottom:0;z-index:30;background:var(--paper);border-top:2px solid var(--crimson);
+.slip{position:absolute;left:0;right:0;bottom:0;z-index:45;background:var(--paper);border-top:2px solid var(--crimson);
   box-shadow:0 -18px 40px rgba(0,0,0,.18);padding:26px var(--pad) 30px;max-height:88%;overflow-y:auto;
   transform:translateY(102%);transition:transform 520ms cubic-bezier(.3,.8,.3,1)}
 .slip.in{transform:translateY(0)}
@@ -377,7 +377,7 @@ p strong{color:var(--ink);font-weight:500}
 .cover .mark b{font-weight:500}
 .cover .sub{font-family:var(--serif)}
 .cover .meta{font-family:var(--mono);text-transform:uppercase}
-.cover .open{position:absolute;bottom:20px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.cover .open{position:absolute;bottom:20px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:10px;cursor:pointer;background:none;border:0;padding:0;color:inherit}
 .cover .open::after{content:"";width:34px;height:1px;animation:nudge 1.8s ease-in-out infinite}
 .page.cover,.face.cover{
   background:
@@ -475,6 +475,7 @@ body:not(.fs) .pgnav{display:flex}
 body.fs .pgnav{display:none}
 .book.closed .pgnav.l,.book.at-end .pgnav.r{opacity:0;pointer-events:none}
 .book.turning .pgnav{opacity:0;pointer-events:none}
+.book.note-open .pgnav{pointer-events:none}
 @media (max-width:860px){ .pgnav{display:none!important} }
 .fsnav:hover{color:#fff}
 .fsnav.l{left:0}.fsnav.r{right:0}
@@ -633,7 +634,8 @@ template{display:none}
 }
 /* hardcover overrides (declared last on purpose) */
 .cover .mark{color:var(--gold)}
-.cover .mark b{color:var(--gold);letter-spacing:.34em}
+.cover .mark b{color:var(--gold);letter-spacing:.24em;font-size:24px}
+.cover .mark img{height:24px}
 .cover .sub{color:var(--cream)}
 .cover .meta b{color:var(--cream)}
 .cover.back .inner .grow{display:none}
@@ -708,7 +710,7 @@ template{display:none}
       <div class="panel"><div class="sub">A future with AI that doesn't leave the human behind. It hands the hours back, so the people at Pathos can spend them on the <em>touch points</em> that made Pathos in the first place: the idea, the craft, the relationship.</div></div>
       <div class="grow"></div>
       <div class="meta"><b>Shane Savage, Chief Strategy Officer</b><br><b>Alex Fagard, Head of Technology + Innovation</b><br>Jeffrey Reinhold &amp; Ryan Poole · Tribune<br>Proposal</div>
-      <div class="open">Open the book</div>
+      <button type="button" class="open" id="coverOpen">Open the book</button>
     </div>
   </div>
 </template>
@@ -1348,7 +1350,7 @@ template{display:none}
         <div><i class="k"></i><div><b>A first target.</b><span>Your instinct is enough to start. The numbers will confirm it.</span></div></div>
         <div><i class="k"></i><div><b>Your margin notes.</b><span>Rough is fine. Rough is better, actually.</span></div></div>
       </div>
-      <div class="contact"><b>Jeffrey Reinhold</b> · Tribune Inc.<br><b>Ryan Poole</b> · Tribune Inc.<br>tribuneinc.com</div>
+      <div class="contact"><b>Jeffrey Reinhold</b> · Tribune Inc. – <a href="mailto:jeff@tribuneinc.com" style="color:inherit">jeff@tribuneinc.com</a><br><b>Ryan Poole</b> · Tribune Inc. – <a href="mailto:ryan@tribuneinc.com" style="color:inherit">ryan@tribuneinc.com</a><br>tribuneinc.com</div>
       <div class="folio"><span>Tribune · The Red Thread</span><span class="n">22</span></div>
     </div>
   </div>
@@ -1528,7 +1530,7 @@ template{display:none}
   });
 
   // ---- notes: the red pins. They open a note on the same page and never turn it. ----
-  function closeSlips(){ document.querySelectorAll('.slip').forEach(s => { s.classList.remove('in'); setTimeout(()=> s.remove(), 550); }); }
+  function closeSlips(){ document.querySelectorAll('.slip').forEach(s => { s.classList.remove('in'); setTimeout(()=> s.remove(), 550); }); book.classList.remove('note-open'); }
   book.addEventListener('click', e => {
     if (e.target.closest('.slip')) return;
     const pin = e.target.closest('.pin'); if (!pin) return;
@@ -1539,8 +1541,10 @@ template{display:none}
     const slip = document.createElement('div'); slip.className = 'slip'; slip.setAttribute('role','dialog');
     slip.innerHTML = `<button class="x" aria-label="Close note">×</button><div class="hd"><span class="no">Note</span><span class="t">${src.dataset.title || ''}</span></div>${src.innerHTML}`;
     page.appendChild(slip);
+    book.classList.add('note-open');
     requestAnimationFrame(()=> requestAnimationFrame(()=> slip.classList.add('in')));
-    slip.querySelector('.x').addEventListener('click', ev => { ev.stopPropagation(); closeSlips(); });
+    slip.querySelector('.x').addEventListener('click', ev => { ev.preventDefault(); ev.stopPropagation(); closeSlips(); });
+    slip.querySelector('.x').addEventListener('pointerdown', ev => { ev.preventDefault(); ev.stopPropagation(); }, true);
   }, true);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSlips(); });
 
@@ -1699,6 +1703,8 @@ template{display:none}
   const pgL = document.getElementById('pgL'), pgR = document.getElementById('pgR');
   pgL.addEventListener('click', ()=> go(cur-1));
   pgR.addEventListener('click', ()=> go(cur+1));
+  const coverOpen = document.getElementById('coverOpen');
+  if (coverOpen) coverOpen.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); go(cur+1); });
   pgL.addEventListener('keydown', e=>{ if (e.key==='Enter'||e.key===' '){ e.preventDefault(); go(cur-1); } });
   pgR.addEventListener('keydown', e=>{ if (e.key==='Enter'||e.key===' '){ e.preventDefault(); go(cur+1); } });
   document.addEventListener('keydown', e=>{
