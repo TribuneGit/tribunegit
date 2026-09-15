@@ -1703,8 +1703,10 @@ template{display:none}
   const pgL = document.getElementById('pgL'), pgR = document.getElementById('pgR');
   pgL.addEventListener('click', ()=> go(cur-1));
   pgR.addEventListener('click', ()=> go(cur+1));
-  const coverOpen = document.getElementById('coverOpen');
-  if (coverOpen) coverOpen.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); go(cur+1); });
+  book.addEventListener('click', e => {
+    const openBtn = e.target.closest('#coverOpen'); if (!openBtn) return;
+    e.preventDefault(); e.stopPropagation(); go(cur+1);
+  });
   pgL.addEventListener('keydown', e=>{ if (e.key==='Enter'||e.key===' '){ e.preventDefault(); go(cur-1); } });
   pgR.addEventListener('keydown', e=>{ if (e.key==='Enter'||e.key===' '){ e.preventDefault(); go(cur+1); } });
   document.addEventListener('keydown', e=>{
