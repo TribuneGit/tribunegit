@@ -54,7 +54,7 @@ a{color:inherit}
 .pathos-header .lockup:hover{text-decoration:none}
 .pathos-header .lockup svg{height:34px;width:auto}
 .pathos-header .wordmark{font-family:'Archivo',var(--sans);font-weight:700;letter-spacing:.2em;font-size:17px;color:#0A0B12}
-.pathos-header .pathos-lockup img{height:34px;width:auto;display:block}
+.pathos-header .pathos-lockup img{height:19px;width:auto;display:block}
 .pathos-header .pathos-x{font-family:'Archivo',var(--sans);font-size:17px;color:#8C8896;font-weight:500}
 .pathos-header .m-nav{display:flex;align-items:center;gap:22px;margin-left:auto}
 .pathos-header .pathos-doctitle{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C8896;white-space:nowrap}
@@ -441,6 +441,16 @@ body.fs{--bw:min(96vw, calc((100vh - 36px) * 1.6));--bh:calc(var(--bw) / 1.6)}
 body.fs .stage{padding:18px 0}
 body:not(.fs) .stage{padding-top:104px}
 .fsnav{position:fixed;top:0;bottom:0;width:min(120px,9vw);z-index:45;display:none;align-items:center;justify-content:center;cursor:pointer;color:rgba(255,255,255,.35);font-size:34px;font-family:var(--serif);transition:color .2s;user-select:none}
+/* desk-mode page-turn arrows, sit on the outer edge of each open page (not fullscreen — .fsnav covers that) */
+.pgnav{position:absolute;top:0;bottom:0;width:56px;z-index:30;display:none;align-items:center;justify-content:center;cursor:pointer;color:rgba(17,17,17,.2);font-size:26px;font-family:var(--serif);transition:color .15s,background .15s;user-select:none;background:transparent}
+.pgnav.l{left:0;border-radius:4px 0 0 4px}
+.pgnav.r{right:0;border-radius:0 4px 4px 0}
+.pgnav:hover{color:var(--crimson);background:rgba(158,27,50,.05)}
+body:not(.fs) .pgnav{display:flex}
+body.fs .pgnav{display:none}
+.book.closed .pgnav.l,.book.at-end .pgnav.r{opacity:0;pointer-events:none}
+.book.turning .pgnav{opacity:0;pointer-events:none}
+@media (max-width:860px){ .pgnav{display:none!important} }
 .fsnav:hover{color:#fff}
 .fsnav.l{left:0}.fsnav.r{right:0}
 body.fs .fsnav{display:flex}
@@ -605,7 +615,7 @@ template{display:none}
 <header class="m-header pathos-header"><div class="wrap">
   <a class="lockup" href="/"><svg viewBox="0 0 100 112" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tribune"><rect x="18" y="10" width="64" height="16" rx="2" fill="#0A0B12"/><polygon points="18,33 46,33 46,86 37,86 18,60" fill="#0A0B12"/><polygon points="54,33 82,33 82,60 63,86 54,86" fill="#0A0B12"/><polygon points="40,90 60,90 50,104" fill="#7A1A5C"/></svg><span class="wordmark">TRIBUNE</span></a>
   <span class="pathos-x" aria-hidden="true">×</span>
-  <a class="lockup pathos-lockup" href="https://wearepathos.com/" target="_blank" rel="noopener"><img src="/assets/pathos-logo.svg" alt="Pathos" height="34"></a>
+  <a class="lockup pathos-lockup" href="https://wearepathos.com/" target="_blank" rel="noopener"><img src="/assets/pathos-logo.svg" alt="Pathos" height="19"></a>
   <nav class="m-nav" aria-label="Primary">
     <span class="pathos-doctitle">The Red Thread <span class="pathos-dot">·</span> Proposal · September 2026</span>
     <button class="fsbtn" id="fsbtn" aria-label="Read in full screen"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>Full screen</button>
@@ -624,6 +634,8 @@ template{display:none}
       <div class="edges f" aria-hidden="true"></div>
       <section class="page left" id="pL"></section>
       <section class="page right" id="pR"></section>
+      <div class="pgnav l" id="pgL" aria-label="Previous page" role="button" tabindex="0">‹</div>
+      <div class="pgnav r" id="pgR" aria-label="Next page" role="button" tabindex="0">›</div>
       <div class="cast l" id="castL" aria-hidden="true"></div>
       <div class="cast r" id="castR" aria-hidden="true"></div>
       <div class="gutter" aria-hidden="true"></div>
@@ -1570,24 +1582,24 @@ template{display:none}
 
   // closing: the endpaper leaf folds over and lands as the front cover, then the closed book turns to its back
   function closeBook(){
-    busy = true; closeSlips();
+    busy = true; book.classList.add('turning'); closeSlips();
     thread.classList.remove('draw'); thread.innerHTML = '';
     castL.classList.add('on');
     book.classList.add('front-closed');
     flipLeaf('fwd', { html: folioFix(html(spreads[LAST-1].r), (LAST-1)*2+1), cls: 'endpaper' }, { html: coverHTML(), cls: 'cover' }, ()=>{ pR.style.visibility = 'hidden'; coverPage(pL); }, ()=>{
       castL.classList.remove('on'); cur = LAST; rail();
-      setTimeout(()=> turnBookOver(true, ()=>{ busy = false; }), 350);
+      setTimeout(()=> turnBookOver(true, ()=>{ busy = false; book.classList.remove('turning'); }), 350);
     });
   }
   // opening from the back: the book turns to its front, the cover lifts, the last spread is back
   function openBack(to){
-    busy = true; closeSlips();
+    busy = true; book.classList.add('turning'); closeSlips();
     turnBookOver(false, ()=>{
       pR.style.visibility = 'hidden'; castR.classList.add('on');
       book.classList.remove('front-closed');
       flipLeaf('bwd', { html: coverHTML(), cls: 'cover' }, { html: folioFix(html(spreads[LAST-1].r), (LAST-1)*2+1), cls: 'endpaper' }, ()=>{ paint(pL,'l',LAST-1); }, ()=>{
         paint(pR,'r',LAST-1); pR.style.visibility=''; castR.classList.remove('on');
-        cur = LAST-1; drawThread(cur); rail(); busy = false;
+        cur = LAST-1; drawThread(cur); rail(); busy = false; book.classList.remove('turning');
         if (to !== undefined && to !== LAST-1) setTimeout(()=> turn(to), 60);
       });
     });
@@ -1603,7 +1615,7 @@ template{display:none}
     }
     if (cur===0 || to===0) reveal();
     if (!isDesk() || FLIP===0){ show(to); return; }
-    busy = true;
+    busy = true; book.classList.add('turning');
     const fwd = to > cur;
     thread.classList.remove('draw'); thread.innerHTML = '';
     const emptyL = !!(spreads[to].l && spreads[to].l.classList.contains('empty'));
@@ -1619,12 +1631,18 @@ template{display:none}
       castR.classList.add('on');
     }
     cur = to; book.classList.toggle('closed', cur===0); book.classList.toggle('at-end', cur===LAST);
+    // The leaf sits exactly over the page it started on (pR for fwd, pL for bwd) and is still
+    // perfectly flat at t=0, so it fully hides that real page. As it rotates open, perspective
+    // foreshortening exposes that real page's edge almost immediately — long before the 90°
+    // midpoint. Paint the new content into it right now, while the leaf still hides it, so the
+    // exposed sliver is already correct instead of showing a stale page for a beat.
+    if (fwd) paint(pR,'r',to); else paint(pL,'l',to);
     flipLeaf(fwd ? 'fwd' : 'bwd', up, down,
-      ()=>{ if (fwd) paint(pR,'r',to); else paint(pL,'l',to); castL.classList.remove('on'); castR.classList.remove('on'); (fwd?castL:castR).classList.add('on'); },
+      ()=>{ castL.classList.remove('on'); castR.classList.remove('on'); (fwd?castL:castR).classList.add('on'); },
       ()=>{
         if (fwd) paint(pL,'l',to); else paint(pR,'r',to);
         castL.classList.remove('on'); castR.classList.remove('on');
-        drawThread(to); rail(); busy=false;
+        drawThread(to); rail(); busy=false; book.classList.remove('turning');
         pL.querySelector('.inner')?.scrollTo(0,0); pR.querySelector('.inner')?.scrollTo(0,0);
       });
   }
@@ -1637,6 +1655,11 @@ template{display:none}
   });
   prevBtn.addEventListener('click', ()=> go(cur-1));
   nextBtn.addEventListener('click', ()=> go(cur+1));
+  const pgL = document.getElementById('pgL'), pgR = document.getElementById('pgR');
+  pgL.addEventListener('click', ()=> go(cur-1));
+  pgR.addEventListener('click', ()=> go(cur+1));
+  pgL.addEventListener('keydown', e=>{ if (e.key==='Enter'||e.key===' '){ e.preventDefault(); go(cur-1); } });
+  pgR.addEventListener('keydown', e=>{ if (e.key==='Enter'||e.key===' '){ e.preventDefault(); go(cur+1); } });
   document.addEventListener('keydown', e=>{
     if (e.target.matches('input,textarea')) return;
     if (e.key==='ArrowRight' || e.key==='PageDown') { e.preventDefault(); go(cur+1); }
