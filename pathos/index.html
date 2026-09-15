@@ -260,6 +260,15 @@ p strong{color:var(--ink);font-weight:500}
 .pack div{padding:6px 0;border-top:1px solid var(--line)}
 .pack b{font-family:var(--serif);font-size:19px;font-weight:400;color:var(--ink)}
 .pack span{display:block;color:var(--mute);font-size:12.5px}
+.pack span.sal{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--crimson);margin-top:3px}
+.pack-total{margin-top:10px;padding-top:10px;border-top:1px solid var(--line-2);display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pack-total b{font-family:var(--serif);font-size:19px;font-weight:400;color:var(--ink)}
+.pack-total span{font-family:var(--mono);font-size:11px;color:var(--mute)}
+.pack-stat{display:flex;gap:28px;flex-wrap:wrap;margin:16px 0;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pack-stat div{display:flex;flex-direction:column}
+.pack-stat b{font-family:var(--serif);font-size:32px;font-weight:400;line-height:1.05;color:var(--ink)}
+.pack-stat b.c{color:var(--crimson)}
+.pack-stat span{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:2px}
 .pill{display:inline-block;align-self:flex-start;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--line-2);color:var(--mute);margin-bottom:14px}
 
 /* timeline */
@@ -1090,21 +1099,26 @@ template{display:none}
       <span class="pill">How Ryan runs it today</span>
       <p class="lead">At Maxximus AI, Ryan works with a full C-suite of AI colleagues.</p>
       <p>Marcus, the CEO, reads everything before Ryan does and turns a morning's brain dump into a plan. Themis, the general counsel, flags exposure before it becomes a problem. Mercury holds the numbers, Sophia the brand, Sophos the technology. And when a big decision is on the table, Momus is brought in to argue against it.</p>
+      <div class="pack-stat">
+        <div><b>$1.7M&ndash;$2.6M</b><span>market salary for that team, per year</span></div>
+        <div><b class="c">$1K&ndash;$3K</b><span>what Ryan actually pays, per month</span></div>
+      </div>
       <p>They talk to each other in a shared room the team calls The Den. Ryan decides everything that can't be undone. In the follow-up he'll show it live.<button class="pin" data-note="pack" aria-label="Open note">i</button></p>
       <div class="notes">
         <section data-note="pack" data-title="The pack, in one table">
           <div class="pack">
-            <div><b>Marcus</b><span>Chief Executive Officer · reviews every output, sets the week</span></div>
-            <div><b>Sophos</b><span>Chief Technology Officer · architecture, reliability</span></div>
-            <div><b>Mercury</b><span>Chief Financial Officer · the numbers, always</span></div>
-            <div><b>Sophia</b><span>Chief Marketing Officer · brand, content, growth</span></div>
-            <div><b>Ares</b><span>Chief Revenue Officer · from attention to revenue</span></div>
-            <div><b>Prometheus</b><span>AI Engineer · the knowledge engine</span></div>
-            <div><b>Themis</b><span>General Counsel · IP, privacy, contracts</span></div>
-            <div><b>Cerberus</b><span>Head of Security · finds the holes first</span></div>
-            <div><b>Momus</b><span>Devil's Advocate · votes no until proven wrong</span></div>
+            <div><b>Marcus</b><span>Chief Executive Officer · reviews every output, sets the week</span><span class="sal">$250K&ndash;$400K/yr</span></div>
+            <div><b>Sophos</b><span>Chief Technology Officer · architecture, reliability</span><span class="sal">$220K&ndash;$350K/yr</span></div>
+            <div><b>Mercury</b><span>Chief Financial Officer · the numbers, always</span><span class="sal">$200K&ndash;$300K/yr</span></div>
+            <div><b>Sophia</b><span>Chief Marketing Officer · brand, content, growth</span><span class="sal">$180K&ndash;$280K/yr</span></div>
+            <div><b>Ares</b><span>Chief Revenue Officer · from attention to revenue</span><span class="sal">$180K&ndash;$260K/yr</span></div>
+            <div><b>Prometheus</b><span>AI Engineer · the knowledge engine</span><span class="sal">$200K&ndash;$320K/yr</span></div>
+            <div><b>Themis</b><span>General Counsel · IP, privacy, contracts</span><span class="sal">$180K&ndash;$280K/yr</span></div>
+            <div><b>Cerberus</b><span>Head of Security · finds the holes first</span><span class="sal">$180K&ndash;$260K/yr</span></div>
+            <div><b>Momus</b><span>Devil's Advocate · votes no until proven wrong</span><span class="sal">$150K&ndash;$200K/yr</span></div>
           </div>
-          <p style="margin-top:12px">The flow: Ryan drops a direction. Marcus turns it into a plan and hands it to the right colleague. They execute. Marcus reviews. Ryan decides on anything irreversible. On the market, that team would cost a seven-figure payroll. It runs on the cost of API calls.</p>
+          <div class="pack-total"><b>Total, market rate</b><span>$1,740,000&ndash;$2,650,000/yr</span></div>
+          <p style="margin-top:12px">The flow: Ryan drops a direction. Marcus turns it into a plan and hands it to the right colleague. They execute. Marcus reviews. Ryan decides on anything irreversible. On the open market, that team costs $1.74M&ndash;$2.65M a year in salary. Ryan runs it for roughly $1,000&ndash;$3,000 a month in API calls &mdash; the cost of one junior employee's day, per month, for the whole team.</p>
           <p>Pathos's version will look different. It should be shaped around how Shane and the department heads actually decide, not copied over.</p>
         </section>
       </div>
