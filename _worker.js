@@ -42,6 +42,7 @@ const MARKDOWN_MAP = new Map([
   ["/reach-out/",                          "/reach-out.md"],
   ["/legal/",                              "/legal.md"],
   ["/us/west-palm-beach/",                 "/us/west-palm-beach.md"],
+  ["/pathos/",                              "/pathos.md"],
 ]);
 
 // /page/index.md → /page.md permanent redirects (Phase C)
@@ -104,6 +105,9 @@ const GATE_MILESTONE = {
 };
 
 const GATES = [GATE_TECHSTACK, GATE_PARTNERSHIP, GATE_MILESTONE];
+
+// Paths that must never be indexed but carry no password gate.
+const NOINDEX_PATHS = ["/pathos"];
 
 function currentWeekNumber() {
   // Rotates the valid token weekly so a leaked cookie expires on its own.
@@ -305,20 +309,28 @@ export default {
       return new Response(response.body, { status: 200, headers });
     }
 
-    // 6. HTML pages: add HTTP Link header for Markdown alternate
+    // 6. HTML pages: add HTTP Link header for Markdown alternate + force noindex on flagged paths
     if (response.status === 200) {
       const ct = response.headers.get("Content-Type") || "";
       if (ct.includes("text/html")) {
+        const isNoindexPath = NOINDEX_PATHS.some(
+          (p) => url.pathname === p || url.pathname === p + "/" || url.pathname.startsWith(p + "/")
+        );
         const mdPath = MARKDOWN_MAP.get(url.pathname);
-        if (mdPath) {
+        if (mdPath || isNoindexPath) {
           const headers = new Headers(response.headers);
-          const links = [
-            `<https://tribuneinc.com${mdPath}>; rel="alternate"; type="text/markdown"`,
-          ];
-          if (url.pathname === "/") {
-            links.push(`<https://tribuneinc.com/llms.txt>; rel="describedby"; type="text/plain"`);
+          if (mdPath) {
+            const links = [
+              `<https://tribuneinc.com${mdPath}>; rel="alternate"; type="text/markdown"`,
+            ];
+            if (url.pathname === "/") {
+              links.push(`<https://tribuneinc.com/llms.txt>; rel="describedby"; type="text/plain"`);
+            }
+            headers.set("Link", links.join(", "));
           }
-          headers.set("Link", links.join(", "));
+          if (isNoindexPath) {
+            headers.set("X-Robots-Tag", "noindex, nofollow, noarchive, nosnippet");
+          }
           return new Response(response.body, { status: 200, headers });
         }
       }

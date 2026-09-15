@@ -6,4 +6,6 @@ Disallow: /partnership
 Disallow: /partnership/
 Disallow: /milestone
 Disallow: /milestone/
+Disallow: /pathos
+Disallow: /pathos/
 Sitemap: https://tribuneinc.com/sitemap.xml
