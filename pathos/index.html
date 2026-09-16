@@ -66,10 +66,10 @@ a{color:inherit}
 .pathos-header .progress-fill{display:block;height:100%;width:0;background:var(--crimson,#9E1B32);transition:width .3s ease}
 @media(max-width:760px){
   .pathos-header{height:auto}
-  .pathos-header .wrap{flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+  .pathos-header .wrap{flex-wrap:wrap;padding:0 16px;padding-top:12px;padding-bottom:12px}
   .pathos-header .pathos-doctitle{display:none}
-  .pathos-header .m-nav{margin-left:0}
-  .pathos-header .progress{display:flex;order:3;width:100%;margin-top:6px}
+  .pathos-header .m-nav{margin-left:0;flex-wrap:wrap;row-gap:8px;max-width:100%}
+  .pathos-header .progress{display:flex;order:3;width:100%;margin-top:6px;box-sizing:border-box}
 }
 body.fs .pathos-header{display:none}
 /* ---------- Kindle-style mobile chrome toggle + swipe hint ---------- */
@@ -78,7 +78,7 @@ body.fs .pathos-header{display:none}
   body.chrome-hidden .ctl{transform:translateY(-140%);opacity:0;pointer-events:none}
   body.chrome-hidden .ctl{transform:translateY(140%)}
   .pathos-header,.ctl{transition:transform .28s ease,opacity .28s ease}
-  .swipehint{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);z-index:55;background:rgba(20,20,22,.92);color:#e8e8ec;
+  .swipehint{position:fixed;left:50%;bottom:calc(70px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:55;background:rgba(20,20,22,.92);color:#e8e8ec;max-width:calc(100vw - 32px);text-align:center;
     font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:9px 16px;border-radius:999px;
     display:flex;align-items:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .4s}
   .swipehint.show{opacity:1}
@@ -572,7 +572,7 @@ body.fs .fshint{opacity:1;animation:hintfade 4s forwards}
 @keyframes pop{to{opacity:1}}
 
 /* ---------- controls ---------- */
-.ctl{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 22px calc(14px + env(safe-area-inset-bottom,0px));
+.ctl{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 22px calc(18px + env(safe-area-inset-bottom,0px));
   display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;
   background:linear-gradient(to top, rgba(20,20,22,.96), rgba(20,20,22,0))}
 .ctl button{all:unset;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#d8d8dc;
@@ -604,7 +604,7 @@ template{display:none}
 /* ---------- mobile: single page, stacked ---------- */
 @media (max-width:860px){
   :root{--bh:auto}
-  .stage{padding:120px 0 90px;display:block}
+  .stage{padding:120px 0 140px;display:block}
   body:not(.fs) .stage{padding-top:120px}
   .book-wrap{width:100%;height:auto;perspective:none}
   .book{position:relative;transform:none!important;display:flex;flex-direction:column;gap:10px;padding:0 12px}
@@ -620,8 +620,9 @@ template{display:none}
   .twodocs .arrow{height:34px}.twodocs .arrow span{transform:none}
   .tv .cab{grid-template-columns:1fr}.tv .pnl{flex-direction:row;justify-content:center}.tv .brandtag{margin:0}
   .heat{grid-template-columns:80px repeat(5,1fr)}
-  .ctl{gap:10px;padding-left:12px;padding-right:12px}
-  .ctl button{padding:9px 11px;font-size:10px}
+  .ctl{gap:8px;padding-left:12px;padding-right:12px;grid-template-columns:auto 1fr auto}
+  .ctl button{padding:9px 10px;font-size:9.5px;letter-spacing:.12em}
+  .rail{min-width:0}
   .cover .open{position:relative;right:auto;bottom:auto;margin-top:18px}
   .cover h1{font-size:clamp(46px,13vw,72px)}
   .margin{margin-top:24px}
@@ -1440,7 +1441,8 @@ template{display:none}
     [...knots.children].forEach((b,i)=>{ b.classList.toggle('cur', i===cur); b.classList.toggle('done', i<cur); });
     fill.style.width = (cur/LAST*100) + '%';
     prevBtn.disabled = cur===0; nextBtn.disabled = cur===LAST;
-    nextBtn.textContent = cur===0 ? 'Open the book ›' : (cur===LAST ? 'The end' : (cur===LAST-1 ? 'Close the book ›' : 'Turn the page ›'));
+    const mobileLabels = !isDesk();
+    nextBtn.textContent = cur===0 ? (mobileLabels ? 'Open ›' : 'Open the book ›') : (cur===LAST ? 'The end' : (cur===LAST-1 ? (mobileLabels ? 'Close ›' : 'Close the book ›') : (mobileLabels ? 'Next ›' : 'Turn the page ›')));
     book.classList.toggle('closed', cur===0);
     book.classList.toggle('at-end', cur===LAST);
     const mFill = document.getElementById('mProgressFill'), mLabel = document.getElementById('mProgressLabel');
